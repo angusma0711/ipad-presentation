@@ -1,0 +1,26 @@
+{
+  "title": "P? · 課題名稱（複製此資料夾後修改）",
+  "order": 5,
+  "assetBase": "/media/my-lesson/",
+  "slides": [
+    {
+      "id": "cover",
+      "title": "封面",
+      "notes": "只在 iPad 顯示的教師筆記。",
+      "html": "<p class=\"eyebrow\">P? 音樂</p><h1>課題名稱</h1><p>副題</p>",
+      "media": []
+    },
+    {
+      "id": "listen",
+      "title": "聆聽",
+      "notes": "播放錄音，問學生聽到甚麼。",
+      "html": "<h1>聽一聽</h1><img src=\"./images/example.jpg\" alt=\"圖片說明\" style=\"max-height:50cqw\"><p>你聽到甚麼樂器？</p>",
+      "media": [
+        {
+          "kind": "audio",
+          "src": "./audio/example.mp3"
+        }
+      ]
+    }
+  ]
+}

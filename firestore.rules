@@ -1,0 +1,110 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  match /sessions/{sessionId} {
+   function authenticated() { return request.auth != null; }
+   // A lesson code works for LESSON_HOURS (24) after creation, until the teacher ends it.
+   function fresh(data) { return data.createdAt > request.time - duration.value(24, 'h'); }
+   // Any deck folder name; the app checks the deck exists and clamps the slide.
+   function validDeck(data) { return data.presentationId is string && data.presentationId.matches('^[a-z0-9-]{1,60}$') && data.currentSlide < 100; }
+   function valid(data) {
+    return data.keys().hasOnly(['currentSlide','presentationId','status','createdAt','updatedAt'])
+     && data.keys().hasAll(['currentSlide','presentationId','status','createdAt','updatedAt'])
+     && data.currentSlide is int && data.currentSlide >= 0 && validDeck(data)
+     && data.status in ['active', 'ended']
+     && data.createdAt is timestamp && data.updatedAt is timestamp;
+   }
+   // Missing-document get permits collision checking and an accurate not-found screen.
+   // Ended lessons stay readable so the projector can show "課堂已結束".
+   allow get: if authenticated() && sessionId.matches('^[A-HJ-NP-Z2-9]{6}$');
+   allow list, delete: if false;
+   allow create: if authenticated() && sessionId.matches('^[A-HJ-NP-Z2-9]{6}$')
+    && valid(request.resource.data) && request.resource.data.currentSlide == 0 && request.resource.data.status == 'active'
+    && request.resource.data.createdAt == request.time && request.resource.data.updatedAt == request.time;
+   allow update: if authenticated() && resource.data.status == 'active'
+    && valid(request.resource.data) && request.resource.data.updatedAt == request.time
+    && ((fresh(resource.data) && request.resource.data.status == 'active'
+      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['currentSlide','updatedAt']))
+     || (request.resource.data.status == 'ended'
+      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt'])));
+   match /teaching/{key} {
+    function activeSession() {
+     return authenticated() && exists(/databases/$(database)/documents/sessions/$(sessionId))
+      && get(/databases/$(database)/documents/sessions/$(sessionId)).data.status == 'active'
+      && fresh(get(/databases/$(database)/documents/sessions/$(sessionId)).data);
+    }
+    function validSlide(index) {
+     return index is int && index >= 0 && index < 100;
+    }
+    function keyedSlide(prefix) {
+     return key.matches('^' + prefix + '-([0-9]|[1-9][0-9])$')
+      && validSlide(int(key.split('-')[1]));
+    }
+    function interaction(data) {
+     return keyedSlide('interaction')
+      && data.keys().hasOnly(['choice','phase','revealed','timbre','timbreSelections','selection','revisionRevealed','updatedAt'])
+      && data.keys().hasAll(['choice','phase','revealed','timbre','timbreSelections','selection','revisionRevealed','updatedAt'])
+      && data.choice is bool && data.revealed is bool && data.timbre is bool && data.revisionRevealed is bool
+      && data.phase in ['listen','compare','vote','explain'] && (data.selection == null || data.selection in [0,1,2])
+      && data.timbreSelections is list && data.timbreSelections.size() <= 3 && data.timbreSelections.hasOnly([0,1,2]);
+    }
+    function group(data) {
+     return data is map && data.keys().hasOnly(['name','points'])
+      && data.keys().hasAll(['name','points'])
+      && data.name is string && data.name.size() > 0 && data.name.size() <= 24
+      && data.points is int && data.points >= 0 && data.points <= 9999;
+    }
+    function groups(data) {
+     return key == 'groups' && data.keys().hasOnly(['g0','g1','g2','g3','visible','updatedAt'])
+      && data.keys().hasAll(['g0','g1','g2','g3','visible','updatedAt'])
+      && group(data.g0) && group(data.g1) && group(data.g2) && group(data.g3)
+      && data.visible is bool;
+    }
+    function pointer(data) {
+     return key == 'pointer' && data.keys().hasOnly(['x','y','active','slide','expiresAt','updatedAt'])
+      && data.keys().hasAll(['x','y','active','slide','expiresAt','updatedAt'])
+      && data.x is number && data.x >= 0 && data.x <= 1
+      && data.y is number && data.y >= 0 && data.y <= 1
+      && data.active is bool && validSlide(data.slide)
+      && data.expiresAt is int && data.expiresAt <= request.time.toMillis() + 5000
+      && data.expiresAt >= request.time.toMillis() - 5000;
+    }
+    function annotations(data) {
+     return keyedSlide('annotations')
+      && data.keys().hasOnly(['strokes','updatedAt']) && data.keys().hasAll(['strokes','updatedAt'])
+      && data.strokes is list && data.strokes.size() <= 30;
+    }
+    function media(data) {
+     return keyedSlide('media')
+      && data.keys().hasOnly(['kind','src','commandId','action','commandAt','updatedAt'])
+      && data.keys().hasAll(['kind','src','commandId','action','commandAt','updatedAt'])
+      && data.kind in ['audio','video','youtube'] && data.src is string && data.src.size() <= 300
+      && ((data.kind == 'youtube' && data.src.matches('^[A-Za-z0-9_-]{11}$'))
+       || (data.kind in ['audio','video'] && data.src.matches('^/media/[^?#]+$')))
+      && data.commandId is string && data.commandId.size() == 24
+      && data.action in ['play','pause','restart'] && data.commandAt is int;
+    }
+    function feedback(data) {
+     return keyedSlide('feedback')
+      && data.keys().hasOnly(['commandId','status','message','updatedAt'])
+      && data.keys().hasAll(['commandId','status','message','updatedAt'])
+      && data.commandId is string && data.commandId.size() == 24
+      && data.status in ['ready','playing','paused','ended','blocked','error']
+      && data.message is string && data.message.size() <= 200;
+    }
+    function action(data) {
+     return keyedSlide('action') && data.keys().hasOnly(['commandId','commandAt','action','updatedAt'])
+      && data.keys().hasAll(['commandId','commandAt','action','updatedAt'])
+      && data.commandId is string && data.commandId.size() == 24
+      && data.commandAt is int && data.action is string && data.action.matches('^[a-z0-9-]{1,40}$');
+    }
+    allow get: if activeSession();
+    allow list, delete: if false;
+    allow create, update: if activeSession()
+     && request.resource.data.updatedAt == request.time
+     && (groups(request.resource.data) || pointer(request.resource.data)
+      || interaction(request.resource.data) || action(request.resource.data) || annotations(request.resource.data) || media(request.resource.data) || feedback(request.resource.data));
+   }
+  }
+ }
+}

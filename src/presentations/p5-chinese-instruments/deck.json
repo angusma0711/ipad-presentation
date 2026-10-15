@@ -1,0 +1,286 @@
+{
+  "title": "P5 · 中國樂器與音色",
+  "order": 2,
+  "assetBase": "/media/p5/",
+  "viewClass": "p5-view",
+  "slides": [
+    {
+      "id": "p5-revision-0",
+      "title": "01 複習四大類",
+      "notes": "0–2 分鐘。先讓學生回想；每按一次揭示下一類，依序顯示吹管、拉弦、彈撥、打擊。iPad 投影初始只有標題。",
+      "media": [],
+      "kind": "revision"
+    },
+    {
+      "id": "p5-opening-1",
+      "title": "02 今日問題",
+      "notes": "2–3 分鐘。先介紹樂器，再用課本音色選項聆聽。把音色與速度、力度及樂曲氣氛／意境分開，再連結實際聆聽證據。",
+      "media": [],
+      "kind": "opening"
+    },
+    {
+      "id": "p5-reveal-2",
+      "title": "03 琵琶與音色",
+      "notes": "3–8 分鐘。先展示樂器真實照片、名稱、演奏方法與曲名，再閱讀課本音色選項，聆聽後多選並說明。音色參考：豐富多變、清脆鏗鏘。不要把速度或情绪當音色。歷史館藏琵琶；外形細節與現代演奏用琵琶不同。",
+      "media": [
+        {
+          "kind": "youtube",
+          "src": "jGq2KK9Xihw"
+        }
+      ],
+      "kind": "reveal",
+      "track": "pipa",
+      "round": 1
+    },
+    {
+      "id": "p5-investigation-3",
+      "title": "04 《十面埋伏》分析",
+      "notes": "8–15 分鐘。課本教師參考：由平靜至緊張、刺激緊張、充滿戲劇性。音色清脆而多變；力度分明；速度多變。這些是討論參考，須對應所播片段，不把全曲描述套用每一截段。 先以課本提問聆聽，再按「圖片」用情境圖討論，最後說出聲音證據。音色與其他音樂元素共同呈現氣氛；不把一種音色與一種情緒固定配對。",
+      "media": [
+        {
+          "kind": "youtube",
+          "src": "jGq2KK9Xihw"
+        }
+      ],
+      "kind": "investigation",
+      "track": "pipa",
+      "round": 1
+    },
+    {
+      "id": "p5-reveal-4",
+      "title": "05 箏（古箏）與音色",
+      "notes": "15–20 分鐘。先展示樂器真實照片、名稱、演奏方法與曲名，再閱讀課本音色選項，聆聽後多選並說明。音色參考：餘韻悠長、柔麗純樸。不要把速度或情绪當音色。現代箏的真實照片。",
+      "media": [
+        {
+          "kind": "youtube",
+          "src": "vtwvoRS6h7k"
+        }
+      ],
+      "kind": "reveal",
+      "track": "zheng",
+      "round": 2
+    },
+    {
+      "id": "p5-investigation-5",
+      "title": "06 《漁舟唱晚》分析",
+      "notes": "20–27 分鐘。課本教師參考：剛開始速度較慢、力度較弱；後半段速度愈來愈快。情境分別為第一項及第二項。分別聆聽開始與後半段，不用同一截段回答兩題。YouTube 來源未核定截段秒數，教師須依實際演奏選段。 先以課本提問聆聽，再按「圖片」用情境圖討論，最後說出聲音證據。音色與其他音樂元素共同呈現氣氛；不把一種音色與一種情緒固定配對。",
+      "media": [
+        {
+          "kind": "youtube",
+          "src": "vtwvoRS6h7k"
+        }
+      ],
+      "kind": "investigation",
+      "track": "zheng",
+      "round": 2
+    },
+    {
+      "id": "p5-reveal-6",
+      "title": "07 二胡與音色",
+      "notes": "27–32 分鐘。先展示樂器真實照片、名稱、演奏方法與曲名，再閱讀課本音色選項，聆聽後多選並說明。音色參考：圓潤明亮、剛柔多變。不要把速度或情绪當音色。二胡與琴弓的真實照片。",
+      "media": [
+        {
+          "kind": "youtube",
+          "src": "EJP66O9epP4"
+        }
+      ],
+      "kind": "reveal",
+      "track": "erhu",
+      "round": 3
+    },
+    {
+      "id": "p5-investigation-7",
+      "title": "08 《戰馬奔騰》分析",
+      "notes": "32–39 分鐘。課本此題為開放作答，教師保持開放態度，接受不同意見。此簡報以三幅馬群情境插圖延伸課本原有馬群圖討論；插圖並非課本原圖。請學生連結剛柔多變／圓潤明亮的音色與實際聽到的演奏。候選影片有伴奏，不把所有聲音歸於二胡。 先以課本提問聆聽，再按「圖片」用情境圖討論，最後說出聲音證據。音色與其他音樂元素共同呈現氣氛；不把一種音色與一種情緒固定配對。",
+      "media": [
+        {
+          "kind": "youtube",
+          "src": "EJP66O9epP4"
+        }
+      ],
+      "kind": "investigation",
+      "track": "erhu",
+      "round": 3
+    },
+    {
+      "id": "p5-comparison-8",
+      "title": "09 比較",
+      "notes": "39–43 分鐘。三張真實樂器照片。讓學生指出彈撥與拉弦，再依次重播已核對截段，比較起音、延續及音色；每次只播放一段。追問持續聲是否必然來自拉弦：輪指可連接，運弓亦可奏短促音。不要把音色和情緒當固定配對。",
+      "media": [],
+      "kind": "comparison"
+    },
+    {
+      "id": "p5-exit-9",
+      "title": "10 離堂檢視",
+      "notes": "43–45 分鐘。學生選一件樂器，以課本詞語描述音色，再解釋一項聽到的音樂元素怎樣呈現氣氛。記錄是否引用具體聆聽證據。",
+      "media": [],
+      "kind": "exit"
+    }
+  ],
+  "timbreOptions": {
+    "verifiedTextbook": true,
+    "source": "已直接核對 Unit 2 Book.pdf 印刷頁19–21（PDF第2–3頁）",
+    "byTrack": {
+      "pipa": {
+        "page": 19,
+        "words": [
+          "豐富多變",
+          "低沉宏厚",
+          "清脆鏗鏘"
+        ]
+      },
+      "zheng": {
+        "page": 20,
+        "words": [
+          "尖銳突出",
+          "餘韻悠長",
+          "柔麗純樸"
+        ]
+      },
+      "erhu": {
+        "page": 21,
+        "words": [
+          "圓潤明亮",
+          "剛柔多變",
+          "透明空靈"
+        ]
+      }
+    }
+  },
+  "tracks": {
+    "pipa": {
+      "name": "琵琶",
+      "title": "十面埋伏",
+      "method": "彈撥",
+      "action": "手指撥動琴弦",
+      "credit": "The Metropolitan Museum of Art · CC0",
+      "photoNote": "歷史館藏琵琶；外形細節與現代演奏用琵琶不同。",
+      "workCredit": "琵琶古曲",
+      "question": "密集的音符，一定代表速度快嗎？",
+      "scenes": [
+        {
+          "image": "assets/scenes/pipa-a.jpg",
+          "alt": "山谷中，騎兵及士兵列隊停留，旗幟垂下。"
+        },
+        {
+          "image": "assets/scenes/pipa-b.jpg?v=contrast2",
+          "alt": "同一山谷中，騎兵及士兵向不同方向移動，旗幟揚起。"
+        },
+        {
+          "image": "assets/scenes/pipa-c.jpg",
+          "alt": "同一山谷中，隊伍向遠處撤離，前景空出。"
+        }
+      ],
+      "youtubeId": "jGq2KK9Xihw"
+    },
+    "zheng": {
+      "name": "箏（古箏）",
+      "title": "漁舟唱晚",
+      "method": "彈撥",
+      "action": "手指撥弦；按弦改變音高",
+      "credit": "Mojmir Churavy · CC BY-SA 4.0",
+      "photoNote": "現代箏的真實照片。",
+      "workCredit": "課本標示：婁樹華",
+      "question": "這段音樂的聲音有甚麼變化？",
+      "scenes": [
+        {
+          "image": "assets/scenes/zheng-a.jpg",
+          "alt": "夕陽下，兩艘漁船停在平靜江面上。"
+        },
+        {
+          "image": "assets/scenes/zheng-b.jpg?v=contrast2",
+          "alt": "同一江面上，兩艘漁船緩緩划行，留下小波紋。"
+        },
+        {
+          "image": "assets/scenes/zheng-c.jpg",
+          "alt": "同一江面上，兩艘漁船快速划行，風拂蘆葦，水面波浪增多。"
+        }
+      ],
+      "youtubeId": "vtwvoRS6h7k"
+    },
+    "erhu": {
+      "name": "二胡",
+      "title": "戰馬奔騰",
+      "method": "拉弦",
+      "action": "琴弓的弓毛摩擦琴弦",
+      "credit": "Gurumandarin · CC BY-SA 3.0",
+      "photoNote": "二胡與琴弓的真實照片。",
+      "workCredit": "作曲：陳耀星；曲名由教師確認",
+      "question": "你聽到的是延續聲，還是短促聲？",
+      "scenes": [
+        {
+          "image": "assets/scenes/erhu-a.jpg",
+          "alt": "草原上，五匹馬安靜站立。"
+        },
+        {
+          "image": "assets/scenes/erhu-b.jpg",
+          "alt": "同一草原上，五匹馬向右行走或小跑。"
+        },
+        {
+          "image": "assets/scenes/erhu-c.jpg",
+          "alt": "同一草原上，五匹馬向右奔跑，揚起少量塵土。"
+        }
+      ],
+      "youtubeId": "EJP66O9epP4"
+    }
+  },
+  "analysis": {
+    "pipa": {
+      "page": 19,
+      "questions": [
+        {
+          "title": "樂曲的氣氛是怎樣的？",
+          "prompt": "你認為樂曲的氣氛是由哪些音樂元素所構成？",
+          "terms": [
+            "音色",
+            "速度",
+            "力度",
+            "其他"
+          ],
+          "options": []
+        }
+      ]
+    },
+    "zheng": {
+      "page": 20,
+      "questions": [
+        {
+          "title": "剛開始時",
+          "prompt": "樂曲的速度和力度是怎樣的？你認為它正描述以下哪個情境？",
+          "terms": [
+            "速度",
+            "力度"
+          ],
+          "options": [
+            "夕陽西下，湖面一片寧靜。",
+            "夕陽西下，雷聲震天，群鳥驚飛。"
+          ]
+        },
+        {
+          "title": "樂曲後半段",
+          "prompt": "樂曲後半段的速度出現了甚麼變化？你認為它正描述以下哪個情境？",
+          "terms": [
+            "速度"
+          ],
+          "options": [
+            "一艘一艘漁船慢慢歸來，場面平靜。",
+            "漁民划槳搖櫓，駕舟競歸，場面愉快。"
+          ]
+        }
+      ]
+    },
+    "erhu": {
+      "page": 21,
+      "questions": [
+        {
+          "title": "樂曲的意境是怎樣的？",
+          "prompt": "你認為下圖能表達樂曲的意境嗎？為甚麼？",
+          "terms": [
+            "意境"
+          ],
+          "options": []
+        }
+      ]
+    }
+  }
+}

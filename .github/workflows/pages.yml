@@ -2,7 +2,6 @@ name: Publish classroom presentation
 on:
   push:
     branches: [main]
-    paths: [ipad-presentation-site.zip]
   workflow_dispatch:
 permissions:
   contents: read
@@ -17,14 +16,35 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.publish.outputs.page_url }}
+    env:
+      VITE_PAGES: 'true'
+      VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+      VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+      VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+      VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+      VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+      VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
     steps:
       - uses: actions/checkout@v4
-      - name: Unpack compiled website
-        run: unzip -q ipad-presentation-site.zip -d site
+      # Stop before publishing a site that cannot connect to Firebase.
+      - name: Check Firebase secrets
+        run: |
+          for name in VITE_FIREBASE_API_KEY VITE_FIREBASE_AUTH_DOMAIN VITE_FIREBASE_PROJECT_ID VITE_FIREBASE_STORAGE_BUCKET VITE_FIREBASE_MESSAGING_SENDER_ID VITE_FIREBASE_APP_ID; do
+            if [ -z "${!name}" ]; then echo "::error::Missing repository secret $name (Settings → Secrets and variables → Actions)"; exit 1; fi
+          done
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Check decks and build
+        run: pnpm run build:pages
+      - run: touch dist-pages/.nojekyll && find dist-pages \( -name '*.md' -o -name '*GENERATION_PROMPTS*' \) -delete
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: dist-pages
       - name: Publish GitHub Pages
         id: publish
         uses: actions/deploy-pages@v4

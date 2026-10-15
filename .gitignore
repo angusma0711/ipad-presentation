@@ -1,0 +1,20 @@
+node_modules/
+dist/
+dist-pages/
+.env
+.env.local
+*.tsbuildinfo
+.firebase/
+firebase-debug.log*
+ipad-presentation-site.zip
+.DS_Store
+# Local QA screenshots and one-off Codex test scripts
+*.png
+!public/**/*.png
+qa/
+scripts/check-p5-*.cjs
+scripts/check-p5-*.mjs
+scripts/check-teaching*.mjs
+scripts/check-firebase-rules.mjs
+scripts/create-p*-session.mjs
+scripts/import-p5.cjs

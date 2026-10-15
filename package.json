@@ -1,0 +1,28 @@
+{
+  "name": "ipad-presentation",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "check": "node scripts/check-decks.mjs",
+    "build": "node scripts/check-decks.mjs && tsc -b && vite build",
+    "build:pages": "node scripts/check-decks.mjs && tsc -b && vite build --base=/ipad-presentation/ --outDir=dist-pages",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "firebase": "^12.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.0",
+    "qrcode.react": "^4.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  },
+  "packageManager": "pnpm@11.19.0"
+}

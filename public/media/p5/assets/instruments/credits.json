@@ -1,0 +1,55 @@
+[
+  {
+    "index": 4,
+    "name": "琵琶",
+    "file": "candidate_07.jpg",
+    "crop_fraction": [
+      0.18,
+      0.02,
+      0.79,
+      0.97
+    ],
+    "modification": "僅裁切多餘背景；保留完整樂器。",
+    "title": "Pipa MET DP216711.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pipa_MET_DP216711.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Pipa_MET_DP216711.jpg",
+    "artist": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "description": "Pipa (琵琶)\nChordophone-lute-plucked-fretted\n\nThe spectacular back and sides of this unique Ming-dynasty instrument feature more than 110 hexagonal ivory plaques, with thinner bone plaques on the neck. Each plaque is carved with Taoist, Confucian, or Buddhist figures and symbols signifying prosperity, happiness, and good luck. These include images of various gods and immortals, such as Shou Lao, the Daoist god of longevity, who is shown with a prominent forehead on the single plaque at the very top. When the instrument is played, this expert workmanship remains unseen by the listener, as the back faces the player. The front is relatively plain but shows signs of use. The ivory string holder bears a scene featuring four figures and a bridge; an archaic cursive inscription; and, at the lip, a bat motif with leafy tendrils. Above the lower frets, two small insets depict a spider and a bird, and just before the rounded upper frets, a trapezoidal plaque portrays two men, one with a fish. The finial repeats the bat (good luck) motif.",
+    "reviewed": "按來源題名／描述與照片結構核對；未經實物專家驗證。",
+    "output": "assets/instruments/pipa.jpg"
+  },
+  {
+    "index": 3,
+    "name": "古箏",
+    "file": "candidate_05.jpg",
+    "crop_fraction": null,
+    "modification": "未裁切；按比例縮放。",
+    "title": "Chinese.Zither.Zheng.Guzheng.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chinese.Zither.Zheng.Guzheng.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Chinese.Zither.Zheng.Guzheng.jpg",
+    "artist": "Mojmir Churavy",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Zither Zheng (or \"Guzheng\") is a traditional Chinese string instrument with more than 2500 years of history. This is a modern version of Chinese zither, which has 21 strings and it is 160 cm long. Sound resonances are provided by a large cavity made of \"Firmiana simplex\" tree (a tree commonly known as the \"Chinese parasol tree\", \"Chinese parasoltree\", or \"wutong\"). This instrument belongs to the Czech sinologist Mgr. Jan Chmelarčík.",
+    "reviewed": "按來源題名／描述與照片結構核對；未經實物專家驗證。",
+    "output": "assets/instruments/zheng.jpg"
+  },
+  {
+    "index": 6,
+    "name": "二胡",
+    "file": "erhu.jpg",
+    "crop_fraction": null,
+    "modification": "未裁切；按比例縮放。",
+    "title": "Erhu1.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erhu1.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Erhu1.jpg",
+    "artist": "Gurumandarin",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "description": "",
+    "reviewed": "按來源題名／描述與照片結構核對；未經實物專家驗證。",
+    "output": "assets/instruments/erhu.jpg"
+  }
+]

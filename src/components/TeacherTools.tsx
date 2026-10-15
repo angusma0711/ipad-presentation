@@ -1,0 +1,72 @@
+import { useEffect, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import type { useTeaching } from '../services/useTeaching';
+import type { MediaKind, PointerState, Stroke } from '../types/teaching';
+import { mediaSource } from '../types/teaching';
+import { changeGroup, setScoresVisible, setPointer, editAnnotations, configureMedia, commandMedia, commandSlideAction, changeInteraction } from '../services/teachingService';
+import type { Deck, DeckMedia } from '../presentations/types';
+import { PresentationView } from './PresentationView';
+import type { Tool } from './AnnotationLayer';
+type Props={deck:Deck;id:string;slide:number;disabled:boolean;teaching:ReturnType<typeof useTeaching>};
+export function TeacherTools({deck,id,slide,disabled,teaching}:Props){
+ const [tool,setTool]=useState<Tool>('none');const [color,setColor]=useState('#e63946');
+ const [busy,setBusy]=useState(false);const lock=useRef(false);const [error,setError]=useState('');
+ const lessonSlide=deck.slides[slide]; const suggested=lessonSlide.media[0]; const Controls=deck.plugin.Controls;
+ const [kind,setKind]=useState<MediaKind>('audio');const [source,setSource]=useState('/media/demo-beat.wav');
+ const pendingPointer=useRef<PointerState|null>(null);const sendingPointer=useRef(false);const connected=useRef(!disabled);connected.current=!disabled;
+ useEffect(()=>{setTool('none');},[slide]);
+ useEffect(()=>{setKind(teaching.media?.kind??suggested?.kind??'audio');setSource(teaching.media?.src??suggested?.src??'/media/demo-beat.wav');},[slide,teaching.media?.kind,teaching.media?.src,suggested?.kind,suggested?.src]);
+ async function perform(action:()=>Promise<void>){
+  if(disabled||lock.current)return;lock.current=true;setBusy(true);setError('');
+  try{await action();}catch(failure){setError(failure instanceof Error?failure.message:'操作失敗，請重試。');}finally{lock.current=false;setBusy(false);}
+ }
+ async function sendPointer(pointer:PointerState){
+  if(!connected.current)return;pendingPointer.current=pointer;if(sendingPointer.current)return;sendingPointer.current=true;
+  try{while(pendingPointer.current&&connected.current){const latest=pendingPointer.current;pendingPointer.current=null;if(latest.active&&latest.expiresAt<Date.now())continue;await setPointer(id,latest);}}
+  catch{setError('Pointer 未能同步，請檢查連線。');}
+  finally{pendingPointer.current=null;sendingPointer.current=false;}
+ }
+ const pendingStroke=useRef(new Map<string,{slide:number;stroke:Stroke}>());const sendingStroke=useRef(false);
+ async function sendStroke(stroke:Stroke){
+  if(!connected.current)return;
+  pendingStroke.current.set(`${slide}:${stroke.id}`,{slide,stroke});
+  if(sendingStroke.current)return;
+  sendingStroke.current=true;
+  try{while(pendingStroke.current.size&&connected.current){const [key,next]=pendingStroke.current.entries().next().value!;pendingStroke.current.delete(key);await editAnnotations(id,next.slide,{stroke:next.stroke});}}
+  catch{setError('畫線未能同步，請檢查連線。');}
+  finally{pendingStroke.current.clear();sendingStroke.current=false;}
+ }
+ const unavailable=disabled||busy;
+ function playMedia(media:DeckMedia){void perform(async()=>{await configureMedia(id,slide,media.kind,media.src);await commandMedia(id,slide,'play');});}
+ function attach(event:FormEvent){event.preventDefault();void perform(async()=>{const src=mediaSource(kind,source);await configureMedia(id,slide,kind,src);});}
+ const status=teaching.media ? (teaching.feedback?.commandId===teaching.media.commandId ? teaching.feedback.status : '等待投影回應') : '未設定';
+ const statusText:Record<string,string>={ready:'已就緒',playing:'播放中',paused:'已暫停',ended:'播放完畢',blocked:'播放被阻擋',error:'播放失敗'};
+ return <>
+  {Controls&&<Controls deck={deck} index={slide} state={teaching.interaction} disabled={unavailable} change={patch=>void perform(()=>changeInteraction(id,slide,patch))} playMedia={playMedia}/>}
+  {suggested&&<section className="card"><h2>此頁教材媒體</h2><div className="tool-bar"><button className="primary" disabled={unavailable} onClick={()=>playMedia(suggested)}>播放</button><button disabled={unavailable||!teaching.media} onClick={()=>void perform(()=>commandMedia(id,slide,'pause'))}>暫停</button></div><p className="small" role="status">播放狀態：{statusText[String(status)]??status}。聲音由投影電腦播放。</p></section>}
+  {lessonSlide.actions.length>0&&<section className="card"><h2>此頁動畫</h2><div className="tool-bar">{lessonSlide.actions.map(action=><button key={action.id} disabled={unavailable} onClick={()=>void perform(()=>commandSlideAction(id,slide,action.id))}>{action.label}</button>)}</div></section>}
+  <section className="card preview-card"><h2>投影片預覽與標記</h2><div className="tool-bar" role="group" aria-label="預覽工具">
+   {([['none','瀏覽'],['pointer','紅點 Pointer'],['pen','畫線／圈選']] as const).map(([value,label])=><button key={value} disabled={disabled} aria-pressed={tool===value} onClick={()=>setTool(value)}>{label}</button>)}
+  </div>{tool==='pen'&&<div className="tool-bar" role="group" aria-label="畫筆顏色">{[['#e63946','紅色'],['#176b60','綠色'],['#1b4fc4','藍色']].map(([value,label])=><button key={value} disabled={unavailable} aria-pressed={color===value} onClick={()=>setColor(value)}>{label}</button>)}</div>}
+   <div className={`preview-frame ${tool!=='none'?'touch-tool-active':''}`}><PresentationView deck={deck} index={slide} interaction={teaching.interaction} onInteraction={patch=>void perform(()=>changeInteraction(id,slide,patch))} preview groups={teaching.groups} strokes={teaching.strokes} pointer={teaching.pointer} media={teaching.media} tool={tool} disabled={unavailable} color={color} onDraft={(stroke:Stroke)=>void sendStroke(stroke)} onStroke={(stroke:Stroke)=>void sendStroke(stroke)} onPointer={pointer=>void sendPointer(pointer)}/></div>
+   <p className="small">{tool==='pointer'?'按住或拖曳顯示紅點；放開後消失。':tool==='pen'?'在預覽畫線或圈選；畫的途中同步至投影。':'預覽與投影使用相同比例。選擇工具後可直接在預覽操作。'}</p>
+   <div className="tool-bar"><button disabled={unavailable||!teaching.strokes.length} onClick={()=>void perform(()=>editAnnotations(id,slide,'undo'))}>復原上一筆</button><button disabled={unavailable||!teaching.strokes.length} onClick={()=>{if(window.confirm('清除這張投影片的所有標記？'))void perform(()=>editAnnotations(id,slide,'clear'));}}>清除此頁標記</button></div>
+  </section>
+  <details className="card tools-section" open><summary>小組積分</summary><p className="small">投影只顯示各組總分；修改組名後按儲存。</p>
+   <button disabled={unavailable} aria-pressed={teaching.groups.visible} onClick={()=>void perform(()=>setScoresVisible(id,!teaching.groups.visible))}>{teaching.groups.visible?'隱藏投影積分':'顯示投影積分'}</button>
+   <div className="groups-list">{teaching.groups.groups.map((group,i)=><div className="group-row" key={i}>
+    <form key={group.name} onSubmit={event=>{event.preventDefault();const form=new FormData(event.currentTarget);void perform(()=>changeGroup(id,i,{name:String(form.get('name'))}));}}><label className="sr-only" htmlFor={`group-${i}`}>第 {i+1} 組名稱</label><input id={`group-${i}`} name="name" defaultValue={group.name} maxLength={24} required disabled={unavailable}/><button disabled={unavailable}>儲存</button></form>
+    <strong aria-label={`${group.name}總分`}>{group.points}</strong><button aria-label={`${group.name}減一分`} disabled={unavailable||group.points===0} onClick={()=>void perform(()=>changeGroup(id,i,{delta:-1}))}>−1</button><button className="primary" aria-label={`${group.name}加一分`} disabled={unavailable||group.points===9999} onClick={()=>void perform(()=>changeGroup(id,i,{delta:1}))}>+1</button>
+   </div>)}</div>
+  </details>
+  <details className="card tools-section"><summary>此頁音訊／影片</summary><p role="status">播放狀態：{statusText[String(status)]??status}</p>
+   <div className="tool-bar">{([['play','播放'],['pause','暫停'],['restart','重新播放']] as const).map(([action,label])=><button key={action} disabled={unavailable||!teaching.media} onClick={()=>void perform(()=>commandMedia(id,slide,action))}>{label}</button>)}</div>
+   {teaching.feedback?.commandId===teaching.media?.commandId&&teaching.feedback?.message&&<p className="error" role="status">{teaching.feedback.message}</p>}
+   <form className="media-form" onSubmit={attach}><label htmlFor="media-kind">媒體來源</label><select id="media-kind" value={kind} disabled={unavailable} onChange={event=>{setKind(event.target.value as MediaKind);setSource('');}}><option value="audio">本機音訊</option><option value="video">本機影片</option><option value="youtube">YouTube</option></select>
+    <label htmlFor="media-source">{kind==='youtube'?'YouTube 連結／影片 ID':'本機媒體路徑'}</label><input id="media-source" value={source} disabled={unavailable} onChange={event=>setSource(event.target.value)} placeholder={kind==='youtube'?'https://www.youtube.com/watch?v=…':kind==='audio'?'/media/lesson.mp3':'/media/lesson.mp4'} required/>
+    <button className="primary" disabled={unavailable}>將媒體加入此頁</button>
+   </form><p className="small">本機檔案請先放入專案的 public/media 資料夾，再輸入 /media/檔案名稱。示範音訊：/media/demo-beat.wav。聲音由投影電腦播放；若被阻擋，請在該電腦按播放鍵。</p>
+  </details>
+  {(error||teaching.error)&&<p className="error" role="alert">{error||teaching.error}</p>}
+ </>;
+}

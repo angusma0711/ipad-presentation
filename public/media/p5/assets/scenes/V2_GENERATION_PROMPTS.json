@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-13",
+  "mode": "built-in image_gen",
+  "intent": "edit",
+  "note": "Generated illustrations, not documentary evidence or instrument photographs. No presumed correct answer. Same-theme variants; actual excerpt not available for alignment.",
+  "records": [
+    {
+      "id": "pipa-a",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/battle.jpg",
+      "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. Before conflict: all cavalry and foot soldiers waiting motionless in orderly formations, flags hanging still, clean undisturbed ground, tension conveyed only by poised still figures. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-3f8a2ee7-a1de-4b7f-983a-5f0a8f30c0bf.png",
+      "destination": "assets/scenes/pipa-a.jpg",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 406929,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects."
+    },
+    {
+      "id": "pipa-b",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/battle.jpg",
+      "prompt": "Edit this watercolor battlefield B variant so its movement is unmistakably different from a motionless ordered army even at a small classroom thumbnail. Keep EXACT mountains, horizon, sunset, palette and watercolor style. Replace the orderly receding troop lines across the entire lower half with large groups of running soldiers and galloping cavalry crossing diagonally in opposite directions. Horses visibly have lifted extended legs; riders lean forward; flags stream almost horizontally; broad pale dust clouds trail behind the moving groups. Main moving figures must be clear silhouettes, noticeably larger and closer than the tiny background columns, all fully within frame. This is active chaotic confrontation, but no weapon contact, gore, injuries, threatening weapons aimed at viewer, explosions, fire, text or labels. Preserve landscape 16:9 and same environment. Do not merely add tiny dust details; strongly change poses, grouping and movement.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-66a7044b-d241-4b75-bff9-b921e7247232.png",
+      "destination": "assets/scenes/pipa-b.jpg",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 452678,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects.",
+      "iterations": [
+        {
+          "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. During active confrontation: the SAME cavalry and foot soldiers moving in many crossing directions, flags billowing, dust and energetic diagonal motion. Show confusion of movement without violence: no fighting contact, wounds or threatening weapons. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+          "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-0c7d971d-a3de-4f8c-a38b-aded91e5f299.png",
+          "reason": "User feedback: A/B motion difference too subtle at projection scale."
+        }
+      ]
+    },
+    {
+      "id": "pipa-c",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/battle.jpg",
+      "prompt": "Use case: precise-object-edit. Edit this ancient valley watercolor scene ONLY to make the aftermath/retreat state unmistakable to a primary school class. Keep the exact landscape, mountains, camera, warm ivory/rust/indigo palette, sunset and watercolor style. REMOVE all soldiers and horses from the nearest foreground left half and nearest bank. Leave that foreground completely empty: bare path, settled dust, rocks. Put a smaller departing column of healthy cavalry and foot soldiers in the middle distance along the path, all facing AWAY from the viewer toward the distant valley. Their flags are LOW and hanging still. No fresh incoming troops, combat, wounds, bodies, broken weapons, text, watermarks or new objects. One landscape 16:9 scene, >=1600x900 detail. This must read as an emptied field after the army departs, not an army waiting for battle.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-5af9c579-32be-4ea7-b289-182434c2cf1c.png",
+      "destination": "assets/scenes/pipa-c.jpg",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 429016,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects.",
+      "iterations": [
+        {
+          "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. Aftermath and retreat: the SAME cavalry and soldiers slowly withdrawing toward the distant valley, lowered flags, settled dust, open empty foreground. All figures healthy and unharmed. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+          "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-ad5eab07-84e3-490a-9aa1-cdac3d534293.png",
+          "reason": "Retreat too similar to waiting formation"
+        }
+      ]
+    },
+    {
+      "id": "zheng-a",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/river.jpg",
+      "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. The SAME two fishing boats are resting motionless, sails furled, no wake; mirror-smooth water and still reeds. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-e35be006-4ee3-4e25-a51b-1f87b3c7abd6.png",
+      "destination": "assets/scenes/zheng-a.jpg",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 372983,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects."
+    },
+    {
+      "id": "zheng-b",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/river.jpg",
+      "prompt": "Edit this sunset river fishing-boat B variant to show unmistakable gentle returning motion, clearly distinct from mirror-still parked boats, while remaining calmer than rough windy waves. Keep EXACT mountains, sunset, lighting, watercolor palette, camera, same two traditional fishing boats and their scale. Both boatmen lean visibly into a wide rowing stroke with long diagonal oars in water. Add two prominent LONG V-shaped silver wakes trailing behind the boats, spreading far across the lower water area, with repeated curved ripples and small oar splashes. Calm water between wakes, reeds mostly upright, no wind, no choppy ocean waves, no storm. Shift boats modestly forward along their path so motion is legible. Main boats fully in frame. Make wakes and rowing poses bold and clearly visible at a 300px-wide thumbnail, not subtle texture. One 16:9 image, no text, labels or new subjects.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-a42c67a1-f758-47aa-9a8c-a02f28bc74da.png",
+      "destination": "assets/scenes/zheng-b.jpg",
+      "dimensions": [
+        1671,
+        941
+      ],
+      "bytes": 403498,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects.",
+      "iterations": [
+        {
+          "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. The SAME two fishing boats returning gently in the same positions and scale, relaxed boatmen rowing, small curved ripples and modest wakes, slightly stirred reeds. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+          "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-3651b74a-1ea5-414b-b4d9-8db600608dc7.png",
+          "reason": "User feedback: A/B motion difference too subtle at projection scale."
+        }
+      ]
+    },
+    {
+      "id": "zheng-c",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/river.jpg",
+      "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. The SAME two fishing boats moving quickly in the same positions and scale, boatmen rowing vigorously, wind-bent reeds, fluttering sailcloth, broad wakes and choppy waves. Safe boats, no storm catastrophe. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-fdee2fd6-9f7d-487d-a692-fceecaf6b20d.png",
+      "destination": "assets/scenes/zheng-c.jpg",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 457521,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects."
+    },
+    {
+      "id": "erhu-a",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/horses.jpg",
+      "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. The SAME five horses stand quietly on the grassland in the same order: black, white, chestnut, tan, dark brown. Relaxed poses, hooves grounded, no dust. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-16fcdaf1-0ef0-4a43-9ff5-d6c4573ac26e.png",
+      "destination": "assets/scenes/erhu-a.jpg",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 411002,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects."
+    },
+    {
+      "id": "erhu-b",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/horses.jpg",
+      "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. The SAME five horses walk or lightly trot toward the right, in the same order: black, white, chestnut, tan, dark brown. Moderate stepping, restrained mane motion, almost no dust. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-420e864a-3413-489b-bee6-2505345a91c1.png",
+      "destination": "assets/scenes/erhu-b.jpg",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 425213,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects."
+    },
+    {
+      "id": "erhu-c",
+      "ref": "/Users/hingyinma/Desktop/Supported documents/P5_Interactive_Music/assets/scenes/horses.jpg",
+      "prompt": "Use case: illustration-story, classroom music comparison. Edit the referenced watercolor scene into one coherent variant. Preserve its exact viewpoint, horizon, mountains, warm ivory/rust/indigo palette, gentle sophisticated watercolor texture, historical setting and subject scale. The SAME five horses gallop energetically toward the right, in the same order: black, white, chestnut, tan, dark brown. Extended running legs, flowing manes, visible light dust. Composition: keep ALL main subjects fully visible inside the central 75% of the frame, with unobtrusive background at left and right for a safe 4:3 crop. Landscape 16:9, high-resolution at least 1600x900 detail. This is ONE single scene, not a montage. No text, letters, labels, borders, watermarks, musical instruments, gore, injuries, aggressive contact or weapons directed at viewer. Change the stated motion/state only; keep the reference scene's recognizable objects and framing.",
+      "generatedPath": "/Users/hingyinma/.codex/generated_images/01a12159-8616-7223-abda-324d4eaa8721/exec-9d9cc59f-fcf4-461f-9db7-1a5984af4f62.png",
+      "destination": "assets/scenes/erhu-c.jpg",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 422692,
+      "processing": "JPEG quality 85, no resampling; full-frame contain within equal 16:10 panels to preserve primary subjects."
+    }
+  ]
+}

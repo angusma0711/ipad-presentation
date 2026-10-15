@@ -1,0 +1,49 @@
+{
+  "title": "音樂探索 · 示範課堂",
+  "order": 9,
+  "assetBase": "/media/",
+  "slides": [
+    {
+      "id": "title",
+      "title": "聆聽音樂，發現節奏",
+      "notes": "邀請學生安靜聆聽周圍的聲音。這是系統示範，可在 deck.json 更換內容。",
+      "html": "<p class=\"eyebrow\">音樂探索 · 示範課堂</p><h1>聆聽音樂<br>發現節奏</h1><p>從聲音到共同創作</p>",
+      "media": []
+    },
+    {
+      "id": "objectives",
+      "title": "今天的學習目標",
+      "notes": "讀出三項目標，請學生說出自己最想嘗試哪一項。",
+      "html": "<h1>今天的學習目標</h1><ul><li>辨認穩定的拍子</li><li>比較不同節奏的感覺</li><li>合作創作四拍節奏</li></ul>",
+      "media": []
+    },
+    {
+      "id": "question",
+      "title": "拍子與節奏有甚麼不同？",
+      "notes": "等待 2–3 個回應。用腳踏穩定拍子，再用手拍不同節奏作比較。",
+      "html": "<p class=\"eyebrow\">思考問題</p><h1>拍子與節奏<br>有甚麼不同？</h1><p>先想一想，再分享。</p>",
+      "media": []
+    },
+    {
+      "id": "visual",
+      "title": "看見四拍",
+      "notes": "指着四個圓圈數拍。逐步減少口頭提示，觀察學生是否保持穩定拍子。",
+      "html": "<h1>看見四拍</h1><div class=\"beats\" aria-label=\"四個穩定拍子\"><span>1</span><span>2</span><span>3</span><span>4</span></div><p>跟着數字，拍出穩定的拍子。</p>",
+      "media": []
+    },
+    {
+      "id": "discussion",
+      "title": "一起創作",
+      "notes": "兩人一組。給予練習時間，再邀請兩組示範。以四拍是否完整作形成性 assessment。",
+      "html": "<p class=\"eyebrow\">小組活動</p><h1>一起創作</h1><p>用拍手與休止，創作一段四拍節奏。</p><p>演奏後，說說你們的選擇。</p>",
+      "media": []
+    },
+    {
+      "id": "summary",
+      "title": "今天你發現了甚麼？",
+      "notes": "請每位學生以一句話描述拍子與節奏的分別，作為 exit ticket。",
+      "html": "<h1>今天你發現了甚麼？</h1><ul><li>拍子幫助我們保持穩定</li><li>節奏可以有不同組合</li><li>聆聽讓合作更順暢</li></ul>",
+      "media": []
+    }
+  ]
+}
