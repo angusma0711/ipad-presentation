@@ -1,0 +1,311 @@
+{
+  "title": "P2 · 動感詩歌（第一課）",
+  "order": 0,
+  "assetBase": "/media/p2-dynamic-poems/",
+  "htmlClass": "dp-deck",
+  "rhythmGame": {
+    "bpm": 72,
+    "countIn": 4,
+    "rounds": [
+      {
+        "title": "Round 1　本課節奏",
+        "beats": [
+          {
+            "r": "ta"
+          },
+          {
+            "r": "titi"
+          },
+          {
+            "r": "titi"
+          },
+          {
+            "r": "ta"
+          },
+          {
+            "r": "titi"
+          },
+          {
+            "r": "titi"
+          },
+          {
+            "r": "ta"
+          },
+          {
+            "r": "rest"
+          }
+        ]
+      },
+      {
+        "title": "Round 2　考試節奏",
+        "beats": [],
+        "emptyMessage": "待老師填入考試節奏型"
+      },
+      {
+        "title": "Round 3　詩句節奏",
+        "beats": [
+          {
+            "r": "titi",
+            "text": "一扇"
+          },
+          {
+            "r": "titi",
+            "text": "一扇"
+          },
+          {
+            "r": "titi",
+            "text": "好清"
+          },
+          {
+            "r": "ta",
+            "text": "涼"
+          },
+          {
+            "r": "rest"
+          }
+        ]
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "dp-cover",
+      "title": "動感詩歌",
+      "notes": "開場。介紹今天的課題：用詩歌學節奏，再為詩歌配上聲響。",
+      "html": "<section id=\"dp-cover\" class=\"dp-slide dp-cover dp-scene\" data-slide-id=\"dp-cover\" aria-label=\"動感詩歌\"><div class=\"dp-art-pair\"><div class=\"dp-art\" data-emoji=\"🐘\"><img src=\"./images/elephant-savanna.png\" alt=\"友善的大象在草地上\"></div><div class=\"dp-art\" data-emoji=\"🐸\"><img src=\"./images/frog-pond-rain.png\" alt=\"青蛙背着小鼓站在荷葉上\"></div></div><div class=\"dp-copy\"><p class=\"dp-kicker\">P2 音樂</p><h1>動感詩歌</h1><p class=\"dp-lead\">詩歌的節奏・為詩歌配聲響</p></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-revision",
+      "title": "熟悉的歌",
+      "notes": "0–6 分鐘。複習上一課的歌曲，全班一起唱。\n【待填】請在 deck.json 把〔歌名待填〕改為歌名；有錄音時在此頁 media 加入路徑（例如 ./audio/歌名.mp3），並把檔案放入 public/media/p2-dynamic-poems/audio/。\n觀察：學生能否準確唱出歌詞及保持穩定拍子。",
+      "html": "<section id=\"dp-revision\" class=\"dp-slide dp-sunshine\" data-slide-id=\"dp-revision\" aria-label=\"熟悉的歌\"><div class=\"dp-copy\"><p class=\"dp-kicker\">熟悉的歌</p><h2>《〔歌名待填〕》</h2><p class=\"dp-lead\">我們一起唱！</p></div><div class=\"dp-music-glyph\" aria-hidden=\"true\">♫</div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-two-rhythms-q",
+      "title": "同一句話，兩種節奏",
+      "notes": "6–13 分鐘。教師用兩種節奏讀「大笨象」：A＝大(長) 笨象(短短)；B＝大笨(短短) 象(長)，邊讀邊拍拍子。\n問：兩次讀法有甚麼不同？\n預期答案：第一次「大」讀得長；第二次「象」讀得長。\n觀察：學生能否跟讀及說出哪個字較長。此頁不顯示答案。",
+      "html": "<section id=\"dp-two-rhythms-q\" class=\"dp-slide dp-sky\" data-slide-id=\"dp-two-rhythms-q\" aria-label=\"同一句話，兩種節奏\"><div class=\"dp-copy dp-center\"><p class=\"dp-kicker\">聽一聽，讀一讀</p><h2>同一句話，兩種節奏</h2><div class=\"dp-ab\"><div class=\"dp-ab-row\"><span class=\"dp-ab-tag\">A</span><span class=\"dp-big-words\">大笨象</span><span class=\"dp-beat-boxes\" aria-label=\"三拍\"><i></i><i></i><i></i></span></div><div class=\"dp-ab-row\"><span class=\"dp-ab-tag\">B</span><span class=\"dp-big-words\">大笨象</span><span class=\"dp-beat-boxes\" aria-label=\"三拍\"><i></i><i></i><i></i></span></div></div></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-two-rhythms-a",
+      "title": "大笨象：A 與 B",
+      "notes": "6–13 分鐘。逐一讀 A 和 B，學生跟讀並拍拍子。\n問：哪個字讀得較長？哪兩個字接得較緊密？\n預期答案：A「大」較長，「笨象」接得緊密；B「象」較長，「大笨」接得緊密。\n按「標出長字」後，長字放大並變為紅色，用來核對答案。\n觀察：學生能否用「長」「短」「緊密」描述。",
+      "html": "<section id=\"dp-two-rhythms-a\" class=\"dp-slide dp-cream\" data-slide-id=\"dp-two-rhythms-a\" aria-label=\"大笨象 A 與 B\"><div class=\"dp-copy dp-center\"><h2>哪個字讀得較長？<br><span class=\"dp-sub\">哪兩個字接得較緊密？</span></h2><div class=\"dp-ab\"><div class=\"dp-ab-row\"><span class=\"dp-ab-tag\">A</span><div class=\"dp-line\"><span class=\"dp-cell dp-ta dp-long\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>大</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>笨象</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div></div><div class=\"dp-ab-row\"><span class=\"dp-ab-tag\">B</span><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>大笨</b></span><span class=\"dp-cell dp-ta dp-long\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>象</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div></div></div><button type=\"button\" class=\"dp-stage-btn\" data-action=\"reveal-long\">標出長字</button></div></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "reveal-long",
+          "label": "標出長字（再按收回）"
+        }
+      ]
+    },
+    {
+      "id": "dp-key-idea",
+      "title": "文字與節奏",
+      "notes": "6–13 分鐘。總結：同一句話可以有不同節奏。\n問：節奏幫我們決定甚麼？\n預期答案：字何時出現、讀多久、在哪裏停。\n觀察：學生能否用自己的話複述。",
+      "html": "<section id=\"dp-key-idea\" class=\"dp-slide dp-sunshine\" data-slide-id=\"dp-key-idea\" aria-label=\"文字與節奏\"><div class=\"dp-copy dp-center dp-key\"><p><span class=\"dp-key-word\">文字</span>告訴我們<strong>內容</strong>；</p><p><span class=\"dp-key-word dp-teal\">節奏</span>安排文字<strong>何時出現</strong>、<strong>讀多久</strong>、<strong>在哪裏停</strong>。</p></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-elephant-poem",
+      "title": "《大笨象》",
+      "notes": "13–28 分鐘。教師示範朗讀全首，學生跟讀。\n問：大笨象有甚麼特徵？\n預期答案：鼻子長、象牙彎、四條腿粗壯、兩耳圓圓像扇。\n觀察：學生能否清楚、整齊地朗讀。",
+      "html": "<section id=\"dp-elephant-poem\" class=\"dp-slide dp-poem dp-scene\" data-slide-id=\"dp-elephant-poem\" aria-label=\"大笨象\"><div class=\"dp-art\" data-emoji=\"🐘\"><img src=\"./images/elephant-savanna.png\" alt=\"友善的大象在草地上\"></div><div class=\"dp-copy\"><h2>《大笨象》</h2><div class=\"dp-lyrics\"><p>大笨象，鼻子長，</p><p>象牙彎，像月亮，</p><p>四條腿，似棟樑，</p><p>兩耳圓圓像把扇，</p><p>一扇一扇好清涼。</p></div></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-listen-task",
+      "title": "聽一聽：哪個字最長？",
+      "notes": "13–28 分鐘。播放兩個版本：用電子課本播放，或由教師示範朗讀版本一及版本二（本簡報沒有錄音檔）。\n問：每句開頭三個字，哪個字最長？\n預期答案：版本一「大」最長；版本二「象」最長。\n觀察：學生能否分辨兩個版本，並指出最長的字。",
+      "html": "<section id=\"dp-listen-task\" class=\"dp-slide dp-sky\" data-slide-id=\"dp-listen-task\" aria-label=\"聽一聽\"><div class=\"dp-copy dp-center\"><p class=\"dp-kicker\">聽一聽</p><h2>每句開頭三個字，<br>哪個字最長？</h2><div class=\"dp-tags\"><span class=\"dp-tag\">版本一</span><span class=\"dp-tag dp-tag-teal\">版本二</span></div></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-elephant-v1",
+      "title": "《大笨象》版本一",
+      "notes": "13–28 分鐘。看節奏讀全首；先拍拍子再讀，之後一邊拍節奏一邊讀。第 2、3 句節奏同第 1 句。\n問：哪幾句的節奏一樣？\n預期答案：第 1、2、3 句一樣。\n觀察：學生能否在休止符停下，不搶拍。",
+      "html": "<section id=\"dp-elephant-v1\" class=\"dp-slide dp-cream dp-rhythm-page\" data-slide-id=\"dp-elephant-v1\" aria-label=\"大笨象 版本一\"><div class=\"dp-copy\"><h2>《大笨象》<span class=\"dp-sub\">版本一</span></h2><div class=\"dp-lines\"><div class=\"dp-line\"><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>大</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>笨象</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>鼻</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>子長</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div><div class=\"dp-line\"><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>象</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>牙彎</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>像</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>月亮</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div><div class=\"dp-line\"><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>四</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>條腿</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>似</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>棟樑</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>兩耳</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>圓圓</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>像</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>把扇</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>一扇</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>一扇</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>好清</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>涼</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div></div></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-elephant-v2",
+      "title": "《大笨象》版本二",
+      "notes": "13–28 分鐘。讀版本二第 1 句，與版本一比較。第 2、3 句用相同節奏；第 4、5 句同版本一。\n問：版本二和版本一有甚麼不同？\n預期答案：版本二先讀兩個短的字（大笨），「象」讀得長。\n觀察：學生能否準確讀出版本二，不與版本一混淆。",
+      "html": "<section id=\"dp-elephant-v2\" class=\"dp-slide dp-cream dp-rhythm-page\" data-slide-id=\"dp-elephant-v2\" aria-label=\"大笨象 版本二\"><div class=\"dp-copy\"><h2>《大笨象》<span class=\"dp-sub\">版本二</span></h2><div class=\"dp-lines\"><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>大笨</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>象</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>鼻子</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>長</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div></div><p class=\"dp-note\">第 2、3 句用相同節奏；第 4、5 句同版本一。</p></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-ending-long",
+      "title": "句末的長字",
+      "notes": "13–28 分鐘。全班讀最後一句。\n問：一扇一扇好清涼——哪個字最長？\n預期答案：「涼」最長。\n按「揭示答案」：「涼」放大，並顯示「句末用較長的節奏收結」。\n觀察：學生能否指出句末字較長。",
+      "html": "<section id=\"dp-ending-long\" class=\"dp-slide dp-sunshine\" data-slide-id=\"dp-ending-long\" aria-label=\"句末的長字\"><div class=\"dp-copy dp-center\"><h2>哪個字最長？</h2><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>一扇</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>一扇</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>好清</b></span><span class=\"dp-cell dp-ta dp-long\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>涼</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div><p class=\"dp-answer\">句末用較長的節奏收結</p><button type=\"button\" class=\"dp-stage-btn\" data-action=\"reveal-end\">揭示答案</button></div></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "reveal-end",
+          "label": "揭示「涼」（再按收回）"
+        }
+      ]
+    },
+    {
+      "id": "dp-rhythm-cards",
+      "title": "節奏卡",
+      "notes": "13–28 分鐘。教師讀《大笨象》其中一句的開頭，學生指出是哪一張卡。可用 Pointer 指着卡。\n例子：「大笨象」版本一＝第 1 張；版本二＝第 2 張；「兩耳圓圓」＝第 3 張。\n觀察：學生能否把聽到的長短配對到節奏卡。",
+      "html": "<section id=\"dp-rhythm-cards\" class=\"dp-slide dp-sky\" data-slide-id=\"dp-rhythm-cards\" aria-label=\"節奏卡\"><div class=\"dp-copy dp-center\"><h2>是哪一張節奏卡？</h2><div class=\"dp-cards\"><div class=\"dp-card\"><span class=\"dp-card-no\">1</span><div class=\"dp-line\"><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>&nbsp;</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>&nbsp;</b></span></div></div><div class=\"dp-card\"><span class=\"dp-card-no\">2</span><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>&nbsp;</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>&nbsp;</b></span></div></div><div class=\"dp-card\"><span class=\"dp-card-no\">3</span><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>&nbsp;</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>&nbsp;</b></span></div></div></div></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-beat-rhythm",
+      "title": "拍子與節奏",
+      "notes": "28–35 分鐘。學生站立：腳踏穩定拍子（拍子 beat），手拍文字節奏（節奏 rhythm），口讀「大笨象，鼻子長」。先分開做，再合起來。\n問：腳和手做的事有甚麼不同？\n預期答案：腳一直平均地踏；手跟着字的長短拍。\n觀察：學生踏步是否穩定，手是否跟字的長短。",
+      "html": "<section id=\"dp-beat-rhythm\" class=\"dp-slide dp-cream dp-scene dp-beat-scene\" data-slide-id=\"dp-beat-rhythm\" aria-label=\"拍子與節奏\"><div class=\"dp-art\" data-emoji=\"👣\"><img src=\"./images/children-beat.png\" alt=\"三位小學生：一位踏步、一位拍手、一位朗讀\"></div><div class=\"dp-copy\"><h2>腳＝心跳，手＝文字</h2><div class=\"dp-grid6\"><p class=\"dp-row-label\">腳 · 拍子 beat</p><div class=\"dp-beat-row\" aria-label=\"穩定的拍子\"><i></i><i></i><i></i><i></i><i></i><i></i></div><p class=\"dp-row-label\">手 · 節奏 rhythm</p><div class=\"dp-line dp-line6\"><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>大</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>笨象</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>鼻</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>子長</b></span><span class=\"dp-cell dp-rest\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div></div></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-frog-poem",
+      "title": "《青蛙打鼓》",
+      "notes": "35–44 分鐘。教師示範讀全首，學生跟讀，再一邊拍節奏一邊讀。括號內的休止符可按需要加入。\n問：哪一句最長？哪些字讀得特別慢？\n預期答案：「快快敲，慢慢敲」一句；「慢慢敲」的字讀得較長。\n觀察：學生能否保持拍子穩定。",
+      "html": "<section id=\"dp-frog-poem\" class=\"dp-slide dp-cream dp-rhythm-page\" data-slide-id=\"dp-frog-poem\" aria-label=\"青蛙打鼓\"><div class=\"dp-copy\"><h2>《青蛙打鼓》</h2><div class=\"dp-lines\"><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>風來</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>了</b></span><span class=\"dp-cell dp-rest dp-opt\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>雨來</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>了</b></span><span class=\"dp-cell dp-rest dp-opt\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>青蛙</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>背着</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>鼓來</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>了</b></span><span class=\"dp-cell dp-rest dp-opt\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>快快</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>敲</b></span><span class=\"dp-cell dp-rest dp-opt\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>慢</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>慢</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>敲</b></span><span class=\"dp-cell dp-rest dp-opt\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div><div class=\"dp-line\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>又唱</b></span><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>又跳</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>把</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>身</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>搖</b></span><span class=\"dp-cell dp-rest dp-opt\" data-r=\"rest\"><img src=\"./symbols/rest.svg\" alt=\"𝄽\"><small>—</small><b>&nbsp;</b></span></div></div><p class=\"dp-note\">（ ）休止可按需要加入</p></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-fast-slow",
+      "title": "快快敲，慢慢敲",
+      "notes": "35–44 分鐘。腳踏拍子，讀「快快敲」與「慢慢敲」。\n重點：拍子速度不變，只是字的長短不同。「快快」兩個字放在一拍內（短），「慢慢」每個字一拍（長）。\n問：「快快」和「慢慢」各用了幾拍？\n預期答案：「快快」一拍；「慢慢」兩拍。\n觀察：學生讀「慢慢」時腳步不放慢。",
+      "html": "<section id=\"dp-fast-slow\" class=\"dp-slide dp-sky\" data-slide-id=\"dp-fast-slow\" aria-label=\"快快敲，慢慢敲\"><div class=\"dp-copy dp-center\"><h2>字的長短不同</h2><div class=\"dp-fs\"><div class=\"dp-fs-row\"><p class=\"dp-fs-label\">快快敲</p><div class=\"dp-line dp-line-grid\"><span class=\"dp-cell dp-titi\" data-r=\"titi\"><img src=\"./symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>快快</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>敲</b></span></div></div><div class=\"dp-fs-row\"><p class=\"dp-fs-label\">慢慢敲</p><div class=\"dp-line dp-line-grid\"><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>慢</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>慢</b></span><span class=\"dp-cell dp-ta\" data-r=\"ta\"><img src=\"./symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>敲</b></span></div></div><div class=\"dp-fs-row\"><p class=\"dp-fs-label\">拍子</p><div class=\"dp-beat-row dp-beat-row3\" aria-label=\"三個平均的拍子\"><i></i><i></i><i></i></div></div></div><p class=\"dp-steady\">拍子速度不變</p></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-sounds-q",
+      "title": "詩歌裏的聲音",
+      "notes": "44–52 分鐘。學生閉上眼睛想像池塘的情景。\n問：《青蛙打鼓》裏會出現甚麼聲音？\n預期答案：風聲、雨聲、青蛙叫聲、鼓聲等。\n觀察：學生能否從詩句找出聲音。",
+      "html": "<section id=\"dp-sounds-q\" class=\"dp-slide dp-poem dp-scene\" data-slide-id=\"dp-sounds-q\" aria-label=\"詩歌裏的聲音\"><div class=\"dp-art\" data-emoji=\"🐸\"><img src=\"./images/frog-pond-rain.png\" alt=\"青蛙背着小鼓站在荷葉上，有風和小雨\"></div><div class=\"dp-copy\"><p class=\"dp-kicker\">想一想</p><h2>詩歌裏會出現<br>甚麼聲音？</h2></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-sounds-a",
+      "title": "六種聲音",
+      "notes": "44–52 分鐘。學生先說，再按「下一個聲音」逐一出現核對（全部出現後再按會收起）。\n可追問：哪個聲音在詩句中出現？例如「又唱」→青蛙的歌聲。\n觀察：學生能否把聲音和詩句配對。",
+      "html": "<section id=\"dp-sounds-a\" class=\"dp-slide dp-sunshine\" data-slide-id=\"dp-sounds-a\" aria-label=\"六種聲音\"><div class=\"dp-copy dp-center\"><h2>詩歌裏的聲音</h2><ol class=\"dp-sounds\"><li class=\"dp-step\">風聲</li><li class=\"dp-step\">雨聲</li><li class=\"dp-step\">青蛙叫聲</li><li class=\"dp-step\">快慢不同的鼓聲</li><li class=\"dp-step\">青蛙的歌聲</li><li class=\"dp-step\">搖動身體的聲音</li></ol><button type=\"button\" class=\"dp-stage-btn\" data-action=\"reveal-sounds\">下一個聲音</button></div></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "reveal-sounds",
+          "label": "下一個聲音"
+        }
+      ]
+    },
+    {
+      "id": "dp-rain-vote",
+      "title": "哪一個最像雨聲？",
+      "notes": "44–52 分鐘。學生閉上眼睛。教師在樂器後面依次奏 A 沙槌、B 小鼓、C 三角鐵。\n投票：學生閉眼舉手，用手指 1／2／3 表示選 A／B／C。\n按「揭示樂器」顯示 A 沙槌、B 小鼓、C 三角鐵。\n追問：為甚麼你覺得像雨聲？（引導用「沙沙」「清脆」等詞語）\n觀察：學生能否說出理由。",
+      "html": "<section id=\"dp-rain-vote\" class=\"dp-slide dp-sky\" data-slide-id=\"dp-rain-vote\" aria-label=\"哪一個最像雨聲\"><div class=\"dp-copy dp-center\"><p class=\"dp-kicker\">閉上眼睛聽</p><h2>哪一個最像雨聲？</h2><div class=\"dp-vote\"><div class=\"dp-vote-card\"><span class=\"dp-vote-letter\">A</span><span class=\"dp-vote-name\">沙槌</span></div><div class=\"dp-vote-card\"><span class=\"dp-vote-letter\">B</span><span class=\"dp-vote-name\">小鼓</span></div><div class=\"dp-vote-card\"><span class=\"dp-vote-letter\">C</span><span class=\"dp-vote-name\">三角鐵</span></div></div><button type=\"button\" class=\"dp-stage-btn\" data-action=\"reveal-rain\">揭示樂器</button></div></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "reveal-rain",
+          "label": "揭示樂器（再按收回）"
+        }
+      ]
+    },
+    {
+      "id": "dp-scrape",
+      "title": "刮瓜：短刮與長刮",
+      "notes": "44–52 分鐘。教師示範刮瓜「短刮」及「長刮」。\n問：哪一個像青蛙叫？哪一個像青蛙唱歌？\n預期答案：短刮像青蛙叫，長刮像青蛙唱歌。\n按「揭示」顯示「叫聲短，歌聲較長」。\n觀察：學生能否用長短描述聲音。",
+      "html": "<section id=\"dp-scrape\" class=\"dp-slide dp-cream\" data-slide-id=\"dp-scrape\" aria-label=\"刮瓜短刮與長刮\"><div class=\"dp-copy dp-center\"><p class=\"dp-kicker\">刮瓜</p><div class=\"dp-compare\"><div class=\"dp-compare-card\"><span class=\"dp-scrape dp-scrape-short\" aria-hidden=\"true\"></span><h3>短刮</h3></div><div class=\"dp-compare-card\"><span class=\"dp-scrape dp-scrape-long\" aria-hidden=\"true\"></span><h3>長刮</h3></div></div><p class=\"dp-question\">哪一個像青蛙叫？<br>哪一個像青蛙唱歌？</p><p class=\"dp-answer\">叫聲短，歌聲較長</p><button type=\"button\" class=\"dp-stage-btn\" data-action=\"reveal-scrape\">揭示</button></div></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "reveal-scrape",
+          "label": "揭示（再按收回）"
+        }
+      ]
+    },
+    {
+      "id": "dp-sound-words",
+      "title": "聲音特質詞語",
+      "notes": "44–52 分鐘。學生用詞語牆及句式說明選擇。\n例子：「我選沙槌，因為沙沙聲像雨聲。」\n觀察：學生能否用聲音特質詞語說明理由。",
+      "html": "<section id=\"dp-sound-words\" class=\"dp-slide dp-sunshine\" data-slide-id=\"dp-sound-words\" aria-label=\"聲音特質詞語\"><div class=\"dp-copy dp-center\"><h2>聲音像甚麼？</h2><div class=\"dp-word-wall\"><span>沙沙</span><span>清脆</span><span>低沉</span><span>長</span><span>短</span><span>輕</span><span>重</span></div><p class=\"dp-frame\">我選＿＿，因為＿＿聲像＿＿。</p></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-groups",
+      "title": "分組配聲",
+      "notes": "44–52 分鐘。分組，每組負責一句，從兩個選項中選一種聲音。給每組 1–2 分鐘試奏。\n選項可在 deck.json 此頁的表格修改。\n觀察：各組能否按詩句選擇合適的聲音並說出理由。",
+      "html": "<section id=\"dp-groups\" class=\"dp-slide dp-cream\" data-slide-id=\"dp-groups\" aria-label=\"分組配聲\"><div class=\"dp-copy\"><h2>分組配聲</h2><table class=\"dp-table\"><thead><tr><th>組別</th><th>詩句</th><th>選項</th></tr></thead><tbody><tr><td><span class=\"dp-group-tag dp-g1\">第一組</span></td><td>風來了</td><td>人聲「呼呼」／沙槌</td></tr><tr><td><span class=\"dp-group-tag dp-g2\">第二組</span></td><td>雨來了</td><td>沙槌／三角鐵</td></tr><tr><td><span class=\"dp-group-tag dp-g3\">第三組</span></td><td>青蛙背着鼓來了、又唱又跳</td><td>刮瓜／人聲</td></tr><tr><td><span class=\"dp-group-tag dp-g4\">第四組</span></td><td>快快敲，慢慢敲</td><td>小鼓／手鼓</td></tr><tr><td><span class=\"dp-group-tag dp-gt\">老師或已掌握的學生</span></td><td>把身搖</td><td>三角鐵或木琴</td></tr></tbody></table></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-signals",
+      "title": "手勢指示",
+      "notes": "52–59 分鐘。練習手勢：舉手＝預備（拿起樂器）；指向組別＝該組開始；握拳＝全部停止。\n先用手勢玩「預備—開始—停止」兩三次，再開始合奏。\n觀察：學生能否看手勢即時開始及停止。",
+      "html": "<section id=\"dp-signals\" class=\"dp-slide dp-sky\" data-slide-id=\"dp-signals\" aria-label=\"手勢指示\"><div class=\"dp-copy dp-center\"><h2>看手勢</h2><div class=\"dp-signals\"><div><span class=\"dp-icon\" aria-hidden=\"true\">✋</span><h3>舉手</h3><p>預備</p></div><div><span class=\"dp-icon\" aria-hidden=\"true\">👉</span><h3>指向組別</h3><p>開始</p></div><div><span class=\"dp-icon\" aria-hidden=\"true\">✊</span><h3>握拳</h3><p>停止</p></div></div></div></section>",
+      "media": []
+    },
+    {
+      "id": "dp-ensemble",
+      "title": "合奏《青蛙打鼓》",
+      "notes": "52–59 分鐘。全班朗讀，各組按手勢在自己的詩句加入聲響。\n按「下一句」逐句高亮輪到的組別；最後一句之後再按會重設。\n觀察：各組能否準時加入、準時停止，聲響是否配合詩句。",
+      "html": "<section id=\"dp-ensemble\" class=\"dp-slide dp-cream\" data-slide-id=\"dp-ensemble\" aria-label=\"合奏青蛙打鼓\"><div class=\"dp-copy\"><h2>合奏《青蛙打鼓》</h2><ol class=\"dp-ensemble\"><li class=\"dp-seq\"><span class=\"dp-group-tag dp-g1\">第一組</span><span class=\"dp-ens-text\">風來了，</span></li><li class=\"dp-seq\"><span class=\"dp-group-tag dp-g2\">第二組</span><span class=\"dp-ens-text\">雨來了，</span></li><li class=\"dp-seq\"><span class=\"dp-group-tag dp-g3\">第三組</span><span class=\"dp-ens-text\">青蛙背着鼓來了，</span></li><li class=\"dp-seq\"><span class=\"dp-group-tag dp-g4\">第四組</span><span class=\"dp-ens-text\">快快敲，慢慢敲，</span></li><li class=\"dp-seq\"><span class=\"dp-group-tag dp-g3\">第三組</span><span class=\"dp-ens-text\">又唱又跳</span></li><li class=\"dp-seq\"><span class=\"dp-group-tag dp-gt\">老師</span><span class=\"dp-ens-text\">把身搖。</span></li></ol><button type=\"button\" class=\"dp-stage-btn\" data-action=\"highlight-next\">下一句</button></div></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "highlight-next",
+          "label": "下一句（最後再按重設）"
+        }
+      ]
+    },
+    {
+      "id": "dp-tidy-up",
+      "title": "收拾樂器",
+      "notes": "59–62 分鐘。按步驟收拾。可按「開始 3 分鐘倒數」（再按會重新開始）。\n觀察：各組能否安靜、有秩序地收拾。",
+      "html": "<section id=\"dp-tidy-up\" class=\"dp-slide dp-sunshine\" data-slide-id=\"dp-tidy-up\" aria-label=\"收拾樂器\"><div class=\"dp-copy dp-center\"><h2>收拾樂器</h2><ol class=\"dp-steps\"><li>樂器回休息位置</li><li>組長放回樂器籃</li><li>回座，雙手放膝上</li></ol><p class=\"dp-timer\" data-seconds=\"180\" aria-live=\"polite\">3:00</p><button type=\"button\" class=\"dp-stage-btn\" data-action=\"start-timer\">開始 3 分鐘倒數</button></div></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "start-timer",
+          "label": "開始 3 分鐘倒數"
+        }
+      ]
+    },
+    {
+      "id": "dp-rhythm-game",
+      "title": "節奏遊戲",
+      "notes": "62–70 分鐘。節奏符號由右至左移動，到達判定線時全班拍手；休止符（雙手張開）不拍。\n流程：先示範（提示音及閃燈）→ 全班跟拍 → 停 → 再試。\niPad：開始／停止／下一輪／重設；不計分、不排名。\nRound 2「考試節奏」待老師填入（deck.json 的 rhythmGame）。\n投影電腦如顯示「點此啟用聲音」，在投影電腦按一下。\n後備：遊戲不能運作時按「逐拍高亮」，用靜態節奏行列逐拍帶讀。\n觀察：學生能否在休止符停下，雙拍子（ti-ti）是否拍得平均。",
+      "html": "<section id=\"dp-rhythm-game\" class=\"dp-slide dp-sky dp-game-slide\" data-slide-id=\"dp-rhythm-game\" aria-label=\"節奏遊戲\"><div class=\"dp-game\" data-game><div class=\"dp-game-head\"><h2 class=\"dp-game-title\">節奏遊戲</h2><p class=\"dp-game-status\" aria-live=\"polite\">按「開始」</p></div><div class=\"dp-lane\"><div class=\"dp-judge\" aria-hidden=\"true\"></div><div class=\"dp-track\"></div></div><p class=\"dp-game-legend\"><span>到判定線：拍手 👏</span><span>休止符：雙手張開 👐</span></p><button type=\"button\" class=\"dp-enable-sound\" data-game-enable hidden>點此啟用聲音</button><div class=\"dp-game-buttons\"><button type=\"button\" class=\"dp-stage-btn\" data-action=\"game-start\">開始</button><button type=\"button\" class=\"dp-stage-btn\" data-action=\"game-stop\">停止</button><button type=\"button\" class=\"dp-stage-btn\" data-action=\"game-next\">下一輪</button><button type=\"button\" class=\"dp-stage-btn\" data-action=\"game-reset\">重設</button><button type=\"button\" class=\"dp-stage-btn\" data-action=\"game-step\">逐拍高亮</button></div></div></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "game-start",
+          "label": "開始"
+        },
+        {
+          "id": "game-stop",
+          "label": "停止"
+        },
+        {
+          "id": "game-next",
+          "label": "下一輪"
+        },
+        {
+          "id": "game-reset",
+          "label": "重設"
+        },
+        {
+          "id": "game-step",
+          "label": "逐拍高亮（後備）"
+        }
+      ]
+    },
+    {
+      "id": "dp-recap",
+      "title": "今天學了甚麼？",
+      "notes": "62–70 分鐘。請學生說一說今天學了甚麼。\n預期答案：節奏會安排字的長短和停頓；同一句話可以有不同節奏；可以用樂器為詩歌配聲響。\n預告下一課：《小豬過橋》配上動作及聲響。",
+      "html": "<section id=\"dp-recap\" class=\"dp-slide dp-poem dp-scene\" data-slide-id=\"dp-recap\" aria-label=\"今天學了甚麼\"><div class=\"dp-art\" data-emoji=\"🐸\"><img src=\"./images/frog-pond-rain.png\" alt=\"青蛙背着小鼓站在荷葉上\"></div><div class=\"dp-copy\"><p class=\"dp-kicker\">今天學了甚麼？</p><h2>節奏會安排字的<br>長短和停頓</h2><p class=\"dp-lead dp-next\">下一課：《小豬過橋》<br>配上動作及聲響</p></div></section>",
+      "media": []
+    }
+  ]
+}

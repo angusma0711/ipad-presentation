@@ -1,0 +1,187 @@
+/* P2 動感詩歌. Same design language as P3 Pitter Patter, scoped to .dp-deck. */
+.slide:has(> .slide-content > .dp-deck){padding:0}
+.slide:has(> .slide-content > .dp-deck) > .slide-content{width:100%;height:100%}
+.slide.with-media:has(> .slide-content > .dp-deck) > .slide-content{width:58%;height:100%}
+.slide:has(> .slide-content > .dp-deck) .slide-counter{background:#fff9ebd9;border-radius:4px;padding:2px 7px;z-index:5}
+
+.dp-deck{--dp-ink:#183f4a;--dp-teal:#037d8b;--dp-coral:#b23c32;--dp-yellow:#ffd76d;--dp-cream:#fff9eb;--dp-sky:#e3f4f4;--dp-sun:#fff0bd;--dp-g1:#037d8b;--dp-g2:#3f6fb5;--dp-g3:#4f8a32;--dp-g4:#b23c32;--dp-gt:#9a6a00;width:100%;height:100%;color:var(--dp-ink);font-family:"PingFang TC","Microsoft JhengHei",sans-serif;container-type:size;overflow:hidden}
+.dp-deck *{box-sizing:border-box}
+.dp-deck .dp-slide{position:relative;isolation:isolate;width:100%;height:100%;display:flex;align-items:center;padding:4.5% 6%;overflow:hidden;background:var(--dp-cream);font-size:clamp(14px,2.7cqw,48px);line-height:1.45}
+.dp-deck .dp-sky{background:var(--dp-sky)}
+.dp-deck .dp-sunshine{background:var(--dp-sun)}
+.dp-deck .dp-cream{background:var(--dp-cream)}
+.dp-deck .dp-copy{position:relative;z-index:2;width:100%}
+.dp-deck .dp-center{text-align:center}
+.dp-deck h1{font-size:3.4em;line-height:1;letter-spacing:.02em;color:var(--dp-coral);margin:.15em 0 .3em;font-weight:850}
+.dp-deck h2{font-size:1.75em;line-height:1.2;margin:0 0 .5em;font-weight:800;color:var(--dp-coral)}
+.dp-deck h3{margin:.2em 0;font-size:1em}
+.dp-deck p{margin:.2em 0 .6em}
+.dp-deck .dp-sub{font-size:.62em;color:var(--dp-teal);font-weight:750;margin-left:.4em}
+.dp-deck h2 br + .dp-sub{margin-left:0}
+.dp-deck .dp-kicker{font-size:.62em;letter-spacing:.08em;font-weight:700;color:var(--dp-teal);margin:0}
+.dp-deck .dp-lead{font-size:1.1em;font-weight:650}
+.dp-deck .dp-note{font-size:.62em;color:#3d626b;margin-top:.6em}
+.dp-deck .dp-music-glyph{position:absolute;right:9%;top:20%;font-family:Georgia,serif;font-size:10em;color:#e39d12;transform:rotate(12deg);line-height:1}
+
+/* Illustrations: a placeholder shows until the PNG exists in public/media/p2-dynamic-poems/images. */
+.dp-deck .dp-art{position:absolute;inset:0;z-index:-2;display:flex;align-items:center;justify-content:flex-end;padding-right:10%;background:radial-gradient(circle at 75% 35%,#ffd76d66 0 22%,transparent 23%),linear-gradient(160deg,#e3f4f4,#cfe9d8 60%,#b8dcae)}
+.dp-deck .dp-art:before{content:attr(data-emoji);font-size:9em;line-height:1;filter:saturate(.9)}
+.dp-deck .dp-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dp-deck .dp-art.dp-missing img{display:none}
+.dp-deck .dp-scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff9eb 0%,#fff9ebf7 29%,#fff9ebd9 44%,#fff9eb30 65%,transparent 80%);z-index:-1}
+.dp-deck .dp-scene .dp-copy{max-width:60%}
+.dp-deck .dp-cover .dp-copy{max-width:58%}
+.dp-deck .dp-cover .dp-lead{font-size:1em}
+.dp-deck .dp-art-pair{position:absolute;inset:0 0 0 40%;z-index:-2;display:flex}
+.dp-deck .dp-art-pair .dp-art{position:relative;flex:1;padding:0;justify-content:center}
+.dp-deck .dp-art-pair .dp-art:before{font-size:6.5em}
+.dp-deck .dp-art-pair .dp-art:first-child{flex:1.4}
+.dp-deck .dp-poem .dp-copy{max-width:62%}
+.dp-deck .dp-lyrics{font-size:1.3em;line-height:1.6;font-weight:600}
+.dp-deck .dp-lyrics p{margin:0}
+.dp-deck .dp-next{color:var(--dp-teal);font-size:.95em;margin-top:.8em}
+
+/* Rhythm notation: symbol, then mnemonic, then the words. No time signature or bar lines. */
+.dp-deck .dp-line{display:flex;align-items:flex-end;justify-content:center;gap:.5em;margin:.15em 0}
+.dp-deck .dp-cell{display:inline-flex;flex-direction:column;align-items:center;min-width:1.6em;line-height:1.1;transition:transform .35s,color .35s}
+.dp-deck .dp-cell img{height:1.7em;width:auto;display:block}
+.dp-deck .dp-cell.dp-titi{min-width:2.7em}
+.dp-deck .dp-cell small{font-size:.5em;color:var(--dp-teal);font-weight:700;margin-top:.15em;font-family:Georgia,"PingFang TC",serif}
+.dp-deck .dp-cell b{font-size:.95em;font-weight:750;margin-top:.1em;letter-spacing:.12em;white-space:nowrap}
+.dp-deck .dp-cell.dp-opt img{opacity:.55}
+.dp-deck .dp-cell.dp-opt small:before{content:"("}
+.dp-deck .dp-cell.dp-opt small:after{content:")"}
+.dp-deck .dp-rhythm-page{align-items:flex-start;padding-top:3.5%}
+.dp-deck .dp-rhythm-page h2{margin-bottom:.25em}
+.dp-deck .dp-lines{display:flex;flex-direction:column;align-items:center;gap:.2em;font-size:1.05em}
+.dp-deck #dp-elephant-v1 .dp-lines{font-size:.8em;gap:.12em}
+.dp-deck #dp-frog-poem .dp-lines{font-size:.92em}
+.dp-deck #dp-frog-poem .dp-note{margin-top:.3em}
+.dp-deck .dp-lines .dp-line{justify-content:flex-start;gap:.7em;padding:.1em .8em;border-radius:.3em;background:#ffffff80;min-width:70%}
+.dp-deck #dp-elephant-v2 .dp-lines{font-size:1.25em;margin-top:.6em}
+
+/* A / B comparison */
+.dp-deck .dp-ab{display:flex;flex-direction:column;gap:.6em;align-items:center;margin-top:.4em}
+.dp-deck .dp-ab-row{display:flex;align-items:center;gap:1em;font-size:1.3em}
+.dp-deck .dp-ab-tag{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:var(--dp-teal);color:#fff;font-weight:800;font-size:.8em}
+.dp-deck .dp-big-words{font-size:1.5em;font-weight:800;letter-spacing:.3em}
+.dp-deck .dp-beat-boxes{display:flex;gap:.3em}
+.dp-deck .dp-beat-boxes i{width:1.4em;height:1.4em;border:.12em dashed var(--dp-teal);border-radius:.25em}
+.dp-deck .dp-revealed .dp-long{transform:scale(1.35);color:var(--dp-coral)}
+.dp-deck .dp-revealed .dp-long b{color:var(--dp-coral)}
+.dp-deck .dp-answer{visibility:hidden;font-size:1.05em;font-weight:800;color:var(--dp-teal);margin-top:.9em}
+.dp-deck .dp-revealed .dp-answer{visibility:visible}
+.dp-deck #dp-ending-long .dp-line{font-size:1.45em;margin-top:.4em}
+
+/* Buttons the iPad presses through actions; also usable with the projector mouse. */
+.dp-deck .dp-stage-btn{position:absolute;right:2.2%;bottom:3.2%;font:inherit;font-size:.48em;font-weight:700;color:var(--dp-ink);background:#ffffffb3;border:1px solid #18404a33;border-radius:.6em;padding:.35em .8em;cursor:pointer;z-index:4}
+.dp-deck .dp-stage-btn:focus-visible{outline:3px solid var(--dp-coral)}
+
+.dp-deck .dp-key{font-size:1.75em;font-weight:650;line-height:1.5}
+.dp-deck .dp-key p{margin:.3em 0}
+.dp-deck .dp-key strong{color:var(--dp-coral)}
+.dp-deck .dp-key-word{display:inline-block;padding:0 .3em;border-radius:.2em;background:#fff;font-weight:850}
+.dp-deck .dp-key-word.dp-teal{color:#fff;background:var(--dp-teal)}
+.dp-deck .dp-tags{display:flex;justify-content:center;gap:1em;margin-top:.8em}
+.dp-deck .dp-tag{font-size:1.2em;font-weight:800;padding:.35em 1.1em;border-radius:.5em;background:var(--dp-coral);color:#fff;box-shadow:0 .12em 0 #7d2922}
+.dp-deck .dp-tag-teal{background:var(--dp-teal);box-shadow:0 .12em 0 #025660}
+
+.dp-deck .dp-cards{display:flex;justify-content:center;gap:1em;margin-top:.5em}
+.dp-deck .dp-card{position:relative;background:#fff;border-radius:.5em;padding:.8em 1em .6em;box-shadow:0 .15em .5em #183f4a22;font-size:1.25em}
+.dp-deck .dp-card-no{position:absolute;left:.4em;top:.25em;font-size:.55em;font-weight:800;color:var(--dp-coral)}
+
+/* Beat and rhythm rows share one six-column grid so beats and words line up. */
+.dp-deck .dp-beat-scene .dp-copy{max-width:64%}
+.dp-deck .dp-beat-scene h2{margin-bottom:.4em}
+.dp-deck .dp-grid6{display:flex;flex-direction:column;gap:.15em}
+.dp-deck .dp-row-label{font-size:.6em;font-weight:800;color:var(--dp-teal);margin:.4em 0 0}
+.dp-deck .dp-beat-row{display:grid;grid-template-columns:repeat(6,1fr);justify-items:center;padding:.3em 0}
+.dp-deck .dp-beat-row i{width:.8em;height:.8em;border-radius:50%;background:var(--dp-teal);animation:dp-pulse 1s ease-in-out infinite}
+.dp-deck .dp-line6{display:grid;grid-template-columns:repeat(6,1fr);justify-items:center;gap:0}
+.dp-deck .dp-beat-row3{grid-template-columns:repeat(3,1fr)}
+@keyframes dp-pulse{0%,100%{transform:scale(.8);opacity:.6}12%{transform:scale(1.15);opacity:1}}
+
+.dp-deck .dp-fs{display:flex;flex-direction:column;gap:.5em;width:min(100%,24em);margin:.3em auto 0}
+.dp-deck .dp-fs-row{display:grid;grid-template-columns:4.5em 1fr;align-items:center}
+.dp-deck .dp-fs-label{margin:0;font-weight:800;text-align:left}
+.dp-deck .dp-line-grid{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;gap:0;font-size:1.2em}
+.dp-deck #dp-fast-slow .dp-fs-row:first-child .dp-line-grid{grid-template-columns:1fr 1fr 1fr}
+.dp-deck #dp-fast-slow .dp-fs-row:first-child .dp-cell:last-child{grid-column:2}
+.dp-deck .dp-steady{display:inline-block;margin-top:.7em;font-size:.9em;font-weight:800;color:#fff;background:var(--dp-teal);padding:.2em .9em;border-radius:2em}
+
+.dp-deck .dp-sounds{list-style:none;padding:0;margin:.3em auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:.5em;max-width:24em}
+.dp-deck .dp-sounds li{background:#fff;border-radius:.4em;padding:.6em .4em;font-weight:750;font-size:.95em;box-shadow:0 .1em .3em #183f4a1a;opacity:0;transform:translateY(.4em);transition:opacity .4s,transform .4s}
+.dp-deck .dp-sounds li.dp-shown{opacity:1;transform:none}
+
+.dp-deck .dp-vote{display:flex;justify-content:center;gap:1.4em;margin-top:.4em}
+.dp-deck .dp-vote-card{width:5.2em;height:5.2em;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 .15em .5em #183f4a26}
+.dp-deck .dp-vote-letter{font-size:2.2em;font-weight:850;color:var(--dp-teal);line-height:1}
+.dp-deck .dp-vote-name{font-size:.8em;font-weight:800;color:var(--dp-coral);visibility:hidden}
+.dp-deck .dp-revealed .dp-vote-name{visibility:visible}
+
+.dp-deck .dp-compare{display:flex;justify-content:center;gap:2em}
+.dp-deck .dp-compare-card{background:#fff;border-radius:.5em;padding:.7em 1.4em;box-shadow:0 .12em .4em #183f4a1f}
+.dp-deck .dp-scrape{display:block;height:.9em;margin:.2em auto;background:repeating-linear-gradient(90deg,var(--dp-teal) 0 .12em,transparent .12em .3em);border-radius:.2em}
+.dp-deck .dp-scrape-short{width:2em}
+.dp-deck .dp-scrape-long{width:6em}
+.dp-deck .dp-question{font-size:1.15em;font-weight:750;margin-top:.7em}
+
+.dp-deck .dp-word-wall{display:flex;flex-wrap:wrap;justify-content:center;gap:.5em;max-width:22em;margin:.2em auto .8em}
+.dp-deck .dp-word-wall span{font-size:1.25em;font-weight:800;background:#fff;padding:.2em .7em;border-radius:.4em;box-shadow:0 .1em .3em #183f4a1a}
+.dp-deck .dp-word-wall span:nth-child(3n+1){color:var(--dp-teal)}
+.dp-deck .dp-word-wall span:nth-child(3n+2){color:var(--dp-coral)}
+.dp-deck .dp-frame{font-size:1.15em;font-weight:750}
+
+.dp-deck .dp-table{width:100%;border-collapse:separate;border-spacing:0 .25em;font-size:.82em}
+.dp-deck .dp-table th{text-align:left;font-size:.75em;color:var(--dp-teal);padding:0 .6em}
+.dp-deck .dp-table td{background:#fff;padding:.4em .6em;font-weight:650}
+.dp-deck .dp-table td:first-child{border-radius:.4em 0 0 .4em;white-space:nowrap}
+.dp-deck .dp-table td:last-child{border-radius:0 .4em .4em 0}
+.dp-deck .dp-group-tag{display:inline-block;color:#fff;font-weight:800;font-size:.8em;padding:.15em .55em;border-radius:.3em;white-space:nowrap}
+.dp-deck .dp-g1{background:var(--dp-g1)}.dp-deck .dp-g2{background:var(--dp-g2)}.dp-deck .dp-g3{background:var(--dp-g3)}.dp-deck .dp-g4{background:var(--dp-g4)}.dp-deck .dp-gt{background:var(--dp-gt)}
+
+.dp-deck .dp-signals{display:flex;justify-content:center;gap:2.2em;margin-top:.3em}
+.dp-deck .dp-signals div{background:#fff;border-radius:.6em;padding:.6em 1.2em;box-shadow:0 .12em .4em #183f4a1f}
+.dp-deck .dp-icon{display:block;font-size:3em;line-height:1.2}
+.dp-deck .dp-signals p{margin:0;font-weight:800;color:var(--dp-coral);font-size:1.1em}
+
+.dp-deck .dp-ensemble{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25em;font-size:1.05em}
+.dp-deck .dp-ensemble li{display:flex;align-items:center;gap:.8em;padding:.2em .5em;border-radius:.4em;transition:background .3s,transform .3s}
+.dp-deck .dp-ensemble .dp-group-tag{min-width:4.2em;text-align:center}
+.dp-deck .dp-ens-text{font-weight:750;font-size:1.15em}
+.dp-deck .dp-ensemble.dp-active li{opacity:.4}
+.dp-deck .dp-ensemble li.dp-current{opacity:1;background:var(--dp-yellow);transform:scale(1.04)}
+
+.dp-deck .dp-steps{text-align:left;display:inline-block;font-size:1.15em;font-weight:700;margin:.1em 0 .3em;padding-left:1.4em}
+.dp-deck .dp-steps li{margin:.2em 0}
+.dp-deck .dp-steps li::marker{color:var(--dp-coral);font-weight:850}
+.dp-deck .dp-timer{font-size:2.6em;font-weight:850;color:var(--dp-teal);font-variant-numeric:tabular-nums;margin:.1em 0}
+.dp-deck .dp-timer.dp-done{color:var(--dp-coral)}
+
+/* Rhythm game */
+.dp-deck .dp-game-slide{padding:3.5% 4% 4.5%}
+.dp-deck .dp-game{width:100%;height:100%;display:flex;flex-direction:column}
+.dp-deck .dp-game-head{display:flex;align-items:baseline;justify-content:space-between;gap:1em}
+.dp-deck .dp-game-title{font-size:1.4em;margin:0}
+.dp-deck .dp-game-status{font-size:.9em;font-weight:800;color:var(--dp-teal);margin:0}
+.dp-deck .dp-lane{position:relative;flex:1;margin:.4em 0;background:#fff;border-radius:.6em;overflow:hidden;box-shadow:inset 0 0 0 .1em #183f4a14}
+.dp-deck .dp-judge{position:absolute;left:14%;top:6%;bottom:6%;width:.25em;background:var(--dp-coral);border-radius:1em;z-index:2;transition:box-shadow .08s}
+.dp-deck .dp-judge.dp-flash{box-shadow:0 0 0 .5em #ffd76d,0 0 1.2em .6em #ffd76d}
+.dp-deck .dp-track{position:absolute;inset:0}
+.dp-deck .dp-token{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:1.6em;will-change:left}
+.dp-deck .dp-token .dp-cell{background:#fff9eb;border-radius:.3em;padding:.15em .3em}
+.dp-deck .dp-token.dp-rest-token .dp-cell b:before{content:"👐"}
+.dp-deck .dp-static .dp-track{display:flex;align-items:center;justify-content:center;gap:.4em;padding:0 3% 0 18%}
+.dp-deck .dp-static .dp-token{position:static;transform:none;font-size:1.25em}
+.dp-deck .dp-static .dp-token.dp-now .dp-cell{outline:.14em solid var(--dp-coral);outline-offset:.1em;background:var(--dp-yellow)}
+.dp-deck .dp-empty{position:absolute;inset:0;display:grid;place-items:center;font-size:1.3em;font-weight:800;color:#6b7f85}
+.dp-deck .dp-game-legend{display:flex;gap:2em;justify-content:center;font-size:.62em;font-weight:700;margin:0}
+.dp-deck .dp-game-buttons{display:flex;justify-content:flex-end;gap:.4em;margin-top:.2em}
+.dp-deck .dp-game-buttons .dp-stage-btn{position:static}
+.dp-deck .dp-enable-sound{position:absolute;left:50%;top:44%;transform:translateX(-50%);z-index:6;font:inherit;font-size:.9em;font-weight:800;background:var(--dp-coral);color:#fff;border:0;border-radius:.5em;padding:.6em 1.2em;cursor:pointer}
+.dp-deck .dp-enable-sound[hidden]{display:none}
+
+@media(prefers-reduced-motion:reduce){
+ .dp-deck .dp-beat-row i{animation:none;opacity:1}
+ .dp-deck .dp-cell,.dp-deck .dp-sounds li,.dp-deck .dp-ensemble li{transition:none}
+}
