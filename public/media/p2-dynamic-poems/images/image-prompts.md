@@ -1,6 +1,6 @@
 # 插圖生成紀錄（P2 動感詩歌）
 
-狀態：**待生成**。製作本簡報的環境不能生成圖片，投影片暫時以色塊及 emoji 佔位。把生成好的 PNG 以下列檔名放入此資料夾即可自動顯示，毋須修改 deck.json。
+狀態：**三張課堂插圖已生成（2026-10-18）；樂器桌備用圖未生成**。大象、青蛙及兒童插圖已接入現有投影片；實際生成 prompts、工具模式及 P3 參考來源見 generation-prompts.md。樂器桌圖是未被投影片引用的備用構想。
 
 共同要求：原創 picture-book gouache 風格，暖色紙張質感，turquoise／coral／sunshine yellow，16:9 橫向，主要內容放在畫面右半部（左邊會加 cream 漸層放文字），無文字、無樂譜、無水印。不要掃描、描摹或模仿課本插圖。
 
@@ -8,7 +8,7 @@
 
 Use case: illustration-story. Asset type: bright picture-book classroom slide background for age 7 primary music students. Wide landscape 16:9. A friendly cartoon elephant standing on soft green grass under a sunny sky: long curling trunk, two gently curved tusks, big round ears like fans, four sturdy legs. Elephant placed in the right half of the picture, calm open grass and sky on the left. Warm pastel yellow, turquoise and coral, hand-painted gouache with soft paper texture, simple clear shapes. Happy gentle mood. No text, labels, musical notation or watermark.
 
-## frog-pond-rain.png（第 1、15 頁）
+## frog-pond-rain.png（第 1、15、25 頁）
 
 Use case: illustration-story. Asset type: picture-book classroom slide background for age 7. Wide landscape 16:9. A cheerful green frog standing on a lily pad in a pond, carrying a small drum on its back, light breeze bending the reeds and a gentle drizzle with visible raindrops. Frog in the right half, calm water on the left. Friendly hand-painted gouache, soft paper texture, turquoise coral sunshine yellow palette. Not stormy. No text, notation or watermark.
 

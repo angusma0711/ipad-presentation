@@ -23,7 +23,7 @@
 .dp-deck .dp-note{font-size:.62em;color:#3d626b;margin-top:.6em}
 .dp-deck .dp-music-glyph{position:absolute;right:9%;top:20%;font-family:Georgia,serif;font-size:10em;color:#e39d12;transform:rotate(12deg);line-height:1}
 
-/* Illustrations: a placeholder shows until the PNG exists in public/media/p2-dynamic-poems/images. */
+/* P3-style gouache illustrations; emoji remains a missing-image fallback. */
 .dp-deck .dp-art{position:absolute;inset:0;z-index:-2;display:flex;align-items:center;justify-content:flex-end;padding-right:10%;background:radial-gradient(circle at 75% 35%,#ffd76d66 0 22%,transparent 23%),linear-gradient(160deg,#e3f4f4,#cfe9d8 60%,#b8dcae)}
 .dp-deck .dp-art:before{content:attr(data-emoji);font-size:9em;line-height:1;filter:saturate(.9)}
 .dp-deck .dp-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -185,3 +185,12 @@
  .dp-deck .dp-beat-row i{animation:none;opacity:1}
  .dp-deck .dp-cell,.dp-deck .dp-sounds li,.dp-deck .dp-ensemble li{transition:none}
 }
+
+/* Keep the subjects visible when the cover divides the landscape artwork. */
+.dp-deck .dp-art-pair .dp-art img{object-position:80% center}
+/* Reserve the left rhythm grid and keep all three movement examples visible. */
+.dp-deck .dp-beat-scene .dp-art{background:var(--dp-cream)}
+.dp-deck .dp-beat-scene .dp-art:before{content:none}
+.dp-deck .dp-beat-scene .dp-art img{inset:auto 0 7% auto;width:72%;height:auto;object-fit:contain}
+.dp-deck .dp-beat-scene .dp-copy{max-width:55%}
+.dp-deck .dp-beat-scene:after{background:linear-gradient(90deg,#fff9eb 0%,#fff9ebf7 35%,#fff9eb00 59%)}
