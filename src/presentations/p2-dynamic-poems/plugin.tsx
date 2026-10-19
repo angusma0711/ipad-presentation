@@ -14,6 +14,42 @@ function attach(root: HTMLElement) {
  });
  const gameElement = root.querySelector<HTMLElement>('[data-game]');
  const game = gameElement ? createGame(gameElement, deck.rhythmGame as GameConfig, deck.assetBase) : null;
+ let beatFrame = 0;
+ const beatDots = [...slide.querySelectorAll<HTMLElement>('[data-beat]')];
+ const rhythmBeats = [...slide.querySelectorAll<HTMLElement>('[data-rhythm-beat]')];
+ const preparation = [...slide.querySelectorAll<HTMLElement>('.dp-preparation i')];
+ const beatStatus = slide.querySelector<HTMLElement>('.dp-follow-status');
+ const clearBeat = () => [...beatDots, ...rhythmBeats, ...preparation].forEach(el => el.classList.remove('dp-playing'));
+ function stopBeat(reset = false) {
+  cancelAnimationFrame(beatFrame); beatFrame = 0; clearBeat();
+  if (beatStatus) beatStatus.textContent = reset ? '準備：4 拍' : '已停止';
+ }
+ function playBeat() {
+  if (!beatDots.length) return;
+  stopBeat(true);
+  const started = performance.now(), duration = 60000 / 72;
+  let previous = -1;
+  const tick = () => {
+   const step = Math.floor((performance.now() - started) / duration);
+   if (step >= beatDots.length + 4) {
+    stopBeat(); if (beatStatus) beatStatus.textContent = '完成'; return;
+   }
+   if (step !== previous) {
+    previous = step; clearBeat();
+    if (step < 4) {
+     preparation[step]?.classList.add('dp-playing');
+     if (beatStatus) beatStatus.textContent = `預備 ${step + 1} / 4`;
+    } else {
+     const index = step - 4;
+     beatDots[index]?.classList.add('dp-playing'); rhythmBeats[index]?.classList.add('dp-playing');
+     if (beatStatus) beatStatus.textContent = `第 ${index + 1} / ${beatDots.length} 拍`;
+    }
+   }
+   beatFrame = requestAnimationFrame(tick);
+  };
+  tick();
+ }
+
  let countdown = 0;
  function startTimer() {
   const display = slide!.querySelector<HTMLElement>('.dp-timer'); if (!display) return;
@@ -27,7 +63,12 @@ function attach(root: HTMLElement) {
   clearInterval(countdown); show(); countdown = window.setInterval(show, 250);
  }
  function act(action: string) {
-  if (TOGGLES.includes(action)) slide!.classList.toggle('dp-revealed');
+  if (action === 'beat-play') playBeat();
+  else if (action === 'beat-stop') stopBeat();
+  else if (action === 'beat-reset') stopBeat(true);
+  else if (action === 'reveal-question') slide!.classList.toggle('dp-question-shown');
+  else if (action === 'reveal-v1' || action === 'reveal-v2') slide!.classList.toggle(action === 'reveal-v1' ? 'dp-show-v1' : 'dp-show-v2');
+  else if (TOGGLES.includes(action)) slide!.classList.toggle('dp-revealed');
   else if (action === 'reveal-sounds') {
    const hidden = slide!.querySelector('.dp-step:not(.dp-shown)');
    if (hidden) hidden.classList.add('dp-shown'); else slide!.querySelectorAll('.dp-step').forEach(item => item.classList.remove('dp-shown'));
@@ -46,6 +87,6 @@ function attach(root: HTMLElement) {
   event.stopPropagation(); act(button.dataset.action!);
  };
  root.addEventListener('click', click);
- return () => { root.removeEventListener('click', click); clearInterval(countdown); game?.destroy(); };
+ return () => { root.removeEventListener('click', click); clearInterval(countdown); cancelAnimationFrame(beatFrame); game?.destroy(); };
 }
 export default { attach } satisfies DeckPlugin;
