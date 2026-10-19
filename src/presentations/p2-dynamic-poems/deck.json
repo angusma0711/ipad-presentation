@@ -251,7 +251,7 @@
       "id": "dp-groups",
       "title": "分組配聲",
       "notes": "44–52 分鐘。分組，每組負責一句，從兩個選項中選一種聲音。給每組 1–2 分鐘試奏。\n選項可在 deck.json 此頁的表格修改。\n觀察：各組能否按詩句選擇合適的聲音並說出理由。",
-      "html": "<section id=\"dp-groups\" class=\"dp-slide dp-cream\" data-slide-id=\"dp-groups\" aria-label=\"分組配聲\"><div class=\"dp-copy\"><h2>分組配聲</h2><table class=\"dp-table\"><thead><tr><th>組別</th><th>詩句</th><th>選項</th></tr></thead><tbody><tr><td><span class=\"dp-group-tag dp-g1\">第一組</span></td><td>風來了</td><td>人聲「呼呼」／沙槌</td></tr><tr><td><span class=\"dp-group-tag dp-g2\">第二組</span></td><td>雨來了</td><td>沙槌／三角鐵</td></tr><tr><td><span class=\"dp-group-tag dp-g3\">第三組</span></td><td>青蛙背着鼓來了、又唱又跳</td><td>刮瓜／人聲</td></tr><tr><td><span class=\"dp-group-tag dp-g4\">第四組</span></td><td>快快敲，慢慢敲</td><td>小鼓／手鼓</td></tr><tr><td><span class=\"dp-group-tag dp-gt\">老師或已掌握的學生</span></td><td>把身搖</td><td>三角鐵或木琴</td></tr></tbody></table></div></section>",
+      "html": "<section id=\"dp-groups\" class=\"dp-slide dp-cream\" data-slide-id=\"dp-groups\" aria-label=\"分組配聲\"><div class=\"dp-copy\"><h2>分組配聲</h2><table class=\"dp-table\"><thead><tr><th>組別</th><th>詩句</th><th>選項</th></tr></thead><tbody><tr><td><span class=\"dp-group-tag dp-g1\">第一組</span></td><td>風來了</td><td>人聲「呼呼」／沙槌</td></tr><tr><td><span class=\"dp-group-tag dp-g2\">第二組</span></td><td>雨來了</td><td>沙槌／三角鐵</td></tr><tr><td><span class=\"dp-group-tag dp-g3\">第三組</span></td><td>青蛙背着鼓來了、又唱又跳</td><td>刮瓜／人聲</td></tr><tr><td><span class=\"dp-group-tag dp-g4\">第四組</span></td><td>快快敲，慢慢敲</td><td>小鼓／手鼓</td></tr><tr><td><span class=\"dp-group-tag dp-gt\">老師/ 其他學生</span></td><td>把身搖</td><td>三角鐵或木琴</td></tr></tbody></table></div></section>",
       "media": []
     },
     {
