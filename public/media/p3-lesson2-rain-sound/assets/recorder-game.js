@@ -144,13 +144,28 @@
   return game;
  }
 
+ function noteNotation(name) {
+  // Treble staff: E4(bottom) to F5(top), 24 units per line spacing.
+  const y = { B: 114, A: 126, G: 138 }[name];
+  const color = NOTES[name].color;
+  const lines = [66, 90, 114, 138, 162].map(line => `<line x1="28" y1="${line}" x2="368" y2="${line}"/>`).join('');
+  const stem = name === 'B'
+   ? `<line x1="225" y1="${y}" x2="225" y2="${y + 84}"/>`
+   : `<line x1="255" y1="${y}" x2="255" y2="${y - 84}"/>`;
+  return `<svg class="rec-note-notation" viewBox="0 0 560 250" role="img" aria-label="${name} 音高音譜號五線譜">
+   <g class="rec-staff-lines">${lines}</g>
+   <text class="rec-music-glyph" x="48" y="138" font-size="96">&#xE050;</text>
+   <g fill="${color}" stroke="${color}" stroke-width="3.5"><ellipse cx="240" cy="${y}" rx="17" ry="10.5" transform="rotate(-18 240 ${y})"/>${stem}</g>
+   <text class="rec-pitch-name" x="464" y="141" text-anchor="middle" fill="${color}">${name}</text>
+  </svg>`;
+ }
  function mountNote(section, name) {
   const note = NOTES[name];
   if (!note) return;
   // Separate front/back views keep the thumb hole off the front of the recorder.
   const graphic = recorderSVG().replace(/<text\b[^>]*>[\s\S]*?<\/text>/g, '');
-  section.innerHTML = `<div class="rec-note-pair">${graphic}${graphic}</div>`;
-  const [front, back] = section.querySelectorAll('svg');
+  section.innerHTML = `${noteNotation(name)}<div class="rec-note-pair">${graphic}${graphic}</div>`;
+  const [front, back] = section.querySelectorAll('.rec-note-pair svg');
   front.querySelector('.rec-thumb').remove();
   front.setAttribute('aria-label', `${name} 音正面：前 ${note.holes.length - 1} 孔按實，其餘打開`);
   back.querySelector('.rec-front').remove();
