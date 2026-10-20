@@ -73,6 +73,9 @@ html[data-system-embed] .worksheet-side,html[data-system-embed] #hotspots,html[d
 <section class="slide peach" id="p3-l2-recorder-ready" data-title="收拾及直笛準備">
  <h2>收拾及直笛準備</h2><div class="rule-lines"><p>📄 工作紙收好</p><p>取出直笛，放在桌上</p><p class="accent">未有指示不吹奏</p></div><div class="stop-rule"><p>✋ 老師舉手 → 立即停吹</p><p>直笛放在下巴下的「休息位置」</p></div>
 </section>
+<section class="slide rec-note-slide" id="p3-l2-recorder-note-b" data-module="recorder-note" data-note="B" data-title="直笛 B 指法" aria-label="直笛 B 指法"></section>
+<section class="slide rec-note-slide" id="p3-l2-recorder-note-a" data-module="recorder-note" data-note="A" data-title="直笛 A 指法" aria-label="直笛 A 指法"></section>
+<section class="slide rec-note-slide" id="p3-l2-recorder-note-g" data-module="recorder-note" data-note="G" data-title="直笛 G 指法" aria-label="直笛 G 指法"></section>
 <section class="slide" id="p3-l2-recorder-bag" data-module="recorder-bag" data-heading="直笛：B、A、G 音" data-title="直笛 B A G 音">
  <h2>直笛：B、A、G 音</h2><div class="friendly"><div class="note-names"><span>B</span><span>A</span><span>G</span></div><p>看老師示範，再一起吹 🎶</p></div>
 </section>
@@ -420,9 +423,10 @@ $('clear-all').onclick=()=>confirm('清除上下兩頁的所有筆跡，供下�
 function exportWorksheetPNG(){if(!sheetReady())return;const im=$('worksheet-image'),c=document.createElement('canvas');const exportScale=Math.min(1,3840/Math.max(im.naturalWidth,im.naturalHeight));c.width=Math.round(im.naturalWidth*exportScale);c.height=Math.round(im.naturalHeight*exportScale);const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(im,0,0,c.width,c.height);for(const box of pageBoxes()){const off=document.createElement('canvas');off.width=Math.max(1,Math.round(c.width*box.w/100));off.height=Math.max(1,Math.round(c.height*box.h/100));renderPaths(off,state(box.id).paths);ctx.drawImage(off,c.width*box.x/100,c.height*box.y/100,c.width*box.w/100,c.height*box.h/100)}const whole=document.createElement('canvas');whole.width=c.width;whole.height=c.height;renderPaths(whole,wholeInk.paths);ctx.drawImage(whole,0,0);try{c.toBlob(blob=>{if(blob)download(blob,`雨中的聲響_第${currentSheetPage}頁_筆跡.png`)},'image/png')}catch(error){notify('未能匯出圖片，筆跡仍然保留')}}
 $('export-png').onclick=exportWorksheetPNG;
 $('worksheet-image').onload=fitSheet;$('worksheet-image').onerror=()=>{$('worksheet-status').textContent='工作紙未能載入，請重新開啟簡報。'};
-// 日後可在兩頁接入獨立模組；現階段不加入功能。
+// 靜態指法頁與既有跟奏模組分開；靜態頁沒有播放或控制文字。
 function initRecorderBag(){RecorderGame.mount($('p3-l2-recorder-bag'),'bag')}
 function initRecorderMary(){RecorderGame.mount($('p3-l2-recorder-mary'),'mary')}
+document.querySelectorAll('[data-module="recorder-note"]').forEach(section=>RecorderGame.mountNote(section,section.dataset.note));
 initRecorderBag();initRecorderMary();
 const recorder=()=>RecorderGame.find(slides[current]);
 scaleStage();jumpHash();

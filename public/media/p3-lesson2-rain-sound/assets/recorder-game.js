@@ -143,7 +143,27 @@
   games.push(game);
   return game;
  }
+
+ function mountNote(section, name) {
+  const note = NOTES[name];
+  if (!note) return;
+  // Separate front/back views keep the thumb hole off the front of the recorder.
+  const graphic = recorderSVG().replace(/<text\b[^>]*>[\s\S]*?<\/text>/g, '');
+  section.innerHTML = `<div class="rec-note-pair">${graphic}${graphic}</div>`;
+  const [front, back] = section.querySelectorAll('svg');
+  front.querySelector('.rec-thumb').remove();
+  front.setAttribute('aria-label', `${name} 音正面：前 ${note.holes.length - 1} 孔按實，其餘打開`);
+  back.querySelector('.rec-front').remove();
+  back.querySelector('rect').remove();
+  back.querySelector('.rec-thumb circle').setAttribute('cx', '420');
+  back.setAttribute('aria-label', `${name} 音背面：拇指孔按實`);
+  section.querySelectorAll('[data-hole]').forEach(hole => {
+   hole.classList.toggle('on', note.holes.includes(Number(hole.dataset.hole)));
+   hole.style.setProperty('--c', note.color);
+  });
+ }
  window.RecorderGame = {
+  mountNote,
   mount,
   stopAll() { games.forEach(game => game.stop()); },
   find(section) { return games.find(game => game.section === section); },

@@ -1,6 +1,6 @@
 # P3 第二課：動人的配樂
 
-來源：P3_Lesson2_Slides V3。12 個固定 slide ID，移除採桑曲、後備節奏卡及時間標示；工作紙依原稿版式分上下兩頁。
+來源：P3_Lesson2_Slides V3。15 個固定 slide ID，移除採桑曲、後備節奏卡及時間標示；工作紙依原稿版式分上下兩頁。
 
 由 deck.json 自動登記。HTML 及素材在 public/media/p3-lesson2-rain-sound/；原 standalone 檔案未修改。持續保留同一 iframe，翻頁不會清空工作紙筆跡。系統負責課堂翻頁、頁碼、教師筆記、標記及 Pointer，內層獨立導覽在接入模式隱藏。跨 frame 訊息驗證同源及來源視窗。
 
@@ -11,3 +11,7 @@ iPad 的「此頁教學互動」可開始／重設下行箭頭，以及播放慢
 私人教學提示放在 deck.json notes，由現有教師頁顯示；內層 HTML 不包含 notes。網站原始資產可被下載，notes 不作敏感資料儲存。
 
 仍待提供：節奏遊戲網址、兩頁直笛互動設計。未新增錄音或教學內容。
+
+## B → A → G 獨立指法頁
+
+在現有 `p3-l2-recorder-bag` 跟奏頁前新增三頁 `p3-l2-recorder-note-b`、`p3-l2-recorder-note-a`、`p3-l2-recorder-note-g`。沿用 recorder-game.js 的同一直笛 SVG 及按孔資料，分開顯示正面及背面（拇指孔）視圖，移除所有可見文字，只以按孔顏色顯示指法；教師標題及 notes 保留音名。三頁不自動發聲，不改動現有跟奏功能。
