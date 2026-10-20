@@ -2,7 +2,7 @@ import {readInteraction} from '../types/interaction';
 import { fastWrite } from './fastWrite';
 import { doc, onSnapshot, runTransaction, serverTimestamp } from 'firebase/firestore';
 import { database } from './firebase';
-import { defaultGroups, validStrokes, uid } from '../types/teaching';
+import { defaultGroups, uid } from '../types/teaching';
 import type { GroupsState, Group, Stroke, PointerState, MediaConfig, MediaAction, MediaFeedback } from '../types/teaching';
 const reference = async (id:string, key:string) => doc(await database(),'sessions',id,'teaching',key);
 export async function watchTeaching(id:string,key:string,receive:(data:Record<string,unknown>|null)=>void,fail:(error:Error)=>void) {
@@ -32,17 +32,8 @@ export async function setScoresVisible(id:string,visible:boolean) {
  await changeTeaching(id,'groups',data=>{const state=readGroups(data);return {visible,g0:state.groups[0],g1:state.groups[1],g2:state.groups[2],g3:state.groups[3]};});
 }
 export async function setPointer(id:string,pointer:PointerState) {await fastWrite(`sessions/${id}/teaching/pointer`,{...pointer});}
-export async function editAnnotations(id:string,slide:number,action:{stroke:Stroke}|'undo'|'clear') {
- await changeTeaching(id,`annotations-${slide}`,data=>{
-  const strokes=validStrokes(data?.strokes);
-  if(action==='undo')return {strokes:strokes.slice(0,-1)};
-  if(action==='clear')return {strokes:[]};
-  const existing=strokes.findIndex(stroke=>stroke.id===action.stroke.id);
-  if(existing>=0){strokes[existing]=action.stroke;return {strokes};}
-  if(strokes.length>=30)throw new Error('每張最多 30 條標記。請先復原或清除。');
-  return {strokes:[...strokes,action.stroke]};
- });
-}
+// Writes the whole stroke list in one request (no read first), so the newest drawing always wins.
+export async function saveAnnotations(id:string,slide:number,strokes:Stroke[]) {await fastWrite(`sessions/${id}/teaching/annotations-${slide}`,{strokes});}
 export async function configureMedia(id:string,slide:number,kind:MediaConfig['kind'],src:string) {
  await changeTeaching(id,`media-${slide}`,()=>({kind,src,commandId:uid(),action:'pause',commandAt:Date.now()}));
 }

@@ -69,3 +69,4 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 .shell{font-size:18px}
 .slide-content>h2{font-size:clamp(24px,4cqw,64px)}
 .slide-content>p,.slide-content>ul>li{font-size:clamp(16px,3cqw,46px)}
+.sync-state{align-self:center;font-size:15px;color:#176b60}.sync-syncing{color:#49616a}.sync-retrying{color:#a04b0f;font-weight:700}

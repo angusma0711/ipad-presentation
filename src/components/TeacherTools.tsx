@@ -3,9 +3,10 @@ import type { FormEvent } from 'react';
 import type { useTeaching } from '../services/useTeaching';
 import type { MediaKind, PointerState, Stroke } from '../types/teaching';
 import { mediaSource } from '../types/teaching';
-import { changeGroup, setScoresVisible, setPointer, editAnnotations, configureMedia, commandMedia, commandSlideAction, changeInteraction } from '../services/teachingService';
+import { changeGroup, setScoresVisible, setPointer, configureMedia, commandMedia, commandSlideAction, changeInteraction } from '../services/teachingService';
 import type { Deck, DeckMedia } from '../presentations/types';
 import { PresentationView } from './PresentationView';
+import { useAnnotationSync } from '../services/useAnnotationSync';
 import type { Tool } from './AnnotationLayer';
 type Props={mode?:'slide'|'general';deck:Deck;id:string;slide:number;disabled:boolean;teaching:ReturnType<typeof useTeaching>};
 export function TeacherTools({mode,deck,id,slide,disabled,teaching}:Props){
@@ -26,16 +27,9 @@ export function TeacherTools({mode,deck,id,slide,disabled,teaching}:Props){
   catch{setError('Pointer 未能同步，請檢查連線。');}
   finally{pendingPointer.current=null;sendingPointer.current=false;}
  }
- const pendingStroke=useRef(new Map<string,{slide:number;stroke:Stroke}>());const sendingStroke=useRef(false);
- async function sendStroke(stroke:Stroke){
-  if(!connected.current)return;
-  pendingStroke.current.set(`${slide}:${stroke.id}`,{slide,stroke});
-  if(sendingStroke.current)return;
-  sendingStroke.current=true;
-  try{while(pendingStroke.current.size&&connected.current){const [key,next]=pendingStroke.current.entries().next().value!;pendingStroke.current.delete(key);await editAnnotations(id,next.slide,{stroke:next.stroke});}}
-  catch{setError('畫線未能同步，請檢查連線。');}
-  finally{pendingStroke.current.clear();sendingStroke.current=false;}
- }
+ const annotations=useAnnotationSync(id,slide,teaching.strokes,!disabled);
+ const syncText={synced:'標記已同步',syncing:'標記同步中…',retrying:'網絡不穩，標記稍後自動重試'}[annotations.sync];
+ const syncLabel=disabled&&annotations.sync!=='synced'?'未連線：標記已保留，重新連線後自動同步':syncText;
  const unavailable=disabled||busy;
  function playMedia(media:DeckMedia){void perform(async()=>{await configureMedia(id,slide,media.kind,media.src);await commandMedia(id,slide,'play');});}
  function attach(event:FormEvent){event.preventDefault();void perform(async()=>{const src=mediaSource(kind,source);await configureMedia(id,slide,kind,src);});}
@@ -49,11 +43,11 @@ export function TeacherTools({mode,deck,id,slide,disabled,teaching}:Props){
   </>}
   {mode!=='slide'&&<>
   <section className="card preview-card"><h2>投影片預覽與標記</h2><div className="tool-bar" role="group" aria-label="預覽工具">
-   {([['none','瀏覽'],['pointer','紅點 Pointer'],['pen','畫線／圈選']] as const).map(([value,label])=><button key={value} disabled={disabled} aria-pressed={tool===value} onClick={()=>setTool(value)}>{label}</button>)}
-  </div>{tool==='pen'&&<div className="tool-bar" role="group" aria-label="畫筆顏色">{[['#e63946','紅色'],['#176b60','綠色'],['#1b4fc4','藍色']].map(([value,label])=><button key={value} disabled={unavailable} aria-pressed={color===value} onClick={()=>setColor(value)}>{label}</button>)}</div>}
-   <div className={`preview-frame ${tool!=='none'?'touch-tool-active':''}`}><PresentationView deck={deck} index={slide} interaction={teaching.interaction} onInteraction={patch=>void perform(()=>changeInteraction(id,slide,patch))} preview groups={teaching.groups} strokes={teaching.strokes} pointer={teaching.pointer} media={teaching.media} tool={tool} disabled={unavailable} color={color} onDraft={(stroke:Stroke)=>void sendStroke(stroke)} onStroke={(stroke:Stroke)=>void sendStroke(stroke)} onPointer={pointer=>void sendPointer(pointer)}/></div>
+   {([['none','瀏覽'],['pointer','紅點 Pointer'],['pen','畫線／圈選']] as const).map(([value,label])=><button key={value} disabled={disabled&&value==='pointer'} aria-pressed={tool===value} onClick={()=>setTool(value)}>{label}</button>)}
+  </div>{tool==='pen'&&<div className="tool-bar" role="group" aria-label="畫筆顏色">{[['#e63946','紅色'],['#176b60','綠色'],['#1b4fc4','藍色']].map(([value,label])=><button key={value} aria-pressed={color===value} onClick={()=>setColor(value)}>{label}</button>)}</div>}
+   <div className={`preview-frame ${tool!=='none'?'touch-tool-active':''}`}><PresentationView deck={deck} index={slide} interaction={teaching.interaction} onInteraction={patch=>void perform(()=>changeInteraction(id,slide,patch))} preview groups={teaching.groups} strokes={annotations.strokes} pointer={teaching.pointer} media={teaching.media} tool={tool} disabled={tool==='pen'?false:unavailable} color={color} onDraft={(stroke:Stroke)=>annotations.draw(stroke)} onStroke={(stroke:Stroke)=>annotations.draw(stroke)} onPointer={pointer=>void sendPointer(pointer)}/></div>
    <p className="small">{tool==='pointer'?'按住或拖曳顯示紅點；放開後消失。':tool==='pen'?'在預覽畫線或圈選；畫的途中同步至投影。':'預覽與投影使用相同比例。選擇工具後可直接在預覽操作。'}</p>
-   <div className="tool-bar"><button disabled={unavailable||!teaching.strokes.length} onClick={()=>void perform(()=>editAnnotations(id,slide,'undo'))}>復原上一筆</button><button disabled={unavailable||!teaching.strokes.length} onClick={()=>{if(window.confirm('清除這張投影片的所有標記？'))void perform(()=>editAnnotations(id,slide,'clear'));}}>清除此頁標記</button></div>
+   <div className="tool-bar"><button disabled={!annotations.strokes.length} onClick={annotations.undo}>復原上一筆</button><button disabled={!annotations.strokes.length} onClick={()=>{if(window.confirm('清除這張投影片的所有標記？'))annotations.clear();}}>清除此頁標記</button><span className={`sync-state sync-${annotations.sync}`} role="status">{syncLabel}</span></div>{annotations.full&&<p className="small">此頁已有 30 條標記，請先復原或清除。</p>}
   </section>
   <details className="card tools-section" open><summary>小組積分</summary><p className="small">投影只顯示各組總分；修改組名後按儲存。</p>
    <button disabled={unavailable} aria-pressed={teaching.groups.visible} onClick={()=>void perform(()=>setScoresVisible(id,!teaching.groups.visible))}>{teaching.groups.visible?'隱藏投影積分':'顯示投影積分'}</button>

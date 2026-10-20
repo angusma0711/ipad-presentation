@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { PointerEvent } from 'react';
 import type { Point, Stroke, PointerState } from '../types/teaching';
-import { uid } from '../types/teaching';
+import { uid, simplify, smoothPath, roundPoint, MAX_POINTS } from '../types/teaching';
 export type Tool = 'none'|'pointer'|'pen';
 type Props = {slide:number;strokes:Stroke[];pointer:PointerState|null;tool?:Tool;disabled?:boolean;color?:string;onStroke?:(stroke:Stroke)=>void;onDraft?:(stroke:Stroke)=>void;onPointer?:(pointer:PointerState)=>void};
 const coordinates=(event:PointerEvent<SVGSVGElement>):Point=>{const box=event.currentTarget.getBoundingClientRect();return {x:Math.max(0,Math.min(1,(event.clientX-box.left)/box.width)),y:Math.max(0,Math.min(1,(event.clientY-box.top)/box.height))};};
@@ -32,7 +32,7 @@ export function AnnotationLayer({slide,strokes,pointer,tool='none',disabled=fals
   event.preventDefault();event.currentTarget.setPointerCapture(event.pointerId);pressed.current=event.pointerId;
   const point=coordinates(event);lastPoint.current=point;
   if(tool==='pointer'){const value=pointerValue(point,true);setLocalPointer(value);onPointer?.(value);lastPublish.current=Date.now();}
-  else{const stroke={id:uid(),points:[point],color,width:6};draftRef.current=stroke;setDraft(stroke);onDraft?.(stroke);lastPublish.current=Date.now();}
+  else{const stroke={id:uid(),points:[roundPoint(point)],color,width:6};draftRef.current=stroke;setDraft(stroke);onDraft?.(stroke);lastPublish.current=Date.now();}
  }
  function move(event:PointerEvent<SVGSVGElement>){
   if(disabled||pressed.current!==event.pointerId)return;
@@ -40,11 +40,15 @@ export function AnnotationLayer({slide,strokes,pointer,tool='none',disabled=fals
   const point=coordinates(event);lastPoint.current=point;
   if(tool==='pointer'){const value=pointerValue(point,true);setLocalPointer(value);if(Date.now()-lastPublish.current>=80){onPointer?.(value);lastPublish.current=Date.now();}}
   else if(draftRef.current){
-   const points=draftRef.current.points;const previous=points[points.length-1];
-   if(Math.hypot(point.x-previous.x,point.y-previous.y)<.002)return;
-   const nextPoints=points.length>=120?points.filter((_,i)=>i%2===0):points;
-   const stroke={...draftRef.current,points:[...nextPoints,point]};draftRef.current=stroke;setDraft(stroke);
-   if(Date.now()-lastPublish.current>=150){onDraft?.(stroke);lastPublish.current=Date.now();}
+   // iPad Safari reports extra in-between touches; using them gives smoother curves.
+   const box=event.currentTarget.getBoundingClientRect();
+   const samples=(event.nativeEvent.getCoalescedEvents?.()??[]).map(e=>({x:Math.max(0,Math.min(1,(e.clientX-box.left)/box.width)),y:Math.max(0,Math.min(1,(e.clientY-box.top)/box.height))}));
+   let points=draftRef.current.points;
+   for(const sample of samples.length?samples:[point]){const previous=points[points.length-1];if(Math.hypot(sample.x-previous.x,sample.y-previous.y)>=.0015)points=[...points,roundPoint(sample)];}
+   if(points===draftRef.current.points)return;
+   if(points.length>MAX_POINTS)points=simplify(points,Math.round(MAX_POINTS*.8));
+   const stroke={...draftRef.current,points};draftRef.current=stroke;setDraft(stroke);
+   if(Date.now()-lastPublish.current>=70){onDraft?.(stroke);lastPublish.current=Date.now();}
   }
  }
  function finish(event:PointerEvent<SVGSVGElement>,_cancelled=false){
@@ -60,7 +64,7 @@ export function AnnotationLayer({slide,strokes,pointer,tool='none',disabled=fals
   aria-label={tool==='pointer'?'在預覽點選或拖曳以指示':tool==='pen'?'在預覽畫線或圈選':'投影片標記'}
   onPointerDown={down} onPointerMove={move} onPointerUp={event=>finish(event)} onPointerCancel={event=>finish(event,true)}
   onLostPointerCapture={event=>{if(pressed.current===event.pointerId)finish(event,true);}}>
-  {[...strokes.filter(stroke=>stroke.id!==draft?.id),...(draft?[draft]:[])].map(stroke=>stroke.points.length===1?<circle key={stroke.id} cx={stroke.points[0].x*1600} cy={stroke.points[0].y*900} r={stroke.width/2} fill={stroke.color}/>:<polyline key={stroke.id} points={stroke.points.map(point=>`${point.x*1600},${point.y*900}`).join(' ')} fill="none" stroke={stroke.color} strokeWidth={stroke.width} strokeLinecap="round" strokeLinejoin="round"/>)}
-  {showPointer&&<circle className="laser-point" cx={shown.x*1600} cy={shown.y*900} r="13" fill="#ef233c" stroke="white" strokeWidth="4"/>}
+  {[...strokes.filter(stroke=>stroke.id!==draft?.id),...(draft?[draft]:[])].map(stroke=>stroke.points.length===1?<circle key={stroke.id} cx={stroke.points[0].x*1600} cy={stroke.points[0].y*900} r={stroke.width/2} fill={stroke.color}/>:<path key={stroke.id} d={smoothPath(stroke.points)} fill="none" stroke={stroke.color} strokeWidth={stroke.width} strokeLinecap="round" strokeLinejoin="round"/>)}
+  {showPointer&&<circle className="laser-point" cx={0} cy={0} r="13" fill="#ef233c" stroke="white" strokeWidth="4" style={{transform:`translate(${shown.x*1600}px,${shown.y*900}px)`,transition:tool==='pointer'?'none':'transform 90ms linear'}}/>}
  </svg>;
 }

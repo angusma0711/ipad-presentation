@@ -4,6 +4,8 @@ function field(value:unknown):Record<string,unknown>{
  if(typeof value==='boolean')return {booleanValue:value};
  if(typeof value==='number')return Number.isInteger(value)?{integerValue:String(value)}:{doubleValue:value};
  if(typeof value==='string')return {stringValue:value};
+ if(Array.isArray(value))return {arrayValue:{values:value.map(field)}};
+ if(value&&typeof value==='object')return {mapValue:{fields:Object.fromEntries(Object.entries(value).map(([key,item])=>[key,field(item)]))}};
  throw new Error('Unsupported realtime field');
 }
 // A direct commit has no preliminary read and never queues an offline action.

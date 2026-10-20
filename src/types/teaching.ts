@@ -9,11 +9,12 @@ export type MediaConfig = { kind: MediaKind; src: string; commandId: string; act
 export type MediaFeedback = { commandId: string; status: 'ready' | 'playing' | 'paused' | 'ended' | 'blocked' | 'error'; message: string };
 export const defaultGroups = (): GroupsState => ({ visible: false, groups: Array.from({length:4}, (_,i) => ({name:`第 ${i+1} 組`,points:0})) });
 export const uid = () => Array.from(crypto.getRandomValues(new Uint8Array(12)), byte => byte.toString(16).padStart(2,'0')).join('');
+export const MAX_STROKES = 30, MAX_POINTS = 300;
 export function validStrokes(value: unknown): Stroke[] {
  if (!Array.isArray(value)) return [];
  return value.slice(0,30).filter((s): s is Stroke => !!s && typeof s.id === 'string' && s.id.length <= 32
   && ['#e63946','#176b60','#1b4fc4'].includes(s.color) && [3,6,10].includes(s.width)
-  && Array.isArray(s.points) && s.points.length > 0 && s.points.length <= 120
+  && Array.isArray(s.points) && s.points.length > 0 && s.points.length <= MAX_POINTS
   && s.points.every((p:Point) => p && Number.isFinite(p.x) && Number.isFinite(p.y) && p.x >= 0 && p.x <= 1 && p.y >= 0 && p.y <= 1));
 }
 export function mediaSource(kind: MediaKind, input: string) {
@@ -34,3 +35,32 @@ export function mediaSource(kind: MediaKind, input: string) {
  if (!extension.test(path)) throw new Error(kind === 'audio' ? '請使用 MP3、WAV、M4A 或 OGG。' : '請使用 MP4、WebM 或 MOV。');
  return raw;
 }
+// Ramer–Douglas–Peucker: keeps the shape of a long stroke within MAX_POINTS.
+export function simplify(points: Point[], max = MAX_POINTS): Point[] {
+ if (points.length <= max) return points;
+ let tolerance = .0008, result = points;
+ while (result.length > max) { result = rdp(points, tolerance); tolerance *= 1.6; }
+ return result;
+}
+function rdp(points: Point[], tolerance: number): Point[] {
+ if (points.length < 3) return points;
+ const first = points[0], last = points[points.length - 1];
+ let index = 0, distance = 0;
+ for (let i = 1; i < points.length - 1; i++) {
+  const p = points[i], dx = last.x - first.x, dy = last.y - first.y, length = Math.hypot(dx, dy) || 1e-9;
+  const d = Math.abs(dy * p.x - dx * p.y + last.x * first.y - last.y * first.x) / length;
+  if (d > distance) { distance = d; index = i; }
+ }
+ if (distance <= tolerance) return [first, last];
+ return [...rdp(points.slice(0, index + 1), tolerance).slice(0, -1), ...rdp(points.slice(index), tolerance)];
+}
+// Smooth curve through the points (quadratic segments between midpoints), in a 1600×900 box.
+export function smoothPath(points: Point[]) {
+ const p = points.map(point => [point.x * 1600, point.y * 900]);
+ if (p.length < 3) return `M${p[0][0]},${p[0][1]}` + p.slice(1).map(([x, y]) => `L${x},${y}`).join('');
+ let d = `M${p[0][0]},${p[0][1]}`;
+ for (let i = 1; i < p.length - 1; i++) d += `Q${p[i][0]},${p[i][1]} ${(p[i][0] + p[i + 1][0]) / 2},${(p[i][1] + p[i + 1][1]) / 2}`;
+ const end = p[p.length - 1];
+ return d + `L${end[0]},${end[1]}`;
+}
+export const roundPoint = (point: Point): Point => ({ x: Math.round(point.x * 10000) / 10000, y: Math.round(point.y * 10000) / 10000 });
