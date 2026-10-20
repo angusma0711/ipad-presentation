@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3240" height="2700" viewBox="80 40 1080 900" role="img" aria-labelledby="ws-title ws-desc">
+<title id="ws-title">雨中的聲響 原稿版式重製</title>
+<desc id="ws-desc">按教師原稿的直向排列重製，聲響空格位於歌名及各句詩上方，右側保留小提示框，底部保留評估欄。</desc>
+<rect width="1200" height="1700" fill="white"/>
+<g fill="#202b2d" font-family="Songti TC,PMingLiU,serif">
+<rect x="100" y="50" width="1000" height="260" fill="none" stroke="#202b2d" stroke-width="2"/>
+<text x="600" y="100" text-anchor="middle" font-size="36">培基小學</text>
+<text x="285" y="145" font-size="30">2026 至 2027 年度</text>
+<text x="600" y="145" font-size="30">上 冊 用 書</text>
+<text x="800" y="145" font-size="30">音樂科工作紙</text>
+<text x="1050" y="225" font-size="54" text-anchor="middle">♫</text>
+<g font-size="30"><text x="145" y="207">姓名：</text><text x="465" y="207">（</text><text x="532" y="207">）</text><text x="705" y="207">三</text><text x="765" y="207">年級</text><text x="972" y="207">班</text><text x="145" y="272">課題：</text><text x="705" y="272">日期：</text></g>
+<path d="M235 278H555" fill="none" stroke="#202b2d" stroke-width="1.7"/>
+<text x="395" y="269" text-anchor="middle" font-size="30">雨中的聲響</text>
+<text x="100" y="405" font-size="30" font-weight="700">（一）為以下詩歌創作聲響效果，並利用圖像符號記錄在□內。</text>
+<path id="field-name" d="M235 213H455" stroke="#202b2d" stroke-width="1.6"/>
+<path id="field-class" d="M865 213H955" stroke="#202b2d" stroke-width="1.6"/>
+<path id="field-date" d="M780 278H1070" stroke="#202b2d" stroke-width="1.6"/>
+<rect id="field-title" x="210" y="500" width="280" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-1" x="210" y="650" width="400" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-2" x="210" y="800" width="400" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-3" x="210" y="950" width="490" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-4" x="210" y="1100" width="550" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-1" x="800" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-2" x="880" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-3" x="960" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-4" x="1040" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<text x="210" y="605" font-family="Georgia,Times New Roman,serif" font-size="45" font-weight="700">Pitter Patter</text>
+<text x="210" y="755" font-family="Georgia,Times New Roman,serif" font-size="45">Pitter patter pit pat,</text>
+<text x="210" y="905" font-family="Georgia,Times New Roman,serif" font-size="45">Listen to the rain.</text>
+<text x="210" y="1055" font-family="Georgia,Times New Roman,serif" font-size="45">Falling in the garden,</text>
+<text x="210" y="1205" font-family="Georgia,Times New Roman,serif" font-size="45">Running down the pane.</text>
+<polygon points="675,510 735,515 750,472 807,487 850,453 893,487 950,472 970,515 1030,510 1025,550 1090,566 1050,603 1115,628 1060,662 1090,705 1020,718 1018,760 952,755 930,795 872,773 827,806 785,772 725,790 710,750 646,755 653,713 595,696 630,661 580,637 633,609 607,573 673,558" fill="white" stroke="#202b2d" stroke-width="2"/>
+<g text-anchor="middle" font-size="28"><text x="850" y="555" font-size="34" font-weight="700">【小提示】</text>
+<text x="850" y="602">記着你所創作的圖像符號</text>
+<text x="850" y="646">要能反映聲音的特質</text>
+<text x="850" y="690">例如高／低、強／弱、</text>
+<text x="850" y="734">長／短、快／慢等。</text></g>
+<text x="100" y="1340" font-size="31" font-weight="700">（二）試一邊唸詩，一邊按圖像符號為詩歌配上聲響效果，</text>
+<text x="195" y="1392" font-size="31" font-weight="700">聽聽效果如何。</text>
+<text x="800" y="1495" font-size="29">整體表現：</text>
+<rect x="800" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="840" y="1556" font-size="29" text-anchor="middle">優異</text>
+<rect x="880" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="920" y="1556" font-size="29" text-anchor="middle">良好</text>
+<rect x="960" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="1000" y="1556" font-size="29" text-anchor="middle">一般</text>
+<rect x="1040" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="1080" y="1556" font-size="29" text-anchor="middle">加油</text>
+</g>
+</svg>

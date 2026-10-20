@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>小三音樂 第二課 動人的配樂</title>
+<style>
+:root{font-family:"PingFang TC","Microsoft JhengHei",system-ui,sans-serif;color:#143c48;background:#17333c;font-synthesis:none;--teal:#007b83;--orange:#bd512c;--cream:#fffaf0}
+*{box-sizing:border-box}body{margin:0;overflow:hidden}button,input,select{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer;border:2px solid transparent;border-radius:12px;padding:12px 20px;background:#e3efed;color:#143c48;font-size:32px;min-height:62px;font-weight:650}button:hover{filter:brightness(.94)}button:disabled{opacity:.4;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible{outline:5px solid #edaa39;outline-offset:4px}button.primary{background:var(--teal);color:white}button.danger{background:#a42f36;color:white}[hidden]{display:none!important}
+#stage{width:1600px;height:900px;position:absolute;left:50%;top:50%;transform-origin:center;background:var(--cream);overflow:hidden;touch-action:pan-y}
+.slide{position:absolute;inset:0;padding:70px 88px 108px;display:none;flex-direction:column;justify-content:center;gap:30px}.slide.active{display:flex}.slide.blue{background:#e7f3f2}.slide.peach{background:#f9ede1}.slide h1{font-size:92px;line-height:1.2;letter-spacing:-3px;max-width:1200px;margin:0}.slide h2{font-size:64px;line-height:1.25;margin:0;color:#ac432c}.slide p{font-size:42px;line-height:1.55;margin:0}.slide .eyebrow{font-size:32px;color:var(--teal);letter-spacing:3px}.slide .big{font-size:58px;line-height:1.5}.slide .small{font-size:32px;line-height:1.5}.placeholder{border:3px dashed #a2b8b5;padding:44px;text-align:center;font-size:40px;background:#ffffff88;line-height:1.5}.cover-mark{font-size:130px;margin-bottom:14px}.accent{color:var(--teal)}
+#navigation{position:absolute;bottom:23px;right:32px;z-index:10;display:flex;align-items:center;gap:12px}#navigation button{min-width:68px;padding:9px 18px;background:#ffffffdb}#page-number{font-size:32px;min-width:112px;text-align:center}#menu{position:absolute;inset:0;z-index:50;background:#153943f5;color:white;padding:55px 80px;overflow:auto}#menu h2{font-size:52px;margin:0 0 25px}#menu-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}#menu-list button{font-size:32px;text-align:left;padding:13px 24px;background:#f1f7f4;color:#143c48}.menu-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.menu-top button{background:white}
+.score-wrap{display:flex;align-items:center;gap:34px;flex:1;max-height:570px}.score-wrap img{width:1260px;max-height:540px;object-fit:contain;background:#fffef8;border-radius:16px}.motion-arrow{font-size:110px;color:var(--teal);line-height:1}.score-note{display:flex;gap:35px;align-items:center}.examples{display:grid;grid-template-columns:1fr 1fr;gap:22px 60px}.example{display:flex;gap:22px;align-items:center;font-size:42px;padding:8px 0}.example .icon{font-size:60px;width:90px;text-align:center}.symbol-example{border-top:2px solid #c4d6d1;padding-top:24px;font-size:40px}.dots{font-size:68px;letter-spacing:16px;color:var(--teal)}
+.compare{justify-content:flex-start;padding-top:50px;gap:20px}.compare h2{font-size:58px}.compare-row{display:flex;align-items:center;gap:28px;min-height:110px;font-size:38px}.compare-label{width:170px;font-size:38px;font-weight:700}.compare-item{display:flex;align-items:center;gap:22px;flex:1}.hit{display:inline-block;font-size:48px;color:var(--teal)}.hit.strong{font-size:85px}.beat-group{display:flex;gap:18px;align-items:center}.beat-dot{display:inline-block;width:26px;height:26px;background:var(--teal);border-radius:50%}.density-panel{border-top:2px solid #bacfca;padding-top:20px;display:grid;grid-template-columns:180px 1fr;align-items:center;gap:16px;font-size:34px}.beat-cells{display:flex;align-items:center;gap:14px}.beat-cell{display:flex;justify-content:space-evenly;align-items:center;width:96px;height:64px;border-bottom:3px solid #83a6a3}.beat-cell i{width:18px;height:18px;background:var(--teal);border-radius:50%}.beat-cell.fast{width:55px}.comparison-arrow{padding:0 12px;font-size:38px}.compare-question{font-size:36px!important}.rule-lines{display:flex;flex-direction:column;gap:32px}.rule-lines p{font-size:48px}.stop-rule{margin-top:20px;border-top:3px solid #b5cec8;padding-top:26px}.game-link{display:inline-block;width:max-content;background:var(--teal);color:white;text-decoration:none;padding:22px 40px;border-radius:14px;font-size:44px}.game-link[aria-disabled=true]{background:#dce6e4;color:#657b7d;pointer-events:none}.rhythm-images{display:flex;gap:25px;align-items:center;justify-content:center;flex-wrap:wrap}.rhythm-images img{max-width:650px;max-height:420px;object-fit:contain}
+/* 工作紙為重新排製的向量內容；筆跡與熱區均放在獨立圖層。 */
+.worksheet-slide{padding:36px 48px 104px;justify-content:flex-start;gap:14px}.worksheet-slide h2{font-size:52px}.worksheet-layout{display:flex;gap:32px;flex:1;min-height:0}.sheet-space{position:relative;flex:1;min-width:0;display:flex;justify-content:center;align-items:center;background:#e5ece9;border-radius:12px;overflow:hidden}.sheet-frame{position:relative;flex:none}.sheet-frame>img{display:block;width:100%;height:100%;object-fit:contain}.sheet-frame canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.sheet-frame canvas.draw-enabled{pointer-events:auto;touch-action:none;cursor:crosshair}#hotspots{position:absolute;inset:0;pointer-events:none}.hotspot{position:absolute;background:transparent;border:0;border-radius:0;min-height:0;padding:0;pointer-events:auto;touch-action:none}.hotspot:hover,.hotspot:focus-visible{background:#0096b32b;outline:3px solid #00859c}.calibrating .hotspot{border:3px solid #e06425;background:#ffb14726;cursor:move}.hotspot.selected{outline:5px solid #007d9a}.hotspot .box-label{position:absolute;top:-34px;left:0;font-size:27px;background:#173e49;color:white;padding:2px 7px;white-space:nowrap;pointer-events:none}.resize-handle{display:none;position:absolute;right:-13px;bottom:-13px;width:30px;height:30px;background:#e06425;border:3px solid white;border-radius:5px;touch-action:none;cursor:nwse-resize}.calibrating .resize-handle{display:none}.calibrating .hotspot.selected .resize-handle{display:block}.calibrating .box-label{display:none}.calibrating .hotspot.selected .box-label{display:block;z-index:6}.worksheet-side{width:340px;display:flex;flex-direction:column;gap:14px;justify-content:center}.worksheet-side p{font-size:32px}.worksheet-side button{font-size:32px;text-align:left;padding:10px 16px}.worksheet-side .hint{color:#547076;font-size:32px;line-height:1.4}.sheet-toolbar{display:flex;gap:10px;flex-wrap:wrap}.sheet-toolbar button{font-size:32px;min-height:56px;padding:8px 15px}.mode-note{font-size:32px;color:#a34322;min-height:40px}.calibration-tools{display:flex;gap:12px;flex-direction:column}.calibration-active .worksheet-side>:not(#calibration-tools):not(#worksheet-status){display:none}.calibration-tools button{font-size:32px;min-height:55px;padding:6px 15px}
+#zoom{position:absolute;inset:0;z-index:40;background:#102d34ef;display:flex;flex-direction:column;padding:25px 32px;gap:18px;touch-action:none}#zoom-header{display:flex;justify-content:space-between;align-items:center;color:white;font-size:34px}#zoom-workspace{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden}#zoom-frame{position:relative;flex:none;overflow:hidden;background:white}#zoom-image{position:absolute;max-width:none;max-height:none;pointer-events:none}#zoom-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}#draw-tools{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;background:#f8f4e9;padding:12px;border-radius:12px}#draw-tools button{font-size:32px;padding:9px 14px;min-width:60px}.color-button{color:white!important}.color-button[data-color="#171717"]{background:#171717}.color-button[data-color="#1262c4"]{background:#1262c4}.color-button[data-color="#cc2e34"]{background:#cc2e34}.color-button[data-color="#18804a"]{background:#18804a}#draw-tools .chosen{outline:4px solid #eeaa34;outline-offset:-3px}#whole-tools{position:absolute;z-index:5;bottom:16px;left:16px;right:16px;padding:14px;background:#fff9efef;display:flex;gap:9px;justify-content:center;flex-wrap:wrap}#whole-tools button{font-size:32px;min-height:55px;padding:7px 13px}.notice{position:absolute;bottom:92px;left:50%;transform:translateX(-50%);z-index:100;max-width:1300px;background:#143c48;color:white;font-size:32px;padding:15px 25px;border-radius:12px;text-align:center;pointer-events:none}dialog{position:absolute;border:0;border-radius:18px;max-width:900px;width:850px;padding:40px;background:#fffaf0;color:#143c48;font-size:38px}dialog::backdrop{background:#0a242caa}dialog p{margin:0 0 30px;line-height:1.5}.dialog-actions{display:flex;gap:20px;justify-content:flex-end}
+
+/* 第一課插畫延續：插畫放在背景或獨立圖片欄，文字區保留對比。 */
+#p3-l2-title{background:linear-gradient(90deg,rgba(255,250,240,.96) 0%,rgba(255,250,240,.9) 35%,rgba(255,250,240,.22) 65%,rgba(255,250,240,0) 100%),url("assets/garden-rain.png") center/cover}
+#p3-l2-title h1{color:#ad432e;font-size:96px}#p3-l2-title .eyebrow{max-width:760px;font-weight:650}#p3-l2-title .big{font-weight:650}
+#p3-l2-recap-rain{background:linear-gradient(rgba(235,248,245,.88),rgba(235,248,245,.84)),url("assets/garden-rain.png") center/cover;gap:26px}
+#p3-l2-recap-rain .score-wrap{max-height:590px;flex:0 1 auto}#p3-l2-recap-rain .score-wrap img{max-height:570px}
+#p3-l2-transition{background:linear-gradient(90deg,rgba(255,250,240,.98) 0%,rgba(255,250,240,.94) 42%,rgba(255,250,240,.08) 74%),url("assets/window-rain.png") center/cover}
+#p3-l2-transition .big{font-size:58px;max-width:920px;line-height:1.65}
+.exploration-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:42px;align-items:center;min-height:330px}.exploration-layout .examples{grid-template-columns:1fr;gap:7px}.exploration-layout .example{font-size:38px}.exploration-layout .example .icon{font-size:48px;width:64px}.percussion-art{width:100%;height:350px;object-fit:contain;border-radius:22px}
+#p3-l2-rain-exploration{gap:20px}#p3-l2-rain-exploration .symbol-example{font-size:36px;padding-top:16px}#p3-l2-rain-exploration .dots{font-size:54px;letter-spacing:10px}
+#p3-l2-summary{background:linear-gradient(90deg,rgba(255,250,240,.97) 0%,rgba(255,250,240,.93) 58%,rgba(255,250,240,.25) 100%),url("assets/garden-rain.png") center/cover}
+#p3-l2-summary h2{max-width:1250px}#p3-l2-summary p{max-width:1200px}
+.worksheet-slide{padding:32px 34px 102px;gap:14px}.worksheet-layout{gap:22px}.worksheet-side{width:282px}.worksheet-side p,.worksheet-side button{font-size:32px}.worksheet-side button{padding:10px 12px}.sheet-space{background:#e1efeb}.sheet-frame{box-shadow:0 7px 26px #184f4d12}.worksheet-slide h2{margin-left:18px}
+
+
+.worksheet-slot{display:flex;flex:1;min-height:0}.worksheet-slot>.worksheet-layout{width:100%}.worksheet-layout{min-height:0}
+.motion-demo{width:150px;min-width:150px;height:360px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:20px}.motion-demo svg{flex:none;min-height:230px}.motion-demo svg[hidden]{display:block!important;visibility:hidden}.motion-arrow path{fill:none;stroke:#007b83;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}#arrow-head{opacity:0}.motion-controls{display:flex;flex-direction:column;gap:10px;width:140px}.motion-controls button{font-size:32px;min-height:58px;padding:9px 14px}
+#p3-l2-recap-rain .score-wrap{gap:20px}#p3-l2-recap-rain .score-wrap img{width:1245px}
+.worksheet-slide .sheet-space{background:#e9efec}.worksheet-slide .sheet-frame{box-shadow:0 3px 18px #143c4810}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html[data-system-embed] #navigation,html[data-system-embed] #menu{display:none!important}html[data-system-readonly] body{pointer-events:none}
+</style>
+</head>
+<body>
+<main id="stage" aria-label="小三音樂第二課簡報">
+<section class="slide blue active" id="p3-l2-title" data-title="動人的配樂" aria-label="封面">
+ <p class="eyebrow">小三 3D　單元二　音樂的魅力</p><h1>動人的配樂</h1><p class="big accent">第二課</p>
+</section>
+<section class="slide blue" id="p3-l2-recap-rain" data-title="複習 Pitter Patter">
+ <h2>《Pitter Patter》</h2><div class="score-wrap"><img id="book-image" src="assets/pitter-patter-score.svg" alt="Pitter Patter 重繪五線譜"><div class="motion-demo"><svg id="down-arrow" class="motion-arrow" width="150" height="230" viewBox="0 0 150 230" aria-label="由高至低" hidden><path id="arrow-shaft" d="M18 35 L125 185" pathLength="1"/><path id="arrow-head" d="M72 178 L125 185 L135 130" pathLength="1"/></svg><div class="motion-controls"><button id="motion-start" class="primary">開始</button><button id="motion-reset">重設</button></div></div></div>
+</section>
+<section class="slide blue" id="p3-l2-transition" data-title="從歌唱到雨聲">
+ <p class="big">旋律像雨點落下；<br>除了唱，我們還可以用<br><span class="accent">身體的聲音</span>表現雨。</p>
+</section>
+<section class="slide" id="p3-l2-rain-exploration" data-title="雨聲探索">
+ <h2>你想表現怎樣的雨？</h2><div class="exploration-layout"><div class="examples"><div class="example"><span class="icon" aria-hidden="true">🤏</span>手指輕拍掌心</div><div class="example"><span class="icon" aria-hidden="true">🦵</span>輕拍膝蓋</div><div class="example"><span class="icon" aria-hidden="true">🙌</span>手掌互相摩擦</div><div class="example"><span class="icon" aria-hidden="true">🗣</span>口發「滴答」聲</div></div><img class="percussion-art" src="assets/body-percussion.png" alt="小朋友用手指輕拍掌心、拍膝蓋及雙手做出身體聲響"></div>
+ <div class="symbol-example"><span class="dots">• • • •</span> ＝ 兩根手指輕拍掌心（輕而短）</div><p class="small">符號要讓別人看得出怎樣演奏，不用畫得漂亮。<br>合適的聲音可以重複使用。</p>
+</section>
+<section class="slide worksheet-slide" id="p3-l2-worksheet" data-worksheet-page="1" data-title="雨中的聲響 上半頁">
+ <h2>《雨中的聲響》上半頁</h2><div class="worksheet-slot"><div class="worksheet-layout"><div class="sheet-space" id="sheet-space"><div class="sheet-frame" id="sheet-frame"><img id="worksheet-image" src="assets/worksheet-page-1.svg" alt="雨中的聲響 重新排製的課堂工作紙"><canvas id="sheet-ink" aria-hidden="true"></canvas><canvas id="whole-canvas" aria-label="整頁繪畫畫布"></canvas><div id="hotspots"></div></div>
+ <div class="calibration-tools" id="calibration-tools" hidden><button id="add-box">新增格子</button><button id="delete-box">刪除所選</button><button id="export-boxes">匯出 JSON</button><button id="import-boxes">匯入 JSON</button><button id="finish-calibration" class="primary">完成校正</button></div>
+ <div id="whole-tools" hidden><button data-whole="black">黑筆</button><button data-whole="blue">藍筆</button><button data-whole="red">紅筆</button><button data-whole="green">綠筆</button><button data-whole="eraser">橡皮擦</button><button data-whole="undo">復原</button><button data-whole="redo">重做</button><button data-whole="clear">清除此層</button><button data-whole="done" class="primary">完成繪畫</button></div></div>
+ <aside class="worksheet-side"><p>選擇聲響，<br>畫出自己的符號。</p><p class="hint">點一下格子，<br>放大後可直接畫。</p><button id="whole-mode">整頁繪畫 D</button><button id="calibration-mode">校正格子 C</button><button id="export-png">匯出 PNG</button><button id="clear-all">全部清除</button><p class="mode-note" id="worksheet-status" role="status"></p></aside></div></div>
+</section>
+<section class="slide worksheet-slide" id="p3-l2-worksheet-bottom" data-worksheet-page="2" data-title="雨中的聲響 下半頁"><h2>《雨中的聲響》下半頁</h2><div class="worksheet-slot"></div></section>
+<section class="slide blue compare" id="p3-l2-comparison" data-title="比較 力度與速度">
+ <h2>同一種拍擊，聽起來有甚麼不同？</h2>
+ <div class="compare-row"><span class="compare-label">力度</span><div class="compare-item"><span class="hit">●</span><span>輕</span></div><div class="compare-item"><span class="hit strong">●</span><span>強</span></div></div>
+ <div class="compare-row"><span class="compare-label">速度</span><div class="compare-item"><div class="beat-group"><i class="beat-dot"></i><i class="beat-dot"></i><i class="beat-dot"></i><i class="beat-dot"></i></div><span>慢</span><button data-audio="slow">播放</button></div><div class="compare-item"><div class="beat-group"><i class="beat-dot"></i><i class="beat-dot"></i><i class="beat-dot"></i><i class="beat-dot"></i></div><span>快</span><button data-audio="fast">播放</button></div></div>
+ <div class="density-panel"><b>疏／密</b><div class="beat-cells" id="density-diagram"></div><b>速度</b><div class="beat-cells" id="speed-diagram"></div></div>
+ <p class="small">拍得密 ≠ 速度快</p><p class="compare-question">哪一次較像細雨？哪一次較像大雨？</p>
+</section>
+<section class="slide peach" id="p3-l2-recorder-ready" data-title="收拾及直笛準備">
+ <h2>收拾及直笛準備</h2><div class="rule-lines"><p>📄 工作紙收好</p><p>取出直笛，放在桌上</p><p class="accent">未有指示不吹奏</p></div><div class="stop-rule"><p>✋ 老師舉手 → 立即停吹</p><p>直笛放在下巴下的「休息位置」</p></div>
+</section>
+<section class="slide" id="p3-l2-recorder-bag" data-module="recorder-bag" data-title="直笛 B A G 音">
+ <h2>直笛：B、A、G 音</h2><div class="placeholder">〔直笛互動內容：待討論〕</div>
+</section>
+<section class="slide" id="p3-l2-recorder-mary" data-module="recorder-mary" data-title="Mary Had a Little Lamb">
+ <h2>〈Mary Had a Little Lamb〉</h2><div class="placeholder">〔直笛互動內容：待討論〕</div>
+</section>
+<section class="slide blue" id="p3-l2-rhythm-game" data-title="節奏遊戲">
+ <h2>節奏遊戲</h2><a class="game-link" id="rhythm-link" target="_blank" rel="noopener noreferrer" aria-disabled="true">開啟節奏遊戲 ↗</a><p class="small" id="game-placeholder">〔待提供：節奏遊戲網址〕</p>
+</section>
+<section class="slide blue" id="p3-l2-summary" data-title="總結">
+ <h2>今天我們怎樣令聲音<br>更像細雨或大雨？</h2><p>今天我們用自己發出的聲音表現雨景；<br>下一課會聆聽不同音樂，<br>再為圖片選配合適的音樂。</p>
+</section>
+<nav id="navigation" aria-label="投影片導覽"><button id="previous" aria-label="上一頁">‹</button><span id="page-number">1 / 12</span><button id="next" aria-label="下一頁">›</button><button id="menu-open" aria-label="開啟目錄">目錄</button><button id="fullscreen">全螢幕</button></nav>
+<div id="menu" hidden><div class="menu-top"><h2>頁面目錄</h2><button id="menu-close">返回簡報 Esc</button></div><div id="menu-list"></div><p style="font-size:32px">← → 翻頁　F 全螢幕　工作紙頁 C 校正／D 整頁繪畫</p></div>
+<div id="zoom" hidden role="dialog" aria-modal="true" aria-label="格子放大繪畫"><div id="zoom-header"><span id="zoom-title">格子繪畫</span><button id="zoom-close">返回整張</button></div><div id="zoom-workspace"><div id="zoom-frame"><img id="zoom-image" alt="工作紙格子"><canvas id="zoom-canvas" aria-label="格子繪畫畫布"></canvas></div></div><div id="draw-tools"><button class="color-button chosen" data-color="#171717">黑</button><button class="color-button" data-color="#1262c4">藍</button><button class="color-button" data-color="#cc2e34">紅</button><button class="color-button" data-color="#18804a">綠</button><button data-size="3">細</button><button data-size="6" class="chosen">中</button><button data-size="12">粗</button><button id="eraser">橡皮擦</button><button id="undo">復原</button><button id="redo">重做</button><button id="clear-box">清除此格</button></div></div>
+<div id="notice" class="notice" hidden role="status"></div>
+<dialog id="confirm-dialog"><p id="confirm-text"></p><div class="dialog-actions"><button id="confirm-cancel">取消</button><button id="confirm-yes" class="danger">全部清除</button></div></dialog>
+<input type="file" id="boxes-file" accept="application/json,.json" hidden>
+</main>
+<script id="worksheet-template-1" type="image/svg+xml">
+<svg xmlns="http://www.w3.org/2000/svg" width="3240" height="2700" viewBox="80 40 1080 900" role="img" aria-labelledby="ws-title ws-desc">
+<title id="ws-title">雨中的聲響 原稿版式重製</title>
+<desc id="ws-desc">按教師原稿的直向排列重製，聲響空格位於歌名及各句詩上方，右側保留小提示框，底部保留評估欄。</desc>
+<rect width="1200" height="1700" fill="white"/>
+<g fill="#202b2d" font-family="Songti TC,PMingLiU,serif">
+<rect x="100" y="50" width="1000" height="260" fill="none" stroke="#202b2d" stroke-width="2"/>
+<text x="600" y="100" text-anchor="middle" font-size="36">培基小學</text>
+<text x="285" y="145" font-size="30">2026 至 2027 年度</text>
+<text x="600" y="145" font-size="30">上 冊 用 書</text>
+<text x="800" y="145" font-size="30">音樂科工作紙</text>
+<text x="1050" y="225" font-size="54" text-anchor="middle">♫</text>
+<g font-size="30"><text x="145" y="207">姓名：</text><text x="465" y="207">（</text><text x="532" y="207">）</text><text x="705" y="207">三</text><text x="765" y="207">年級</text><text x="972" y="207">班</text><text x="145" y="272">課題：</text><text x="705" y="272">日期：</text></g>
+<path d="M235 278H555" fill="none" stroke="#202b2d" stroke-width="1.7"/>
+<text x="395" y="269" text-anchor="middle" font-size="30">雨中的聲響</text>
+<text x="100" y="405" font-size="30" font-weight="700">（一）為以下詩歌創作聲響效果，並利用圖像符號記錄在□內。</text>
+<path id="field-name" d="M235 213H455" stroke="#202b2d" stroke-width="1.6"/>
+<path id="field-class" d="M865 213H955" stroke="#202b2d" stroke-width="1.6"/>
+<path id="field-date" d="M780 278H1070" stroke="#202b2d" stroke-width="1.6"/>
+<rect id="field-title" x="210" y="500" width="280" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-1" x="210" y="650" width="400" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-2" x="210" y="800" width="400" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-3" x="210" y="950" width="490" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-4" x="210" y="1100" width="550" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-1" x="800" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-2" x="880" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-3" x="960" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-4" x="1040" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<text x="210" y="605" font-family="Georgia,Times New Roman,serif" font-size="45" font-weight="700">Pitter Patter</text>
+<text x="210" y="755" font-family="Georgia,Times New Roman,serif" font-size="45">Pitter patter pit pat,</text>
+<text x="210" y="905" font-family="Georgia,Times New Roman,serif" font-size="45">Listen to the rain.</text>
+<text x="210" y="1055" font-family="Georgia,Times New Roman,serif" font-size="45">Falling in the garden,</text>
+<text x="210" y="1205" font-family="Georgia,Times New Roman,serif" font-size="45">Running down the pane.</text>
+<polygon points="675,510 735,515 750,472 807,487 850,453 893,487 950,472 970,515 1030,510 1025,550 1090,566 1050,603 1115,628 1060,662 1090,705 1020,718 1018,760 952,755 930,795 872,773 827,806 785,772 725,790 710,750 646,755 653,713 595,696 630,661 580,637 633,609 607,573 673,558" fill="white" stroke="#202b2d" stroke-width="2"/>
+<g text-anchor="middle" font-size="28"><text x="850" y="555" font-size="34" font-weight="700">【小提示】</text>
+<text x="850" y="602">記着你所創作的圖像符號</text>
+<text x="850" y="646">要能反映聲音的特質</text>
+<text x="850" y="690">例如高／低、強／弱、</text>
+<text x="850" y="734">長／短、快／慢等。</text></g>
+<text x="100" y="1340" font-size="31" font-weight="700">（二）試一邊唸詩，一邊按圖像符號為詩歌配上聲響效果，</text>
+<text x="195" y="1392" font-size="31" font-weight="700">聽聽效果如何。</text>
+<text x="800" y="1495" font-size="29">整體表現：</text>
+<rect x="800" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="840" y="1556" font-size="29" text-anchor="middle">優異</text>
+<rect x="880" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="920" y="1556" font-size="29" text-anchor="middle">良好</text>
+<rect x="960" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="1000" y="1556" font-size="29" text-anchor="middle">一般</text>
+<rect x="1040" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="1080" y="1556" font-size="29" text-anchor="middle">加油</text>
+</g>
+</svg>
+</script>
+<script id="worksheet-template-2" type="image/svg+xml">
+<svg xmlns="http://www.w3.org/2000/svg" width="3240" height="2280" viewBox="80 925 1080 760" role="img" aria-labelledby="ws-title ws-desc">
+<title id="ws-title">雨中的聲響 原稿版式重製</title>
+<desc id="ws-desc">按教師原稿的直向排列重製，聲響空格位於歌名及各句詩上方，右側保留小提示框，底部保留評估欄。</desc>
+<rect width="1200" height="1700" fill="white"/>
+<g fill="#202b2d" font-family="Songti TC,PMingLiU,serif">
+<rect x="100" y="50" width="1000" height="260" fill="none" stroke="#202b2d" stroke-width="2"/>
+<text x="600" y="100" text-anchor="middle" font-size="36">培基小學</text>
+<text x="285" y="145" font-size="30">2026 至 2027 年度</text>
+<text x="600" y="145" font-size="30">上 冊 用 書</text>
+<text x="800" y="145" font-size="30">音樂科工作紙</text>
+<text x="1050" y="225" font-size="54" text-anchor="middle">♫</text>
+<g font-size="30"><text x="145" y="207">姓名：</text><text x="465" y="207">（</text><text x="532" y="207">）</text><text x="705" y="207">三</text><text x="765" y="207">年級</text><text x="972" y="207">班</text><text x="145" y="272">課題：</text><text x="705" y="272">日期：</text></g>
+<path d="M235 278H555" fill="none" stroke="#202b2d" stroke-width="1.7"/>
+<text x="395" y="269" text-anchor="middle" font-size="30">雨中的聲響</text>
+<text x="100" y="405" font-size="30" font-weight="700">（一）為以下詩歌創作聲響效果，並利用圖像符號記錄在□內。</text>
+<path id="field-name" d="M235 213H455" stroke="#202b2d" stroke-width="1.6"/>
+<path id="field-class" d="M865 213H955" stroke="#202b2d" stroke-width="1.6"/>
+<path id="field-date" d="M780 278H1070" stroke="#202b2d" stroke-width="1.6"/>
+<rect id="field-title" x="210" y="500" width="280" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-1" x="210" y="650" width="400" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-2" x="210" y="800" width="400" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-3" x="210" y="950" width="490" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-line-4" x="210" y="1100" width="550" height="65" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-1" x="800" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-2" x="880" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-3" x="960" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<rect id="field-rating-4" x="1040" y="1570" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/>
+<text x="210" y="605" font-family="Georgia,Times New Roman,serif" font-size="45" font-weight="700">Pitter Patter</text>
+<text x="210" y="755" font-family="Georgia,Times New Roman,serif" font-size="45">Pitter patter pit pat,</text>
+<text x="210" y="905" font-family="Georgia,Times New Roman,serif" font-size="45">Listen to the rain.</text>
+<text x="210" y="1055" font-family="Georgia,Times New Roman,serif" font-size="45">Falling in the garden,</text>
+<text x="210" y="1205" font-family="Georgia,Times New Roman,serif" font-size="45">Running down the pane.</text>
+<polygon points="675,510 735,515 750,472 807,487 850,453 893,487 950,472 970,515 1030,510 1025,550 1090,566 1050,603 1115,628 1060,662 1090,705 1020,718 1018,760 952,755 930,795 872,773 827,806 785,772 725,790 710,750 646,755 653,713 595,696 630,661 580,637 633,609 607,573 673,558" fill="white" stroke="#202b2d" stroke-width="2"/>
+<g text-anchor="middle" font-size="28"><text x="850" y="555" font-size="34" font-weight="700">【小提示】</text>
+<text x="850" y="602">記着你所創作的圖像符號</text>
+<text x="850" y="646">要能反映聲音的特質</text>
+<text x="850" y="690">例如高／低、強／弱、</text>
+<text x="850" y="734">長／短、快／慢等。</text></g>
+<text x="100" y="1340" font-size="31" font-weight="700">（二）試一邊唸詩，一邊按圖像符號為詩歌配上聲響效果，</text>
+<text x="195" y="1392" font-size="31" font-weight="700">聽聽效果如何。</text>
+<text x="800" y="1495" font-size="29">整體表現：</text>
+<rect x="800" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="840" y="1556" font-size="29" text-anchor="middle">優異</text>
+<rect x="880" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="920" y="1556" font-size="29" text-anchor="middle">良好</text>
+<rect x="960" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="1000" y="1556" font-size="29" text-anchor="middle">一般</text>
+<rect x="1040" y="1520" width="80" height="50" fill="none" stroke="#202b2d" stroke-width="2"/><text x="1080" y="1556" font-size="29" text-anchor="middle">加油</text>
+</g>
+</svg>
+</script>
+<script>
+'use strict';
+const worksheetSources={1:document.getElementById('worksheet-template-1').textContent,2:document.getElementById('worksheet-template-2').textContent};
+document.getElementById('worksheet-image').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(worksheetSources[1]);
+// 可由教師修改。熱區座標依重製工作紙的 SVG 幾何精確換算為百分比。
+const TEMPO = { slow: 60, fast: 120 };
+const RHYTHM_GAME_URL = "";
+const BOXES = [
+ {
+  "id": "name",
+  "label": "姓名",
+  "page": 1,
+  "x": 14.351851851851851,
+  "y": 15.11111111111111,
+  "w": 20.37037037037037,
+  "h": 4.111111111111112
+ },
+ {
+  "id": "number",
+  "label": "學號",
+  "page": 1,
+  "x": 38.148148148148145,
+  "y": 15.11111111111111,
+  "w": 2.7777777777777777,
+  "h": 4.111111111111112
+ },
+ {
+  "id": "class",
+  "label": "班別",
+  "page": 1,
+  "x": 72.68518518518519,
+  "y": 15.11111111111111,
+  "w": 8.333333333333332,
+  "h": 4.111111111111112
+ },
+ {
+  "id": "date",
+  "label": "日期",
+  "page": 1,
+  "x": 64.81481481481481,
+  "y": 22.333333333333332,
+  "w": 26.851851851851855,
+  "h": 4.111111111111112
+ },
+ {
+  "id": "title",
+  "label": "Pitter Patter",
+  "page": 1,
+  "x": 12.037037037037036,
+  "y": 51.11111111111111,
+  "w": 25.925925925925924,
+  "h": 7.222222222222221
+ },
+ {
+  "id": "line-1",
+  "label": "Pitter patter pit pat,",
+  "page": 1,
+  "x": 12.037037037037036,
+  "y": 67.77777777777779,
+  "w": 37.03703703703704,
+  "h": 7.222222222222221
+ },
+ {
+  "id": "line-2",
+  "label": "Listen to the rain.",
+  "page": 1,
+  "x": 12.037037037037036,
+  "y": 84.44444444444444,
+  "w": 37.03703703703704,
+  "h": 7.222222222222221
+ },
+ {
+  "id": "line-3",
+  "label": "Falling in the garden,",
+  "page": 2,
+  "x": 12.037037037037036,
+  "y": 3.289473684210526,
+  "w": 45.370370370370374,
+  "h": 8.552631578947368
+ },
+ {
+  "id": "line-4",
+  "label": "Running down the pane.",
+  "page": 2,
+  "x": 12.037037037037036,
+  "y": 23.026315789473685,
+  "w": 50.92592592592593,
+  "h": 8.552631578947368
+ },
+ {
+  "id": "rating-1",
+  "label": "整體表現 優異",
+  "page": 2,
+  "x": 66.66666666666666,
+  "y": 84.86842105263158,
+  "w": 7.4074074074074066,
+  "h": 6.578947368421052
+ },
+ {
+  "id": "rating-2",
+  "label": "整體表現 良好",
+  "page": 2,
+  "x": 74.07407407407408,
+  "y": 84.86842105263158,
+  "w": 7.4074074074074066,
+  "h": 6.578947368421052
+ },
+ {
+  "id": "rating-3",
+  "label": "整體表現 一般",
+  "page": 2,
+  "x": 81.48148148148148,
+  "y": 84.86842105263158,
+  "w": 7.4074074074074066,
+  "h": 6.578947368421052
+ },
+ {
+  "id": "rating-4",
+  "label": "整體表現 加油",
+  "page": 2,
+  "x": 88.88888888888889,
+  "y": 84.86842105263158,
+  "w": 7.4074074074074066,
+  "h": 6.578947368421052
+ }
+];
+const SYSTEM_EMBED=new URLSearchParams(location.search).get('embedded')==='1';
+if(SYSTEM_EMBED){document.documentElement.dataset.systemEmbed='';if(new URLSearchParams(location.search).get('readonly')==='1')document.documentElement.dataset.systemReadonly='';}
+const $=id=>document.getElementById(id), stage=$('stage'),slides=[...document.querySelectorAll('.slide')];
+let current=0,calibration=false,wholeMode=false,selectedBox=null,activeBox=null,stroke=null,penColor='#171717',penWidth=6,erasing=false,clearArmed=false,noticeTimer,confirmAction=null,drawPointer=null;
+let boxes=BOXES.map(b=>({...b}));
+let currentSheetPage=1;
+document.querySelector('.worksheet-side').append($('calibration-tools'));
+// 向量座標均為 0–1，壓感逐點保存。橡皮擦亦為獨立路徑，支援復原／重做。
+const ink=new Map(),wholeInkPages={1:{paths:[],redo:[]},2:{paths:[],redo:[]}};
+let wholeInk=wholeInkPages[1];
+function state(id){if(!ink.has(id))ink.set(id,{paths:[],redo:[]});return ink.get(id)}
+function notify(text){$('notice').textContent=text;$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,2800)}
+function scaleStage(){const s=Math.min(innerWidth/1600,innerHeight/900);stage.style.transform=`translate(-50%,-50%) scale(${s})`;if(sheetReady())fitSheet();if(activeBox)fitZoom()}
+function sheetReady(){return $('worksheet-image').complete&&$('worksheet-image').naturalWidth>0}
+function isWorksheet(){return !!slides[current].dataset.worksheetPage}
+function pageBoxes(){return boxes.filter(box=>box.page===currentSheetPage)}
+function showSlide(n,updateHash=true){
+ if(SYSTEM_EMBED && updateHash){if(n>=0&&n<slides.length&&Math.abs(n-current)===1)parent.postMessage({channel:'p3-l2-system',type:'navigate',delta:n-current},location.origin);return;}
+
+ if(n<0||n>=slides.length)return;
+ closeZoom();finishStroke();setCalibration(false);setWhole(false);stopAudio();resetArrow();
+ slides[current].classList.remove('active');slides[current].setAttribute('aria-hidden','true');
+ current=n;slides[current].classList.add('active');slides[current].setAttribute('aria-hidden','false');
+ $('page-number').textContent=`${n+1} / ${slides.length}`;
+ $('previous').disabled=n===0;$('next').disabled=n===slides.length-1;
+ if(updateHash)history.replaceState(null,'','#'+slides[n].id);
+ if(isWorksheet()){currentSheetPage=+slides[n].dataset.worksheetPage;slides[n].querySelector('.worksheet-slot').append(document.querySelector('.worksheet-layout'));wholeInk=wholeInkPages[currentSheetPage];if($('worksheet-image').dataset.sheetPage!==String(currentSheetPage)){$('worksheet-image').dataset.sheetPage=String(currentSheetPage);$('worksheet-image').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(worksheetSources[currentSheetPage])}requestAnimationFrame(fitSheet)}
+}
+function jumpHash(){const n=slides.findIndex(s=>s.id===location.hash.slice(1));showSlide(n<0?0:n,false)}
+function toggleMenu(open){$('menu').hidden=!open;if(open)$('menu-close').focus()}
+function fullscreen(){if(document.fullscreenElement)document.exitFullscreen().catch(()=>notify('未能離開全螢幕'));else document.documentElement.requestFullscreen?.().catch(()=>notify('此裝置可使用瀏覽器的全螢幕功能'))}
+$('previous').onclick=()=>showSlide(current-1);$('next').onclick=()=>showSlide(current+1);$('fullscreen').onclick=fullscreen;$('menu-open').onclick=()=>toggleMenu(true);$('menu-close').onclick=()=>toggleMenu(false);
+slides.forEach((s,i)=>{s.setAttribute('aria-hidden',i?'true':'false');const b=document.createElement('button');b.textContent=`${i+1}　${s.dataset.title}`;b.onclick=()=>{toggleMenu(false);showSlide(i)};$('menu-list').append(b)});
+window.addEventListener('hashchange',jumpHash);window.addEventListener('resize',scaleStage);
+document.addEventListener('keydown',e=>{
+ if(e.target.matches('input,textarea,select')||e.ctrlKey||e.metaKey||e.altKey)return;
+ if($('confirm-dialog').open)return;
+ if(e.key==='Escape'){e.preventDefault();if(activeBox)closeZoom();else if(calibration)setCalibration(false);else if(wholeMode)setWhole(false);else toggleMenu($('menu').hidden);return}
+ if(!$('menu').hidden||activeBox)return;
+ if(e.key.toLowerCase()==='c'&&isWorksheet()){e.preventDefault();setCalibration(!calibration);return}
+ if(e.key.toLowerCase()==='d'&&isWorksheet()){e.preventDefault();setWhole(!wholeMode);return}
+ if(calibration||wholeMode)return;
+ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();showSlide(current+(e.key==='ArrowRight'?1:-1))}
+ if(e.key.toLowerCase()==='f'){e.preventDefault();fullscreen()}
+});
+let swipe=null;
+function blockedTarget(t){return t.closest('button,a,input,canvas,#menu,#zoom,#sheet-space,dialog')}
+stage.addEventListener('pointerdown',e=>{if(blockedTarget(e.target)||calibration||wholeMode)return;swipe={x:e.clientX,y:e.clientY,id:e.pointerId}});
+stage.addEventListener('pointerup',e=>{if(!swipe||swipe.id!==e.pointerId)return;const {x,y}=swipe;swipe=null;if(blockedTarget(e.target)||activeBox||calibration||wholeMode)return;const dx=e.clientX-x,dy=e.clientY-y;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)showSlide(current+(dx<0?1:-1));else if(Math.abs(dx)<12&&Math.abs(dy)<12){const r=stage.getBoundingClientRect();showSlide(current+(e.clientX<r.left+r.width*.28?-1:1))}});
+stage.addEventListener('pointercancel',()=>swipe=null);
+// 複習直接沿用上一課重繪五線譜。
+
+let arrowAnimations=[];
+function resetArrow(){arrowAnimations.forEach(a=>a.cancel());arrowAnimations=[];$('down-arrow').setAttribute('hidden','');$('motion-start').textContent='開始'}
+function startArrow(){resetArrow();$('down-arrow').removeAttribute('hidden');$('motion-start').textContent='重播';const duration=matchMedia('(prefers-reduced-motion: reduce)').matches?250:1400;arrowAnimations.push($('arrow-shaft').animate([{strokeDashoffset:'1'},{strokeDashoffset:'0'}],{duration,fill:'forwards',easing:'ease-in-out'}));arrowAnimations.push($('arrow-head').animate([{opacity:0,strokeDashoffset:'1'},{opacity:1,strokeDashoffset:'0'}],{duration:350,delay:Math.max(0,duration-250),fill:'forwards'}))}
+$('motion-start').onclick=startArrow;$('motion-reset').onclick=resetArrow;
+
+if(RHYTHM_GAME_URL){$('rhythm-link').href=RHYTHM_GAME_URL;$('rhythm-link').removeAttribute('aria-disabled');$('game-placeholder').hidden=true}
+// 節拍示範只用於比較頁，停止或翻頁時會立即終止。
+let audioContext=null,audioNodes=[],audioTimers=[],playingButton=null;
+function stopAudio(){document.querySelectorAll('.beat-dot').forEach(d=>d.style.background='');audioTimers.forEach(clearTimeout);audioTimers=[];audioNodes.forEach(n=>{try{n.stop()}catch{}});audioNodes=[];if(playingButton)playingButton.textContent='播放';playingButton=null}
+async function playBeat(mode,button){if(playingButton===button){stopAudio();return}stopAudio();try{audioContext??=new(window.AudioContext||window.webkitAudioContext)();await audioContext.resume();playingButton=button;button.textContent='停止';const interval=60/TEMPO[mode],start=audioContext.currentTime+.08;for(let i=0;i<8;i++){const osc=audioContext.createOscillator(),gain=audioContext.createGain(),t=start+i*interval;osc.type='triangle';osc.frequency.setValueAtTime(700,t);gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.3,t+.003);gain.gain.exponentialRampToValueAtTime(.0001,t+.07);osc.connect(gain).connect(audioContext.destination);osc.start(t);osc.stop(t+.08);audioNodes.push(osc);audioTimers.push(setTimeout(()=>{const dots=button.parentElement.querySelectorAll('.beat-dot');dots.forEach(d=>d.style.background='');dots[i%4].style.background='#c2542b'},(t-audioContext.currentTime)*1000))}audioTimers.push(setTimeout(()=>{button.parentElement.querySelectorAll('.beat-dot').forEach(d=>d.style.background='');stopAudio()},(8*interval+.1)*1000))}catch{stopAudio();notify('此瀏覽器未能播放節拍聲')}}
+document.querySelectorAll('[data-audio]').forEach(b=>b.onclick=()=>playBeat(b.dataset.audio,b));
+function cells(count,hits,fast=false){return Array.from({length:count},()=>`<span class="beat-cell${fast?' fast':''}">${'<i></i>'.repeat(hits)}</span>`).join('')}
+$('density-diagram').innerHTML=`${cells(3,1)}<span class="comparison-arrow">→</span>${cells(3,2)}<span>拍子不變</span>`;
+$('speed-diagram').innerHTML=`${cells(3,1)}<span class="comparison-arrow">→</span>${cells(3,1,true)}<span>每拍一下，拍子加快</span>`;
+// 工作紙佈局
+function fitSheet(){if(!sheetReady()||!isWorksheet())return;const im=$('worksheet-image'),space=$('sheet-space'),ratio=im.naturalWidth/im.naturalHeight;const w=Math.min(space.clientWidth-36,(space.clientHeight-26)*ratio),h=w/ratio;$('sheet-frame').style.width=w+'px';$('sheet-frame').style.height=h+'px';sizeCanvas($('sheet-ink'),w,h);sizeCanvas($('whole-canvas'),w,h);renderSheet();renderHotspots()}
+function sizeCanvas(c,w,h){const dpr=Math.max(2,window.devicePixelRatio||1);c.width=Math.round(w*dpr);c.height=Math.round(h*dpr)}
+function renderPaths(c,paths,clear=true){const ctx=c.getContext('2d',{willReadFrequently:true});if(clear){if(ctx.reset)ctx.reset();else{c.width=c.width}}ctx.lineCap='round';ctx.lineJoin='round';for(const path of paths){const pts=path.points;if(!pts.length)continue;ctx.globalCompositeOperation=path.erase?'destination-out':'source-over';ctx.strokeStyle=path.color;ctx.fillStyle=path.color;for(let i=0;i<pts.length;i++){const p=pts[i],prev=pts[Math.max(0,i-1)],width=path.width/1000*c.width*(p.pressure||1);ctx.lineWidth=width;if(i===0){ctx.beginPath();ctx.arc(p.x*c.width,p.y*c.height,width/2,0,Math.PI*2);ctx.fill()}else{ctx.beginPath();ctx.moveTo(prev.x*c.width,prev.y*c.height);ctx.lineTo(p.x*c.width,p.y*c.height);ctx.stroke()}}}ctx.globalCompositeOperation='source-over'}
+function renderSheet(){const c=$('sheet-ink'),ctx=c.getContext('2d',{willReadFrequently:true});ctx.clearRect(0,0,c.width,c.height);for(const box of pageBoxes()){const paths=state(box.id).paths;if(!paths.length)continue;const off=document.createElement('canvas');off.width=Math.max(1,Math.round(c.width*box.w/100));off.height=Math.max(1,Math.round(c.height*box.h/100));renderPaths(off,paths);ctx.drawImage(off,c.width*box.x/100,c.height*box.y/100,c.width*box.w/100,c.height*box.h/100)}renderPaths($('whole-canvas'),wholeInk.paths)}
+function renderHotspots(){const host=$('hotspots');host.replaceChildren();host.hidden=wholeMode;for(const box of pageBoxes()){const b=document.createElement('button');b.className='hotspot'+(selectedBox===box.id?' selected':'');b.dataset.box=box.id;b.setAttribute('aria-label','放大 '+box.label);Object.assign(b.style,{left:box.x+'%',top:box.y+'%',width:box.w+'%',height:box.h+'%'});if(calibration){const label=document.createElement('span');label.className='box-label';label.textContent=box.label;b.append(label)}const handle=document.createElement('span');handle.className='resize-handle';handle.setAttribute('aria-hidden','true');b.append(handle);b.addEventListener('click',e=>{e.stopPropagation();if(!calibration)openZoom(box);else{selectedBox=box.id;renderHotspots()}});b.addEventListener('pointerdown',e=>beginBoxDrag(e,box,b,e.target===handle));host.append(b)}}
+function setCalibration(on){if(on&&!sheetReady())return;finishStroke();if(on)setWhole(false);calibration=on;$('sheet-space').classList.toggle('calibrating',on);document.querySelector('.worksheet-layout').classList.toggle('calibration-active',on);$('calibration-tools').hidden=!on;$('worksheet-status').textContent=on?'拖動外框；拖右下角調整大小。':'';renderHotspots()}
+function setWhole(on){if(on&&!sheetReady())return;finishStroke();if(on)setCalibration(false);wholeMode=on;$('whole-canvas').classList.toggle('draw-enabled',on);$('whole-tools').hidden=!on;$('worksheet-status').textContent=on?'整頁繪畫中，翻頁手勢已停用。':'';renderHotspots()}
+function beginBoxDrag(e,box,button,resize){if(!calibration)return;e.stopPropagation();e.preventDefault();selectedBox=box.id;button.classList.add('selected');const r=$('sheet-frame').getBoundingClientRect(),start={x:e.clientX,y:e.clientY,bx:box.x,by:box.y,w:box.w,h:box.h};button.setPointerCapture(e.pointerId);const move=ev=>{const dx=(ev.clientX-start.x)/r.width*100,dy=(ev.clientY-start.y)/r.height*100;if(resize){box.w=Math.max(.5,Math.min(100-box.x,start.w+dx));box.h=Math.max(.5,Math.min(100-box.y,start.h+dy))}else{box.x=Math.max(0,Math.min(100-box.w,start.bx+dx));box.y=Math.max(0,Math.min(100-box.h,start.by+dy))}Object.assign(button.style,{left:box.x+'%',top:box.y+'%',width:box.w+'%',height:box.h+'%'});renderSheet()};const up=()=>{button.removeEventListener('pointermove',move);button.removeEventListener('pointerup',up);button.removeEventListener('pointercancel',up);renderHotspots()};button.addEventListener('pointermove',move);button.addEventListener('pointerup',up);button.addEventListener('pointercancel',up)}
+$('whole-mode').onclick=()=>setWhole(!wholeMode);$('calibration-mode').onclick=()=>setCalibration(!calibration);$('finish-calibration').onclick=()=>setCalibration(false);
+$('add-box').onclick=()=>{const id='custom-'+Date.now();boxes.push({id,label:'新增格子',page:currentSheetPage,x:35,y:45,w:25,h:5});selectedBox=id;renderHotspots()};
+$('delete-box').onclick=()=>{if(!selectedBox){notify('請先選取一個熱區');return}const id=selectedBox;confirm('刪除所選熱區及該格筆跡？',()=>{boxes=boxes.filter(b=>b.id!==id);ink.delete(id);selectedBox=null;renderHotspots();renderSheet()},'刪除熱區')};
+function download(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)}
+$('export-boxes').onclick=()=>download(new Blob([JSON.stringify(boxes.map(b=>({...b,x:+b.x.toFixed(3),y:+b.y.toFixed(3),w:+b.w.toFixed(3),h:+b.h.toFixed(3)})),null,2)],{type:'application/json'}),'worksheet-boxes.json');
+$('import-boxes').onclick=()=>$('boxes-file').click();$('boxes-file').onchange=async e=>{try{const list=JSON.parse(await e.target.files[0].text());if(!Array.isArray(list)||!list.length||list.some(b=>![1,2].includes(b.page)||typeof b.id!=='string'||!/^[-a-zA-Z0-9_]+$/.test(b.id)||typeof b.label!=='string'||!['x','y','w','h'].every(k=>typeof b[k]==='number'&&Number.isFinite(b[k]))||b.x<0||b.y<0||b.w<=0||b.h<=0||b.x+b.w>100||b.y+b.h>100)||new Set(list.map(b=>b.id)).size!==list.length)throw Error();boxes=list.map(b=>({id:b.id,label:b.label,page:b.page,x:b.x,y:b.y,w:b.w,h:b.h}));selectedBox=null;renderHotspots();renderSheet();notify('已載入熱區座標')}catch{notify('JSON 格式不正確，原有座標已保留')}e.target.value=''};
+// 放大同一份向量工作紙，保持格子內容與筆跡的比例。
+function openZoom(box){finishStroke();activeBox=box;clearArmed=false;$('clear-box').textContent='清除此格';$('zoom').hidden=false;$('zoom-title').textContent=box.label;$('zoom-image').src=$('worksheet-image').src;requestAnimationFrame(fitZoom);$('zoom-close').focus();refreshTools()}
+function fitZoom(){if(!activeBox)return;const box=activeBox,im=$('worksheet-image'),space=$('zoom-workspace'),ratio=(im.naturalWidth*box.w)/(im.naturalHeight*box.h),w=Math.min(space.clientWidth-20,(space.clientHeight-20)*ratio),h=w/ratio;Object.assign($('zoom-frame').style,{width:w+'px',height:h+'px'});Object.assign($('zoom-image').style,{width:w*100/box.w+'px',height:h*100/box.h+'px',left:-w*box.x/box.w+'px',top:-h*box.y/box.h+'px'});sizeCanvas($('zoom-canvas'),w,h);renderPaths($('zoom-canvas'),state(box.id).paths)}
+function closeZoom(){if(!activeBox)return;finishStroke();const old=activeBox.id;activeBox=null;$('zoom').hidden=true;renderSheet();document.querySelector(`[data-box="${old}"]`)?.focus()}
+$('zoom-close').onclick=closeZoom;
+function point(e,c){const r=c.getBoundingClientRect();return{x:Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)),y:Math.max(0,Math.min(1,(e.clientY-r.top)/r.height)),pressure:e.pointerType==='pen'&&e.pressure>0?Math.max(.2,e.pressure*1.8):1}}
+function drawingState(c){return c.id==='zoom-canvas'&&activeBox?state(activeBox.id):wholeInk}
+function bindCanvas(c){c.addEventListener('pointerdown',e=>{if(drawPointer!==null||(!activeBox&&c.id==='zoom-canvas')||(!wholeMode&&c.id==='whole-canvas'))return;e.preventDefault();e.stopPropagation();clearArmed=false;$('clear-box').textContent='清除此格';const s=drawingState(c);s.redo=[];stroke={color:penColor,width:penWidth,erase:erasing,points:[point(e,c)]};s.paths.push(stroke);drawPointer=e.pointerId;c.setPointerCapture(e.pointerId);renderPaths(c,s.paths);refreshTools()});c.addEventListener('pointermove',e=>{if(!stroke||drawPointer!==e.pointerId)return;e.preventDefault();e.stopPropagation();const samples=e.getCoalescedEvents?.();for(const ev of samples?.length?samples:[e])stroke.points.push(point(ev,c));renderPaths(c,drawingState(c).paths)});for(const type of ['pointerup','pointercancel','lostpointercapture'])c.addEventListener(type,e=>{if(drawPointer!==e.pointerId)return;e.preventDefault();e.stopPropagation();finishStroke()});c.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});c.addEventListener('wheel',e=>e.preventDefault(),{passive:false})}
+function finishStroke(){stroke=null;drawPointer=null;if(sheetReady())renderSheet();refreshTools()}
+bindCanvas($('zoom-canvas'));bindCanvas($('whole-canvas'));
+function refreshTools(){const s=activeBox?state(activeBox.id):wholeInk;$('undo').disabled=!s.paths.length;$('redo').disabled=!s.redo.length;document.querySelectorAll('[data-color]').forEach(b=>b.classList.toggle('chosen',!erasing&&b.dataset.color===penColor));document.querySelectorAll('[data-size]').forEach(b=>b.classList.toggle('chosen',+b.dataset.size===penWidth));$('eraser').classList.toggle('chosen',erasing)}
+function undo(s){finishStroke();if(s.paths.length)s.redo.push(s.paths.pop());redraw()}
+function redo(s){finishStroke();if(s.redo.length)s.paths.push(s.redo.pop());redraw()}
+function redraw(){if(activeBox)renderPaths($('zoom-canvas'),state(activeBox.id).paths);renderSheet();refreshTools()}
+document.querySelectorAll('[data-color]').forEach(b=>b.onclick=()=>{penColor=b.dataset.color;erasing=false;refreshTools()});document.querySelectorAll('[data-size]').forEach(b=>b.onclick=()=>{penWidth=+b.dataset.size;refreshTools()});$('eraser').onclick=()=>{erasing=!erasing;refreshTools()};$('undo').onclick=()=>{if(activeBox)undo(state(activeBox.id))};$('redo').onclick=()=>{if(activeBox)redo(state(activeBox.id))};$('clear-box').onclick=()=>{if(!activeBox)return;if(!clearArmed){clearArmed=true;$('clear-box').textContent='再按一次清除';return}const s=state(activeBox.id);s.paths=[];s.redo=[];clearArmed=false;$('clear-box').textContent='清除此格';redraw()};
+document.querySelectorAll('[data-whole]').forEach(b=>b.onclick=()=>{const action=b.dataset.whole;if(action==='done')setWhole(false);else if(action==='undo')undo(wholeInk);else if(action==='redo')redo(wholeInk);else if(action==='clear')confirm('清除整頁繪畫層？格子內的筆跡會保留。',()=>{wholeInk.paths=[];wholeInk.redo=[];redraw()},'清除此層');else if(action==='eraser')erasing=!erasing;else{penColor={black:'#171717',blue:'#1262c4',red:'#cc2e34',green:'#18804a'}[action];erasing=false}refreshTools()});
+function confirm(text,fn,label='全部清除'){finishStroke();confirmAction=fn;$('confirm-text').textContent=text;$('confirm-yes').textContent=label;$('confirm-dialog').showModal()}
+$('confirm-cancel').onclick=()=>{$('confirm-dialog').close();confirmAction=null};$('confirm-yes').onclick=()=>{const fn=confirmAction;confirmAction=null;$('confirm-dialog').close();fn?.()};$('confirm-dialog').addEventListener('cancel',()=>confirmAction=null);
+$('clear-all').onclick=()=>confirm('清除上下兩頁的所有筆跡，供下一班使用？',()=>{ink.clear();Object.values(wholeInkPages).forEach(s=>{s.paths=[];s.redo=[]});redraw();notify('已清除所有筆跡')});
+function exportWorksheetPNG(){if(!sheetReady())return;const im=$('worksheet-image'),c=document.createElement('canvas');const exportScale=Math.min(1,3840/Math.max(im.naturalWidth,im.naturalHeight));c.width=Math.round(im.naturalWidth*exportScale);c.height=Math.round(im.naturalHeight*exportScale);const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(im,0,0,c.width,c.height);for(const box of pageBoxes()){const off=document.createElement('canvas');off.width=Math.max(1,Math.round(c.width*box.w/100));off.height=Math.max(1,Math.round(c.height*box.h/100));renderPaths(off,state(box.id).paths);ctx.drawImage(off,c.width*box.x/100,c.height*box.y/100,c.width*box.w/100,c.height*box.h/100)}const whole=document.createElement('canvas');whole.width=c.width;whole.height=c.height;renderPaths(whole,wholeInk.paths);ctx.drawImage(whole,0,0);try{c.toBlob(blob=>{if(blob)download(blob,`雨中的聲響_第${currentSheetPage}頁_筆跡.png`)},'image/png')}catch(error){notify('未能匯出圖片，筆跡仍然保留')}}
+$('export-png').onclick=exportWorksheetPNG;
+$('worksheet-image').onload=fitSheet;$('worksheet-image').onerror=()=>{$('worksheet-status').textContent='工作紙未能載入，請重新開啟簡報。'};
+// 日後可在兩頁接入獨立模組；現階段不加入功能。
+function initRecorderBag() {}
+function initRecorderMary() {}
+scaleStage();jumpHash();
+if(SYSTEM_EMBED){
+ const actions={
+  'arrow-start':()=>{if(slides[current].id==='p3-l2-recap-rain')startArrow()},
+  'arrow-reset':resetArrow,
+  'beat-slow':()=>{if(slides[current].id==='p3-l2-comparison')document.querySelector('[data-audio="slow"]')?.click()},
+  'beat-fast':()=>{if(slides[current].id==='p3-l2-comparison')document.querySelector('[data-audio="fast"]')?.click()},
+  'beat-stop':stopAudio
+ };
+ window.addEventListener('message',event=>{
+  if(event.origin!==location.origin||event.source!==parent||event.data?.channel!=='p3-l2-system')return;
+  const message=event.data;
+  if(message.type==='slide'){const n=slides.findIndex(slide=>slide.id===message.id);if(n>=0&&n!==current){showSlide(n,false);history.replaceState(null,'','#'+slides[n].id)}}
+  if(message.type==='action'&&message.slideId===slides[current].id&&Object.hasOwn(actions,message.action))actions[message.action]();
+ });
+ document.addEventListener('keydown',event=>{
+  if(event.target.closest('input,textarea,select')||event.repeat||event.ctrlKey||event.metaKey||event.altKey)return;
+  if(activeBox||calibration||wholeMode||$('confirm-dialog').open)return;
+  if(['ArrowLeft','ArrowRight',' '].includes(event.key)){
+   event.preventDefault();event.stopImmediatePropagation();
+   parent.postMessage({channel:'p3-l2-system',type:'navigate',delta:event.key==='ArrowLeft'?-1:1},location.origin);
+  }
+ },true);
+ parent.postMessage({channel:'p3-l2-system',type:'ready'},location.origin);
+}
+
+</script>
+</body>
+</html>
