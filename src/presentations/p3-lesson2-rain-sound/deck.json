@@ -85,16 +85,62 @@
     {
       "id": "p3-l2-recorder-bag",
       "title": "直笛 B A G 音",
-      "notes": "兩頁僅佔位。待討論後再加入各頁的獨立模組。按現有教案，先教 B、A、G，再教 Mary Had a Little Lamb。現階段不加指法圖、樂譜或互動功能。",
+      "notes": "逐一教 B、A、G：按「顯示 B／A／G 指法」，投影直笛會標出要按的孔（拇指在背面）並播放該音。先無聲做指法，再跟老師吹。\n然後按「開始」：數 4 拍後，音符方塊向左移到紅線時吹奏；直笛圖同步顯示指法，右邊圓形顯示目前及下一個音。\n第一次開「示範聲音」聽一聽，之後關掉聲音讓學生自己吹。速度可轉換慢／中／快。\n練習次序可在 assets/recorder-game.js 的 SONGS.bag 修改。\n觀察：拇指是否蓋好背孔、手指是否用指腹蓋滿孔、吹氣是否輕。",
       "media": [],
-      "actions": []
+      "actions": [
+        {
+          "id": "rec-show-b",
+          "label": "顯示 B 指法"
+        },
+        {
+          "id": "rec-show-a",
+          "label": "顯示 A 指法"
+        },
+        {
+          "id": "rec-show-g",
+          "label": "顯示 G 指法"
+        },
+        {
+          "id": "rec-play",
+          "label": "開始／暫停"
+        },
+        {
+          "id": "rec-restart",
+          "label": "重新開始"
+        },
+        {
+          "id": "rec-tempo",
+          "label": "轉換速度"
+        },
+        {
+          "id": "rec-sound",
+          "label": "示範聲音 開／關"
+        }
+      ]
     },
     {
       "id": "p3-l2-recorder-mary",
       "title": "Mary Had a Little Lamb",
-      "notes": "兩頁僅佔位。待討論後再加入各頁的獨立模組。按現有教案，先教 B、A、G，再教 Mary Had a Little Lamb。現階段不加指法圖、樂譜或互動功能。",
+      "notes": "先開「示範聲音」播放一次，學生跟着唱 Ma-ry had a lit-tle lamb 並做指法；再關掉聲音全班吹奏，可先用「慢」速。\n音符方塊下有歌詞；長方塊＝長音（2 拍或 4 拍），要吹滿。\n此版本只用 B、A、G：第三句用 B B B 代替原曲較高的音。\n觀察：換 B→A→G 時手指是否同時移動，長音是否吹滿拍子，老師舉手時是否立即停吹。",
       "media": [],
-      "actions": []
+      "actions": [
+        {
+          "id": "rec-play",
+          "label": "開始／暫停"
+        },
+        {
+          "id": "rec-restart",
+          "label": "重新開始"
+        },
+        {
+          "id": "rec-tempo",
+          "label": "轉換速度"
+        },
+        {
+          "id": "rec-sound",
+          "label": "示範聲音 開／關"
+        }
+      ]
     },
     {
       "id": "p3-l2-rhythm-game",

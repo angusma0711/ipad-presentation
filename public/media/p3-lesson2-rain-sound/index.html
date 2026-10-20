@@ -37,6 +37,7 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 html[data-system-embed] #navigation,html[data-system-embed] #menu{display:none!important}html[data-system-readonly] body{pointer-events:none}
 </style>
+<link rel="stylesheet" href="assets/recorder-game.css">
 </head>
 <body>
 <main id="stage" aria-label="小三音樂第二課簡報">
@@ -70,10 +71,10 @@ html[data-system-embed] #navigation,html[data-system-embed] #menu{display:none!i
 <section class="slide peach" id="p3-l2-recorder-ready" data-title="收拾及直笛準備">
  <h2>收拾及直笛準備</h2><div class="rule-lines"><p>📄 工作紙收好</p><p>取出直笛，放在桌上</p><p class="accent">未有指示不吹奏</p></div><div class="stop-rule"><p>✋ 老師舉手 → 立即停吹</p><p>直笛放在下巴下的「休息位置」</p></div>
 </section>
-<section class="slide" id="p3-l2-recorder-bag" data-module="recorder-bag" data-title="直笛 B A G 音">
+<section class="slide" id="p3-l2-recorder-bag" data-module="recorder-bag" data-heading="直笛：B、A、G 音" data-title="直笛 B A G 音">
  <h2>直笛：B、A、G 音</h2><div class="friendly"><div class="note-names"><span>B</span><span>A</span><span>G</span></div><p>看老師示範，再一起吹 🎶</p></div>
 </section>
-<section class="slide" id="p3-l2-recorder-mary" data-module="recorder-mary" data-title="Mary Had a Little Lamb">
+<section class="slide" id="p3-l2-recorder-mary" data-module="recorder-mary" data-heading="〈Mary Had a Little Lamb〉" data-title="Mary Had a Little Lamb">
  <h2>〈Mary Had a Little Lamb〉</h2><div class="friendly"><div class="friendly-icon" aria-hidden="true">🐑</div><p>用 B、A、G 吹這首歌<br>先聽一聽，再跟老師吹</p></div>
 </section>
 <section class="slide blue" id="p3-l2-rhythm-game" data-title="節奏遊戲">
@@ -187,6 +188,7 @@ html[data-system-embed] #navigation,html[data-system-embed] #menu{display:none!i
 </g>
 </svg>
 </script>
+<script src="assets/recorder-game.js"></script>
 <script>
 'use strict';
 const worksheetSources={1:document.getElementById('worksheet-template-1').textContent,2:document.getElementById('worksheet-template-2').textContent};
@@ -333,7 +335,7 @@ function showSlide(n,updateHash=true){
  if(SYSTEM_EMBED && updateHash){if(n>=0&&n<slides.length&&Math.abs(n-current)===1)parent.postMessage({channel:'p3-l2-system',type:'navigate',delta:n-current},location.origin);return;}
 
  if(n<0||n>=slides.length)return;
- closeZoom();finishStroke();setCalibration(false);setWhole(false);stopAudio();resetArrow();
+ RecorderGame.stopAll();closeZoom();finishStroke();setCalibration(false);setWhole(false);stopAudio();resetArrow();
  slides[current].classList.remove('active');slides[current].setAttribute('aria-hidden','true');
  current=n;slides[current].classList.add('active');slides[current].setAttribute('aria-hidden','false');
  $('page-number').textContent=`${n+1} / ${slides.length}`;
@@ -417,8 +419,10 @@ function exportWorksheetPNG(){if(!sheetReady())return;const im=$('worksheet-imag
 $('export-png').onclick=exportWorksheetPNG;
 $('worksheet-image').onload=fitSheet;$('worksheet-image').onerror=()=>{$('worksheet-status').textContent='工作紙未能載入，請重新開啟簡報。'};
 // 日後可在兩頁接入獨立模組；現階段不加入功能。
-function initRecorderBag() {}
-function initRecorderMary() {}
+function initRecorderBag(){RecorderGame.mount($('p3-l2-recorder-bag'),'bag')}
+function initRecorderMary(){RecorderGame.mount($('p3-l2-recorder-mary'),'mary')}
+initRecorderBag();initRecorderMary();
+const recorder=()=>RecorderGame.find(slides[current]);
 scaleStage();jumpHash();
 if(SYSTEM_EMBED){
  const actions={
@@ -426,7 +430,14 @@ if(SYSTEM_EMBED){
   'arrow-reset':resetArrow,
   'beat-slow':()=>{if(slides[current].id==='p3-l2-comparison')document.querySelector('[data-audio="slow"]')?.click()},
   'beat-fast':()=>{if(slides[current].id==='p3-l2-comparison')document.querySelector('[data-audio="fast"]')?.click()},
-  'beat-stop':stopAudio
+  'beat-stop':stopAudio,
+  'rec-play':()=>recorder()?.play(),
+  'rec-restart':()=>recorder()?.restart(),
+  'rec-tempo':()=>recorder()?.cycleTempo(),
+  'rec-sound':()=>recorder()?.toggleSound(),
+  'rec-show-b':()=>recorder()?.show('B'),
+  'rec-show-a':()=>recorder()?.show('A'),
+  'rec-show-g':()=>recorder()?.show('G')
  };
  window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==parent||event.data?.channel!=='p3-l2-system')return;
