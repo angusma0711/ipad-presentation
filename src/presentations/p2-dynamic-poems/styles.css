@@ -238,3 +238,16 @@
 .dp-deck .dp-follow-rhythm .dp-cell{font-size:1em}
 .dp-deck .dp-follow-beats i.dp-playing,.dp-deck .dp-preparation i.dp-playing{background:var(--dp-coral);color:white;box-shadow:0 0 0 .18em #ffd76d}
 .dp-deck .dp-follow-rhythm>div.dp-playing{background:#ffd76d;color:#183f4a}
+
+/* Projector legibility: enlarge the dense full-poem and comparison layouts. */
+.dp-deck .dp-version .dp-lines{font-size:.64em;gap:.3em}
+.dp-deck .dp-version .dp-line{padding:.22em .1em;gap:.35em}
+.dp-deck .dp-follow-row{font-size:.64em;margin:.18em auto;padding:.12em .5em;max-width:94%}
+.dp-deck .dp-follow-rhythm .dp-cell small{font-size:.6em}
+.dp-deck .dp-instrument{display:inline-flex;align-items:center;gap:.2em;vertical-align:middle;white-space:nowrap}
+.dp-deck .dp-instrument img{width:2.2em;height:2em;object-fit:contain}
+.dp-deck #dp-groups{padding:3% 4%}
+.dp-deck #dp-groups .dp-table{font-size:.82em}
+.dp-deck #dp-groups .dp-table td,.dp-deck #dp-groups .dp-table th{padding:.3em .4em}
+.dp-deck .dp-enable-beat{position:absolute;right:3%;bottom:2%;z-index:5;font-size:.65em;min-height:0;padding:.4em .8em;background:#ffd76d}
+.dp-deck .dp-enable-beat[hidden]{display:none}

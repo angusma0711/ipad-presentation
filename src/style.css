@@ -59,3 +59,13 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 .lesson-ended{color:#fff;text-align:center}.lesson-ended h1{font-size:clamp(36px,6vw,96px);margin:0 0 16px}.lesson-ended p{font-size:clamp(20px,3vw,44px)}
 .deck-loading,.page-loading{color:#9fb3bd;font-size:20px;text-align:center;padding:40px}
 .preview-page{max-width:1100px}
+
+/* Readable controller controls and non-interactive next-slide thumbnail. */
+.navigator button{font-size:18px;min-height:54px}
+.controller-header-tools button,.tools-section button,.preview-card button{font-size:18px}
+.next-slide-card .preview-frame{pointer-events:none}
+.next-slide-card h2{font-size:22px}
+
+.shell{font-size:18px}
+.slide-content>h2{font-size:clamp(24px,4cqw,64px)}
+.slide-content>p,.slide-content>ul>li{font-size:clamp(16px,3cqw,46px)}

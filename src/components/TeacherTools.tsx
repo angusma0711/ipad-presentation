@@ -7,8 +7,8 @@ import { changeGroup, setScoresVisible, setPointer, editAnnotations, configureMe
 import type { Deck, DeckMedia } from '../presentations/types';
 import { PresentationView } from './PresentationView';
 import type { Tool } from './AnnotationLayer';
-type Props={deck:Deck;id:string;slide:number;disabled:boolean;teaching:ReturnType<typeof useTeaching>};
-export function TeacherTools({deck,id,slide,disabled,teaching}:Props){
+type Props={mode?:'slide'|'general';deck:Deck;id:string;slide:number;disabled:boolean;teaching:ReturnType<typeof useTeaching>};
+export function TeacherTools({mode,deck,id,slide,disabled,teaching}:Props){
  const [tool,setTool]=useState<Tool>('none');const [color,setColor]=useState('#e63946');
  const [busy,setBusy]=useState(false);const lock=useRef(false);const [error,setError]=useState('');
  const lessonSlide=deck.slides[slide]; const suggested=lessonSlide.media[0]; const Controls=deck.plugin.Controls;
@@ -42,9 +42,12 @@ export function TeacherTools({deck,id,slide,disabled,teaching}:Props){
  const status=teaching.media ? (teaching.feedback?.commandId===teaching.media.commandId ? teaching.feedback.status : '等待投影回應') : '未設定';
  const statusText:Record<string,string>={ready:'已就緒',playing:'播放中',paused:'已暫停',ended:'播放完畢',blocked:'播放被阻擋',error:'播放失敗'};
  return <>
+  {mode!=='general'&&<>
   {Controls&&<Controls deck={deck} index={slide} state={teaching.interaction} disabled={unavailable} change={patch=>void perform(()=>changeInteraction(id,slide,patch))} playMedia={playMedia}/>}
   {suggested&&<section className="card"><h2>此頁教材媒體</h2><div className="tool-bar"><button className="primary" disabled={unavailable} onClick={()=>playMedia(suggested)}>播放</button><button disabled={unavailable||!teaching.media} onClick={()=>void perform(()=>commandMedia(id,slide,'pause'))}>暫停</button></div><p className="small" role="status">播放狀態：{statusText[String(status)]??status}。聲音由投影電腦播放。</p></section>}
-  {lessonSlide.actions.length>0&&<section className="card"><h2>此頁動畫</h2><div className="tool-bar">{lessonSlide.actions.map(action=><button key={action.id} disabled={unavailable} onClick={()=>void perform(()=>commandSlideAction(id,slide,action.id))}>{action.label}</button>)}</div></section>}
+  {lessonSlide.actions.length>0&&<section className="card"><h2>投影片功能</h2><div className="tool-bar">{lessonSlide.actions.map(action=><button key={action.id} disabled={unavailable} onClick={()=>void perform(()=>commandSlideAction(id,slide,action.id))}>{action.label}</button>)}</div></section>}
+  </>}
+  {mode!=='slide'&&<>
   <section className="card preview-card"><h2>投影片預覽與標記</h2><div className="tool-bar" role="group" aria-label="預覽工具">
    {([['none','瀏覽'],['pointer','紅點 Pointer'],['pen','畫線／圈選']] as const).map(([value,label])=><button key={value} disabled={disabled} aria-pressed={tool===value} onClick={()=>setTool(value)}>{label}</button>)}
   </div>{tool==='pen'&&<div className="tool-bar" role="group" aria-label="畫筆顏色">{[['#e63946','紅色'],['#176b60','綠色'],['#1b4fc4','藍色']].map(([value,label])=><button key={value} disabled={unavailable} aria-pressed={color===value} onClick={()=>setColor(value)}>{label}</button>)}</div>}
@@ -67,6 +70,7 @@ export function TeacherTools({deck,id,slide,disabled,teaching}:Props){
     <button className="primary" disabled={unavailable}>將媒體加入此頁</button>
    </form><p className="small">本機檔案請先放入專案的 public/media 資料夾，再輸入 /media/檔案名稱。示範音訊：/media/demo-beat.wav。聲音由投影電腦播放；若被阻擋，請在該電腦按播放鍵。</p>
   </details>
+  </>}
   {(error||teaching.error)&&<p className="error" role="alert">{error||teaching.error}</p>}
  </>;
 }
