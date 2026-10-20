@@ -251,3 +251,10 @@
 .dp-deck #dp-groups .dp-table td,.dp-deck #dp-groups .dp-table th{padding:.3em .4em}
 .dp-deck .dp-enable-beat{position:absolute;right:3%;bottom:2%;z-index:5;font-size:.65em;min-height:0;padding:.4em .8em;background:#ffd76d}
 .dp-deck .dp-enable-beat[hidden]{display:none}
+
+/* The ensemble repeats each group's instrument choices beside its lyric. */
+.dp-deck #dp-ensemble{padding:3% 4%}
+.dp-deck #dp-ensemble .dp-ensemble li{display:grid;grid-template-columns:6.4em 1fr 12em;gap:.45em;align-items:center;padding:.22em .35em}
+.dp-deck #dp-ensemble .dp-ensemble-instruments{font-size:.58em;display:flex;align-items:center;justify-content:flex-end;gap:.15em;white-space:nowrap}
+.dp-deck #dp-ensemble .dp-ensemble-instruments .dp-instrument img{width:2em;height:1.8em}
+.dp-deck #dp-ensemble .dp-group-tag{font-size:.5em}
