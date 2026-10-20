@@ -55,9 +55,15 @@ service cloud.firestore {
       && data.points is int && data.points >= 0 && data.points <= 9999;
     }
     function groups(data) {
-     return key == 'groups' && data.keys().hasOnly(['g0','g1','g2','g3','visible','updatedAt'])
-      && data.keys().hasAll(['g0','g1','g2','g3','visible','updatedAt'])
-      && group(data.g0) && group(data.g1) && group(data.g2) && group(data.g3)
+     return key == 'groups' && data.keys().hasOnly(['g0','g1','g2','g3','g4','g5','g6','g7','visible','updatedAt'])
+      && data.keys().hasAll(['g0','visible','updatedAt']) && group(data.g0)
+      && (!('g1' in data) || (group(data.g1)))
+      && (!('g2' in data) || ('g1' in data && group(data.g2)))
+      && (!('g3' in data) || ('g2' in data && group(data.g3)))
+      && (!('g4' in data) || ('g3' in data && group(data.g4)))
+      && (!('g5' in data) || ('g4' in data && group(data.g5)))
+      && (!('g6' in data) || ('g5' in data && group(data.g6)))
+      && (!('g7' in data) || ('g6' in data && group(data.g7)))
       && data.visible is bool;
     }
     function pointer(data) {

@@ -13,23 +13,43 @@ async function changeTeaching(id:string,key:string,change:(data:Record<string,un
  const ref = await reference(id,key); const db = await database();
  await runTransaction(db,async tx => {const snapshot=await tx.get(ref);tx.set(ref,{...change(snapshot.exists()?snapshot.data():null),updatedAt:serverTimestamp()});});
 }
+export const MAX_GROUPS = 8;
+function groupData(state: GroupsState): Record<string, unknown> {
+ return {visible:state.visible,...Object.fromEntries(state.groups.map((group,index)=>[`g${index}`,group]))};
+}
 export async function changeGroup(id:string,index:number,change:{delta:number}|{name:string}) {
- if (!Number.isInteger(index) || index<0 || index>3) throw new Error('小組索引無效。');
  await changeTeaching(id,'groups',data=>{
   const state=readGroups(data);const groups=state.groups.map(group=>({...group}));
+  if (!Number.isInteger(index) || !groups[index]) throw new Error('小組已變更，請重新選擇。');
   if ('delta' in change) groups[index].points=Math.max(0,Math.min(9999,groups[index].points+change.delta));
   else {const name=change.name.trim();if(!name || name.length>24)throw new Error('組名需要 1–24 個字。');groups[index].name=name;}
-  return {visible:state.visible,g0:groups[0],g1:groups[1],g2:groups[2],g3:groups[3]};
+  return groupData({...state,groups});
+ });
+}
+export async function addGroup(id:string) {
+ await changeTeaching(id,'groups',data=>{
+  const state=readGroups(data);
+  if(state.groups.length>=MAX_GROUPS)throw new Error(`最多 ${MAX_GROUPS} 組。`);
+  let number=1;while(state.groups.some(group=>group.name===`第 ${number} 組`))number++;
+  return groupData({...state,groups:[...state.groups,{name:`第 ${number} 組`,points:0}]});
+ });
+}
+export async function removeGroup(id:string,index:number) {
+ await changeTeaching(id,'groups',data=>{
+  const state=readGroups(data);
+  if(state.groups.length<=1)throw new Error('最少保留 1 組。');
+  if(!Number.isInteger(index)||!state.groups[index])throw new Error('小組已變更，請重新選擇。');
+  return groupData({...state,groups:state.groups.filter((_,i)=>i!==index)});
  });
 }
 export function readGroups(data:Record<string,unknown>|null):GroupsState {
  if(!data)return defaultGroups();
- const groups=[data.g0,data.g1,data.g2,data.g3] as Group[];
- if(groups.some(group=>!group || typeof group.name!=='string' || group.name.length>24 || !Number.isInteger(group.points) || group.points<0 || group.points>9999))return defaultGroups();
+ const groups=Array.from({length:MAX_GROUPS},(_,i)=>data[`g${i}`]).filter(group=>group!==undefined) as Group[];
+ if(!groups.length||groups.some(group=>!group||typeof group.name!=='string'||!group.name.trim()||group.name.length>24||!Number.isInteger(group.points)||group.points<0||group.points>9999))return defaultGroups();
  return {groups,visible:data.visible===true};
 }
 export async function setScoresVisible(id:string,visible:boolean) {
- await changeTeaching(id,'groups',data=>{const state=readGroups(data);return {visible,g0:state.groups[0],g1:state.groups[1],g2:state.groups[2],g3:state.groups[3]};});
+ await changeTeaching(id,'groups',data=>groupData({...readGroups(data),visible}));
 }
 export async function setPointer(id:string,pointer:PointerState) {await fastWrite(`sessions/${id}/teaching/pointer`,{...pointer});}
 // Writes the whole stroke list in one request (no read first), so the newest drawing always wins.

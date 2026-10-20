@@ -3,7 +3,7 @@ import type { FormEvent } from 'react';
 import type { useTeaching } from '../services/useTeaching';
 import type { MediaKind, PointerState, Stroke } from '../types/teaching';
 import { mediaSource } from '../types/teaching';
-import { changeGroup, setScoresVisible, setPointer, configureMedia, commandMedia, commandSlideAction, changeInteraction } from '../services/teachingService';
+import { addGroup, removeGroup, MAX_GROUPS, changeGroup, setScoresVisible, setPointer, configureMedia, commandMedia, commandSlideAction, changeInteraction } from '../services/teachingService';
 import type { Deck, DeckMedia } from '../presentations/types';
 import { PresentationView } from './PresentationView';
 import { useAnnotationSync } from '../services/useAnnotationSync';
@@ -49,11 +49,12 @@ export function TeacherTools({mode,deck,id,slide,disabled,teaching}:Props){
    <p className="small">{tool==='pointer'?'按住或拖曳顯示紅點；放開後消失。':tool==='pen'?'在預覽畫線或圈選；畫的途中同步至投影。':'預覽與投影使用相同比例。選擇工具後可直接在預覽操作。'}</p>
    <div className="tool-bar"><button disabled={!annotations.strokes.length} onClick={annotations.undo}>復原上一筆</button><button disabled={!annotations.strokes.length} onClick={()=>{if(window.confirm('清除這張投影片的所有標記？'))annotations.clear();}}>清除此頁標記</button><span className={`sync-state sync-${annotations.sync}`} role="status">{syncLabel}</span></div>{annotations.full&&<p className="small">此頁已有 30 條標記，請先復原或清除。</p>}
   </section>
-  <details className="card tools-section" open><summary>小組積分</summary><p className="small">投影只顯示各組總分；修改組名後按儲存。</p>
+  <details className="card tools-section" open><summary>小組積分</summary><p className="small">可設定 1–8 組；修改組名後按儲存。新增小組從 0 分開始，其他小組積分保留。</p>
    <button disabled={unavailable} aria-pressed={teaching.groups.visible} onClick={()=>void perform(()=>setScoresVisible(id,!teaching.groups.visible))}>{teaching.groups.visible?'隱藏投影積分':'顯示投影積分'}</button>
+   <div className="tool-bar"><strong>目前 {teaching.groups.groups.length} 組</strong><button disabled={unavailable||teaching.groups.groups.length>=MAX_GROUPS} onClick={()=>void perform(()=>addGroup(id))}>新增小組</button></div>
    <div className="groups-list">{teaching.groups.groups.map((group,i)=><div className="group-row" key={i}>
     <form key={group.name} onSubmit={event=>{event.preventDefault();const form=new FormData(event.currentTarget);void perform(()=>changeGroup(id,i,{name:String(form.get('name'))}));}}><label className="sr-only" htmlFor={`group-${i}`}>第 {i+1} 組名稱</label><input id={`group-${i}`} name="name" defaultValue={group.name} maxLength={24} required disabled={unavailable}/><button disabled={unavailable}>儲存</button></form>
-    <strong aria-label={`${group.name}總分`}>{group.points}</strong><button aria-label={`${group.name}減一分`} disabled={unavailable||group.points===0} onClick={()=>void perform(()=>changeGroup(id,i,{delta:-1}))}>−1</button><button className="primary" aria-label={`${group.name}加一分`} disabled={unavailable||group.points===9999} onClick={()=>void perform(()=>changeGroup(id,i,{delta:1}))}>+1</button>
+    <strong aria-label={`${group.name}總分`}>{group.points}</strong><button aria-label={`${group.name}減一分`} disabled={unavailable||group.points===0} onClick={()=>void perform(()=>changeGroup(id,i,{delta:-1}))}>−1</button><button className="primary" aria-label={`${group.name}加一分`} disabled={unavailable||group.points===9999} onClick={()=>void perform(()=>changeGroup(id,i,{delta:1}))}>+1</button><button className="remove-group" aria-label={`刪除${group.name}`} disabled={unavailable||teaching.groups.groups.length<=1} onClick={()=>{if(window.confirm(`刪除「${group.name}」及其 ${group.points} 分？其他小組的積分會保留。`))void perform(()=>removeGroup(id,i));}}>刪除小組</button>
    </div>)}</div>
   </details>
   <details className="card tools-section"><summary>此頁音訊／影片</summary><p role="status">播放狀態：{statusText[String(status)]??status}</p>

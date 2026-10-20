@@ -70,3 +70,12 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 .slide-content>h2{font-size:clamp(24px,4cqw,64px)}
 .slide-content>p,.slide-content>ul>li{font-size:clamp(16px,3cqw,46px)}
 .sync-state{align-self:center;font-size:15px;color:#176b60}.sync-syncing{color:#49616a}.sync-retrying{color:#a04b0f;font-weight:700}
+
+/* Group count can vary without squeezing names or touch targets. */
+.group-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid #d7e0e4}
+.group-row form{display:flex;flex:1 1 100%;gap:8px}
+.group-row form input{min-width:0;flex:1}
+.group-row .remove-group{margin-left:auto;color:#a32e2e}
+.score-strip{flex-wrap:wrap;gap:.7cqw 2%;padding:.6% 3%}
+.score-strip>div{flex:1 1 20%;max-width:23%}
+.slide.with-scores{padding-bottom:12%}
