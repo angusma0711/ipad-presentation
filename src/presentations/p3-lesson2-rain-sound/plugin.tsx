@@ -12,7 +12,7 @@ function Slide({ deck, index }: { deck: Deck; index: number }) {
  const seen = useRef('');
  const current = useRef(index); current.current = index;
  const readonly = /(?:^|[\/#])control(?:\/|$)/.test(location.pathname + location.hash);
- const initial = useRef(deckAsset('./index.html', deck.assetBase) + '?embedded=1' + (readonly ? '&readonly=1' : '') + '#' + deck.slides[index].id);
+ const initial = useRef(deckAsset('./index.html', deck.assetBase) + '?embedded=1&v=' + encodeURIComponent(String(deck.data.revision ?? '1')) + (readonly ? '&readonly=1' : '') + '#' + deck.slides[index].id);
  function send(message: Record<string, unknown>) {
   frame.current?.contentWindow?.postMessage({ channel: CHANNEL, ...message }, location.origin);
  }
