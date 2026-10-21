@@ -39,7 +39,7 @@ html[data-system-embed] #navigation,html[data-system-embed] #menu{display:none!i
 /* In the classroom system, drawing comes only from the iPad controller, so the worksheet's own pens are hidden. */
 html[data-system-embed] .worksheet-side,html[data-system-embed] #hotspots,html[data-system-embed] #whole-tools,html[data-system-embed] #zoom{display:none!important}html[data-system-readonly] body{pointer-events:none}
 </style>
-<link rel="stylesheet" href="assets/recorder-game.css?v=recorder-notes-2">
+<link rel="stylesheet" href="assets/recorder-game.css?v=mary-score-1">
 </head>
 <body>
 <main id="stage" aria-label="小三音樂第二課簡報">
@@ -193,7 +193,7 @@ html[data-system-embed] .worksheet-side,html[data-system-embed] #hotspots,html[d
 </g>
 </svg>
 </script>
-<script src="assets/recorder-game.js?v=recorder-notes-2"></script>
+<script src="assets/recorder-game.js?v=mary-score-1"></script>
 <script>
 'use strict';
 const worksheetSources={1:document.getElementById('worksheet-template-1').textContent,2:document.getElementById('worksheet-template-2').textContent};
@@ -443,7 +443,8 @@ if(SYSTEM_EMBED){
   'rec-sound':()=>recorder()?.toggleSound(),
   'rec-show-b':()=>recorder()?.show('B'),
   'rec-show-a':()=>recorder()?.show('A'),
-  'rec-show-g':()=>recorder()?.show('G')
+  'rec-show-g':()=>recorder()?.show('G'),
+  'rec-score':()=>recorder()?.toggleScore()
  };
  window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==parent||event.data?.channel!=='p3-l2-system')return;

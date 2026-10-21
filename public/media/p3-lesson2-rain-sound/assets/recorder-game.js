@@ -16,7 +16,7 @@
   mary: { title: 'Mary Had a Little Lamb', notes: [
    ['B', 1, 'Ma'], ['A', 1, 'ry'], ['G', 1, 'had'], ['A', 1, 'a'], ['B', 1, 'lit'], ['B', 1, 'tle'], ['B', 2, 'lamb,'],
    ['A', 1, 'lit'], ['A', 1, 'tle'], ['A', 2, 'lamb,'], ['B', 1, 'lit'], ['B', 1, 'tle'], ['B', 2, 'lamb,'],
-   ['B', 1, 'Ma'], ['A', 1, 'ry'], ['G', 1, 'had'], ['A', 1, 'a'], ['B', 1, 'lit'], ['B', 1, 'tle'], ['B', 1, 'lamb,'], ['B', 1, 'its'],
+   ['B', 1, 'Ma'], ['A', 1, 'ry'], ['G', 1, 'had'], ['A', 1, 'a'], ['B', 1, 'lit'], ['B', 1, 'tle'], ['B', 2, 'lamb,'],
    ['A', 1, 'fleece'], ['A', 1, 'was'], ['B', 1, 'white'], ['A', 1, 'as'], ['G', 4, 'snow.']] },
  };
  const TEMPOS = [{ label: '慢', bpm: 60 }, { label: '中', bpm: 80 }, { label: '快', bpm: 100 }];
@@ -58,7 +58,8 @@
   section.classList.add('rec-slide');
   section.innerHTML = `<div class="rec-head"><h2>${section.dataset.heading}</h2><p class="rec-status" aria-live="polite">按「開始」</p><div class="rec-controls">
     <button type="button" class="primary" data-rec="play">▶ 開始</button><button type="button" data-rec="restart">↺ 重來</button>
-    <button type="button" data-rec="tempo">速度：中</button><button type="button" data-rec="sound" aria-pressed="true">🔊 示範</button></div></div>
+    <button type="button" data-rec="tempo">速度：中</button><button type="button" data-rec="sound" aria-pressed="true">🔊 示範</button>${songId === 'mary' ? '<button type="button" data-rec="score" aria-pressed="true">跟奏畫面</button>' : ''}</div></div>
+   ${songId === 'mary' ? '<figure class="rec-score-panel"><img src="assets/mary-had-a-little-lamb-score.svg?v=mary-score-1" alt="瑪莉有隻小綿羊：教師原稿重繪五線譜，四四拍，八小節，音名 B、A、G"></figure>' : ''}
    <div class="rec-progress"><span></span></div>
    <div class="rec-lane"><div class="rec-rows">${ROWS.map(r => `<button type="button" class="rec-row-label" data-show="${r}" style="--c:${NOTES[r].color}">${r}</button>`).join('')}</div>
     <div class="rec-window"><div class="rec-hit"></div><div class="rec-blocks">${notes.map((n, i) => `<div class="rec-block" data-i="${i}" style="--c:${NOTES[n.name].color};--d:${NOTES[n.name].dark};top:${ROWS.indexOf(n.name) * 33.333}%;width:${n.beats * PX_PER_BEAT - 12}px"><b>${n.name}</b>${n.lyric ? `<small>${n.lyric}</small>` : ''}</div>`).join('')}</div></div></div>
@@ -106,7 +107,17 @@
    if (position >= total) { stop(); position = total; draw(); setStatus('完成！🎉'); q('[data-rec="play"]').textContent = '▶ 開始'; return; }
    frame = requestAnimationFrame(tick);
   }
+  function setScore(on) {
+   if (songId !== 'mary') return;
+   if (on && playing) pause();
+   section.classList.toggle('rec-score-view', on);
+   const button = q('[data-rec="score"]');
+   button.textContent = on ? '跟奏畫面' : '查看樂譜';
+   button.setAttribute('aria-pressed', String(on));
+  }
+  function toggleScore() { setScore(!section.classList.contains('rec-score-view')); }
   async function play() {
+   setScore(false);
    if (playing) { pause(); return; }
    shown = null;
    if (position >= total) position = -COUNT_IN;
@@ -135,11 +146,13 @@
    const button = event.target.closest('button'); if (!button) return;
    if (button.dataset.rec === 'play') play(); else if (button.dataset.rec === 'restart') restart();
    else if (button.dataset.rec === 'tempo') cycleTempo(); else if (button.dataset.rec === 'sound') toggleSound();
+   else if (button.dataset.rec === 'score') toggleScore();
    else if (button.dataset.show) show(button.dataset.show);
    else if (button.classList.contains('rec-enable')) audio?.resume().then(() => { button.hidden = audio.state === 'running'; });
   });
   draw();
-  const game = { section, play, restart, cycleTempo, toggleSound, show, stop: () => { if (playing) pause(); } };
+  if (songId === 'mary') { section.classList.add('rec-mary'); setScore(true); }
+  const game = { section, play, restart, cycleTempo, toggleSound, toggleScore, show, stop: () => { if (playing) pause(); } };
   games.push(game);
   return game;
  }

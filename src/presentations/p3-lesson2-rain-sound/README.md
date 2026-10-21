@@ -17,3 +17,7 @@ iPad 的「此頁教學互動」可開始／重設下行箭頭，以及播放慢
 在現有 `p3-l2-recorder-bag` 跟奏頁前新增三頁 `p3-l2-recorder-note-b`、`p3-l2-recorder-note-a`、`p3-l2-recorder-note-g`。沿用 recorder-game.js 的同一直笛 SVG 及按孔資料，分開顯示正面及背面（拇指孔）視圖，移除所有可見文字，只以按孔顏色顯示指法；教師標題及 notes 保留音名。三頁不自動發聲，不改動現有跟奏功能。
 
 第 9–11 頁加入對應的高音譜號五線譜及音名：B 第三線、A 第二間、G 第二線（由下往上數）。Bravura 音樂字型沿用既有授權，放在同頁 assets 內；指法圖仍分正面及背面，音符顏色與按孔顏色一致。
+
+## Mary 原稿樂譜
+
+第 13 頁預設顯示教師 IMG_5628.heic 的原生向量重繪樂譜（assets/mary-had-a-little-lamb-score.svg），兩行八小節、4/4、B A G 音名、原有時值與換氣記號，未嵌入照片。樂譜／跟奏可由本頁按鈕或 iPad action 切換；開始跟奏會顯示跟奏畫面。第六小節的跟奏已與原稿 BB二分B 對齊。

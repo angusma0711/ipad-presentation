@@ -5,3 +5,5 @@
 - worksheet-boxes.json：依兩頁實際矩形座標換算，含 13 個百分比熱區及頁碼。
 - pitter-patter-score.svg：沿用第一課最終版簡報的重繪五線譜，來源為 /Users/hingyinma/Desktop/Block Practice/3D_Music_Slides/assets/images/pitter-patter-score.svg。既有 Bravura 字型已內嵌於 SVG。字型授權見 Bravura-LICENSE.txt。
 - garden-rain.png、window-rain.png、body-percussion.png：沿用教師第一課簡報已有的插畫，來源為 /Users/hingyinma/Desktop/Block Practice/3D_Music_Slides/assets/images/。
+
+- mary-had-a-little-lamb-score.svg：依教師提供 IMG_5628.heic 逐音重繪，高音譜號、四四拍、八小節、音名及換氣記號；原稿沒有歌詞。Bravura 音樂字型內嵌，授權見 Bravura-LICENSE.txt。

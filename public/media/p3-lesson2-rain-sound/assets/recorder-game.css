@@ -44,3 +44,13 @@
 .rec-staff-lines{stroke:#78949b;stroke-width:2.2}
 .rec-music-glyph{font-family:RecNotation;fill:#143c48}
 .rec-pitch-name{font-family:Georgia,serif;font-size:84px;font-weight:700}
+
+/* The supplied score is the default Mary view; play-along remains available. */
+.rec-score-panel{display:none;width:100%;height:610px;margin:0;flex:none}
+.rec-score-panel img{display:block;width:100%;height:100%;object-fit:contain}
+.rec-mary .rec-head h2{font-size:42px}
+.rec-mary .rec-status{display:none}
+.rec-mary .rec-controls{gap:8px}
+.rec-mary .rec-controls button{font-size:24px;padding:8px 13px}
+.rec-mary.rec-score-view .rec-score-panel{display:block}
+.rec-mary.rec-score-view .rec-progress,.rec-mary.rec-score-view .rec-lane,.rec-mary.rec-score-view .rec-bottom{display:none}
