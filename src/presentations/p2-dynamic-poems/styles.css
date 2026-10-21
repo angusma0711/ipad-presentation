@@ -277,3 +277,30 @@
 
 /* Reveal notation independently, keeping the lyric and layout visible. */
 .dp-deck .dp-reading-phrase:not(.dp-rhythm-shown) .dp-cell img,.dp-deck .dp-reading-phrase:not(.dp-rhythm-shown) .dp-cell small{visibility:hidden}
+
+/* Book p.17: lyrics flank three rhythm cards, with room to draw connections. */
+.dp-deck .dp-book-match{padding:3% 5%;align-items:stretch}
+.dp-deck .dp-book-match .dp-copy{display:flex;flex-direction:column;min-height:0}
+.dp-deck .dp-book-match h2{font-size:1.45em;margin:0 0 .12em}
+.dp-deck .dp-match-instruction{font-size:.72em;margin:0 0 .5em}
+.dp-deck .dp-match-board{display:grid;grid-template-columns:1fr 1.15fr 1fr;column-gap:10%;flex:1;min-height:0;align-items:stretch}
+.dp-deck .dp-match-words{display:flex;flex-direction:column;justify-content:space-around;font-size:1.15em;font-weight:750;line-height:1.15;color:#365c78}
+.dp-deck .dp-match-word{display:flex;align-items:center;justify-content:space-between;gap:.45em;white-space:nowrap}
+.dp-deck .dp-match-word i{width:.22em;height:.22em;border-radius:50%;background:currentColor;flex:none}
+.dp-deck .dp-match-right{padding:1.2em 0}
+.dp-deck .dp-match-right .dp-match-word{flex-direction:row-reverse}
+.dp-deck .dp-book-match .dp-cards{flex-direction:column;justify-content:space-around;gap:.5em;margin:0}
+.dp-deck .dp-book-match .dp-card{padding:.3em .45em;border-radius:.8em;font-size:1em;box-shadow:none;border:2px solid #fff9;position:relative}
+.dp-deck .dp-book-match .dp-card:before,.dp-deck .dp-book-match .dp-card:after{content:"";position:absolute;top:50%;width:.22em;height:.22em;background:#365c78;border-radius:50%}
+.dp-deck .dp-book-match .dp-card:before{left:-.6em}
+.dp-deck .dp-book-match .dp-card:after{right:-.6em}
+.dp-deck .dp-book-match .dp-card:nth-child(1){background:#dfebc4}
+.dp-deck .dp-book-match .dp-card:nth-child(2){background:#f6d7d2}
+.dp-deck .dp-book-match .dp-card:nth-child(3){background:#ffecaf}
+.dp-deck .dp-book-match .dp-card-no{font-size:.45em;left:.4em;top:.2em;color:#365c78}
+.dp-deck .dp-book-match .dp-line{margin:0;gap:.35em}
+.dp-deck .dp-book-match .dp-cell{min-width:1.4em}
+.dp-deck .dp-book-match .dp-cell.dp-titi{min-width:2.3em}
+.dp-deck .dp-book-match .dp-cell img{height:1.4em}
+.dp-deck .dp-book-match .dp-cell b{display:none}
+.dp-deck .dp-match-ending{font-size:.55em;margin:.45em 0 0;color:#6c4850;text-align:right}
