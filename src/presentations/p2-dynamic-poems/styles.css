@@ -271,3 +271,6 @@
 .dp-deck .dp-reading-phrase .dp-reading-lyrics{font-size:1.1em;font-weight:750;margin:0 0 .2em}
 .dp-deck .dp-reading-phrase .dp-line{font-size:.85em;justify-content:flex-start;gap:.7em;margin:0}
 .dp-deck .dp-reading-page .dp-listen-question{width:47%;right:2%;bottom:2%}
+
+.dp-deck .dp-reading-phrase .dp-line{font-size:1.05em;padding:.25em 0}
+.dp-deck #dp-fast-slow .dp-fs-row:first-child .dp-cell.dp-half{grid-column:2 / span 2}
