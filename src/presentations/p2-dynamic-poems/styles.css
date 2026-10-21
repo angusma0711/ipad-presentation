@@ -274,3 +274,6 @@
 
 .dp-deck .dp-reading-phrase .dp-line{font-size:1.05em;padding:.25em 0}
 .dp-deck #dp-fast-slow .dp-fs-row:first-child .dp-cell.dp-half{grid-column:2 / span 2}
+
+/* Reveal notation independently, keeping the lyric and layout visible. */
+.dp-deck .dp-reading-phrase:not(.dp-rhythm-shown) .dp-cell img,.dp-deck .dp-reading-phrase:not(.dp-rhythm-shown) .dp-cell small{visibility:hidden}

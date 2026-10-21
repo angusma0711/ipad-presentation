@@ -112,7 +112,8 @@ function attach(root: HTMLElement) {
   clearInterval(countdown); show(); countdown = window.setInterval(show, 250);
  }
  function act(action: string) {
-  if (action === 'beat-play') playBeat();
+  if (/^reveal-rhythm-[12]$/.test(action)) slide!.querySelector(`[data-reading-phrase="${action.slice(-1)}"]`)?.classList.toggle('dp-rhythm-shown');
+  else if (action === 'beat-play') playBeat();
   else if (action === 'beat-stop') stopBeat();
   else if (action === 'beat-reset') stopBeat(true);
   else if (action === 'reveal-question') slide!.classList.toggle('dp-question-shown');
