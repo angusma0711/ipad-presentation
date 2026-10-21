@@ -64,3 +64,12 @@ export function smoothPath(points: Point[]) {
  return d + `L${end[0]},${end[1]}`;
 }
 export const roundPoint = (point: Point): Point => ({ x: Math.round(point.x * 10000) / 10000, y: Math.round(point.y * 10000) / 10000 });
+
+export type ClassroomTimer = {visible:boolean;running:boolean;duration:number;remaining:number;endsAt:number;x:number;y:number;width:number};
+export const defaultTimer = ():ClassroomTimer => ({visible:false,running:false,duration:180,remaining:180,endsAt:0,x:.72,y:.04,width:.24});
+export function readTimer(data:Record<string,unknown>|null):ClassroomTimer {
+ const fallback=defaultTimer();if(!data)return fallback;
+ if(typeof data.visible!=='boolean'||typeof data.running!=='boolean'||!Number.isInteger(data.duration)||Number(data.duration)<1||Number(data.duration)>5999||!Number.isFinite(data.remaining)||Number(data.remaining)<0||Number(data.remaining)>5999||!Number.isFinite(data.endsAt)||Number(data.endsAt)<0||!Number.isFinite(data.x)||!Number.isFinite(data.y)||!Number.isFinite(data.width)||Number(data.width)<.15||Number(data.width)>.5||Number(data.x)<0||Number(data.x)>1-Number(data.width)||Number(data.y)<0||Number(data.y)>.98-Number(data.width)*.75)return fallback;
+ return data as unknown as ClassroomTimer;
+}
+export const timerRemaining=(timer:ClassroomTimer)=>timer.running?Math.max(0,(timer.endsAt-Date.now())/1000):timer.remaining;

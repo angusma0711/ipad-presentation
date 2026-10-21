@@ -79,3 +79,14 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 .score-strip{flex-wrap:wrap;gap:.7cqw 2%;padding:.6% 3%}
 .score-strip>div{flex:1 1 20%;max-width:23%}
 .slide.with-scores{padding-bottom:12%}
+
+.classroom-timer{position:absolute;z-index:12;aspect-ratio:2.4;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;background:#173c43;color:#fff;border:.2cqw solid #fff;border-radius:1.2cqw;box-shadow:0 .3cqw 1cqw #0004;font-variant-numeric:tabular-nums;font-weight:800;pointer-events:none;user-select:none}
+.classroom-timer small{font-size:.3em;line-height:1.2}
+.classroom-timer.timer-expired{background:#a32e2e}
+.classroom-timer.timer-editable{pointer-events:auto;touch-action:none;cursor:move}
+.timer-resize{position:absolute;right:0;bottom:0;min-width:30px;min-height:30px;font-size:.5em;display:grid;place-items:center;cursor:nwse-resize;touch-action:none}
+.timer-settings{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:14px 0}
+.timer-settings label{flex:1;min-width:85px}
+.timer-settings input{width:100%;font-size:20px}
+.timer-position-preview{touch-action:none;margin-top:16px}
+.timer-position-preview .slide-content{pointer-events:none}

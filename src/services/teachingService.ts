@@ -2,7 +2,7 @@ import {readInteraction} from '../types/interaction';
 import { fastWrite } from './fastWrite';
 import { doc, onSnapshot, runTransaction, serverTimestamp } from 'firebase/firestore';
 import { database } from './firebase';
-import { defaultGroups, uid } from '../types/teaching';
+import { readTimer, timerRemaining, defaultGroups, uid } from '../types/teaching';
 import type { GroupsState, Group, Stroke, PointerState, MediaConfig, MediaAction, MediaFeedback } from '../types/teaching';
 const reference = async (id:string, key:string) => doc(await database(),'sessions',id,'teaching',key);
 export async function watchTeaching(id:string,key:string,receive:(data:Record<string,unknown>|null)=>void,fail:(error:Error)=>void) {
@@ -70,3 +70,16 @@ export async function reportMedia(id:string,slide:number,feedback:MediaFeedback)
 export async function commandSlideAction(id:string,slide:number,action:string){await changeTeaching(id,`action-${slide}`,()=>({commandId:uid(),commandAt:Date.now(),action}));}
 
 export async function changeInteraction(id:string,slide:number,patch:Partial<import('../types/interaction').LessonInteraction>){await changeTeaching(id,`interaction-${slide}`,data=>({...readInteraction(data),...patch}));}
+
+export async function controlTimer(id:string,action:'start'|'pause'|'reset'|'configure'|'layout'|'visible',value:Record<string,number|boolean>={}) {
+ await changeTeaching(id,'timer',data=>{
+  const state=readTimer(data);
+  if(action==='start') {const left=timerRemaining(state);state.remaining=left>0?left:state.duration;state.endsAt=Date.now()+state.remaining*1000;state.running=true;state.visible=true;}
+  if(action==='pause'){state.remaining=timerRemaining(state);state.running=false;state.endsAt=0;}
+  if(action==='reset'){state.remaining=state.duration;state.running=false;state.endsAt=0;}
+  if(action==='configure'){const duration=Number(value.duration);if(!Number.isInteger(duration)||duration<1||duration>5999)throw new Error('請設定 1 秒至 99 分 59 秒。');Object.assign(state,{duration,remaining:duration,running:false,endsAt:0});}
+  if(action==='visible')state.visible=value.visible===true;
+  if(action==='layout') {const width=Math.max(.15,Math.min(.5,Number(value.width)));Object.assign(state,{width,x:Math.max(0,Math.min(1-width,Number(value.x))),y:Math.max(0,Math.min(.98-width*.75,Number(value.y)))});if(!Number.isFinite(state.x)||!Number.isFinite(state.y)||!Number.isFinite(state.width))throw new Error('計時器位置無效。');}
+  return {...state};
+ });
+}

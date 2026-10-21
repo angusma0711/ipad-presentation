@@ -66,6 +66,17 @@ service cloud.firestore {
       && (!('g7' in data) || ('g6' in data && group(data.g7)))
       && data.visible is bool;
     }
+    function timer(data) {
+     return key == 'timer' && data.keys().hasOnly(['visible','running','duration','remaining','endsAt','x','y','width','updatedAt'])
+      && data.keys().hasAll(['visible','running','duration','remaining','endsAt','x','y','width','updatedAt'])
+      && data.visible is bool && data.running is bool
+      && data.duration is int && data.duration >= 1 && data.duration <= 5999
+      && data.remaining is number && data.remaining >= 0 && data.remaining <= 5999
+      && data.endsAt is number && data.endsAt >= 0
+      && data.x is number && data.y is number && data.width is number
+      && data.width >= 0.15 && data.width <= 0.5
+      && data.x >= 0 && data.x <= 1 - data.width && data.y >= 0 && data.y <= 0.98 - data.width * 0.75;
+    }
     function pointer(data) {
      return key == 'pointer' && data.keys().hasOnly(['x','y','active','slide','expiresAt','updatedAt'])
       && data.keys().hasAll(['x','y','active','slide','expiresAt','updatedAt'])
@@ -108,7 +119,7 @@ service cloud.firestore {
     allow list, delete: if false;
     allow create, update: if activeSession()
      && request.resource.data.updatedAt == request.time
-     && (groups(request.resource.data) || pointer(request.resource.data)
+     && (timer(request.resource.data) || groups(request.resource.data) || pointer(request.resource.data)
       || interaction(request.resource.data) || action(request.resource.data) || annotations(request.resource.data) || media(request.resource.data) || feedback(request.resource.data));
    }
   }

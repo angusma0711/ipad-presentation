@@ -2,7 +2,7 @@ import {readInteraction} from '../types/interaction';
 import type { SlideAction } from '../components/ActionContext';
 import { useEffect, useState } from 'react';
 import { watchTeaching, readGroups } from './teachingService';
-import { validStrokes } from '../types/teaching';
+import { readTimer, validStrokes } from '../types/teaching';
 import type { MediaConfig, MediaFeedback, PointerState } from '../types/teaching';
 function useDocument(id:string,key:string) {
  const token=id+':'+key;
@@ -20,6 +20,7 @@ function useDocument(id:string,key:string) {
  return {data:stored.token===token?stored.data:null,error};
 }
 export function useTeaching(id:string,slide:number) {
+ const timer=useDocument(id,'timer');
  const groups=useDocument(id,'groups');const pointer=useDocument(id,'pointer');
  const annotations=useDocument(id,`annotations-${slide}`);const media=useDocument(id,`media-${slide}`);
  const interaction=useDocument(id,`interaction-${slide}`);
@@ -32,7 +33,7 @@ export function useTeaching(id:string,slide:number) {
  const rawMedia=media.data;
  const validMedia=rawMedia && ['audio','video','youtube'].includes(String(rawMedia.kind)) && typeof rawMedia.src==='string'
   && typeof rawMedia.commandId==='string' && ['play','pause','restart'].includes(String(rawMedia.action)) && Number.isFinite(rawMedia.commandAt);
- return {interaction:readInteraction(interaction.data),action:action.data as SlideAction|null,groups:readGroups(groups.data),pointer:validPointer?rawPointer as PointerState:null,
+ return {timer:readTimer(timer.data),interaction:readInteraction(interaction.data),action:action.data as SlideAction|null,groups:readGroups(groups.data),pointer:validPointer?rawPointer as PointerState:null,
   strokes:validStrokes(annotations.data?.strokes),media:validMedia?rawMedia as MediaConfig:null,
-  feedback:feedback.data as MediaFeedback|null,error:[groups,pointer,annotations,media,feedback,action,interaction].map(item=>item.error).find(Boolean)??''};
+  feedback:feedback.data as MediaFeedback|null,error:[timer,groups,pointer,annotations,media,feedback,action,interaction].map(item=>item.error).find(Boolean)??''};
 }
