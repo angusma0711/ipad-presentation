@@ -258,3 +258,6 @@
 .dp-deck #dp-ensemble .dp-ensemble-instruments{font-size:.58em;display:flex;align-items:center;justify-content:flex-end;gap:.15em;white-space:nowrap}
 .dp-deck #dp-ensemble .dp-ensemble-instruments .dp-instrument img{width:2em;height:1.8em}
 .dp-deck #dp-ensemble .dp-group-tag{font-size:.5em}
+
+.dp-deck .dp-cell.dp-half{min-width:2.7em}
+.dp-deck .dp-follow-rhythm>div[data-beats="2"]{align-self:stretch;display:grid;place-items:center}

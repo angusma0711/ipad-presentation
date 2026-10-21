@@ -90,7 +90,7 @@ function attach(root: HTMLElement) {
      if (beatStatus) beatStatus.textContent = `預備 ${step + 1} / 4`;
     } else {
      const index = step - 4;
-     beatDots[index]?.classList.add('dp-playing'); rhythmBeats[index]?.classList.add('dp-playing');
+     beatDots[index]?.classList.add('dp-playing'); rhythmBeats.find(element=>index>=Number(element.dataset.rhythmBeat)&&index<Number(element.dataset.rhythmBeat)+Number(element.dataset.beats??1))?.classList.add('dp-playing');
      if (beatStatus) beatStatus.textContent = `第 ${index + 1} / ${beatDots.length} 拍`;
     }
    }
