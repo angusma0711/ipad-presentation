@@ -1,3 +1,4 @@
+import {createPortal} from 'react-dom';
 import {TimerTools} from './TimerTools';
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
@@ -9,8 +10,8 @@ import type { Deck, DeckMedia } from '../presentations/types';
 import { PresentationView } from './PresentationView';
 import { useAnnotationSync } from '../services/useAnnotationSync';
 import type { Tool } from './AnnotationLayer';
-type Props={mode?:'slide'|'general';deck:Deck;id:string;slide:number;disabled:boolean;teaching:ReturnType<typeof useTeaching>};
-export function TeacherTools({mode,deck,id,slide,disabled,teaching}:Props){
+type Props={stageTarget?:HTMLElement|null;mode?:'slide'|'general';deck:Deck;id:string;slide:number;disabled:boolean;teaching:ReturnType<typeof useTeaching>};
+export function TeacherTools({stageTarget,mode,deck,id,slide,disabled,teaching}:Props){
  const [tool,setTool]=useState<Tool>('none');const [color,setColor]=useState('#e63946');
  const [busy,setBusy]=useState(false);const lock=useRef(false);const [error,setError]=useState('');
  const lessonSlide=deck.slides[slide]; const suggested=lessonSlide.media[0]; const Controls=deck.plugin.Controls;
@@ -46,7 +47,7 @@ export function TeacherTools({mode,deck,id,slide,disabled,teaching}:Props){
   <section className="card preview-card"><h2>投影片預覽與標記</h2><div className="tool-bar" role="group" aria-label="預覽工具">
    {([['none','瀏覽'],['pointer','紅點 Pointer'],['pen','畫線／圈選']] as const).map(([value,label])=><button key={value} disabled={disabled&&value==='pointer'} aria-pressed={tool===value} onClick={()=>setTool(value)}>{label}</button>)}
   </div>{tool==='pen'&&<div className="tool-bar" role="group" aria-label="畫筆顏色">{[['#e63946','紅色'],['#176b60','綠色'],['#1b4fc4','藍色']].map(([value,label])=><button key={value} aria-pressed={color===value} onClick={()=>setColor(value)}>{label}</button>)}</div>}
-   <div className={`preview-frame ${tool!=='none'?'touch-tool-active':''}`}><PresentationView timer={teaching.timer} deck={deck} index={slide} interaction={teaching.interaction} onInteraction={patch=>void perform(()=>changeInteraction(id,slide,patch))} preview groups={teaching.groups} strokes={annotations.strokes} pointer={teaching.pointer} media={teaching.media} tool={tool} disabled={tool==='pen'?false:unavailable} color={color} onDraft={(stroke:Stroke)=>annotations.draw(stroke)} onStroke={(stroke:Stroke)=>annotations.draw(stroke)} onPointer={pointer=>void sendPointer(pointer)}/></div>
+   {stageTarget?createPortal(<div className={`preview-frame ${tool!=='none'?'touch-tool-active':''}`}><PresentationView timer={teaching.timer} deck={deck} index={slide} interaction={teaching.interaction} onInteraction={patch=>void perform(()=>changeInteraction(id,slide,patch))} preview groups={teaching.groups} strokes={annotations.strokes} pointer={teaching.pointer} media={teaching.media} tool={tool} disabled={tool==='pen'?false:unavailable} color={color} onDraft={(stroke:Stroke)=>annotations.draw(stroke)} onStroke={(stroke:Stroke)=>annotations.draw(stroke)} onPointer={pointer=>void sendPointer(pointer)}/></div>,stageTarget):<div className={`preview-frame ${tool!=='none'?'touch-tool-active':''}`}><PresentationView timer={teaching.timer} deck={deck} index={slide} interaction={teaching.interaction} onInteraction={patch=>void perform(()=>changeInteraction(id,slide,patch))} preview groups={teaching.groups} strokes={annotations.strokes} pointer={teaching.pointer} media={teaching.media} tool={tool} disabled={tool==='pen'?false:unavailable} color={color} onDraft={(stroke:Stroke)=>annotations.draw(stroke)} onStroke={(stroke:Stroke)=>annotations.draw(stroke)} onPointer={pointer=>void sendPointer(pointer)}/></div>}
    <p className="small">{tool==='pointer'?'按住或拖曳顯示紅點；放開後消失。':tool==='pen'?'在預覽畫線或圈選；畫的途中同步至投影。':'預覽與投影使用相同比例。選擇工具後可直接在預覽操作。'}</p>
    <div className="tool-bar"><button disabled={!annotations.strokes.length} onClick={annotations.undo}>復原上一筆</button><button disabled={!annotations.strokes.length} onClick={()=>{if(window.confirm('清除這張投影片的所有標記？'))annotations.clear();}}>清除此頁標記</button><span className={`sync-state sync-${annotations.sync}`} role="status">{syncLabel}</span></div>{annotations.full&&<p className="small">此頁已有 30 條標記，請先復原或清除。</p>}
   </section>
