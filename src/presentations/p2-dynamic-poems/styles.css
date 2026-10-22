@@ -304,3 +304,8 @@
 .dp-deck .dp-book-match .dp-cell img{height:1.4em}
 .dp-deck .dp-book-match .dp-cell b{display:none}
 .dp-deck .dp-match-ending{font-size:.55em;margin:.45em 0 0;color:#6c4850;text-align:right}
+
+/* A two-beat note starts beneath its first dot; the next dot marks sustain. */
+.dp-deck .dp-follow-rhythm>div.dp-follow-held[data-beats="2"]{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;justify-items:center}
+.dp-deck .dp-follow-held .dp-note-space{display:block;height:1.7em}
+.dp-deck .dp-follow-held .dp-sustain{min-width:0}
