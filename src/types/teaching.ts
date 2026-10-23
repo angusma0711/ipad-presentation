@@ -73,3 +73,9 @@ export function readTimer(data:Record<string,unknown>|null):ClassroomTimer {
  return data as unknown as ClassroomTimer;
 }
 export const timerRemaining=(timer:ClassroomTimer)=>timer.running?Math.max(0,(timer.endsAt-Date.now())/1000):timer.remaining;
+
+export type MediaLayout={x:number;y:number;width:number};
+export function boundedMediaLayout(value:MediaLayout):MediaLayout {
+ const width=Math.max(.3,Math.min(1,value.width));
+ return {width,x:Math.max(0,Math.min(1-width,value.x)),y:Math.max(0,Math.min(1-width,value.y))};
+}

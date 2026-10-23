@@ -91,6 +91,11 @@ service cloud.firestore {
       && data.keys().hasOnly(['strokes','updatedAt']) && data.keys().hasAll(['strokes','updatedAt'])
       && data.strokes is list && data.strokes.size() <= 30;
     }
+    function mediaLayout(data) {
+     return key.matches('^media-layout-([0-9]|[1-9][0-9])$') && validSlide(int(key.split('-')[2])) && data.keys().hasOnly(['x','y','width','updatedAt']) && data.keys().hasAll(['x','y','width','updatedAt'])
+      && data.x is number && data.y is number && data.width is number && data.width>=0.3 && data.width<=1
+      && data.x>=0 && data.x<=1-data.width && data.y>=0 && data.y<=1-data.width;
+    }
     function media(data) {
      return keyedSlide('media')
       && data.keys().hasOnly(['kind','src','commandId','action','commandAt','updatedAt'])
@@ -120,7 +125,7 @@ service cloud.firestore {
     allow create, update: if activeSession()
      && request.resource.data.updatedAt == request.time
      && (timer(request.resource.data) || groups(request.resource.data) || pointer(request.resource.data)
-      || interaction(request.resource.data) || action(request.resource.data) || annotations(request.resource.data) || media(request.resource.data) || feedback(request.resource.data));
+      || interaction(request.resource.data) || action(request.resource.data) || annotations(request.resource.data) || media(request.resource.data) || mediaLayout(request.resource.data) || feedback(request.resource.data));
    }
   }
  }

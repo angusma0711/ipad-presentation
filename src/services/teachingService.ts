@@ -83,3 +83,9 @@ export async function controlTimer(id:string,action:'start'|'pause'|'reset'|'con
   return {...state};
  });
 }
+
+export async function setMediaLayout(id:string,slide:number,layout:import('../types/teaching').MediaLayout) {
+ const {boundedMediaLayout}=await import('../types/teaching');
+ if(![layout.x,layout.y,layout.width].every(Number.isFinite))throw new Error('影片位置無效。');
+ await fastWrite(`sessions/${id}/teaching/media-layout-${slide}`,boundedMediaLayout(layout));
+}

@@ -25,7 +25,7 @@ function P5Slide({ index }: { index: number }) {
 }
 function P5Controls({ index, state, disabled, change, playMedia }: DeckControlsProps) {
  const revisionCount = state.revisionRevealed ? ['listen', 'compare', 'vote', 'explain'].indexOf(state.phase) + 1 : 0;
- const slide = deck.slides[index]; const track = slide.track as Track | undefined;
+ const slide = deck.slides[index]; if(slide.kind==='video')return null; const track = slide.track as Track | undefined;
  return <section className="card"><h2>此頁教學互動</h2><div className="p5-control-buttons">
   {slide.kind === 'revision' && <button disabled={disabled || revisionCount === 4} onClick={() => change({ revisionRevealed: true, phase: (['listen', 'compare', 'vote', 'explain'] as const)[revisionCount] })}>{revisionCount === 4 ? '已全部揭示' : '揭示下一類'}</button>}
   {slide.kind === 'investigation' && <><button disabled={disabled} onClick={() => change({ choice: false })}>題目</button>{track === 'zheng' && <button disabled={disabled} onClick={() => change({ choice: false, revealed: !state.revealed })}>{state.revealed ? '開始' : '後半段'}</button>}<button disabled={disabled} onClick={() => change({ choice: true, phase: 'compare' })}>圖片</button><button disabled={disabled || !state.choice} onClick={() => change({ phase: 'explain' })}>說理由</button>{['A', 'B', 'C'].map((letter, i) => <button key={letter} disabled={disabled || !state.choice} aria-pressed={state.selection === i} onClick={() => change({ selection: i })}>{letter}</button>)}</>}

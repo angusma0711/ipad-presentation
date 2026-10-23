@@ -20,6 +20,7 @@ function useDocument(id:string,key:string) {
  return {data:stored.token===token?stored.data:null,error};
 }
 export function useTeaching(id:string,slide:number) {
+ const mediaLayout=useDocument(id,`media-layout-${slide}`);
  const timer=useDocument(id,'timer');
  const groups=useDocument(id,'groups');const pointer=useDocument(id,'pointer');
  const annotations=useDocument(id,`annotations-${slide}`);const media=useDocument(id,`media-${slide}`);
@@ -33,7 +34,9 @@ export function useTeaching(id:string,slide:number) {
  const rawMedia=media.data;
  const validMedia=rawMedia && ['audio','video','youtube'].includes(String(rawMedia.kind)) && typeof rawMedia.src==='string'
   && typeof rawMedia.commandId==='string' && ['play','pause','restart'].includes(String(rawMedia.action)) && Number.isFinite(rawMedia.commandAt);
- return {timer:readTimer(timer.data),interaction:readInteraction(interaction.data),action:action.data as SlideAction|null,groups:readGroups(groups.data),pointer:validPointer?rawPointer as PointerState:null,
+ const rawLayout=mediaLayout.data;
+ const validLayout=rawLayout&&[rawLayout.x,rawLayout.y,rawLayout.width].every(value=>typeof value==='number'&&Number.isFinite(value))&&Number(rawLayout.width)>=.3&&Number(rawLayout.width)<=1&&Number(rawLayout.x)>=0&&Number(rawLayout.x)<=1-Number(rawLayout.width)&&Number(rawLayout.y)>=0&&Number(rawLayout.y)<=1-Number(rawLayout.width);
+ return {mediaLayout:validLayout?rawLayout as unknown as import('../types/teaching').MediaLayout:undefined,timer:readTimer(timer.data),interaction:readInteraction(interaction.data),action:action.data as SlideAction|null,groups:readGroups(groups.data),pointer:validPointer?rawPointer as PointerState:null,
   strokes:validStrokes(annotations.data?.strokes),media:validMedia?rawMedia as MediaConfig:null,
-  feedback:feedback.data as MediaFeedback|null,error:[timer,groups,pointer,annotations,media,feedback,action,interaction].map(item=>item.error).find(Boolean)??''};
+  feedback:feedback.data as MediaFeedback|null,error:[mediaLayout,timer,groups,pointer,annotations,media,feedback,action,interaction].map(item=>item.error).find(Boolean)??''};
 }
