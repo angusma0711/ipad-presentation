@@ -116,3 +116,30 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 @media(max-width:1100px){.controller-layout.menu-open{grid-template-columns:minmax(0,1fr) 320px}.controller-stage.with-next-preview{grid-template-columns:minmax(0,3fr) minmax(150px,1fr)}}
 @media(max-width:760px){.controller-workspace{padding:16px}.controller-stage{position:static}.controller-stage.with-next-preview{grid-template-columns:minmax(0,2.5fr) minmax(110px,1fr);gap:10px}.next-slide-preview{padding:10px}.next-slide-preview h2{font-size:15px}.next-slide-preview p{font-size:12px}.teacher-sidebar{position:fixed;right:0;top:0;bottom:0;width:min(90vw,360px);max-height:100dvh;z-index:40;border-radius:18px 0 0 18px;box-shadow:-12px 0 40px #172c3840;padding:18px 14px;padding-bottom:max(18px,env(safe-area-inset-bottom))}.controller-layout.menu-open{grid-template-columns:minmax(0,1fr)}.workspace-header .controller-header-tools{justify-content:flex-start}.stage-heading span{display:none}}
 .current-slide-surface{width:100%;max-width:calc((100dvh - 190px)*1.777778);margin-inline:auto}
+
+/* Approved icon-based teacher workspace. */
+.controller-workspace{background:#f1f4f2;color:#203a38;padding:0 28px 28px}
+.controller-workspace .workspace-header{margin:0 -28px 26px;padding:20px 28px;background:white;border-bottom:1px solid #e7ede9;min-height:90px}
+.controller-brand{display:flex;align-items:center;gap:14px}.brand-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:#176b60;color:white;font-size:28px;letter-spacing:-2px}.controller-brand h2{font-size:24px;font-weight:650}.controller-brand .eyebrow{font-size:12px;letter-spacing:0;margin:4px 0 0;color:#74847e}
+.tool-icon{width:24px;height:24px;flex-shrink:0}.controller-header-tools button{gap:8px}.controller-header-tools button[aria-pressed=true]{background:#176b60;color:white;border-color:#176b60}
+.controller-layout.menu-open{grid-template-columns:minmax(0,1fr) 308px;gap:24px}
+.controller-stage.with-next-preview{grid-template-columns:minmax(0,3.2fr) minmax(160px,1fr);gap:24px}
+.teacher-sidebar{background:white;border:1px solid #dce4df;border-radius:20px;padding:18px;max-height:calc(100dvh - 140px);display:flex;flex-direction:column;min-height:600px}
+.sidebar-heading button{border:0;color:#74847e;min-width:44px}.sidebar-heading h2{font-size:21px}
+.teacher-tool-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:20px 0}
+.teacher-tool-tabs button{display:flex;flex-direction:column;gap:8px;background:#f6f8f6;color:#74847e;border:0;min-height:76px;padding:10px 4px;font-size:14px}.teacher-tool-tabs .tool-icon{color:#176b60}.teacher-tool-tabs [aria-selected=true]{background:#e8f2ed;color:#176b60}
+.teacher-tab-content{border-top:1px solid #dce4df;padding-top:8px;flex:1;min-width:0}
+.teacher-sidebar .teacher-tab-content .card{border:0;border-radius:0;padding:8px 0;margin:16px 0;background:transparent}
+.teacher-sidebar .teacher-tab-content .navigator{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.teacher-sidebar .navigator button{min-width:0;min-height:48px}
+.teacher-sidebar .tools-section summary{gap:0;font-size:20px}.teacher-sidebar .tools-section summary::before{display:none}
+.sidebar-end{margin-top:24px;border-top:1px solid #dce4df;padding-top:12px}.sidebar-end>button{color:#a14d44;border:0;padding-left:0}
+.quick-tools-mount{margin-top:18px}.controller-quick-tools{display:inline-flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px;background:white;border:1px solid #dce4df;border-radius:16px}
+.controller-quick-tools>button{border:0;gap:8px;font-size:16px;min-height:44px;padding:8px 12px}.controller-quick-tools>button[aria-pressed=true]{background:#e8f2ed;color:#176b60}
+.quick-colors{display:flex;gap:10px;align-items:center}.controller-quick-tools .color-swatch{width:44px;height:44px;min-height:44px;padding:0;border:8px solid white;border-radius:50%}.color-swatch[aria-pressed=true]{outline:2px solid #176b60;outline-offset:-4px}
+.stage-heading{min-height:32px}.stage-heading h2{font-size:18px}.stage-heading span{max-width:55%;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;color:#74847e}
+.next-slide-preview{padding:0;background:transparent;border:0}.next-slide-preview h2{min-height:32px;display:flex;align-items:center;font-weight:500;color:#74847e;margin-bottom:12px}
+.current-slide-surface{max-width:calc((100dvh - 255px)*1.777778)}
+.teacher-sidebar [hidden]{display:none!important}
+@media(min-width:1500px){.controller-layout.menu-open{grid-template-columns:minmax(0,1fr) 320px}}
+@media(max-width:1100px){.controller-layout.menu-open{grid-template-columns:minmax(0,1fr) 280px;gap:18px}.controller-stage.with-next-preview{grid-template-columns:minmax(0,3fr) minmax(130px,1fr);gap:14px}.teacher-sidebar{padding:14px}.teacher-sidebar .timer-settings{gap:8px}.teacher-sidebar .timer-settings label{min-width:80px}.stage-heading span{display:none}}
+@media(max-width:760px){.controller-workspace{padding:0 16px 20px}.controller-workspace .workspace-header{margin:0 -16px 20px;padding:16px;gap:14px}.controller-layout.menu-open{grid-template-columns:minmax(0,1fr)}.controller-stage.with-next-preview{grid-template-columns:minmax(0,2.5fr) minmax(100px,1fr);gap:10px}.teacher-sidebar{max-height:100dvh;min-height:0;padding:18px 14px}.controller-header-tools{gap:8px}.workspace-header button{font-size:14px;padding:10px 12px}.controller-brand h2{font-size:21px}.current-slide-surface{max-width:100%}}
