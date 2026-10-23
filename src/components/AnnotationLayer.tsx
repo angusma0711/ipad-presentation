@@ -23,7 +23,7 @@ export function AnnotationLayer({slide,strokes,pointer,tool='none',disabled=fals
  useEffect(()=>{const timer=setInterval(()=>setClock(Date.now()),250);return()=>clearInterval(timer);},[]);
  useEffect(()=>{
   const timer=setInterval(()=>{if(tool==='pointer'&&pressed.current!==null&&!disabled)publishRef.current?.({...lastPoint.current,slide,active:true,expiresAt:Date.now()+2400});},1000);
-  return()=>{clearInterval(timer);if(pressed.current!==null&&tool==='pointer')publishRef.current?.({...lastPoint.current,slide,active:false,expiresAt:Date.now()});pressed.current=null;};
+  return()=>{clearInterval(timer);if(pressed.current!==null&&tool==='pointer')publishRef.current?.({...lastPoint.current,slide,active:false,expiresAt:Date.now()});const active=pressed.current;pressed.current=null;const surface=surfaceRef.current;if(active!==null&&surface?.hasPointerCapture(active))surface.releasePointerCapture(active);};
  },[slide,tool,disabled]);
  useEffect(()=>{setDraft(null);draftRef.current=null;setLocalPointer(null);},[slide,tool,disabled]);
  function pointerValue(point:Point,active:boolean){return {...point,slide,active,expiresAt:Date.now()+2400};}

@@ -19,6 +19,7 @@ export function ControlPage(){
  const index=deck?Math.min(session.slide,deck.slides.length-1):0;
  const teaching=useTeaching(sessionId,index);
  const [menuOpen,setMenuOpen]=useState(()=>window.matchMedia('(min-width:761px)').matches),[previewNext,setPreviewNext]=useState(true);
+ const [navigationVersion,setNavigationVersion]=useState(0);
  const [category,setCategory]=useState<TeacherCategory>('slides');
  const [quickTarget,setQuickTarget]=useState<HTMLDivElement|null>(null);
  const [stageTarget,setStageTarget]=useState<HTMLDivElement|null>(null);const menuButton=useRef<HTMLButtonElement>(null);
@@ -43,8 +44,8 @@ export function ControlPage(){
    <div className="sidebar-heading"><h2>教師工具</h2><button onClick={closeMenu} aria-label="收起選單"><ToolIcon name="close"/></button></div>
    <nav className="teacher-tool-tabs" role="tablist" aria-label="教師工具分類">{([['slides','換頁'],['action','此頁功能'],['pen','畫筆'],['timer','計時'],['groups','積分'],['media','媒體']] as const).map(([value,label],i)=><button key={value} id={`teacher-tab-${value}`} role="tab" aria-selected={category===value} aria-controls={`teacher-panel-${value}`} tabIndex={category===value?0:-1} onClick={()=>setCategory(value)} onKeyDown={event=>{const values:TeacherCategory[]=['slides','action','pen','timer','groups','media'];let target:number|undefined;if(event.key==='ArrowRight')target=(i+1)%6;if(event.key==='ArrowLeft')target=(i+5)%6;if(event.key==='Home')target=0;if(event.key==='End')target=5;if(target!==undefined){event.preventDefault();setCategory(values[target]);document.getElementById(`teacher-tab-${values[target]}`)?.focus();}}}><ToolIcon name={value}/><span>{label}</span></button>)}</nav>
    <div className="teacher-tab-content">
-   <div hidden={category!=='slides'} role="tabpanel" id="teacher-panel-slides" aria-labelledby="teacher-tab-slides"><ControllerPanel showNext={false} deck={deck} index={index} disabled={session.status!=='Connected'} navigate={change=>void session.navigate(change)}/></div>
-   <TeacherTools category={category} stageTarget={stageTarget} quickTarget={quickTarget} deck={deck} id={sessionId} slide={index} disabled={session.busy||session.status!=='Connected'} teaching={teaching}/>
+   <div hidden={category!=='slides'} role="tabpanel" id="teacher-panel-slides" aria-labelledby="teacher-tab-slides"><ControllerPanel showNext={false} deck={deck} index={index} disabled={session.status!=='Connected'} navigate={change=>{setNavigationVersion(value=>value+1);void session.navigate(change);}}/></div>
+   <TeacherTools navigationVersion={navigationVersion} category={category} stageTarget={stageTarget} quickTarget={quickTarget} deck={deck} id={sessionId} slide={index} disabled={session.busy||session.status!=='Connected'} teaching={teaching}/>
    </div>
    {session.status!=='Connected'&&<p role="status">等待連線；電腦仍可使用方向鍵操作。重新連線後將顯示雲端最新投影片。</p>}
    <section className="sidebar-end"><p className="sr-only">結束後將停用此課堂代碼。</p><button disabled={ending||session.status!=='Connected'} onClick={()=>void end()}>{ending?'正在結束…':'結束課堂'}</button>{endError&&<p className="error" role="alert">{endError}</p>}</section>

@@ -11,13 +11,14 @@ import type { Deck, DeckMedia } from '../presentations/types';
 import { PresentationView } from './PresentationView';
 import { useAnnotationSync } from '../services/useAnnotationSync';
 import type { Tool } from './AnnotationLayer';
-type Props={category?:TeacherCategory;quickTarget?:HTMLElement|null;stageTarget?:HTMLElement|null;mode?:'slide'|'general';deck:Deck;id:string;slide:number;disabled:boolean;teaching:ReturnType<typeof useTeaching>};
-export function TeacherTools({category,quickTarget,stageTarget,mode,deck,id,slide,disabled,teaching}:Props){
+type Props={navigationVersion?:number;category?:TeacherCategory;quickTarget?:HTMLElement|null;stageTarget?:HTMLElement|null;mode?:'slide'|'general';deck:Deck;id:string;slide:number;disabled:boolean;teaching:ReturnType<typeof useTeaching>};
+export function TeacherTools({navigationVersion=0,category,quickTarget,stageTarget,mode,deck,id,slide,disabled,teaching}:Props){
  const [tool,setTool]=useState<Tool>('none');const [color,setColor]=useState('#e63946');
  const [busy,setBusy]=useState(false);const lock=useRef(false);const [error,setError]=useState('');
  const lessonSlide=deck.slides[slide]; const suggested=lessonSlide.media[0]; const Controls=deck.plugin.Controls;
  const [kind,setKind]=useState<MediaKind>('audio');const [source,setSource]=useState('/media/demo-beat.wav');
- useEffect(()=>{setTool('none');},[slide]);
+ // Navigation and tool-category changes leave drawing mode before another page is used.
+ useEffect(()=>{setTool('none');},[slide,category,navigationVersion]);
  useEffect(()=>{setKind(teaching.media?.kind??suggested?.kind??'audio');setSource(teaching.media?.src??suggested?.src??'/media/demo-beat.wav');},[slide,teaching.media?.kind,teaching.media?.src,suggested?.kind,suggested?.src]);
  async function perform(action:()=>Promise<void>){
   if(disabled||lock.current)return;lock.current=true;setBusy(true);setError('');
@@ -33,7 +34,7 @@ export function TeacherTools({category,quickTarget,stageTarget,mode,deck,id,slid
  const statusText:Record<string,string>={ready:'已就緒',playing:'播放中',paused:'已暫停',ended:'播放完畢',blocked:'播放被阻擋',error:'播放失敗'};
  const quickTools=<div className="controller-quick-tools" role="group" aria-label="主畫面畫筆快捷工具"><button aria-pressed={tool==='pen'} onClick={()=>setTool(tool==='pen'?'none':'pen')}><ToolIcon name="pen"/>畫筆</button><div className="quick-colors" role="group" aria-label="畫筆顏色">{[['#e63946','紅色'],['#176b60','綠色'],['#1b4fc4','藍色']].map(([value,label])=><button className="color-swatch" key={value} style={{backgroundColor:value}} aria-label={label} aria-pressed={color===value} onClick={()=>setColor(value)}/>)}</div><button disabled={!annotations.strokes.length} onClick={annotations.undo}><ToolIcon name="undo"/>復原</button></div>;
  return <>
-  {quickTarget&&mode!=='slide'&&createPortal(quickTools,quickTarget)}
+  {quickTarget&&mode!=='slide'&&tool==='pen'&&createPortal(quickTools,quickTarget)}
   {mode!=='general'&&<div hidden={!!category&&category!=='action'} id="teacher-panel-action" role={category?'tabpanel':undefined} aria-labelledby={category?'teacher-tab-action':undefined}>
   {Controls&&<Controls deck={deck} index={slide} state={teaching.interaction} disabled={unavailable} change={patch=>void perform(()=>changeInteraction(id,slide,patch))} playMedia={playMedia}/>}
   {suggested&&<section className="card"><h2>此頁教材媒體</h2><div className="tool-bar"><button className="primary" disabled={unavailable} onClick={()=>playMedia(suggested)}>播放</button><button disabled={unavailable||!teaching.media} onClick={()=>void perform(()=>commandMedia(id,slide,'pause'))}>暫停</button></div><p className="small" role="status">播放狀態：{statusText[String(status)]??status}。聲音由投影電腦播放。</p></section>}

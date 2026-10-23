@@ -143,3 +143,7 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 @media(min-width:1500px){.controller-layout.menu-open{grid-template-columns:minmax(0,1fr) 320px}}
 @media(max-width:1100px){.controller-layout.menu-open{grid-template-columns:minmax(0,1fr) 280px;gap:18px}.controller-stage.with-next-preview{grid-template-columns:minmax(0,3fr) minmax(130px,1fr);gap:14px}.teacher-sidebar{padding:14px}.teacher-sidebar .timer-settings{gap:8px}.teacher-sidebar .timer-settings label{min-width:80px}.stage-heading span{display:none}}
 @media(max-width:760px){.controller-workspace{padding:0 16px 20px}.controller-workspace .workspace-header{margin:0 -16px 20px;padding:16px;gap:14px}.controller-layout.menu-open{grid-template-columns:minmax(0,1fr)}.controller-stage.with-next-preview{grid-template-columns:minmax(0,2.5fr) minmax(100px,1fr);gap:10px}.teacher-sidebar{max-height:100dvh;min-height:0;padding:18px 14px}.controller-header-tools{gap:8px}.workspace-header button{font-size:14px;padding:10px 12px}.controller-brand h2{font-size:21px}.current-slide-surface{max-width:100%}}
+
+/* Confine drawing hit targets to the slide; navigation always stays above them. */
+.controller-stage{isolation:isolate}.teacher-sidebar{z-index:20}.quick-tools-mount:empty{display:none}
+@media(max-width:760px){.teacher-sidebar{z-index:40}}
