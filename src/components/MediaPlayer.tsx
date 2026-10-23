@@ -1,6 +1,6 @@
 import { assetURL } from '../utils/urls';
 import { useEffect, useRef, useState } from 'react';
-import { youtubeAPI } from '../services/youtube';
+import { youtubeAPI, youtubeErrorMessage } from '../services/youtube';
 import type { YouTubePlayer } from '../services/youtube';
 import type { MediaConfig, MediaFeedback } from '../types/teaching';
 import { mediaSource } from '../types/teaching';
@@ -30,20 +30,27 @@ function NativeMedia({media,onFeedback}:Props){
 }
 function YouTubeMedia({media,onFeedback}:Props){
  const container=useRef<HTMLDivElement|null>(null);const player=useRef<YouTubePlayer|null>(null);const seen=useRef('');
- const [ready,setReady]=useState(false);const [message,setMessage]=useState('');const [blocked,setBlocked]=useState(false);
+ const [failed,setFailed]=useState(false);const [ready,setReady]=useState(false);const [message,setMessage]=useState('');const [blocked,setBlocked]=useState(false);
  const current=useRef(media);current.current=media;const feedbackRef=useRef(onFeedback);feedbackRef.current=onFeedback;
- function report(status:MediaFeedback['status'],text=''){setMessage(text);feedbackRef.current({commandId:current.current.commandId,status,message:text});}
+ function report(status:MediaFeedback['status'],text=''){setFailed(status==='error');setMessage(text);feedbackRef.current({commandId:current.current.commandId,status,message:text});}
  useEffect(()=>{
   let cancelled=false;
   youtubeAPI().then(api=>{
-   if(cancelled||!container.current)return;const target=document.createElement('div');container.current.replaceChildren(target);
-   player.current=new api.Player(target,{videoId:media.src,playerVars:{origin:location.origin,playsinline:1,controls:1,rel:0},
+   if(cancelled||!container.current)return;
+   if(!['http:','https:'].includes(location.protocol)){report('error',youtubeErrorMessage(153));return;}
+   const target=document.createElement('iframe');
+   const params=new URLSearchParams({enablejsapi:'1',origin:location.origin,playsinline:'1',controls:'1',autoplay:'0',rel:'0'});
+   target.src=`https://www.youtube.com/embed/${encodeURIComponent(media.src)}?${params}`;
+   target.title='YouTube 教材影片';target.referrerPolicy='strict-origin-when-cross-origin';
+   target.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';target.allowFullscreen=true;
+   container.current.replaceChildren(target);
+   player.current=new api.Player(target,{videoId:media.src,playerVars:{origin:location.origin,playsinline:1,controls:1,autoplay:0,rel:0},
     events:{onReady:()=>{if(!cancelled){setReady(true);report('ready');}},
      onStateChange:event=>{if(cancelled)return;const status=event.data===1?'playing':event.data===2?'paused':event.data===0?'ended':null;if(status){setBlocked(false);report(status);}},
-     onError:event=>{if(!cancelled)report('error',`YouTube 無法播放（${event.data}）。影片可能禁止嵌入、已下架或網絡無法存取。`);},
+     onError:event=>{if(!cancelled)report('error',youtubeErrorMessage(event.data));},
      onAutoplayBlocked:()=>{if(!cancelled){setBlocked(true);report('blocked','請在投影電腦按影片播放鍵以啟用播放。');}}}});
-  }).catch(error=>{if(!cancelled)report('error',error.message);});
-  return()=>{cancelled=true;player.current?.destroy();player.current=null;};
+  }).catch(error=>{if(!cancelled)report('error',error instanceof Error?error.message:'YouTube 載入失敗，請檢查網絡。');});
+  return()=>{cancelled=true;try{player.current?.destroy();}finally{player.current=null;container.current?.replaceChildren();}};
  },[media.src]);
  useEffect(()=>{
   if(!ready||seen.current===media.commandId)return;seen.current=media.commandId;
@@ -51,5 +58,5 @@ function YouTubeMedia({media,onFeedback}:Props){
   if(media.action==='pause')player.current?.pauseVideo();
   else{if(media.action==='restart')player.current?.seekTo(0,true);player.current?.playVideo();}
  },[ready,media.commandId,media.action]);
- return <div className="media-player youtube-player"><div ref={container}/>{blocked&&<button className="enable-media" onClick={()=>player.current?.playVideo()}>點此啟用播放</button>}{message&&<p className="media-error" role="status">{message}</p>}</div>;
+ return <div className="media-player youtube-player"><div ref={container}/>{blocked&&<button className="enable-media" onClick={()=>player.current?.playVideo()}>點此啟用播放</button>}{message&&failed&&<aside className="youtube-error-panel" role="status"><p>{message}</p><a className="button primary" href={`https://www.youtube.com/watch?v=${encodeURIComponent(media.src)}`} target="_blank" rel="noopener noreferrer">在 YouTube 開啟 ↗</a><small>外部 YouTube 播放不受 iPad 控制器遙控。</small></aside>}{message&&!failed&&<p className="media-error" role="status">{message}</p>}</div>;
 }

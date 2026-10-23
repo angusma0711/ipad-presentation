@@ -147,3 +147,6 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 /* Confine drawing hit targets to the slide; navigation always stays above them. */
 .controller-stage{isolation:isolate}.teacher-sidebar{z-index:20}.quick-tools-mount:empty{display:none}
 @media(max-width:760px){.teacher-sidebar{z-index:40}}
+
+.youtube-error-panel{position:absolute;left:0;right:0;bottom:0;z-index:5;max-height:85%;overflow:auto;background:#fff5e8;color:#683f1f;padding:14px;display:flex;flex-direction:column;gap:10px}
+.slide .youtube-error-panel p{font-size:clamp(14px,1.4cqw,24px);line-height:1.5;margin:0}.youtube-error-panel .button{font-size:clamp(14px,1.3cqw,22px);min-height:44px;padding:10px 14px}.youtube-error-panel small{font-size:clamp(12px,1cqw,18px);line-height:1.5}
