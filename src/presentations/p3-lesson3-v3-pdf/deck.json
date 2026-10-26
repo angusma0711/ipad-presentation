@@ -19,12 +19,22 @@
     {
       "id": "pdf-page-02",
       "title": "再唱《Pitter Patter》",
-      "notes": "原PDF第2頁。",
+      "notes": "沿用第二課《Pitter Patter》的歌譜及下行箭頭。按「開始／重播下行箭頭」才顯示箭頭；可由教師控制器重設。",
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-02.webp\" alt=\"第2頁：再唱《Pitter Patter》\">",
       "media": [],
-      "actions": [],
+      "actions": [
+        {
+          "id": "arrow-start",
+          "label": "開始／重播下行箭頭"
+        },
+        {
+          "id": "arrow-reset",
+          "label": "隱藏並重設箭頭"
+        }
+      ],
       "pdfImage": "./pages/page-02.webp",
-      "readableHtml": "<section style=\"background-image:linear-gradient(#fff9edd4,#fff9edd4),url('./images/garden-rain.webp');background-size:cover;background-position:center\" class=\"v3-readable \"><h1>再唱《Pitter Patter》</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><div class=\"v3-lyrics\"><p>Pitter patter pit pat,</p><p>Listen to the rain.</p><p>Falling in the garden,</p><p>Running down the pane.</p></div><img src=\"./images/garden-rain.webp\" alt=\"花園雨景\"></div></div></section>"
+      "readableHtml": "<section style=\"background-image:linear-gradient(#fff9edd4,#fff9edd4),url('./images/garden-rain.webp');background-size:cover;background-position:center\" class=\"v3-readable \"><h1>再唱《Pitter Patter》</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><div class=\"v3-lyrics\"><p>Pitter patter pit pat,</p><p>Listen to the rain.</p><p>Falling in the garden,</p><p>Running down the pane.</p></div><img src=\"./images/garden-rain.webp\" alt=\"花園雨景\"></div></div></section>",
+      "kind": "previous-lesson-song"
     },
     {
       "id": "pdf-page-03",

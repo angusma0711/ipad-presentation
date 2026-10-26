@@ -8,6 +8,13 @@ import {InteractionContext} from '../../components/InteractionContext';
 import {reportMedia} from '../../services/teachingService';
 type MakerAPI={run:(action:string)=>Promise<string>};
 const tracks:Record<string,{name:string;file:string;limit?:number}>={chopin:{name:'蕭邦《降 D 大調圓舞曲》Op.64 No.1',file:'chopin.mp3'},swan:{name:'聖桑《天鵝》開首30秒',file:'swan.mp3',limit:30},moon:{name:'德布西《月光》開首30秒',file:'moon.mp3',limit:30}};
+function PreviousLessonSong({passive=false}:{passive?:boolean}){
+ const frame=useRef<HTMLIFrameElement>(null),seen=useRef('');const action=useContext(ActionContext);
+ const source=deckAsset('/media/p3-lesson2-rain-sound/index.html','')+'?embedded=1'+(passive?'&readonly=1':'')+'#p3-l2-recap-rain';
+ function send(message:Record<string,unknown>){frame.current?.contentWindow?.postMessage({channel:'p3-l2-system',...message},location.origin);}
+ useEffect(()=>{if(passive||!action||seen.current===action.commandId)return;seen.current=action.commandId;if(Date.now()-action.commandAt<10000&&['arrow-start','arrow-reset'].includes(action.action))send({type:'action',slideId:'p3-l2-recap-rain',action:action.action});},[action,passive]);
+ return <iframe ref={frame} src={source} className="v3-previous-song" title="Pitter Patter：第二課原有歌譜" style={passive?{pointerEvents:'none'}:undefined} onLoad={()=>send({type:'slide',id:'p3-l2-recap-rain'})}/>;
+}
 function LessonSlide({deck,index,passive=false}:{deck:Deck;index:number;passive?:boolean}){
  const page=deck.slides[index];const {sessionId}=useParams();const command=useContext(ActionContext);const {state,change}=useContext(InteractionContext);
  const audio=useRef<HTMLAudioElement|null>(null),frame=useRef<HTMLIFrameElement|null>(null),seen=useRef(''),current=useRef(command);current.current=command;
@@ -25,7 +32,7 @@ function LessonSlide({deck,index,passive=false}:{deck:Deck;index:number;passive?
  },[command,index,passive]);
  const opened=page.maker===true&&state.revealed;
  useLayoutEffect(()=>{const active=frame.current;if(!opened||!active)return;return()=>{try{void (active.contentWindow as unknown as {IBoardMusicMaker?:MakerAPI}|null)?.IBoardMusicMaker?.run('pause').catch(()=>{});}catch{}};},[opened,index]);
- return <div className="v3-slide-surface">{typeof page.readableHtml==='string'?<div className="v3-task-host" dangerouslySetInnerHTML={{__html:page.readableHtml.replaceAll('./images/',deckAsset('./images/',deck.assetBase))}}/>:page.kind==='task'?<div className="v3-task-host" dangerouslySetInnerHTML={{__html:page.html??''}}/>:<img className="pdf-page-image" src={deckAsset(String(page.pdfImage),deck.assetBase)} alt={page.title}/>}
+ return <div className="v3-slide-surface">{page.kind==='previous-lesson-song'?<PreviousLessonSong passive={passive}/>:typeof page.readableHtml==='string'?<div className="v3-task-host" dangerouslySetInnerHTML={{__html:page.readableHtml.replaceAll('./images/',deckAsset('./images/',deck.assetBase))}}/>:page.kind==='task'?<div className="v3-task-host" dangerouslySetInnerHTML={{__html:page.html??''}}/>:<img className="pdf-page-image" src={deckAsset(String(page.pdfImage),deck.assetBase)} alt={page.title}/>}
   {blocked&&!passive&&<div className="v3-audio-status"><button onClick={()=>void playTrack(chosen.current)}>啟用音訊／播放</button></div>}
   {opened&&<div className="v3-maker-overlay"><header><strong>Music Maker</strong><span>首次請在投影電腦按「開始」</span><button onClick={()=>{void maker()?.run('pause').catch(()=>{});change?.({revealed:false});}}>返回投影片</button></header>{passive?<div className="v3-maker-passive">Music Maker 已在投影電腦開啟<br/><small>請在教師選單「此頁功能」選卡、試聽或停止。</small></div>:<iframe ref={frame} src={deckAsset('./music-maker/index.html',deck.assetBase)} title="Music Maker 教學配樂" allow="autoplay"/>}{status&&<p className="v3-maker-status" role="status">{status}</p>}</div>}
   {!passive&&<audio ref={audio} preload="metadata" onTimeUpdate={()=>{const node=audio.current,limit=tracks[chosen.current]?.limit;if(node&&limit&&node.currentTime>=limit){node.pause();ack('ended','30秒比較片段已結束。');}}} onEnded={()=>ack('ended','配樂已播放完畢。')} onError={()=>ack('error','音樂未能載入，請檢查網絡或重新開啟課堂。')}/>}
