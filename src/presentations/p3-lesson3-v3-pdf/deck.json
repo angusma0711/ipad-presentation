@@ -13,7 +13,8 @@
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-01.webp\" alt=\"第1頁：音樂怎樣配合畫面？\">",
       "media": [],
       "actions": [],
-      "pdfImage": "./pages/page-01.webp"
+      "pdfImage": "./pages/page-01.webp",
+      "readableHtml": "<section class=\"v3-readable \"><h1>音樂怎樣配合畫面？</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><div><p class=\"v3-hero\">看動作<br>聽聲音<br>說理由</p></div><img src=\"./images/garden-rain.webp\" alt=\"花園雨景\"></div></div></section>"
     },
     {
       "id": "pdf-page-02",
@@ -22,7 +23,8 @@
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-02.webp\" alt=\"第2頁：再唱《Pitter Patter》\">",
       "media": [],
       "actions": [],
-      "pdfImage": "./pages/page-02.webp"
+      "pdfImage": "./pages/page-02.webp",
+      "readableHtml": "<section class=\"v3-readable \"><h1>再唱《Pitter Patter》</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><div class=\"v3-lyrics\"><p>Pitter patter pit pat,</p><p>Listen to the rain.</p><p>Falling in the garden,</p><p>Running down the pane.</p></div><img src=\"./images/garden-rain.webp\" alt=\"花園雨景\"></div></div></section>"
     },
     {
       "id": "pdf-page-03",
@@ -34,7 +36,8 @@
       "pdfImage": "./pages/page-03.webp",
       "music": [
         "chopin"
-      ]
+      ],
+      "readableHtml": "<section class=\"v3-readable \"><h1>哪幅畫配合這首音樂？</h1><div class=\"v3-reading-body\"><div class=\"v3-art-options\"><figure><img src=\"./images/Art_Skating.webp\" alt=\"溜冰\"><figcaption>1　溜冰</figcaption></figure><figure><img src=\"./images/Art_Pleader.webp\" alt=\"小狗與女孩\"><figcaption>2　小狗與女孩</figcaption></figure><figure><img src=\"./images/Art_Regatta.webp\" alt=\"帆船\"><figcaption>3　帆船</figcaption></figure></div><p class=\"v3-prompt\">聽音樂 → 選一幅 → 用手指回答</p></div><footer class=\"v3-reference\">音樂：蕭邦 Op.64 No.1 ｜ 原畫：Raeburn、Barber、Monet；Public domain</footer></section>"
     },
     {
       "id": "pdf-page-04",
@@ -46,7 +49,8 @@
       "pdfImage": "./pages/page-04.webp",
       "music": [
         "chopin"
-      ]
+      ],
+      "readableHtml": "<section class=\"v3-readable \"><h1>用聽到的聲音說理由</h1><div class=\"v3-reading-body\"><div class=\"v3-big-cards\"><article>① 我聽到：<strong>快／慢・強／弱</strong></article><article>② 配合畫面：<strong>哪個動作？</strong></article><article>③ 所以我選：<strong>1、2 或 3</strong></article></div><p class=\"v3-prompt\">可以改選，但要說理由。</p></div></section>"
     },
     {
       "id": "pdf-page-05",
@@ -59,7 +63,8 @@
       "music": [
         "swan",
         "moon"
-      ]
+      ],
+      "readableHtml": "<section class=\"v3-readable \"><h1>同一畫面，加上音樂</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><img src=\"./images/Swan_Online.webp\" alt=\"水上游泳的天鵝\"><div><div class=\"v3-big-cards\"><article>先看照片</article><article>再聽《天鵝》</article><article>感覺變了嗎？</article></div></div></div></div><footer class=\"v3-reference\">天鵝照片：Bruce Emmerling / Wikimedia Commons / CC BY-SA 4.0；沿用原照比例。</footer></section>"
     },
     {
       "id": "pdf-page-06",
@@ -72,7 +77,8 @@
       "music": [
         "swan",
         "moon"
-      ]
+      ],
+      "readableHtml": "<section class=\"v3-readable \"><h1>換一首，感覺有甚麼不同？</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><img src=\"./images/Swan_Online.webp\" alt=\"同一張天鵝照片\"><div><div class=\"v3-big-cards\"><article>《天鵝》 ↔《月光》</article><article>動作有改變嗎？</article><article>聽到甚麼不同？</article></div></div></div></div><footer class=\"v3-reference\">天鵝照片：Bruce Emmerling / Wikimedia Commons / CC BY-SA 4.0；沿用原照比例。</footer></section>"
     },
     {
       "id": "pdf-page-07",
@@ -81,7 +87,8 @@
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-07.webp\" alt=\"第7頁：每個人都參與\">",
       "media": [],
       "actions": [],
-      "pdfImage": "./pages/page-07.webp"
+      "pdfImage": "./pages/page-07.webp",
+      "readableHtml": "<section class=\"v3-readable \"><h1>每個人都參與</h1><div class=\"v3-reading-body\"><div class=\"v3-big-cards\"><article><strong>操作員</strong>操作 iPad</article><article><strong>記錄員</strong>圈選設定</article><article><strong>每位組員</strong>討論・表決・演出</article></div><p class=\"v3-prompt\">老師舉手 → 停播 → iPad 面朝下 → 望老師</p></div></section>"
     },
     {
       "id": "pdf-page-08",
@@ -90,7 +97,8 @@
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-08.webp\" alt=\"第8頁：你想突出哪個動作？\">",
       "media": [],
       "actions": [],
-      "pdfImage": "./pages/page-08.webp"
+      "pdfImage": "./pages/page-08.webp",
+      "readableHtml": "<section class=\"v3-readable \"><h1>你想突出哪個動作？</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><img src=\"./images/Demo_Elephant_Bird.webp\" alt=\"大象踏步與小鳥飛翔\"><div><div class=\"v3-big-cards\"><article>大象踏步？</article><article>小鳥飛翔？</article><article>先選一個重點</article></div></div></div></div></section>"
     },
     {
       "id": "pdf-page-09",
@@ -100,7 +108,8 @@
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-09.webp",
-      "maker": true
+      "maker": true,
+      "readableHtml": "<section class=\"v3-readable \"><h1>哪個聲音配合你的重點？</h1><div class=\"v3-reading-body\"><div class=\"v3-instruments\"><figure><img src=\"./images/DoubleBass_Online.webp\" alt=\"低音大提琴\"><figcaption>低音大提琴</figcaption></figure><figure><img src=\"./images/Flute_Cutout.webp\" alt=\"長笛\"><figcaption>長笛</figcaption></figure></div><p class=\"v3-prompt\">聽聲音 → 想動作 → 說理由</p></div><footer class=\"v3-reference\">低音大提琴：papapishu / CC0；長笛：Jkwchui / CC BY-SA 3.0，去標註、改銀灰色及裁透明空白。</footer></section>"
     },
     {
       "id": "pdf-page-10",
@@ -110,7 +119,8 @@
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-10.webp",
-      "maker": true
+      "maker": true,
+      "readableHtml": "<section class=\"v3-readable \"><h1>先看畫面，再一起選聲音</h1><div class=\"v3-reading-body\"><div class=\"v3-group-images\"><figure><img src=\"./images/01_Hop.webp\" alt=\"小組A活動畫面\"><figcaption>A</figcaption></figure><figure><img src=\"./images/02_March.webp\" alt=\"小組B活動畫面\"><figcaption>B</figcaption></figure><figure><img src=\"./images/03_Float.webp\" alt=\"小組C活動畫面\"><figcaption>C</figcaption></figure><figure><img src=\"./images/04_Dance.webp\" alt=\"小組D活動畫面\"><figcaption>D</figcaption></figure></div><p class=\"v3-prompt\">看重點 → 試聽 → 一起圈選</p></div></section>"
     },
     {
       "id": "pdf-page-11",
@@ -119,14 +129,15 @@
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-11.webp\" alt=\"第11頁：加分挑戰：補上畫面的動態\">",
       "media": [],
       "actions": [],
-      "pdfImage": "./pages/page-11.webp"
+      "pdfImage": "./pages/page-11.webp",
+      "readableHtml": "<section class=\"v3-readable \"><h1>加分挑戰：補上畫面的動態</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><img src=\"./images/body-percussion.webp\" alt=\"身體敲擊與律動\"><div><div class=\"v3-big-cards\"><article>加身體聲響／律動</article><article>跟手勢加入、停止</article><article>聲音不蓋過音樂</article></div></div></div></div></section>"
     },
     {
       "id": "v3-group-task",
       "title": "我們要做甚麼？小組配樂任務",
       "notes": "按10月29日V3教案：先用6分鐘看圖、試聲、共同決定並記錄；接著4分鐘排練（加分挑戰可選）；每組演出15–30秒並給具體回饋。",
       "kind": "task",
-      "html": "<section class=\"v3-task\"><p class=\"task-eyebrow\">小組配樂任務</p><h1>我們要做甚麼？</h1><div class=\"v3-task-grid\"><article><div class=\"task-icon\"><svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><circle cx=\"24\" cy=\"24\" r=\"8\"/><path d=\"M2 24Q24 0 46 24Q24 48 2 24Z\"/></svg><b>1</b></div><h2>看清楚</h2><p>指出圖片的一個重點</p><small>誰在動？怎樣動？</small></article><article><div class=\"task-icon\"><svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M8 28V22a16 16 0 0 1 32 0v6M8 26h7v14H8ZM33 26h7v14h-7Z\"/></svg><b>2</b></div><h2>試一試</h2><p>低音量試不同設定</p><small>速度・力度・樂器・風格</small></article><article><div class=\"task-icon\"><svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M12 5h24v38H12ZM17 17l4 4 10-10M18 29h12M18 35h12\"/></svg><b>3</b></div><h2>一起決定</h2><p>每人說理由，全組表決</p><small>記錄員圈選設定</small></article><article><div class=\"task-icon\"><svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M14 34V8l22-4v26M14 8l22-4\"/><ellipse cx=\"9\" cy=\"36\" rx=\"6\" ry=\"4\"/><ellipse cx=\"31\" cy=\"32\" rx=\"6\" ry=\"4\"/></svg><b>4</b></div><h2>排練</h2><p>配樂；可加身體聲響和律動</p><small>跟手勢加入／停止，不蓋過音樂</small></article><article><div class=\"task-icon\"><svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"m16 6 25 18-25 18Z\"/></svg><b>5</b></div><h2>展示</h2><p>一人說構思，全組演出</p><small>播放 15–30 秒</small></article><article><div class=\"task-icon\"><svg viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M5 7h38v27H22L10 44V34H5Z M13 17h22M13 25h16\"/></svg><b>6</b></div><h2>聽回饋</h2><p>先說欣賞，再提一項建議</p><small>表演組決定：保留／修改，說理由</small></article></div><footer>一部 iPad・一人操作・一人記錄・每人參與　｜　老師舉手：停止播放 → iPad 面朝下 → 望老師</footer></section>",
+      "html": "<section class=\"v3-readable \"><h1>我們要做甚麼？</h1><div class=\"v3-reading-body\"><div class=\"v3-task-large\"><article><b>1</b><h2>看圖</h2><p>指出一個動作</p></article><article><b>2</b><h2>試聲</h2><p>低音量試設定</p></article><article><b>3</b><h2>決定</h2><p>每人說理由<br>表決並圈選</p></article><article><b>4</b><h2>排練</h2><p>配樂＋可選律動</p></article><article><b>5</b><h2>展示</h2><p>說構思<br>演出 15–30 秒</p></article><article><b>6</b><h2>回饋</h2><p>先欣賞，再建議</p></article></div></div></section>",
       "media": [],
       "actions": []
     },
@@ -137,7 +148,8 @@
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-12.webp\" alt=\"第12頁：聽清楚，再給具體回饋\">",
       "media": [],
       "actions": [],
-      "pdfImage": "./pages/page-12.webp"
+      "pdfImage": "./pages/page-12.webp",
+      "readableHtml": "<section class=\"v3-readable \"><h1>聽清楚，再給具體回饋</h1><div class=\"v3-reading-body\"><div class=\"v3-big-cards\"><article><strong>先欣賞</strong>哪個聲音配合畫面？</article><article><strong>再建議</strong>怎樣改會更配合？</article><article><strong>表演組回應</strong>保留／修改，說理由</article></div></div></section>"
     },
     {
       "id": "pdf-page-13",
@@ -146,7 +158,8 @@
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-13.webp\" alt=\"第13頁：剛才的音樂，配合這幅圖嗎？\">",
       "media": [],
       "actions": [],
-      "pdfImage": "./pages/page-13.webp"
+      "pdfImage": "./pages/page-13.webp",
+      "readableHtml": "<section class=\"v3-readable \"><h1>剛才的音樂，配合這幅圖嗎？</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><img src=\"./images/Check_Bubbles.webp\" alt=\"小孩與飄浮的泡泡\"><div><div class=\"v3-big-cards\"><article>聽到快，還是慢？</article><article>聽到強，還是弱？</article><article>配合哪個動作？</article></div></div></div></div></section>"
     },
     {
       "id": "pdf-page-14",
@@ -156,7 +169,8 @@
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-14.webp",
-      "maker": true
+      "maker": true,
+      "readableHtml": "<section class=\"v3-readable \"><h1>今天，我用聲音說理由</h1><div class=\"v3-reading-body\"><div class=\"v3-big-cards\"><article><strong>聽到甚麼？</strong>速度・力度・聲音</article><article><strong>配合哪裏？</strong>指出畫面的動作</article><article><strong>為甚麼？</strong>把聲音和動作連起來</article></div></div></section>"
     }
   ]
 }
