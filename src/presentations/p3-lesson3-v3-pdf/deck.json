@@ -1,0 +1,122 @@
+{
+  "title": "P3 · 第三課 V3：音樂怎樣配合畫面？（PDF）",
+  "order": 1.2,
+  "assetBase": "/media/p3-lesson3-v3-pdf/",
+  "viewClass": "pdf-page-deck",
+  "source": "Slide_Preview.pdf",
+  "importMode": "static-pdf-pages",
+  "slides": [
+    {
+      "id": "pdf-page-01",
+      "title": "音樂怎樣配合畫面？",
+      "notes": "原PDF第1頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-01.webp\" alt=\"第1頁：音樂怎樣配合畫面？\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-02",
+      "title": "再唱《Pitter Patter》",
+      "notes": "原PDF第2頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-02.webp\" alt=\"第2頁：再唱《Pitter Patter》\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-03",
+      "title": "哪幅畫配合這首音樂？",
+      "notes": "原PDF第3頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-03.webp\" alt=\"第3頁：哪幅畫配合這首音樂？\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-04",
+      "title": "用聽到的聲音說理由",
+      "notes": "原PDF第4頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-04.webp\" alt=\"第4頁：用聽到的聲音說理由\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-05",
+      "title": "同一畫面，加上音樂",
+      "notes": "原PDF第5頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-05.webp\" alt=\"第5頁：同一畫面，加上音樂\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-06",
+      "title": "換一首，感覺有甚麼不同？",
+      "notes": "原PDF第6頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-06.webp\" alt=\"第6頁：換一首，感覺有甚麼不同？\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-07",
+      "title": "每個人都參與",
+      "notes": "原PDF第7頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-07.webp\" alt=\"第7頁：每個人都參與\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-08",
+      "title": "你想突出哪個動作？",
+      "notes": "原PDF第8頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-08.webp\" alt=\"第8頁：你想突出哪個動作？\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-09",
+      "title": "哪個聲音配合你的重點？",
+      "notes": "原PDF第9頁。 本頁「開啟 Music Maker」為PDF原稿文字；靜態匯入未加入互動連結。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-09.webp\" alt=\"第9頁：哪個聲音配合你的重點？\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-10",
+      "title": "先看畫面，再一起選聲音",
+      "notes": "原PDF第10頁。 本頁「開啟 Music Maker」為PDF原稿文字；靜態匯入未加入互動連結。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-10.webp\" alt=\"第10頁：先看畫面，再一起選聲音\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-11",
+      "title": "加分挑戰：補上畫面的動態",
+      "notes": "原PDF第11頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-11.webp\" alt=\"第11頁：加分挑戰：補上畫面的動態\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-12",
+      "title": "聽清楚，再給具體回饋",
+      "notes": "原PDF第12頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-12.webp\" alt=\"第12頁：聽清楚，再給具體回饋\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-13",
+      "title": "剛才的音樂，配合這幅圖嗎？",
+      "notes": "原PDF第13頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-13.webp\" alt=\"第13頁：剛才的音樂，配合這幅圖嗎？\">",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "pdf-page-14",
+      "title": "今天，我用聲音說理由",
+      "notes": "原PDF第14頁。",
+      "html": "<img class=\"pdf-page-image\" src=\"./pages/page-14.webp\" alt=\"第14頁：今天，我用聲音說理由\">",
+      "media": [],
+      "actions": []
+    }
+  ]
+}
