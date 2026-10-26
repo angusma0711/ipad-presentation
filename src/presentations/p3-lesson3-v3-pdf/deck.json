@@ -14,7 +14,7 @@
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-01.webp",
-      "readableHtml": "<section style=\"background-image:linear-gradient(#fff9edd4,#fff9edd4),url('./images/garden-rain.webp');background-size:cover;background-position:center\" class=\"v3-readable \"><h1>音樂怎樣配合畫面？</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><div><p class=\"v3-hero\">看動作<br>聽聲音<br>說理由</p></div><img src=\"./images/garden-rain.webp\" alt=\"花園雨景\"></div></div></section>"
+      "readableHtml": "<section class=\"v3-readable v3-lesson-cover\" style=\"background-image:linear-gradient(90deg,rgba(255,250,240,.96) 0%,rgba(255,250,240,.9) 35%,rgba(255,250,240,.22) 65%,rgba(255,250,240,0) 100%),url('./images/garden-rain.webp');background-size:cover;background-position:center\" aria-label=\"第三課封面\"><p class=\"v3-cover-eyebrow\">小三　單元二　音樂的魅力</p><h1>動人的配樂</h1><p class=\"v3-cover-lesson\">第三課</p><p class=\"v3-cover-question\">音樂怎樣配合畫面？</p></section>"
     },
     {
       "id": "pdf-page-02",
