@@ -21,7 +21,7 @@ function HtmlSlide({ deck, index, passive=false }: { deck: Deck; index: number; 
  }, [command, passive]);
  return <div ref={root} className={typeof deck.data.htmlClass === 'string' ? deck.data.htmlClass : 'deck-html'} dangerouslySetInnerHTML={{ __html: html }} />;
 }
-export function DeckSlideView({ deck, index, passive=false }: { deck: Deck; index: number; passive?: boolean }) {
+export function DeckSlideView({ deck, index, passive=false, preview=false }: { deck: Deck; index: number; passive?: boolean; preview?:boolean }) {
  const Custom = deck.plugin.Slide;
- return Custom ? <Custom deck={deck} index={index} passive={passive} /> : <HtmlSlide passive={passive} key={deck.slides[index].id} deck={deck} index={index} />;
+ return Custom ? <Custom deck={deck} index={index} passive={passive||preview} /> : <HtmlSlide passive={passive} key={deck.slides[index].id} deck={deck} index={index} />;
 }
