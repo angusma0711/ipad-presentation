@@ -88,7 +88,7 @@
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-07.webp",
-      "readableHtml": "<section class=\"v3-readable \"><h1>每個人都參與</h1><div class=\"v3-reading-body\"><div class=\"v3-big-cards\"><article><strong>操作員</strong>操作 iPad</article><article><strong>記錄員</strong>圈選設定</article><article><strong>每位組員</strong>討論・表決・演出</article></div><p class=\"v3-prompt\">老師舉手 → 停播 → iPad 面朝下 → 望老師</p></div></section>"
+      "readableHtml": "<section class=\"v3-readable\"><h1>每個人都參與</h1><div class=\"v3-reading-body\"><div class=\"v3-role-rows\"><article><div><strong>操作員</strong><p>操作 iPad</p></div><div class=\"v3-role-picture\"><svg viewBox=\"0 0 110 100\" role=\"img\" aria-label=\"操作員操作平板\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"42\" cy=\"20\" r=\"11\"/><path d=\"M22 77V52q0-16 20-16t20 16v25M29 54l15 13 16-12\"/><rect x=\"64\" y=\"37\" width=\"31\" height=\"43\" rx=\"4\"/><path d=\"M75 73h9\"/></svg></div></article><article><div><strong>記錄員</strong><p>圈選設定</p></div><div class=\"v3-role-picture\"><svg viewBox=\"0 0 110 100\" role=\"img\" aria-label=\"記錄員填寫紀錄\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"37\" cy=\"20\" r=\"11\"/><path d=\"M17 77V52q0-16 20-16t20 16v25M25 54l16 13 19-11\"/><rect x=\"65\" y=\"34\" width=\"29\" height=\"46\" rx=\"3\"/><path d=\"M72 46h15M72 56h10M72 66l4 4 11-13\"/></svg></div></article><article><div><strong>每位組員</strong><p>討論・表決・演出</p></div><div class=\"v3-role-picture\"><svg viewBox=\"0 0 110 100\" role=\"img\" aria-label=\"全體組員一起參與\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"55\" cy=\"17\" r=\"10\"/><circle cx=\"23\" cy=\"28\" r=\"9\"/><circle cx=\"87\" cy=\"28\" r=\"9\"/><path d=\"M39 63V45q0-14 16-14t16 14v18M8 78V54q0-13 15-13t15 13v24M72 78V54q0-13 15-13t15 13v24M19 62l13 9M91 62l-13 9\"/><path d=\"M44 79h23M55 68v23\"/></svg></div></article></div><p class=\"v3-prompt\">老師舉手 → 停播 → iPad 面朝下 → 望老師</p></div></section>"
     },
     {
       "id": "pdf-page-08",
@@ -98,28 +98,26 @@
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-08.webp",
-      "readableHtml": "<section class=\"v3-readable \"><h1>你想突出哪個動作？</h1><div class=\"v3-reading-body\"><div class=\"v3-split\"><img src=\"./images/Demo_Elephant_Bird.webp\" alt=\"大象踏步與小鳥飛翔\"><div><div class=\"v3-big-cards\"><article>大象踏步？</article><article>小鳥飛翔？</article><article>先選一個重點</article></div></div></div></div></section>"
+      "readableHtml": "<section class=\"v3-readable v3-picture-only\"><div class=\"v3-reading-body\"><img src=\"./images/Demo_Elephant_Bird.webp\" alt=\"大象踏步、小鳥飛翔的畫面\"></div></section>"
     },
     {
       "id": "pdf-page-09",
       "title": "哪個聲音配合你的重點？",
-      "notes": "原PDF第9頁。 可由iPad開啟及控制投影的Music Maker；首次在投影電腦按開始。",
+      "notes": "原PDF第9頁。",
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-09.webp\" alt=\"第9頁：哪個聲音配合你的重點？\">",
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-09.webp",
-      "maker": true,
       "readableHtml": "<section class=\"v3-readable \"><h1>哪個聲音配合你的重點？</h1><div class=\"v3-reading-body\"><div class=\"v3-instruments\"><figure><img src=\"./images/DoubleBass_Online.webp\" alt=\"低音大提琴\"><figcaption>低音大提琴</figcaption></figure><figure><img src=\"./images/Flute_Cutout.webp\" alt=\"長笛\"><figcaption>長笛</figcaption></figure></div><p class=\"v3-prompt\">聽聲音 → 想動作 → 說理由</p></div><footer class=\"v3-reference\">低音大提琴：papapishu / CC0；長笛：Jkwchui / CC BY-SA 3.0，去標註、改銀灰色及裁透明空白。</footer></section>"
     },
     {
       "id": "pdf-page-10",
       "title": "先看畫面，再一起選聲音",
-      "notes": "原PDF第10頁。 可由iPad開啟及控制投影的Music Maker；首次在投影電腦按開始。",
+      "notes": "原PDF第10頁。",
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-10.webp\" alt=\"第10頁：先看畫面，再一起選聲音\">",
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-10.webp",
-      "maker": true,
       "readableHtml": "<section class=\"v3-readable \"><h1>先看畫面，再一起選聲音</h1><div class=\"v3-reading-body\"><div class=\"v3-group-images\"><figure><img src=\"./images/01_Hop.webp\" alt=\"小組A活動畫面\"><figcaption>A</figcaption></figure><figure><img src=\"./images/02_March.webp\" alt=\"小組B活動畫面\"><figcaption>B</figcaption></figure><figure><img src=\"./images/03_Float.webp\" alt=\"小組C活動畫面\"><figcaption>C</figcaption></figure><figure><img src=\"./images/04_Dance.webp\" alt=\"小組D活動畫面\"><figcaption>D</figcaption></figure></div><p class=\"v3-prompt\">看重點 → 試聽 → 一起圈選</p></div></section>"
     },
     {
@@ -164,12 +162,11 @@
     {
       "id": "pdf-page-14",
       "title": "今天，我用聲音說理由",
-      "notes": "原PDF第14頁。 可由iPad開啟及控制投影的Music Maker；首次在投影電腦按開始。",
+      "notes": "原PDF第14頁。",
       "html": "<img class=\"pdf-page-image\" src=\"./pages/page-14.webp\" alt=\"第14頁：今天，我用聲音說理由\">",
       "media": [],
       "actions": [],
       "pdfImage": "./pages/page-14.webp",
-      "maker": true,
       "readableHtml": "<section class=\"v3-readable \"><h1>今天，我用聲音說理由</h1><div class=\"v3-reading-body\"><div class=\"v3-big-cards\"><article><strong>聽到甚麼？</strong>速度・力度・聲音</article><article><strong>配合哪裏？</strong>指出畫面的動作</article><article><strong>為甚麼？</strong>把聲音和動作連起來</article></div></div></section>"
     }
   ]

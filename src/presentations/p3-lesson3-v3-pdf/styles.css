@@ -28,3 +28,5 @@
 .v3-readable .v3-task-large b{float:right;color:#176b60;font-size:3cqw}
 .v3-readable .v3-task-large h2{font-size:3cqw;line-height:1.2;margin:0 0 1cqw;color:#176b60}
 .v3-readable .v3-task-large p{font-size:2.7cqw;line-height:1.35}
+
+.v3-readable .v3-role-rows{display:grid;gap:1.2cqw}.v3-readable .v3-role-rows article{display:flex;justify-content:space-between;align-items:center;background:#e9efe6;border-radius:1cqw;padding:.8cqw 2cqw;min-height:9cqw}.v3-readable .v3-role-rows strong{font-size:3cqw;line-height:1.3}.v3-readable .v3-role-picture{width:19cqw;height:8.8cqw;display:flex;justify-content:center;color:#176b60}.v3-readable .v3-role-picture svg{height:100%;width:auto}.v3-readable.v3-picture-only{padding:1.5cqw 2cqw 3cqw}.v3-readable.v3-picture-only img{height:100%;width:100%;object-fit:contain}
