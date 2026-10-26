@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3eee4">
+  <title>音樂創作坊 Music Maker</title>
+  <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="gate">
+    <div class="gate-card">
+      <p class="gate-title">音樂創作坊</p>
+      <span class="sub">Music Maker</span>
+      <p>按一下，打開聲音。<br>Tap once to turn the sound on.</p>
+      <button id="startBtn" type="button">開始 Start</button>
+      <p id="gateMsg"></p>
+    </div>
+  </div>
+
+  <div id="app" class="wrap" inert>
+    <header class="top">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="28" r="14" fill="#FFE08A"/><rect x="16" y="46" width="32" height="6" rx="3" fill="#fff"/></svg>
+        </div>
+        <div>
+          <h1 id="pageTitle">音樂創作坊</h1>
+          <span class="sub">Music Maker · 創作你自己的音樂 Make your own music</span>
+        </div>
+      </div>
+      <button id="previewBtn" class="btn primary" type="button" aria-pressed="false">試聽 Preview</button>
+    </header>
+
+    <div class="steps" aria-label="步驟 Steps">
+      <div class="step"><i>1</i>選節奏 <span class="en">Choose</span></div>
+      <div class="step"><i>2</i>試聽 <span class="en">Play</span></div>
+    </div>
+
+    <p id="status" class="status" role="status">選速度、力度、樂器和風格，再按試聽。Pick speed, dynamics, instrument and style, then press Preview.</p>
+
+    <div class="layout single">
+      <section class="panel" aria-labelledby="videoHeading" hidden>
+        <h2 id="videoHeading">廣告 Advert</h2>
+        <div class="tv">
+          <div class="screen">
+            <video id="adVideo"  playsinline webkit-playsinline preload="none" muted></video>
+          </div>
+          <p id="tvLabel" class="tv-label">廣告 Ad</p>
+        </div>
+        <div class="player-row">
+          <button id="videoToggle" class="btn" type="button" aria-pressed="false">播放 Play</button>
+          <label class="sr" for="seek">廣告位置 Ad position</label>
+          <input id="seek" class="seek" type="range" min="0" max="1000" value="0" disabled>
+          <span class="time"><span id="timeNow">0:00</span> / <span id="timeTotal">0:00</span></span>
+        </div>
+        <div class="file-row">
+          <label class="file-btn">載入影片 Load video
+            <input id="videoFile" type="file" accept="video/*">
+          </label>
+          <button id="useDemo" class="btn" type="button">陽光橙示範 Orange demo</button>
+          <button id="useSample" class="btn" type="button" hidden>返回廣告 Back to ad</button>
+        </div>
+        <p class="hint">影片只留在這部裝置。廣告原聲會關掉。The video stays on this device. The ad sound is muted.</p>
+        <div class="length-row">
+          <label for="length"><strong>長度</strong><span class="en"> Length</span></label>
+          <input id="length" type="range" min="10" max="30" step="1" value="15">
+          <div class="length-readout"><span id="lengthValue">15</span><small>秒 sec</small></div>
+        </div>
+        <div class="meter" aria-hidden="true"><span id="meter"></span></div>
+        <div class="action-row">
+          <button id="watchAd" class="btn" type="button" aria-pressed="false">睇廣告 Watch ad</button>
+          <button id="watchMusic" class="btn primary" type="button" aria-pressed="false">用我的音樂睇 Watch with my music</button>
+        </div>
+        <p id="scaleLine" class="scale-line"></p>
+        <p id="chordLine" class="chord-line"></p>
+      </section>
+
+      <section id="cardBoard" class="panel card-col" aria-label="快速開始 Quick start">
+        <div id="moodRow">
+          <h2>心情 Mood</h2>
+          <div id="moodCards" class="cards cols-5"></div>
+        </div>
+        <h2>速度 Speed</h2>
+        <div id="speedCards" class="cards cols-3"></div>
+        <h2>力度 Dynamics</h2>
+        <div id="dynamicsCards" class="cards cols-3"></div>
+        <h2>樂器（低音 → 高音） Instrument (low → high)</h2>
+        <div id="instrumentCards" class="cards cols-5"></div>
+        <h2>風格 Style</h2>
+        <div id="styleCards" class="cards cols-4"></div>
+        <p class="hint">點圖卡會換上新節奏。Picking a card loads a new pattern.</p>
+      </section>
+    </div>
+
+    <section class="grid-section" aria-labelledby="gridHeading" hidden>
+      <div class="grid-head">
+        <div>
+          <h2 id="gridHeading">音樂格子 Grid</h2>
+          <p id="summary" class="summary"></p>
+        </div>
+      </div>
+      <p class="hint">點一下格子就可以開關。這 16 格會重複，直到時間完。Tap a square to switch it. These 16 steps repeat until the time ends.</p>
+      <div id="grid" class="seq-scroll"></div>
+      <div class="export-row">
+        <button id="exportWav" class="btn" type="button">下載 WAV Download WAV</button>
+        <a id="saveWav" class="btn primary" hidden download="ad-music.wav">儲存 WAV Save WAV</a>
+        <button id="saveJson" class="btn" type="button">儲存設定 Save settings</button>
+        <label class="file-btn">載入設定 Load settings
+          <input id="loadJson" type="file" accept="application/json,.json">
+        </label>
+      </div>
+      <p class="legal">樂器使用真實錄音，鼓聲使用 <a href="vendor/tone/LICENSE.md">Tone.js（MIT）</a> 合成。<a href="vendor/instrument-samples/CREDITS.md">音源來源及授權 Sample credits</a>。沒有帳戶，也不會儲存學生資料。Recorded instruments and synthesized drums. No accounts, and no student work is stored.</p>
+    </section>
+  </div>
+
+  <noscript>
+    <p>請開啟 JavaScript 才能使用這個工作坊。Turn on JavaScript to use this workshop.</p>
+  </noscript>
+
+  <script>window.TONE_SILENCE_LOGGING = true;</script>
+  <script src="vendor/tone/Tone.js"></script>
+  <script src="js/presets.js"></script>
+  <script src="js/instrument-samples.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

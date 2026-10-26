@@ -1,0 +1,177 @@
+[
+  {
+    "instrument": "contrabass",
+    "note": "C2",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/contrabass/C2.mp3",
+    "bytes": 251058,
+    "sha256": "29909070468832bd40184a3add476c73df42412e03b5e31d33828f7a2ab40fd4"
+  },
+  {
+    "instrument": "contrabass",
+    "note": "D2",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/contrabass/D2.mp3",
+    "bytes": 416948,
+    "sha256": "97da6ece5288497b06cc6c43bb83434662714f30bbe17e976f2ed4bf99b23e50"
+  },
+  {
+    "instrument": "contrabass",
+    "note": "E2",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/contrabass/E2.mp3",
+    "bytes": 331812,
+    "sha256": "c476fb11b33bbf5f04db2ce7489aab9ff34790b3c4897bbad56e4cdb66d9fb4c"
+  },
+  {
+    "instrument": "contrabass",
+    "note": "Fs2",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/contrabass/Fs2.mp3",
+    "bytes": 158410,
+    "sha256": "92e6283bee964da8b2783c37233b2ed37a1559df1276c310b69ec3d71c6441cd"
+  },
+  {
+    "instrument": "contrabass",
+    "note": "A2",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/contrabass/A2.mp3",
+    "bytes": 291122,
+    "sha256": "fa6497b23b2de54fe3da42a9f562d011fd4cbca9950e2e0f388333c98cfdf5b0"
+  },
+  {
+    "instrument": "contrabass",
+    "note": "Cs3",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/contrabass/Cs3.mp3",
+    "bytes": 184702,
+    "sha256": "09977ba5b668236a2d5817ae5d5ee9d824a15d8c67b8c6bbbc8a637c5ad39993"
+  },
+  {
+    "instrument": "cello",
+    "note": "C3",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/cello/C3.mp3",
+    "bytes": 75778,
+    "sha256": "bde16914903926f7b7924756e9e28617d9357fe1f7d7085b0d06cedeb527e62a"
+  },
+  {
+    "instrument": "cello",
+    "note": "D3",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/cello/D3.mp3",
+    "bytes": 81412,
+    "sha256": "0e43147624360217944e71cc5148f30ffa4b63b510dab280eab705a63d53b36b"
+  },
+  {
+    "instrument": "cello",
+    "note": "E3",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/cello/E3.mp3",
+    "bytes": 71396,
+    "sha256": "a231fee45696e44da85fa5886007b4b8c8ffd6129c39327ebfc3f2c964edc291"
+  },
+  {
+    "instrument": "cello",
+    "note": "G3",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/cello/G3.mp3",
+    "bytes": 70770,
+    "sha256": "869683c073aa1264e5b2d2ec5f68818d20acea390d6926a728654a6d6a026169"
+  },
+  {
+    "instrument": "cello",
+    "note": "A3",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/cello/A3.mp3",
+    "bytes": 73274,
+    "sha256": "9738de0733f9e321b2cd0212d4ef6f00da8b3c2a6d7cb787f51a65515fd8fd8f"
+  },
+  {
+    "instrument": "cello",
+    "note": "C4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/cello/C4.mp3",
+    "bytes": 80160,
+    "sha256": "e652c5eafaec4fb339da2595daf5554005f39357fac3f6c093b0d0f594b1012b"
+  },
+  {
+    "instrument": "piano",
+    "note": "A3",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/A3.mp3",
+    "bytes": 200352,
+    "sha256": "fdd984a8e4bfd27fbe92e071635dd1f5ca90c1aec6102270eb52b46d7d64f14a"
+  },
+  {
+    "instrument": "piano",
+    "note": "C4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/C4.mp3",
+    "bytes": 239164,
+    "sha256": "a265c8cfd4140cf27b55054b4953b6c691fce3523530ca8ae0faed5e4cd39063"
+  },
+  {
+    "instrument": "piano",
+    "note": "Ds4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/Ds4.mp3",
+    "bytes": 209742,
+    "sha256": "981383275cc1021b425f5c3e4fab8e9ee4385e4023e82993e04140ad325d0f08"
+  },
+  {
+    "instrument": "piano",
+    "note": "Fs4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/Fs4.mp3",
+    "bytes": 161540,
+    "sha256": "0b23feb9c67e409aa18b7bd2b1897f198e5914121a709e4dfd9996af4f0a15b4"
+  },
+  {
+    "instrument": "piano",
+    "note": "A4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/A4.mp3",
+    "bytes": 159036,
+    "sha256": "a3b829eb92b37fd1174227bc83757f3a62bc3f9efbaf79503e83447c52338d44"
+  },
+  {
+    "instrument": "piano",
+    "note": "C5",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/C5.mp3",
+    "bytes": 177190,
+    "sha256": "54a9304d2c609328580c0e06a394670559fe5f594f643d5d12c6dae158051b4a"
+  },
+  {
+    "instrument": "flute",
+    "note": "C5",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/flute/C5.mp3",
+    "bytes": 183450,
+    "sha256": "1b6ec4d5bf2caeca80da4c53f6d9f09eb3a49e8de04588965c55ca8f00ff296d"
+  },
+  {
+    "instrument": "flute",
+    "note": "E5",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/flute/E5.mp3",
+    "bytes": 195970,
+    "sha256": "2d024d4cd56412bcb8cc3ecbce0736b63c9ba1d77de2e9601ba4efeda559a157"
+  },
+  {
+    "instrument": "flute",
+    "note": "A5",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/flute/A5.mp3",
+    "bytes": 177190,
+    "sha256": "0735eccfb744176f253d1f715f7a70cf045694cce1da99d934e52a3a3544f968"
+  },
+  {
+    "instrument": "flute",
+    "note": "C6",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/flute/C6.mp3",
+    "bytes": 176564,
+    "sha256": "535d1fbfaddbdb7f91c415708470f0860669c08733823212e81e98909afc9a64"
+  },
+  {
+    "instrument": "bells",
+    "note": "C6",
+    "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Glockenspiel/glock_medium_C6_01.wav",
+    "bytes": 1271310,
+    "sha256": "e942cbf502cf6731df2925945fe3234c876cb63f047d91007b6929887f9e4904"
+  },
+  {
+    "instrument": "bells",
+    "note": "G6",
+    "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Glockenspiel/glock_medium_G6_01.wav",
+    "bytes": 843122,
+    "sha256": "a2ba94e59119cd5272c1161fc8b8fbfb94c7b44de45a9a6cc5973b1c332103af"
+  },
+  {
+    "instrument": "bells",
+    "note": "C7",
+    "url": "https://raw.githubusercontent.com/sgossner/VCSL/c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e/Idiophones/Struck%20Idiophones/Glockenspiel/glock_medium_C7_01.wav",
+    "bytes": 492418,
+    "sha256": "b2ecbe0e60c983bbfaa49a1f45f8a11559f7dba27b8c8a032eb2cb7366a36910"
+  }
+]

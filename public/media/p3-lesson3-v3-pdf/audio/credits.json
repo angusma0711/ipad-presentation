@@ -1,0 +1,29 @@
+[
+  {
+    "id": "chopin",
+    "artist": "Muriel Nguyen Xuan; recording Stéphane Magnenat",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Muriel-Nguyen-Xuan-Chopin-valse-opus64-1.ogg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c4/Muriel-Nguyen-Xuan-Chopin-valse-opus64-1.ogg/Muriel-Nguyen-Xuan-Chopin-valse-opus64-1.ogg.mp3",
+    "changes": "Wikimedia MP3 transcode; original performance unchanged. Swan/Moon opening 30 seconds selected at playback."
+  },
+  {
+    "id": "swan",
+    "artist": "John Michel",
+    "license": "CC BY-SA 3.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-SAINT_SAENS_CARNIVAL_OF_ANIMALS_THE_SWAN.ogg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/JOHN_MICHEL_CELLO-SAINT_SAENS_CARNIVAL_OF_ANIMALS_THE_SWAN.ogg/JOHN_MICHEL_CELLO-SAINT_SAENS_CARNIVAL_OF_ANIMALS_THE_SWAN.ogg.mp3",
+    "changes": "Wikimedia MP3 transcode; original performance unchanged. Swan/Moon opening 30 seconds selected at playback."
+  },
+  {
+    "id": "moon",
+    "artist": "Laurens Goedhart (2011)",
+    "license": "CC BY 3.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Clair_de_lune_%28Claude_Debussy%29_Suite_bergamasque.ogg",
+    "download": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/be/Clair_de_lune_%28Claude_Debussy%29_Suite_bergamasque.ogg/Clair_de_lune_%28Claude_Debussy%29_Suite_bergamasque.ogg.mp3",
+    "changes": "Wikimedia MP3 transcode; original performance unchanged. Swan/Moon opening 30 seconds selected at playback."
+  }
+]

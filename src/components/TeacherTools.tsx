@@ -38,7 +38,7 @@ export function TeacherTools({navigationVersion=0,category,quickTarget,stageTarg
  return <>
   {quickTarget&&mode!=='slide'&&tool==='pen'&&createPortal(quickTools,quickTarget)}
   {mode!=='general'&&<div hidden={!!category&&category!=='action'} id="teacher-panel-action" role={category?'tabpanel':undefined} aria-labelledby={category?'teacher-tab-action':undefined}>
-  {Controls&&<Controls deck={deck} index={slide} state={teaching.interaction} disabled={unavailable} change={patch=>void perform(()=>changeInteraction(id,slide,patch))} playMedia={playMedia}/>}
+  {Controls&&<Controls sendAction={action=>void perform(()=>commandSlideAction(id,slide,action))} action={teaching.action} feedback={teaching.feedback} deck={deck} index={slide} state={teaching.interaction} disabled={unavailable} change={patch=>void perform(()=>changeInteraction(id,slide,patch))} playMedia={playMedia}/>}
   {suggested&&<section className="card"><h2>此頁教材媒體</h2><div className="tool-bar"><button className="primary" disabled={unavailable} onClick={()=>playMedia(suggested)}>播放</button><button disabled={unavailable||!teaching.media} onClick={()=>void perform(()=>commandMedia(id,slide,'pause'))}>暫停</button></div><p className="small" role="status">播放狀態：{statusText[String(status)]??status}。聲音由投影電腦播放。</p></section>}
   {lessonSlide.actions.length>0&&<section className="card"><h2>投影片功能</h2><div className="tool-bar">{lessonSlide.actions.map(action=><button key={action.id} disabled={unavailable} onClick={()=>void perform(()=>commandSlideAction(id,slide,action.id))}>{action.label}</button>)}</div></section>}
   {!Controls&&!suggested&&!lessonSlide.actions.length&&<p className="small">這張投影片沒有專用教學按鈕。</p>}

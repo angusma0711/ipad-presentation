@@ -1,0 +1,9 @@
+Tone.js 14.7.77
+https://github.com/Tonejs/Tone.js
+Copyright (c) 2014-2020 Yotam Mann
+MIT License — see LICENSE.md
+
+File: Tone.js
+This is the official UMD build. The sourceMappingURL comment was removed so a
+browser does not request the separate source map when the page is offline.
+The library code itself is unchanged.

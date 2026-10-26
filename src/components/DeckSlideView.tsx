@@ -23,5 +23,5 @@ function HtmlSlide({ deck, index, passive=false }: { deck: Deck; index: number; 
 }
 export function DeckSlideView({ deck, index, passive=false }: { deck: Deck; index: number; passive?: boolean }) {
  const Custom = deck.plugin.Slide;
- return Custom ? <Custom deck={deck} index={index} /> : <HtmlSlide passive={passive} key={deck.slides[index].id} deck={deck} index={index} />;
+ return Custom ? <Custom deck={deck} index={index} passive={passive} /> : <HtmlSlide passive={passive} key={deck.slides[index].id} deck={deck} index={index} />;
 }
