@@ -6,26 +6,139 @@
   "ink": "page",
   "slides": [
     {
-      "id": "nv-page-1",
-      "title": "第一頁",
-      "notes": "工作紙第一頁原頁（頁首及第1至5題）。用上半頁、下半頁或框選放大，避免整張 A4 縮到看不清。筆跡在「畫筆」：可畫線、圈選、擦除、復原、清除；放大或改視窗後仍對準原位。\n\n姓名和日期寫在紙上，不要在投影收集學生資料。方格只填四分音符（一拍）或二分音符（兩拍）。\n第1題 3/4：第3小節空格是四分音符。中間方格是工作紙已印的示例。\n第2題 2/4：兩個空格都是四分音符。最後的二分音符已是兩拍。\n第3題 2/4：開頭只有一個空格，要填二分音符。\n第4題 3/4：第一空格二分音符，第二空格四分音符。\n第5題 4/4：第一空格二分音符，第二空格四分音符。",
-      "html": "<img src=\"./pages/page-1.jpg\" alt=\"培基小學音樂科工作紙第一頁：音符時值\">",
+      "id": "nv-title",
+      "title": "音符時值",
+      "kind": "title",
+      "notes": "",
       "media": [],
-      "actions": [],
-      "image": "./pages/page-1.jpg",
-      "pageWidth": 4284,
-      "pageHeight": 5712
+      "actions": []
     },
     {
-      "id": "nv-page-2",
-      "title": "第二頁",
-      "notes": "工作紙第二頁原頁（第5、6題、整體表現、學生自我評估）。同樣可用上半頁、下半頁和框選放大。\n\n第5題 4/4：三個空格都是四分音符。最後的附點二分音符加四分音符已滿四拍。\n第6題 4/4：空格是四分音符。兩粒八分音符合共一拍，休止符也算拍。相片中間有反光；若印刷和小節線看起來不同，以工作紙拍數口頭調整。\n\n整體表現在各人工作紙勾選，不要在螢幕點名。自我評估由學生在紙上塗顏色。",
-      "html": "<img src=\"./pages/page-2.jpg\" alt=\"培基小學音樂科工作紙第二頁：音符時值\">",
+      "id": "nv-note-tree",
+      "title": "音符樹",
+      "kind": "tree",
+      "notes": "以四分音符為一拍：全音符四拍，二分音符兩拍，四分音符一拍，八分音符半拍。",
       "media": [],
-      "actions": [],
+      "actions": []
+    },
+    {
+      "id": "nv-question-1",
+      "title": "第 1 題",
+      "kind": "question",
+      "notes": "原照片題目，保留原印刷音符及方框。",
+      "image": "./pages/page-1.jpg",
+      "pageWidth": 4284,
+      "pageHeight": 5712,
+      "region": {
+        "x": 0.105,
+        "y": 0.233,
+        "w": 0.8,
+        "h": 0.075
+      },
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "nv-question-2",
+      "title": "第 2 題",
+      "kind": "question",
+      "notes": "原照片題目，保留原印刷音符及方框。",
+      "image": "./pages/page-1.jpg",
+      "pageWidth": 4284,
+      "pageHeight": 5712,
+      "region": {
+        "x": 0.105,
+        "y": 0.335,
+        "w": 0.8,
+        "h": 0.077
+      },
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "nv-question-3",
+      "title": "第 3 題",
+      "kind": "question",
+      "notes": "原照片題目，保留原印刷音符及方框。",
+      "image": "./pages/page-1.jpg",
+      "pageWidth": 4284,
+      "pageHeight": 5712,
+      "region": {
+        "x": 0.1,
+        "y": 0.451,
+        "w": 0.8,
+        "h": 0.078
+      },
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "nv-question-4",
+      "title": "第 4 題",
+      "kind": "question",
+      "notes": "原照片題目，保留原印刷音符及方框。",
+      "image": "./pages/page-1.jpg",
+      "pageWidth": 4284,
+      "pageHeight": 5712,
+      "region": {
+        "x": 0.1,
+        "y": 0.575,
+        "w": 0.8,
+        "h": 0.08
+      },
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "nv-question-5",
+      "title": "第 5 題",
+      "kind": "question",
+      "notes": "原照片題目，保留原印刷音符及方框。",
+      "image": "./pages/page-1.jpg",
+      "pageWidth": 4284,
+      "pageHeight": 5712,
+      "region": {
+        "x": 0.1,
+        "y": 0.703,
+        "w": 0.8,
+        "h": 0.08
+      },
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "nv-question-6",
+      "title": "第 5 題（第二頁）",
+      "kind": "question",
+      "notes": "原照片題目，保留原印刷音符及方框。",
       "image": "./pages/page-2.jpg",
       "pageWidth": 4284,
-      "pageHeight": 5712
+      "pageHeight": 5712,
+      "region": {
+        "x": 0.12,
+        "y": 0.14,
+        "w": 0.78,
+        "h": 0.065
+      },
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "nv-question-7",
+      "title": "第 6 題（第二頁）",
+      "kind": "question",
+      "notes": "原照片題目，保留原印刷音符及方框。",
+      "image": "./pages/page-2.jpg",
+      "pageWidth": 4284,
+      "pageHeight": 5712,
+      "region": {
+        "x": 0.12,
+        "y": 0.245,
+        "w": 0.78,
+        "h": 0.072
+      },
+      "media": [],
+      "actions": []
     }
   ]
 }
