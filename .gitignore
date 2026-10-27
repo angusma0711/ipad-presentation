@@ -18,3 +18,7 @@ scripts/check-teaching*.mjs
 scripts/check-firebase-rules.mjs
 scripts/create-p*-session.mjs
 scripts/import-p5.cjs
+# Runtime sprites belong in the published application.
+!src/activities/solfege/assets/runner/*.png
+# Original classroom reference photo stays local.
+references/solfege/

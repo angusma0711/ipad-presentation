@@ -1,0 +1,44 @@
+[
+  {
+    "instrument": "piano",
+    "note": "A3",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/A3.mp3",
+    "bytes": 200352,
+    "sha256": "fdd984a8e4bfd27fbe92e071635dd1f5ca90c1aec6102270eb52b46d7d64f14a"
+  },
+  {
+    "instrument": "piano",
+    "note": "C4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/C4.mp3",
+    "bytes": 239164,
+    "sha256": "a265c8cfd4140cf27b55054b4953b6c691fce3523530ca8ae0faed5e4cd39063"
+  },
+  {
+    "instrument": "piano",
+    "note": "Ds4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/Ds4.mp3",
+    "bytes": 209742,
+    "sha256": "981383275cc1021b425f5c3e4fab8e9ee4385e4023e82993e04140ad325d0f08"
+  },
+  {
+    "instrument": "piano",
+    "note": "Fs4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/Fs4.mp3",
+    "bytes": 161540,
+    "sha256": "0b23feb9c67e409aa18b7bd2b1897f198e5914121a709e4dfd9996af4f0a15b4"
+  },
+  {
+    "instrument": "piano",
+    "note": "A4",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/A4.mp3",
+    "bytes": 159036,
+    "sha256": "a3b829eb92b37fd1174227bc83757f3a62bc3f9efbaf79503e83447c52338d44"
+  },
+  {
+    "instrument": "piano",
+    "note": "C5",
+    "url": "https://raw.githubusercontent.com/nbrosowsky/tonejs-instruments/622c2f1c32c8cfce4158ddc3eb26e518ddef37e5/samples/piano/C5.mp3",
+    "bytes": 177190,
+    "sha256": "54a9304d2c609328580c0e06a394670559fe5f594f643d5d12c6dae158051b4a"
+  }
+]

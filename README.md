@@ -157,3 +157,9 @@ P5 與 interaction 文件規則已於使用者批准後發布，實際 Firebase 
 先提供名稱及課本音色選項，再聆聽。分析沿用課本第19–21頁題目及選項；箏可切換「開始／後半段」。圖片是課堂延伸插圖，並非課本原圖。教師參考答案只在教師備註顯示。
 每輪教師端有 YouTube 播放／暫停和原站連結，投影亦有原站連結。實際聲音由投影電腦播放；YouTube 是否允許嵌入由影片來源決定。
 重建後請開始新課堂，避免沿用舊課堂按頁儲存的互動及媒體狀態。Firestore schema 和規則沒有改動，網站仍由本機 Vite 提供，未發布 Firebase Hosting。
+
+## 小二「唱名解鎖」活動
+
+首頁新增單機活動入口，亦可直接開啟 `/activities/solfege`，不需建立課堂或登入。已按提供的考試圖片完成二線譜映射，加入真鋼琴錄音參考音、六站音符跑道及最後挑戰。啟動、來源待辦及驗證紀錄見 [活動 README](src/activities/solfege/README.md)。
+
+公開活動：[唱名解鎖](https://angusma0711.github.io/ipad-presentation/#/activities/solfege)。
