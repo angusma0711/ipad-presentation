@@ -25,120 +25,275 @@
       "id": "nv-question-1",
       "title": "第 1 題",
       "kind": "question",
-      "notes": "原照片單題；預設只顯示本題。教師可查看原頁、上／下半頁或框選放大，按「本題」返回。筆跡以原照片座標儲存。",
-      "image": "./pages/page-2.jpg",
-      "pageWidth": 4284,
-      "pageHeight": 5712,
+      "notes": "模式 B：依原工作紙重新繪製，每題一頁，保留原題號及原印刷示例，空格未填答案。",
+      "image": "./redrawn/question-1.svg",
+      "pageWidth": 1600,
+      "pageHeight": 900,
       "region": {
-        "x": 0.105,
-        "y": 0.233,
-        "w": 0.8,
-        "h": 0.075
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
       },
       "media": [],
-      "actions": []
+      "actions": [],
+      "sourceImage": "./pages/page-2.jpg",
+      "notation": {
+        "meter": [
+          3,
+          4
+        ],
+        "measures": [
+          [
+            "quarter",
+            "quarter",
+            "quarter"
+          ],
+          [
+            "quarter",
+            "example",
+            "quarter"
+          ],
+          [
+            "blank",
+            "quarter",
+            "quarter"
+          ]
+        ]
+      }
     },
     {
       "id": "nv-question-2",
       "title": "第 2 題",
       "kind": "question",
-      "notes": "原照片單題；預設只顯示本題。教師可查看原頁、上／下半頁或框選放大，按「本題」返回。筆跡以原照片座標儲存。",
-      "image": "./pages/page-2.jpg",
-      "pageWidth": 4284,
-      "pageHeight": 5712,
+      "notes": "模式 B：依原工作紙重新繪製，每題一頁，保留原題號及原印刷示例，空格未填答案。",
+      "image": "./redrawn/question-2.svg",
+      "pageWidth": 1600,
+      "pageHeight": 900,
       "region": {
-        "x": 0.105,
-        "y": 0.335,
-        "w": 0.8,
-        "h": 0.077
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
       },
       "media": [],
-      "actions": []
+      "actions": [],
+      "sourceImage": "./pages/page-2.jpg",
+      "notation": {
+        "meter": [
+          2,
+          4
+        ],
+        "measures": [
+          [
+            "quarter",
+            "blank"
+          ],
+          [
+            "blank",
+            "quarter"
+          ],
+          [
+            "half"
+          ]
+        ]
+      }
     },
     {
       "id": "nv-question-3",
       "title": "第 3 題",
       "kind": "question",
-      "notes": "原照片單題；預設只顯示本題。教師可查看原頁、上／下半頁或框選放大，按「本題」返回。筆跡以原照片座標儲存。",
-      "image": "./pages/page-2.jpg",
-      "pageWidth": 4284,
-      "pageHeight": 5712,
+      "notes": "模式 B：依原工作紙重新繪製，每題一頁，保留原題號及原印刷示例，空格未填答案。",
+      "image": "./redrawn/question-3.svg",
+      "pageWidth": 1600,
+      "pageHeight": 900,
       "region": {
-        "x": 0.1,
-        "y": 0.451,
-        "w": 0.8,
-        "h": 0.078
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
       },
       "media": [],
-      "actions": []
+      "actions": [],
+      "sourceImage": "./pages/page-2.jpg",
+      "notation": {
+        "meter": [
+          2,
+          4
+        ],
+        "measures": [
+          [
+            "blank"
+          ],
+          [
+            "quarter",
+            "quarter"
+          ],
+          [
+            "half"
+          ]
+        ]
+      }
     },
     {
       "id": "nv-question-4",
       "title": "第 4 題",
       "kind": "question",
-      "notes": "原照片單題；預設只顯示本題。教師可查看原頁、上／下半頁或框選放大，按「本題」返回。筆跡以原照片座標儲存。",
-      "image": "./pages/page-2.jpg",
-      "pageWidth": 4284,
-      "pageHeight": 5712,
+      "notes": "模式 B：依原工作紙重新繪製，每題一頁，保留原題號及原印刷示例，空格未填答案。",
+      "image": "./redrawn/question-4.svg",
+      "pageWidth": 1600,
+      "pageHeight": 900,
       "region": {
-        "x": 0.1,
-        "y": 0.575,
-        "w": 0.8,
-        "h": 0.08
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
       },
       "media": [],
-      "actions": []
+      "actions": [],
+      "sourceImage": "./pages/page-2.jpg",
+      "notation": {
+        "meter": [
+          3,
+          4
+        ],
+        "measures": [
+          [
+            "blank",
+            "quarter"
+          ],
+          [
+            "quarter",
+            "quarter",
+            "blank"
+          ],
+          [
+            "half",
+            "quarter"
+          ]
+        ]
+      }
     },
     {
       "id": "nv-question-5",
       "title": "第 5 題",
       "kind": "question",
-      "notes": "原照片單題；預設只顯示本題。教師可查看原頁、上／下半頁或框選放大，按「本題」返回。筆跡以原照片座標儲存。",
-      "image": "./pages/page-2.jpg",
-      "pageWidth": 4284,
-      "pageHeight": 5712,
+      "notes": "模式 B：依原工作紙重新繪製，每題一頁，保留原題號及原印刷示例，空格未填答案。",
+      "image": "./redrawn/question-5.svg",
+      "pageWidth": 1600,
+      "pageHeight": 900,
       "region": {
-        "x": 0.1,
-        "y": 0.703,
-        "w": 0.8,
-        "h": 0.08
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
       },
       "media": [],
-      "actions": []
+      "actions": [],
+      "sourceImage": "./pages/page-2.jpg",
+      "notation": {
+        "meter": [
+          4,
+          4
+        ],
+        "measures": [
+          [
+            "half",
+            "blank"
+          ],
+          [
+            "half",
+            "quarter",
+            "blank"
+          ],
+          [
+            "half",
+            "half"
+          ]
+        ]
+      }
     },
     {
       "id": "nv-question-6",
       "title": "第 5 題（第二頁）",
       "kind": "question",
-      "notes": "原照片單題；預設只顯示本題。教師可查看原頁、上／下半頁或框選放大，按「本題」返回。筆跡以原照片座標儲存。",
-      "image": "./pages/page-1.jpg",
-      "pageWidth": 4284,
-      "pageHeight": 5712,
+      "notes": "模式 B：依原工作紙重新繪製，每題一頁，保留原題號及原印刷示例，空格未填答案。",
+      "image": "./redrawn/question-6.svg",
+      "pageWidth": 1600,
+      "pageHeight": 900,
       "region": {
-        "x": 0.12,
-        "y": 0.14,
-        "w": 0.78,
-        "h": 0.065
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
       },
       "media": [],
-      "actions": []
+      "actions": [],
+      "sourceImage": "./pages/page-1.jpg",
+      "notation": {
+        "meter": [
+          4,
+          4
+        ],
+        "measures": [
+          [
+            "dotted-half",
+            "blank"
+          ],
+          [
+            "quarter",
+            "quarter",
+            "blank",
+            "quarter"
+          ],
+          [
+            "blank",
+            "half"
+          ]
+        ]
+      }
     },
     {
       "id": "nv-question-7",
       "title": "第 6 題（第二頁）",
       "kind": "question",
-      "notes": "原照片單題；預設只顯示本題。教師可查看原頁、上／下半頁或框選放大，按「本題」返回。筆跡以原照片座標儲存。",
-      "image": "./pages/page-1.jpg",
-      "pageWidth": 4284,
-      "pageHeight": 5712,
+      "notes": "模式 B：依原工作紙重新繪製，每題一頁，保留原題號及原印刷示例，空格未填答案。",
+      "image": "./redrawn/question-7.svg",
+      "pageWidth": 1600,
+      "pageHeight": 900,
       "region": {
-        "x": 0.12,
-        "y": 0.245,
-        "w": 0.78,
-        "h": 0.072
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
       },
       "media": [],
-      "actions": []
+      "actions": [],
+      "sourceImage": "./pages/page-1.jpg",
+      "notation": {
+        "meter": [
+          4,
+          4
+        ],
+        "measures": [
+          [
+            "blank",
+            "quarter",
+            "blank",
+            "quarter"
+          ],
+          [
+            "half",
+            "quarter",
+            "blank"
+          ],
+          [
+            "dotted-half",
+            "quarter-rest"
+          ]
+        ]
+      }
     }
-  ]
+  ],
+  "renderMode": "redrawn-svg"
 }

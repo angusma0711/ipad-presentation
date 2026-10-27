@@ -124,7 +124,7 @@ function WorksheetSlide({ deck, index, preview = false, action = null }: { deck:
 function Controls({ deck, index, disabled, sendAction, action }: DeckControlsProps) {
  const page = deck.slides[index];
  const current = action?.action ?? '';
- const mode = current === 'view-top' || current === 'view-bottom' || current === 'view-pick' ? current : ZOOM.test(current) ? 'zoom' : current==='view-full'?'view-full':'view-question';
+ const mode = current === 'view-top' || current === 'view-bottom' || current === 'view-pick' ? current : ZOOM.test(current) ? 'zoom' : 'view-full';
  useEffect(() => {
   const onZoom = (event: Event) => {
    const detail = (event as CustomEvent<{ slideId: string; region: Box }>).detail;
@@ -137,13 +137,10 @@ function Controls({ deck, index, disabled, sendAction, action }: DeckControlsPro
  if(page.kind!=='question')return null;
  return <section className="card"><h2>題目範圍</h2>
   <div className="tool-bar" role="group" aria-label="頁面範圍">
-   <button type="button" aria-pressed={mode === 'view-question'} disabled={disabled} onClick={() => sendAction?.('view-question')}>本題</button>
-   <button type="button" aria-pressed={mode === 'view-full'} disabled={disabled} onClick={() => sendAction?.('view-full')}>原頁</button>
-   <button type="button" aria-pressed={mode === 'view-top'} disabled={disabled} onClick={() => sendAction?.('view-top')}>上半頁</button>
-   <button type="button" aria-pressed={mode === 'view-bottom'} disabled={disabled} onClick={() => sendAction?.('view-bottom')}>下半頁</button>
+   <button type="button" aria-pressed={mode === 'view-full'} disabled={disabled} onClick={() => sendAction?.('view-full')}>全題</button>
    <button type="button" aria-pressed={mode === 'view-pick'} disabled={disabled} onClick={() => sendAction?.('view-pick')}>框選放大</button>
   </div>
-  <p className="small">{mode === 'view-pick' ? '在預覽上由一角拖到對角。放開後，該範圍放大到投影，頁面不會被拉變形。' : mode === 'zoom' ? '正在放大所選範圍。可再框選，或按「本題」返回單題、按「原頁」查看來源。' : '預設一題一頁。原頁與放大共用本頁筆跡；按「本題」返回，書寫工具在「畫筆」。'}</p>
+  <p className="small">{mode === 'view-pick' ? '在預覽上由一角拖到對角。放開後，該範圍放大到投影，頁面不會被拉變形。' : mode === 'zoom' ? '正在放大所選範圍。可再框選，或按「全題」返回。' : '每題一頁，空格保留作答。框選放大與全題共用同一筆跡；書寫工具在「畫筆」。'}</p>
  </section>;
 }
 

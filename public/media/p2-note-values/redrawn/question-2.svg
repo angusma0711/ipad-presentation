@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">第 2 題</title><desc id="desc">按原工作紙重新繪製，保留空格，沒有新增答案。</desc>
+<rect width="1600" height="900" fill="#fffaf0"/>
+<text x="90" y="120" font-family="sans-serif" font-size="64" font-weight="700" fill="#ad432e">第 2 題</text>
+<text x="90" y="216" font-family="sans-serif" font-size="40" fill="#173f45">細看下列節奏，在□內填上</text>
+<g transform="translate(665 216) scale(0.45)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="#152d34" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<text x="704" y="216" font-family="sans-serif" font-size="40" fill="#173f45">或</text>
+<g transform="translate(779 216) scale(0.45)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="white" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<text x="820" y="216" font-family="sans-serif" font-size="40" fill="#173f45">。</text>
+<g fill="#152d34" font-family="serif" font-size="70" font-weight="700" text-anchor="middle"><text x="152" y="447">2</text><text x="152" y="515">4</text></g>
+<g transform="translate(293.65 493) scale(1.15)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="#152d34" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<rect x="366.1" y="341.20000000000005" width="112.69999999999999" height="188.6" fill="none" stroke="#152d34" stroke-width="3.5"/>
+<path d="M517.9 341.20000000000005V529.8" stroke="#152d34" stroke-width="3.5"/>
+<rect x="566.1999999999999" y="341.20000000000005" width="112.69999999999999" height="188.6" fill="none" stroke="#152d34" stroke-width="3.5"/>
+<g transform="translate(751.3499999999999 493) scale(1.15)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="#152d34" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<path d="M835.2999999999998 341.20000000000005V529.8" stroke="#152d34" stroke-width="3.5"/>
+<g transform="translate(934.1999999999998 493) scale(1.15)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="white" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<path d="M1023.8999999999997 341.20000000000005V529.8" stroke="#152d34" stroke-width="3.5"/>
+<path d="M1035.3999999999996 341.20000000000005V529.8" stroke="#152d34" stroke-width="6"/>
+</svg>

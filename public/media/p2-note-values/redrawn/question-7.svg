@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">第 6 題</title><desc id="desc">按原工作紙重新繪製，保留空格，沒有新增答案。</desc>
+<rect width="1600" height="900" fill="#fffaf0"/>
+<text x="90" y="120" font-family="sans-serif" font-size="64" font-weight="700" fill="#ad432e">第 6 題</text>
+<text x="90" y="216" font-family="sans-serif" font-size="40" fill="#173f45">細看下列節奏，在□內填上</text>
+<g transform="translate(665 216) scale(0.45)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="#152d34" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<text x="704" y="216" font-family="sans-serif" font-size="40" fill="#173f45">或</text>
+<g transform="translate(779 216) scale(0.45)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="white" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<text x="820" y="216" font-family="sans-serif" font-size="40" fill="#173f45">。</text>
+<g fill="#152d34" font-family="serif" font-size="70" font-weight="700" text-anchor="middle"><text x="152" y="447">4</text><text x="152" y="515">4</text></g>
+<rect x="247.7918781725888" y="352.28934010152284" width="104.46700507614214" height="174.82233502538074" fill="none" stroke="#152d34" stroke-width="3.5"/>
+<g transform="translate(419.4162436548223 493) scale(1.0659898477157361)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="#152d34" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<rect x="486.5736040609137" y="352.28934010152284" width="104.46700507614214" height="174.82233502538074" fill="none" stroke="#152d34" stroke-width="3.5"/>
+<g transform="translate(658.1979695431472 493) scale(1.0659898477157361)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="#152d34" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<path d="M736.0152284263959 352.28934010152284V527.1116751269036" stroke="#152d34" stroke-width="3.5"/>
+<g transform="translate(827.6903553299492 493) scale(1.0659898477157361)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="white" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<g transform="translate(941.751269035533 493) scale(1.0659898477157361)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="#152d34" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
+<rect x="1008.9086294416244" y="352.28934010152284" width="104.46700507614214" height="174.82233502538074" fill="none" stroke="#152d34" stroke-width="3.5"/>
+<path d="M1149.6192893401017 352.28934010152284V527.1116751269036" stroke="#152d34" stroke-width="3.5"/>
+<g transform="translate(1254.0862944162436 493) scale(1.0659898477157361)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="white" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/><circle cx="39" cy="-4" r="6" fill="#152d34"/></g>
+<path transform="translate(1383.0710659898477 365.0812182741117) scale(1.0659898477157361)" d="M-9 0L15 23L2 42L21 64L4 81C-19 75 -13 98 2 112C-29 101 -31 82 -8 69L-20 50L-4 30Z" fill="#152d34"/>
+<path d="M1463.020304568528 352.28934010152284V527.1116751269036" stroke="#152d34" stroke-width="3.5"/>
+<path d="M1473.6802030456854 352.28934010152284V527.1116751269036" stroke="#152d34" stroke-width="6"/>
+</svg>
