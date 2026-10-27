@@ -1,0 +1,155 @@
+{
+  "title": "P2 · 小豬過橋（第二課）",
+  "order": 0.1,
+  "assetBase": "/media/p2-lesson2-pig-bridge/",
+  "htmlClass": "dp-deck",
+  "slides": [
+    {
+      "id": "pb-cover",
+      "title": "小豬過橋",
+      "notes": "引入。先讓學生觀察圖畫，再由老師朗讀全首。\n問：小豬想做甚麼？牠為甚麼害怕？\n預期答案：牠想過橋；小木橋上下搖，牠站不穩。\n觀察：學生能否從圖畫及朗讀中找出線索。",
+      "html": "<section id=\"pb-cover\" class=\"dp-slide pb-slide pb-cover\" data-slide-id=\"pb-cover\" aria-label=\"小豬過橋\"><div class=\"pb-cover-copy\"><p class=\"dp-kicker\">單元二　動感詩歌</p><h1>小豬過橋</h1><p class=\"pb-question\">小豬想做甚麼？</p><p class=\"pb-question\">牠為甚麼害怕？</p><p class=\"pb-cue-text\">先聽老師朗讀。</p></div><figure class=\"pb-cover-art\"><img src=\"./images/pig-bridge.jpg\" alt=\"小豬站在搖晃的小木橋上，樹上有麻雀，橋下有流水\"></figure></section>",
+      "media": []
+    },
+    {
+      "id": "pb-poem",
+      "title": "《小豬過橋》全首",
+      "notes": "先聆聽，再跟着讀。\n按「下一句」逐句高亮，學生跟讀；最後一句之後再按會重設。\n可先由老師讀一句、學生跟讀一句，再全班合讀。\n觀察：學生是否咬字清楚、在逗號及句號停頓。",
+      "html": "<section id=\"pb-poem\" class=\"dp-slide pb-slide dp-sky\" data-slide-id=\"pb-poem\" aria-label=\"小豬過橋全首\"><div class=\"dp-copy\"><h2>小豬過橋</h2><div class=\"pb-poem\"><p class=\"pb-poem-line pb-step\">小木橋，上下搖，</p><p class=\"pb-poem-line pb-step\">有隻小豬想過橋。</p><p class=\"pb-poem-line pb-step\">站不穩，走不動，</p><p class=\"pb-poem-line pb-step\">踏上橋頭心亂跳，</p><p class=\"pb-poem-line pb-step\">頭上麻雀吱吱叫，</p><p class=\"pb-poem-line pb-step\">橋下流水偷偷笑，</p><p class=\"pb-poem-line pb-step\">小豬慌忙地呼叫：</p><p class=\"pb-poem-line pb-step\">「爸爸請抱我過橋。」</p></div><p class=\"pb-cue-text\">先聆聽，再跟着讀。</p></div><button type=\"button\" hidden data-action=\"pb-line-next\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "pb-line-next",
+          "label": "下一句（最後再按重設）"
+        }
+      ]
+    },
+    {
+      "id": "pb-why",
+      "title": "小豬為甚麼害怕？",
+      "notes": "問：小豬為甚麼害怕？請用詩中的字詞說明。\n先讓學生回答，再按「顯示下一個答案」逐一核對（全部顯示後再按會收起）。\n預期答案：牠想過橋；小木橋上下搖，牠站不穩；牠請爸爸抱牠過橋。\n觀察：學生能否引用詩句作答。",
+      "html": "<section id=\"pb-why\" class=\"dp-slide pb-slide dp-cream\" data-slide-id=\"pb-why\" aria-label=\"小豬為甚麼害怕\"><div class=\"dp-copy\"><h2>小豬為甚麼害怕？</h2><div class=\"pb-answers\"><p class=\"pb-answer pb-step\">牠想過橋。</p><p class=\"pb-answer pb-step\">小木橋上下搖，牠站不穩。</p><p class=\"pb-answer pb-step\">牠請爸爸抱牠過橋。</p></div><p class=\"pb-cue-text pb-center\">用詩中的字詞說明。</p></div><button type=\"button\" hidden data-action=\"pb-answer-next\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "pb-answer-next",
+          "label": "顯示下一個答案"
+        }
+      ]
+    },
+    {
+      "id": "pb-read-1",
+      "title": "《小豬過橋》分句朗讀 1 / 4",
+      "notes": "分句朗讀 1 / 4：小木橋上下搖；有隻小豬想過橋。\n先拍穩定拍子，老師示範一次，學生跟讀。\n按「跟拍朗讀」：先數 4 拍預備，每張卡逐拍亮起（每分鐘 72 拍）；ti-ti 兩個字合佔一拍，ta 一個字佔一拍，休止要停聲。\n觀察：學生在休止處是否停聲，ti-ti 是否讀得平均。",
+      "html": "<section id=\"pb-read-1\" class=\"dp-slide pb-slide dp-sky pb-read\" data-slide-id=\"pb-read-1\" aria-label=\"小豬過橋分句朗讀 1\"><div class=\"dp-copy\"><div class=\"pb-read-head\"><h2>《小豬過橋》分句朗讀 1 / 4</h2><p class=\"pb-status\" aria-live=\"polite\"></p></div><div class=\"pb-row\"><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"0\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>小木</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"1\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>橋</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"2\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"3\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>上下</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"4\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>搖</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"5\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div></div><div class=\"pb-row\"><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"6\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>有隻</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"7\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>小豬</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"8\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>想過</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"9\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>橋</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"10\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div></div></div><button type=\"button\" hidden data-action=\"read-play\" aria-hidden=\"true\" tabindex=\"-1\"></button><button type=\"button\" hidden data-action=\"read-stop\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "read-play",
+          "label": "跟拍朗讀（數 4 拍預備）"
+        },
+        {
+          "id": "read-stop",
+          "label": "停止"
+        }
+      ]
+    },
+    {
+      "id": "pb-read-2",
+      "title": "《小豬過橋》分句朗讀 2 / 4",
+      "notes": "分句朗讀 2 / 4：站不穩走不動；踏上橋頭心亂跳。\n先拍穩定拍子，老師示範一次，學生跟讀。\n按「跟拍朗讀」：先數 4 拍預備，每張卡逐拍亮起（每分鐘 72 拍）；ti-ti 兩個字合佔一拍，ta 一個字佔一拍，休止要停聲。\n觀察：學生在休止處是否停聲，ti-ti 是否讀得平均。",
+      "html": "<section id=\"pb-read-2\" class=\"dp-slide pb-slide dp-sky pb-read\" data-slide-id=\"pb-read-2\" aria-label=\"小豬過橋分句朗讀 2\"><div class=\"dp-copy\"><div class=\"pb-read-head\"><h2>《小豬過橋》分句朗讀 2 / 4</h2><p class=\"pb-status\" aria-live=\"polite\"></p></div><div class=\"pb-row\"><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"0\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>站不</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"1\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>穩</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"2\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"3\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>走不</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"4\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>動</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"5\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div></div><div class=\"pb-row\"><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"6\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>踏上</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"7\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>橋頭</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"8\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>心亂</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"9\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>跳</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"10\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div></div></div><button type=\"button\" hidden data-action=\"read-play\" aria-hidden=\"true\" tabindex=\"-1\"></button><button type=\"button\" hidden data-action=\"read-stop\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "read-play",
+          "label": "跟拍朗讀（數 4 拍預備）"
+        },
+        {
+          "id": "read-stop",
+          "label": "停止"
+        }
+      ]
+    },
+    {
+      "id": "pb-read-3",
+      "title": "《小豬過橋》分句朗讀 3 / 4",
+      "notes": "分句朗讀 3 / 4：頭上麻雀吱吱叫；橋下流水偷偷笑。\n先拍穩定拍子，老師示範一次，學生跟讀。\n按「跟拍朗讀」：先數 4 拍預備，每張卡逐拍亮起（每分鐘 72 拍）；ti-ti 兩個字合佔一拍，ta 一個字佔一拍，休止要停聲。\n觀察：學生在休止處是否停聲，ti-ti 是否讀得平均。",
+      "html": "<section id=\"pb-read-3\" class=\"dp-slide pb-slide dp-sky pb-read\" data-slide-id=\"pb-read-3\" aria-label=\"小豬過橋分句朗讀 3\"><div class=\"dp-copy\"><div class=\"pb-read-head\"><h2>《小豬過橋》分句朗讀 3 / 4</h2><p class=\"pb-status\" aria-live=\"polite\"></p></div><div class=\"pb-row\"><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"0\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>頭上</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"1\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>麻雀</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"2\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>吱吱</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"3\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>叫</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"4\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div></div><div class=\"pb-row\"><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"5\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>橋下</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"6\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>流水</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"7\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>偷偷</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"8\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>笑</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"9\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div></div></div><button type=\"button\" hidden data-action=\"read-play\" aria-hidden=\"true\" tabindex=\"-1\"></button><button type=\"button\" hidden data-action=\"read-stop\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "read-play",
+          "label": "跟拍朗讀（數 4 拍預備）"
+        },
+        {
+          "id": "read-stop",
+          "label": "停止"
+        }
+      ]
+    },
+    {
+      "id": "pb-read-4",
+      "title": "《小豬過橋》分句朗讀 4 / 4",
+      "notes": "分句朗讀 4 / 4：小豬慌忙地呼叫；爸爸請抱我過橋。\n先拍穩定拍子，老師示範一次，學生跟讀。\n按「跟拍朗讀」：先數 4 拍預備，每張卡逐拍亮起（每分鐘 72 拍）；ti-ti 兩個字合佔一拍，ta 一個字佔一拍，休止要停聲。\n觀察：學生在休止處是否停聲，ti-ti 是否讀得平均。",
+      "html": "<section id=\"pb-read-4\" class=\"dp-slide pb-slide dp-sky pb-read\" data-slide-id=\"pb-read-4\" aria-label=\"小豬過橋分句朗讀 4\"><div class=\"dp-copy\"><div class=\"pb-read-head\"><h2>《小豬過橋》分句朗讀 4 / 4</h2><p class=\"pb-status\" aria-live=\"polite\"></p></div><div class=\"pb-row\"><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"0\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>小豬</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"1\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>慌忙</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"2\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>地呼</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"3\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>叫</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"4\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div></div><div class=\"pb-row\"><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"5\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>爸爸</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"6\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>請抱</b></div><div class=\"pb-card pb-titi\" data-r=\"titi\" data-beat=\"7\"><img src=\"/media/p2-dynamic-poems/symbols/titi.svg\" alt=\"♫\"><small>ti-ti</small><b>我過</b></div><div class=\"pb-card pb-ta\" data-r=\"ta\" data-beat=\"8\"><img src=\"/media/p2-dynamic-poems/symbols/ta.svg\" alt=\"♩\"><small>ta</small><b>橋</b></div><div class=\"pb-card pb-rest\" data-r=\"rest\" data-beat=\"9\"><img src=\"/media/p2-dynamic-poems/symbols/rest.svg\" alt=\"𝄽\"><small>休止</small><b>停</b></div></div></div><button type=\"button\" hidden data-action=\"read-play\" aria-hidden=\"true\" tabindex=\"-1\"></button><button type=\"button\" hidden data-action=\"read-stop\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "read-play",
+          "label": "跟拍朗讀（數 4 拍預備）"
+        },
+        {
+          "id": "read-stop",
+          "label": "停止"
+        }
+      ]
+    },
+    {
+      "id": "pb-actions",
+      "title": "三個動作",
+      "notes": "三個動作：上下搖（雙手輕輕上下擺）、站不穩（坐着左右輕搖）、抱（雙手抱自己）。\n按「下一個動作」逐一放大並示範動畫；學生原位輕做。第四次按會回到全部顯示。\n提醒：聽到字詞才加入，動作要輕。\n觀察：學生能否在聽到字詞時才做動作。",
+      "html": "<section id=\"pb-actions\" class=\"dp-slide pb-slide dp-sky\" data-slide-id=\"pb-actions\" aria-label=\"三個動作\"><div class=\"dp-copy pb-center\"><h2 class=\"pb-left\">三個動作</h2><div class=\"pb-move-cards\"><div class=\"pb-move-card pb-step\"><span class=\"pb-move-icon pb-anim-updown\" aria-hidden=\"true\">🙌</span><h3>上下搖</h3><p>雙手輕輕上下擺</p></div><div class=\"pb-move-card pb-step\"><span class=\"pb-move-icon pb-anim-sway\" aria-hidden=\"true\">🧍</span><h3>站不穩</h3><p>坐着左右輕搖</p></div><div class=\"pb-move-card pb-step\"><span class=\"pb-move-icon pb-anim-hug\" aria-hidden=\"true\">🤗</span><h3>抱</h3><p>雙手抱自己</p></div></div><p class=\"pb-cue-text\">原位輕做，聽到字詞才加入。</p></div><button type=\"button\" hidden data-action=\"pb-move-next\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "pb-move-next",
+          "label": "下一個動作"
+        }
+      ]
+    },
+    {
+      "id": "pb-sfx",
+      "title": "三種聲效",
+      "notes": "三種聲效：心亂跳（「噗噗噗」或輕拍胸口）、吱吱叫（「吱吱吱吱」）、偷偷笑（輕搓雙手或輕聲「嘻嘻」）。\n按「下一個聲效」逐一亮起並播放動畫，全班試做；選一個做法，全班一起試。\n觀察：聲效是否輕、短，是否配合字詞。",
+      "html": "<section id=\"pb-sfx\" class=\"dp-slide pb-slide dp-cream\" data-slide-id=\"pb-sfx\" aria-label=\"三種聲效\"><div class=\"dp-copy\"><h2>三種聲效</h2><div class=\"pb-sfx\"><div class=\"pb-sfx-row pb-step\"><strong>心亂跳</strong><span class=\"pb-sfx-visual\"><span class=\"pb-heart\" aria-hidden=\"true\">❤️</span></span><span class=\"pb-sfx-how\">「噗噗噗」或輕拍胸口</span></div><div class=\"pb-sfx-row pb-step\"><strong>吱吱叫</strong><span class=\"pb-sfx-visual\"><span class=\"pb-chirps\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i></span></span><span class=\"pb-sfx-how\">「吱吱吱吱」</span></div><div class=\"pb-sfx-row pb-step\"><strong>偷偷笑</strong><span class=\"pb-sfx-visual\"><span class=\"pb-giggle\" aria-hidden=\"true\">🤭</span></span><span class=\"pb-sfx-how\">輕搓雙手或輕聲「嘻嘻」</span></div></div><p class=\"pb-cue-text pb-center\">選一個做法，全班一起試。</p></div><button type=\"button\" hidden data-action=\"pb-sfx-next\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "pb-sfx-next",
+          "label": "下一個聲效"
+        }
+      ]
+    },
+    {
+      "id": "pb-why-sound",
+      "title": "為甚麼選這個聲音？",
+      "notes": "學生用句式說明選擇：「我選＿＿，因為它像＿＿。」例如：「噗噗噗像心跳得很快。」\n追問：聲效應在甚麼字出現時加入？（例如讀到「心亂跳」時加入。）\n觀察：學生能否說出聲音與詩句意思的關係。",
+      "html": "<section id=\"pb-why-sound\" class=\"dp-slide pb-slide dp-sky\" data-slide-id=\"pb-why-sound\" aria-label=\"為甚麼選這個聲音\"><div class=\"dp-copy\"><h2>為甚麼選這個聲音？</h2><div class=\"pb-frame\"><p>我選＿＿，</p><p>因為它像＿＿。</p></div><p class=\"pb-example\">例如：「噗噗噗像心跳得很快。」</p><p class=\"pb-cue-text pb-center\">聲效應在甚麼字出現時加入？</p></div></section>",
+      "media": []
+    },
+    {
+      "id": "pb-perform",
+      "title": "全班合演《小豬過橋》",
+      "notes": "全班合演：一起朗讀；看老師指揮，在指定字詞加入動作或聲效。\n按「下一句」逐句高亮；有動作（🙌）或聲效（🔊）的字詞會跳出提示。最後一句之後再按會重設。\n建議：第一次只朗讀；第二次加入動作；第三次加入聲效。\n觀察：學生能否保持穩定拍子，並在正確字詞加入動作或聲效。",
+      "html": "<section id=\"pb-perform\" class=\"dp-slide pb-slide dp-sky\" data-slide-id=\"pb-perform\" aria-label=\"全班合演小豬過橋\"><div class=\"dp-copy\"><h2>全班合演《小豬過橋》</h2><div class=\"pb-poem pb-perform\"><p class=\"pb-perform-line pb-step\">小木橋，<mark class=\"pb-cue pb-cue-move\" data-icon=\"🙌\">上下搖</mark>，</p><p class=\"pb-perform-line pb-step\">有隻小豬想過橋。</p><p class=\"pb-perform-line pb-step\"><mark class=\"pb-cue pb-cue-move\" data-icon=\"🙌\">站不穩</mark>，走不動，</p><p class=\"pb-perform-line pb-step\">踏上橋頭<mark class=\"pb-cue pb-cue-sfx\" data-icon=\"🔊\">心亂跳</mark>，</p><p class=\"pb-perform-line pb-step\">頭上麻雀<mark class=\"pb-cue pb-cue-sfx\" data-icon=\"🔊\">吱吱叫</mark>，</p><p class=\"pb-perform-line pb-step\">橋下流水<mark class=\"pb-cue pb-cue-sfx\" data-icon=\"🔊\">偷偷笑</mark>，</p><p class=\"pb-perform-line pb-step\">小豬慌忙地呼叫：</p><p class=\"pb-perform-line pb-step\">「爸爸請<mark class=\"pb-cue pb-cue-move\" data-icon=\"🙌\">抱</mark>我過橋。」</p></div><p class=\"pb-cue-text\">一起朗讀；看老師指揮，在指定字詞加入動作或聲效。<span class=\"pb-legend\"><mark class=\"pb-cue pb-cue-move\">動作</mark><mark class=\"pb-cue pb-cue-sfx\">聲效</mark></span></p></div><button type=\"button\" hidden data-action=\"pb-perform-next\" aria-hidden=\"true\" tabindex=\"-1\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "pb-perform-next",
+          "label": "下一句（最後再按重設）"
+        }
+      ]
+    }
+  ]
+}

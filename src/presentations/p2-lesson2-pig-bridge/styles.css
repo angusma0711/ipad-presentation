@@ -1,0 +1,91 @@
+/* P2 第二課《小豬過橋》. Builds on the lesson 1 .dp-deck styles (imported by plugin.tsx). */
+.dp-deck .pb-slide h2{font-size:1.45em;margin-bottom:.45em}
+.dp-deck .pb-center{text-align:center}
+/* The app's global .slide p size would otherwise override these blocks. */
+.dp-deck .pb-poem p,.dp-deck .pb-answers p,.dp-deck .pb-frame p{font-size:inherit}
+.dp-deck .pb-left{text-align:left}
+.dp-deck .pb-cue-text{color:var(--dp-teal);font-weight:750;font-size:.75em;margin-top:.8em}
+.dp-deck .pb-step{transition:opacity .35s,transform .35s,background .35s,box-shadow .35s}
+
+/* Cover: text left, illustration right (as in the preview). */
+.dp-deck .pb-cover{padding:0;align-items:stretch;background:var(--dp-cream)}
+.dp-deck .pb-cover-copy{flex:0 0 58%;padding:7% 5% 6% 6%;display:flex;flex-direction:column;justify-content:flex-start}
+.dp-deck .pb-cover h1{font-size:2.6em;margin:.15em 0 .35em}
+.dp-deck .pb-question{font-size:1.25em;font-weight:700;margin:.15em 0 .5em}
+.dp-deck .pb-cover .pb-cue-text{margin-top:auto;font-size:.8em}
+.dp-deck .pb-cover-art{flex:1;margin:0;overflow:hidden}
+.dp-deck .pb-cover-art img{width:100%;height:100%;object-fit:cover;object-position:center 40%;animation:pb-bridge 5s ease-in-out infinite;transform-origin:50% 80%}
+@keyframes pb-bridge{0%,100%{transform:scale(1.04) translateY(0)}50%{transform:scale(1.04) translateY(-1.2%)}}
+
+/* Whole poem in two columns, highlighted line by line. */
+.dp-deck .pb-poem{display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(4,auto);gap:.3em 1.5em;font-size:1.25em;font-weight:650}
+.dp-deck .pb-poem p{white-space:nowrap}
+.dp-deck .pb-poem p{margin:0;padding:.3em .5em;border-radius:.35em}
+.dp-deck .pb-focus .pb-step:not(.pb-current){opacity:.35}
+.dp-deck .pb-step.pb-current{background:var(--dp-yellow);transform:scale(1.04);box-shadow:0 .1em .3em #183f4a22}
+
+.dp-deck .pb-answers{display:flex;flex-direction:column;gap:.7em;margin:.8em 0 0 .6em;font-size:1.55em;font-weight:700}
+.dp-deck .pb-answer{margin:0;opacity:0;transform:translateX(-.6em)}
+.dp-deck .pb-answer.pb-shown{opacity:1;transform:none}
+
+/* Rhythm reading cards (same symbols as lesson 1). */
+.dp-deck .pb-read{align-items:flex-start;padding-top:3.5%}
+.dp-deck .pb-read .dp-copy{display:flex;flex-direction:column;gap:.7em}
+.dp-deck .pb-read-head{display:flex;align-items:baseline;justify-content:space-between;gap:1em}
+.dp-deck .pb-read-head h2{margin:0}
+.dp-deck .pb-status{margin:0;font-size:.8em;font-weight:800;color:var(--dp-teal)}
+.dp-deck .pb-row{display:flex;gap:.3em}
+.dp-deck .pb-card{flex:1;display:flex;flex-direction:column;align-items:center;background:#fff;border-radius:.35em;padding:.8em .2em .6em;transition:transform .12s,background .12s,box-shadow .12s}
+.dp-deck .pb-card img{height:2.5em;width:auto}
+.dp-deck .pb-card small{font-size:.5em;color:var(--dp-teal);font-weight:700;margin-top:.3em}
+.dp-deck .pb-card b{font-size:1.1em;font-weight:750;letter-spacing:.1em;margin-top:.1em}
+.dp-deck .pb-card.pb-rest b{color:#6b7f85}
+.dp-deck .pb-card.pb-on{background:var(--dp-yellow);transform:translateY(-.15em) scale(1.05);box-shadow:0 .25em .5em #183f4a26}
+.dp-deck .pb-count{display:inline-flex;gap:.3em;margin-left:.4em;vertical-align:middle}
+
+/* Three actions with demo animations. */
+.dp-deck .pb-move-cards{display:flex;gap:.9em;justify-content:center;margin-top:.8em;font-size:1.25em}
+.dp-deck .pb-move-card{flex:1;background:#fff;border-radius:.5em;padding:.7em .5em .8em;text-align:center}
+.dp-deck .pb-move-card h3{font-size:1.3em;color:var(--dp-coral);margin:.25em 0}
+.dp-deck .pb-move-card p{margin:0;font-weight:650;font-size:.8em}
+.dp-deck .pb-move-icon{display:inline-block;font-size:2.4em;line-height:1.1}
+.dp-deck .pb-current .pb-anim-updown{animation:pb-updown .9s ease-in-out infinite}
+.dp-deck .pb-current .pb-anim-sway{animation:pb-sway 1.2s ease-in-out infinite;transform-origin:50% 90%}
+.dp-deck .pb-current .pb-anim-hug{animation:pb-hug 1.4s ease-in-out infinite}
+@keyframes pb-updown{0%,100%{transform:translateY(.15em)}50%{transform:translateY(-.25em)}}
+@keyframes pb-sway{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+@keyframes pb-hug{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+
+/* Three sound effects. */
+.dp-deck .pb-sfx{display:flex;flex-direction:column;gap:.6em;margin-top:.5em;font-size:1.3em}
+.dp-deck .pb-sfx-row{display:grid;grid-template-columns:4.2em 4.2em 1fr;align-items:center;gap:.6em;padding:.35em .6em;border-radius:.4em}
+.dp-deck .pb-sfx-row strong{font-size:1.2em;color:var(--dp-coral)}
+.dp-deck .pb-sfx-how{font-weight:650}
+.dp-deck .pb-sfx-visual{display:flex;justify-content:center;font-size:1.5em}
+.dp-deck .pb-chirps{display:flex;gap:.18em}
+.dp-deck .pb-chirps i{width:0;height:0;border-left:.28em solid transparent;border-right:.28em solid transparent;border-bottom:.48em solid #e6a73c}
+.dp-deck .pb-current .pb-heart{animation:pb-beat .45s ease-in-out infinite}
+.dp-deck .pb-current .pb-chirps i{animation:pb-chirp 1.2s infinite}
+.dp-deck .pb-current .pb-chirps i:nth-child(2){animation-delay:.15s}.dp-deck .pb-current .pb-chirps i:nth-child(3){animation-delay:.3s}.dp-deck .pb-current .pb-chirps i:nth-child(4){animation-delay:.45s}
+.dp-deck .pb-current .pb-giggle{animation:pb-giggle .5s ease-in-out infinite}
+@keyframes pb-beat{0%,100%{transform:scale(1)}30%{transform:scale(1.3)}}
+@keyframes pb-chirp{0%,60%,100%{transform:translateY(0);opacity:.45}20%{transform:translateY(-.3em);opacity:1}}
+@keyframes pb-giggle{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+
+.dp-deck .pb-frame{font-size:2.1em;font-weight:750;margin:.4em 0 .2em .5em}
+.dp-deck .pb-frame p{margin:.15em 0}
+.dp-deck .pb-example{color:var(--dp-teal);font-weight:750;margin-left:.5em;font-size:1.2em}
+
+/* Whole-class performance: cue words for actions and sound effects. */
+.dp-deck .pb-perform{font-size:1.25em;margin-top:.4em}
+.dp-deck .pb-cue{background:none;color:inherit;border-bottom:.12em solid;padding:0 .05em;position:relative}
+.dp-deck .pb-cue-move{border-color:var(--dp-teal);color:var(--dp-teal)}
+.dp-deck .pb-cue-sfx{border-color:var(--dp-coral);color:var(--dp-coral)}
+.dp-deck .pb-current .pb-cue:after{content:attr(data-icon);position:absolute;left:50%;top:-1.25em;transform:translateX(-50%);font-size:.85em;animation:pb-pop .8s ease-in-out infinite}
+@keyframes pb-pop{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-.2em)}}
+.dp-deck .pb-legend{display:inline-flex;gap:.8em;margin-left:1em}
+.dp-deck .pb-legend .pb-cue{font-size:.95em}
+
+@media(prefers-reduced-motion:reduce){
+ .dp-deck .pb-cover-art img,.dp-deck .pb-current .pb-anim-updown,.dp-deck .pb-current .pb-anim-sway,.dp-deck .pb-current .pb-anim-hug,.dp-deck .pb-current .pb-heart,.dp-deck .pb-current .pb-chirps i,.dp-deck .pb-current .pb-giggle,.dp-deck .pb-current .pb-cue:after{animation:none}
+}
