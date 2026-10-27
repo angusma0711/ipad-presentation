@@ -1,0 +1,46 @@
+{
+  "musicMakerURL": "",
+  "swan": {
+    "src": "",
+    "expectedFile": "video/Swan.mp4",
+    "start": 0,
+    "duration": 30
+  },
+  "media": {
+    "chopin": {
+      "src": "",
+      "expectedFile": "audio/Chopin_Op64_No1.mp3",
+      "start": 0,
+      "duration": 30,
+      "label": "蕭邦 Op.64 No.1（待補錄音）"
+    },
+    "textbook": {
+      "src": "",
+      "expectedFile": "audio/Swan_Textbook.mp3",
+      "start": 0,
+      "duration": 30,
+      "label": "《動物狂歡節》之《天鵝》（錄音待補）"
+    },
+    "moonlight": {
+      "src": "",
+      "expectedFile": "audio/Moonlight.mp3",
+      "start": 0,
+      "duration": 30,
+      "label": "德布西《月光》（錄音待補）"
+    },
+    "exitA": {
+      "src": "",
+      "expectedFile": "audio/Exit_A.mp3",
+      "start": 0,
+      "duration": 30,
+      "label": "音樂 A（待補）"
+    },
+    "exitB": {
+      "src": "",
+      "expectedFile": "audio/Exit_B.mp3",
+      "start": 0,
+      "duration": 30,
+      "label": "音樂 B（待補）"
+    }
+  }
+}

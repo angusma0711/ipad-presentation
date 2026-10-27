@@ -1,5 +1,6 @@
 import {ToolIcon,type TeacherCategory} from './ToolIcon';
 import {createPortal} from 'react-dom';
+import {RemoteControlPanel} from './RemoteControlPanel';
 import {TimerTools} from './TimerTools';
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
@@ -70,6 +71,7 @@ export function TeacherTools({navigationVersion=0,category,quickTarget,stageTarg
     <button className="primary" disabled={unavailable}>將媒體加入此頁</button>
    </form><p className="small">本機檔案請先放入專案的 public/media 資料夾，再輸入 /media/檔案名稱。示範音訊：/media/demo-beat.wav。聲音由投影電腦播放；若被阻擋，請在該電腦按播放鍵。</p>
   </details></div>
+  <RemoteControlPanel/>
   </>}
   {(error||teaching.error)&&<p className="error" role="alert">{error||teaching.error}</p>}
  </>;

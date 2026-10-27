@@ -1,0 +1,267 @@
+{
+  "title": "P3 · 第三課：音樂與畫面（素材待補）",
+  "order": 2,
+  "assetBase": "/media/p3-lesson3/",
+  "htmlClass": "mp-deck",
+  "slides": [
+    {
+      "id": "mp-exam",
+      "title": "先來複習",
+      "notes": "0–6分鐘。只使用老師已確認的試題及節奏材料。未找到考試材料，不推測試題；可由老師用既有紙本帶領。",
+      "html": "<section class=\"mp-page\" id=\"mp-exam\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>先來複習</h2></header><div class=\"mp-open\"><p>準備好耳朵和雙手。</p><div class=\"mp-pending\">考試複習材料待老師補入</div></div><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-recall",
+      "title": "我們怎樣用聲音表現雨景？",
+      "notes": "6–10分鐘。回顧第二課，以熟悉聲響回應雨景；可在黑板重畫學生上課用過的圖像記譜，不把新符號當成已學材料。雨景圖沿用現有P3 garden-rain.png（既有生成插圖）。",
+      "html": "<section class=\"mp-page\" id=\"mp-recall\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>我們怎樣用聲音表現雨景？</h2></header><div class=\"mp-split\"><img class=\"mp-existing\" src=\"./images/Lesson2_Rain.png\" alt=\"第二課使用的雨景插圖\"><div><p class=\"mp-question\">說出你用過的聲音，<br>再做一次。</p><p>拍手 · 拍腿 · 指尖拍手掌</p></div></div><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-goal",
+      "title": "音樂怎樣幫助我們表現圖片？",
+      "notes": "6–10分鐘。三項成功準則。先聽、再找圖片證據；不將「快＝開心、慢＝傷心」當規則。",
+      "html": "<section class=\"mp-page\" id=\"mp-goal\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>音樂怎樣幫助我們表現圖片？</h2></header><p class=\"mp-hero\">留意動態，也留意氣氛。</p><ol class=\"mp-criteria\"><li>說出聽到的聲音特徵。</li><li>解釋怎樣配合圖片。</li><li>聽後提出保留或修改的理由。</li></ol><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-listen-first",
+      "title": "先聽，再選一幅圖",
+      "notes": "10–22分鐘。已核對使用者提供的《Unit 2 Book.pdf》PDF第2頁（印刷p.16–17），p.16三圖保持同時並列。指定蕭邦《降D大調圓舞曲》作品64第1號，來源為使用者文件；作品及三圖已核對課本，合法錄音尚待提供。首次播放不揭示配對。每段預設30秒，需老師依最終教案設定片段。",
+      "html": "<section class=\"mp-page\" id=\"mp-listen-first\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>先聽，再選一幅圖</h2></header><div class=\"mp-three\"><figure class=\"mp-figure\"><img src=\"./images/Textbook16_A.png\" alt=\"A\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>Textbook16_A.png</span></div><figcaption>A</figcaption></figure><figure class=\"mp-figure\"><img src=\"./images/Textbook16_B.png\" alt=\"B\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>Textbook16_B.png</span></div><figcaption>B</figcaption></figure><figure class=\"mp-figure\"><img src=\"./images/Textbook16_C.png\" alt=\"C\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>Textbook16_C.png</span></div><figcaption>C</figcaption></figure></div><div class=\"mp-media-controls\"><button data-mp-play=\"chopin\">播放片段</button><button data-mp-replay=\"chopin\">重播</button><button data-mp-stop>停止</button><span data-media-label=\"chopin\"></span></div><p class=\"mp-footer\">自己先選 A／B／C，暫時不用跟別人一樣。</p><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"listen-play\"></button><button type=\"button\" hidden data-action=\"listen-stop\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "listen-play",
+          "label": "播放／重播片段"
+        },
+        {
+          "id": "listen-stop",
+          "label": "停止播放"
+        }
+      ]
+    },
+    {
+      "id": "mp-listen-evidence",
+      "title": "再聽：找出你的證據",
+      "notes": "10–22分鐘。同一音樂、相同三圖。個人先選，重聽留意速度及力度；接受有音樂證據的不同選擇。無自動正解。",
+      "html": "<section class=\"mp-page\" id=\"mp-listen-evidence\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>再聽：找出你的證據</h2></header><div class=\"mp-three\"><figure class=\"mp-figure\"><img src=\"./images/Textbook16_A.png\" alt=\"A\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>Textbook16_A.png</span></div><figcaption>A</figcaption></figure><figure class=\"mp-figure\"><img src=\"./images/Textbook16_B.png\" alt=\"B\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>Textbook16_B.png</span></div><figcaption>B</figcaption></figure><figure class=\"mp-figure\"><img src=\"./images/Textbook16_C.png\" alt=\"C\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>Textbook16_C.png</span></div><figcaption>C</figcaption></figure></div><div class=\"mp-media-controls\"><button data-mp-play=\"chopin\">播放片段</button><button data-mp-replay=\"chopin\">重播</button><button data-mp-stop>停止</button><span data-media-label=\"chopin\"></span></div><p class=\"mp-footer\">速度？力度？　它配合圖片哪個動作？</p><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"listen-play\"></button><button type=\"button\" hidden data-action=\"listen-stop\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "listen-play",
+          "label": "播放／重播片段"
+        },
+        {
+          "id": "listen-stop",
+          "label": "停止播放"
+        }
+      ]
+    },
+    {
+      "id": "mp-pair",
+      "title": "你聽到甚麼？",
+      "notes": "10–22分鐘。同伴輪流分享，教師抽問不同選圖者，觀察是否能把聲音特徵連到具體圖片線索。",
+      "html": "<section class=\"mp-page\" id=\"mp-pair\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>你聽到甚麼？</h2></header><div class=\"mp-dialogue\"><p>先說一個聲音特徵。</p><span>↓</span><p>指出圖片中的一個細節。</p></div><p class=\"mp-footer\">兩人輪流說，先聽完再回應。</p><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-reason",
+      "title": "把理由連起來",
+      "notes": "10–22分鐘。這是表達框架，不預填答案。追問「你在音樂哪裏聽到？」區分感覺與音樂證據。",
+      "html": "<section class=\"mp-page\" id=\"mp-reason\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>把理由連起來</h2></header><div class=\"mp-reason\"><div>我聽到<br><strong>＿＿＿＿</strong></div><span>→</span><div>圖片中<br><strong>＿＿＿＿</strong></div></div><p class=\"mp-hero\">我覺得配合，因為＿＿＿＿。</p><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-swan-silent",
+      "title": "先看：畫面有甚麼動態？",
+      "notes": "22–31分鐘。已核對課本p.17：活動4a先比較同一天鵝影像無配樂／有配樂；影片檔案尚待提供。無配樂版本：影片原聲也靜音；三頁都用config中的同一Swan.mp4及相同起點、長度。不可用其他影像替代指定片段。",
+      "html": "<section class=\"mp-page\" id=\"mp-swan-silent\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>先看：畫面有甚麼動態？</h2></header><div class=\"mp-swan\"><video poster=\"./images/Swan_Poster.png\" data-swan playsinline preload=\"none\" muted></video><div class=\"mp-video-missing\">天鵝影像待補<br><small>Swan.mp4</small></div></div><div class=\"mp-media-controls\"><button data-swan-play=\"silent\">播放相同片段</button><button data-swan-play=\"silent\">重播</button><button data-mp-stop>停止</button></div><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"swan-play\"></button><button type=\"button\" hidden data-action=\"listen-stop\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "swan-play",
+          "label": "播放／重播無配樂影像"
+        },
+        {
+          "id": "listen-stop",
+          "label": "停止播放"
+        }
+      ]
+    },
+    {
+      "id": "mp-swan-textbook",
+      "title": "加入配樂，感覺怎樣？",
+      "notes": "22–31分鐘。相同天鵝片段；影片靜音，只播放課本指定音樂。課本標註 Swan from The Carnival of the Animals；實際合法錄音尚待提供。",
+      "html": "<section class=\"mp-page\" id=\"mp-swan-textbook\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>加入配樂，感覺怎樣？</h2></header><div class=\"mp-swan\"><video poster=\"./images/Swan_Poster.png\" data-swan playsinline preload=\"none\" muted></video><div class=\"mp-video-missing\">天鵝影像待補<br><small>Swan.mp4</small></div></div><div class=\"mp-media-controls\"><button data-swan-play=\"textbook\">播放相同片段</button><button data-swan-play=\"textbook\">重播</button><button data-mp-stop>停止</button></div><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"swan-play\"></button><button type=\"button\" hidden data-action=\"listen-stop\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "swan-play",
+          "label": "播放／重播課本配樂版本"
+        },
+        {
+          "id": "listen-stop",
+          "label": "停止播放"
+        }
+      ]
+    },
+    {
+      "id": "mp-swan-moonlight",
+      "title": "換上《月光》，再看一次",
+      "notes": "22–31分鐘。相同片段配《月光》；已核對課本p.17活動4b：《Clair de Lune／月光》，作曲者 Debussy／德布西；實際合法錄音與片段尚待提供。片段長度與前頁相同。",
+      "html": "<section class=\"mp-page\" id=\"mp-swan-moonlight\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>換上《月光》，再看一次</h2></header><div class=\"mp-swan\"><video poster=\"./images/Swan_Poster.png\" data-swan playsinline preload=\"none\" muted></video><div class=\"mp-video-missing\">天鵝影像待補<br><small>Swan.mp4</small></div></div><div class=\"mp-media-controls\"><button data-swan-play=\"moonlight\">播放相同片段</button><button data-swan-play=\"moonlight\">重播</button><button data-mp-stop>停止</button></div><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"swan-play\"></button><button type=\"button\" hidden data-action=\"listen-stop\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "swan-play",
+          "label": "播放／重播月光版本"
+        },
+        {
+          "id": "listen-stop",
+          "label": "停止播放"
+        }
+      ]
+    },
+    {
+      "id": "mp-compare",
+      "title": "畫面相同，感覺怎樣改變？",
+      "notes": "22–31分鐘。用速度／力度及具體聽覺線索解釋；不宣稱只改一個變項，不提供唯一心情標籤。",
+      "html": "<section class=\"mp-page\" id=\"mp-compare\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>畫面相同，感覺怎樣改變？</h2></header><div class=\"mp-comparison\"><div>沒有配樂</div><div>課本配樂</div><div>另一段配樂</div></div><p class=\"mp-hero\">你聽到甚麼不同？<br>它怎樣改變你對畫面的感覺？</p><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-demo",
+      "title": "先找圖片的重點",
+      "notes": "31–37分鐘。示範圖：本人在車站候車，待照片生成。App製作背景氣氛，身體聲響突出一個細節；不假定App有圖片載入或獨立力度控制。已檢查完整index/css/js/vendor/media；卡片可改變多項設定，不宣稱單一變項。",
+      "html": "<section class=\"mp-page\" id=\"mp-demo\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>先找圖片的重點</h2></header><div class=\"mp-split\"><figure class=\"mp-figure\"><img src=\"./images/Demo_Station.png\" alt=\"示範圖\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>Demo_Station.png</span></div><figcaption>示範圖</figcaption></figure><div><p>圖片重點 → 配樂選擇</p><p>加一種身體聲響 → 試聽</p><p>聽後決定：保留／修改</p><button data-open-maker>開啟 Music Maker</button></div></div><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"open-maker\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "open-maker",
+          "label": "開啟 Music Maker"
+        }
+      ]
+    },
+    {
+      "id": "mp-cues",
+      "title": "先聽背景，再看老師手勢",
+      "notes": "31–37分鐘。老師現場示範一致的加入／停止手勢。無聲手勢是律動／提示，不稱為發聲或身體敲擊。先無配樂演練，再配背景，不要求固定拍數。",
+      "html": "<section class=\"mp-page\" id=\"mp-cues\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>先聽背景，再看老師手勢</h2></header><div class=\"mp-cues\"><div><strong>先聽</strong><p>背景音樂</p></div><span>→</span><div><strong>加入</strong><p>一種身體聲響</p></div><span>→</span><div><strong>停止</strong><p>看老師手勢</p></div></div><p class=\"mp-footer\">不用逐拍對齊，留意整體效果。</p><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-task",
+      "title": "一起為圖片配聲",
+      "notes": "37–47分鐘。四組各一圖，學生使用紙本圈選，不操作裝置。先個人判斷再共識，避免只有記錄員參與。背景配樂設定由老師在既有App操作。",
+      "html": "<section class=\"mp-page\" id=\"mp-task\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>一起為圖片配聲</h2></header><div class=\"mp-task-flow\"><span>看圖</span><b>→</b><span>先想</span><b>→</b><span>討論圈選</span><b>→</b><span>試聲</span><b>→</b><span>說理由</span></div><p class=\"mp-hero\">每人先提出一個觀察，<br>再作共同選擇。</p><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-body",
+      "title": "用熟悉的身體聲響突出細節",
+      "notes": "37–47分鐘。圖示是動作提示，配合教師實際示範。疏密不必然等同tempo；速度、力度為核心，音色在App選擇中應用。選一種熟悉聲響，不增加分層合奏。",
+      "html": "<section class=\"mp-page\" id=\"mp-body\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>用熟悉的身體聲響突出細節</h2></header><div class=\"mp-three mp-body\"><div><svg viewBox=\"0 0 180 180\" aria-hidden=\"true\"><path d=\"M58 85l-15-25m20 20L55 40m18 38V35m10 43l9-35m-28 45l38-13m-3 52l25-42m-14 52l30-25\"/></svg><h3>拍手</h3></div><div><svg viewBox=\"0 0 180 180\" aria-hidden=\"true\"><path d=\"M45 110h90M60 110v45m60-45v45M47 60l23 35m55-35l-20 35M45 40h30m30 0h30\"/></svg><h3>拍腿</h3></div><div><svg viewBox=\"0 0 180 180\" aria-hidden=\"true\"><path d=\"M40 120h100M55 110l-8-20m20 17l-5-30m16 27V70m15 36l6-28M140 35l-38 45m45-30l-33 37\"/></svg><h3>指尖拍手掌</h3></div></div><p class=\"mp-footer\">選一種聲響：輕／較強？疏／密？</p><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-group-1",
+      "title": "第 1 組：聽聽我們的構思",
+      "notes": "47–63分鐘。每組約4分鐘：說構思→配樂及聲響試演15–20秒→同伴回饋→保留／修改理由。場景：細雨中撐傘步行，以本人照片生成之圖尚待提供。只選1–2組重試。老師在另一視窗操作App，學生看圖片；示範完先停止App音樂再切組。",
+      "html": "<section class=\"mp-page\" id=\"mp-group-1\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>第 1 組：聽聽我們的構思</h2></header><div class=\"mp-group-image\"><figure class=\"mp-figure\"><img src=\"./images/G1_Rain.png\" alt=\"第 1 組圖片\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>G1_Rain.png</span></div><figcaption>第 1 組圖片</figcaption></figure></div><p class=\"mp-footer\">聽眾：哪一個聲音配合圖片的細節？</p><button class=\"mp-maker-corner\" data-open-maker>開啟 Music Maker</button><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"open-maker\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "open-maker",
+          "label": "開啟 Music Maker"
+        }
+      ]
+    },
+    {
+      "id": "mp-group-2",
+      "title": "第 2 組：聽聽我們的構思",
+      "notes": "47–63分鐘。每組約4分鐘：說構思→配樂及聲響試演15–20秒→同伴回饋→保留／修改理由。場景：公園跑步，以本人照片生成之圖尚待提供。只選1–2組重試。老師在另一視窗操作App，學生看圖片；示範完先停止App音樂再切組。",
+      "html": "<section class=\"mp-page\" id=\"mp-group-2\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>第 2 組：聽聽我們的構思</h2></header><div class=\"mp-group-image\"><figure class=\"mp-figure\"><img src=\"./images/G2_Running.png\" alt=\"第 2 組圖片\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>G2_Running.png</span></div><figcaption>第 2 組圖片</figcaption></figure></div><p class=\"mp-footer\">聽眾：哪一個聲音配合圖片的細節？</p><button class=\"mp-maker-corner\" data-open-maker>開啟 Music Maker</button><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"open-maker\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "open-maker",
+          "label": "開啟 Music Maker"
+        }
+      ]
+    },
+    {
+      "id": "mp-group-3",
+      "title": "第 3 組：聽聽我們的構思",
+      "notes": "47–63分鐘。每組約4分鐘：說構思→配樂及聲響試演15–20秒→同伴回饋→保留／修改理由。場景：海邊看海，以本人照片生成之圖尚待提供。只選1–2組重試。老師在另一視窗操作App，學生看圖片；示範完先停止App音樂再切組。",
+      "html": "<section class=\"mp-page\" id=\"mp-group-3\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>第 3 組：聽聽我們的構思</h2></header><div class=\"mp-group-image\"><figure class=\"mp-figure\"><img src=\"./images/G3_Sea.png\" alt=\"第 3 組圖片\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>G3_Sea.png</span></div><figcaption>第 3 組圖片</figcaption></figure></div><p class=\"mp-footer\">聽眾：哪一個聲音配合圖片的細節？</p><button class=\"mp-maker-corner\" data-open-maker>開啟 Music Maker</button><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"open-maker\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "open-maker",
+          "label": "開啟 Music Maker"
+        }
+      ]
+    },
+    {
+      "id": "mp-group-4",
+      "title": "第 4 組：聽聽我們的構思",
+      "notes": "47–63分鐘。每組約4分鐘：說構思→配樂及聲響試演15–20秒→同伴回饋→保留／修改理由。場景：風中山徑前行，以本人照片生成之圖尚待提供。只選1–2組重試。老師在另一視窗操作App，學生看圖片；示範完先停止App音樂再切組。",
+      "html": "<section class=\"mp-page\" id=\"mp-group-4\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>第 4 組：聽聽我們的構思</h2></header><div class=\"mp-group-image\"><figure class=\"mp-figure\"><img src=\"./images/G4_Wind.png\" alt=\"第 4 組圖片\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>G4_Wind.png</span></div><figcaption>第 4 組圖片</figcaption></figure></div><p class=\"mp-footer\">聽眾：哪一個聲音配合圖片的細節？</p><button class=\"mp-maker-corner\" data-open-maker>開啟 Music Maker</button><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"open-maker\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "open-maker",
+          "label": "開啟 Music Maker"
+        }
+      ]
+    },
+    {
+      "id": "mp-feedback",
+      "title": "保留或修改甚麼？",
+      "notes": "47–63分鐘。根據聽到的聲音提出具體回饋；不是只有「好聽／不好聽」。重試前提出改哪個選擇及原因，不要求每組重試。",
+      "html": "<section class=\"mp-page\" id=\"mp-feedback\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>保留或修改甚麼？</h2></header><div class=\"mp-feedback\"><div>我想保留＿＿<br>因為聽到＿＿。</div><div>我想修改＿＿<br>因為圖片中＿＿。</div></div><p class=\"mp-footer\">先說具體理由，再選一至兩組重試。</p><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    },
+    {
+      "id": "mp-exit",
+      "title": "換一幅圖，你會怎樣選？",
+      "notes": "63–70分鐘。本人草地放風箏圖待提供。兩段音樂待老師確認；每人先選，再口述或圈選，不能以組別表現推斷個人掌握。接受有證據的不同選擇。",
+      "html": "<section class=\"mp-page\" id=\"mp-exit\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>換一幅圖，你會怎樣選？</h2></header><div class=\"mp-split\"><figure class=\"mp-figure\"><img src=\"./images/Exit_Kite.png\" alt=\"新圖片\"><div class=\"mp-image-missing\"><strong>圖片待補</strong><span>Exit_Kite.png</span></div><figcaption>新圖片</figcaption></figure><div><div class=\"mp-ab\"><strong>A</strong><div class=\"mp-media-controls\"><button data-mp-play=\"exitA\">播放片段</button><button data-mp-replay=\"exitA\">重播</button><button data-mp-stop>停止</button><span data-media-label=\"exitA\"></span></div></div><div class=\"mp-ab\"><strong>B</strong><div class=\"mp-media-controls\"><button data-mp-play=\"exitB\">播放片段</button><button data-mp-replay=\"exitB\">重播</button><button data-mp-stop>停止</button><span data-media-label=\"exitB\"></span></div></div><p>我選＿＿，因為我聽到＿＿，<br>配合圖片中的＿＿。</p></div></div><p class=\"mp-media-status\" role=\"status\"></p><button type=\"button\" hidden data-action=\"exit-a\"></button><button type=\"button\" hidden data-action=\"exit-b\"></button><button type=\"button\" hidden data-action=\"listen-stop\"></button></section>",
+      "media": [],
+      "actions": [
+        {
+          "id": "exit-a",
+          "label": "播放／重播 A"
+        },
+        {
+          "id": "exit-b",
+          "label": "播放／重播 B"
+        },
+        {
+          "id": "listen-stop",
+          "label": "停止播放"
+        }
+      ]
+    },
+    {
+      "id": "mp-summary",
+      "title": "音樂幫助我們表現圖片的甚麼？",
+      "notes": "63–70分鐘。回扣三項成功準則，針對學生實際回應給予具體回饋。來源、待補素材及核實狀態見README及assets_manifest.md；不宣稱督導評級保證。",
+      "html": "<section class=\"mp-page\" id=\"mp-summary\"><header><span class=\"mp-unit\">P3 · 音樂與畫面</span><h2>音樂幫助我們表現圖片的甚麼？</h2></header><div class=\"mp-summary\"><span>動態</span><span>細節</span><span>氣氛</span></div><p class=\"mp-hero\">用聽到的聲音，<br>解釋你的選擇。</p><p class=\"mp-media-status\" role=\"status\"></p></section>",
+      "media": [],
+      "actions": []
+    }
+  ]
+}

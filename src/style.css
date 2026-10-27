@@ -91,6 +91,7 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 .timer-position-preview{touch-action:none;margin-top:16px}
 .timer-position-preview .slide-content{pointer-events:none}
 
+.remote-command-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.remote-command-grid button{min-height:56px}.remote-pair-form input{width:100%;margin:10px 0;font-size:18px}.remote-extra summary{color:#176b60}
 
 /* Teacher workspace: live slide first; existing controls stay mounted in the sidebar. */
 .controller-workspace{max-width:none;width:100%;padding:20px 24px;min-height:100dvh}

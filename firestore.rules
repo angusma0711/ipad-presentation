@@ -1,6 +1,81 @@
 rules_version = '2';
 service cloud.firestore {
  match /databases/{database}/documents {
+  // Optional Windows remote control. Independent from classroom-code permissions.
+  match /remoteDevices/{deviceId} {
+   function signedIn(){return request.auth != null;}
+   function idValid(){return deviceId.matches('^[a-f0-9]{64}$');}
+   function owner(){return signedIn() && resource.data.ownerUid == request.auth.uid;}
+   function young(data){return data.createdAt > request.time-duration.value(1,'h');}
+   function valid(data){
+    return data.keys().hasOnly(['ownerUid','controllerUid','requestUid','confirmation','state','enabled','createdAt','updatedAt','allowAfter','heartbeat'])
+     && data.keys().hasAll(['ownerUid','controllerUid','requestUid','confirmation','state','enabled','createdAt','updatedAt','allowAfter','heartbeat'])
+     && data.ownerUid is string && data.ownerUid.size()>0 && data.ownerUid.size()<=128
+     && data.controllerUid is string && data.controllerUid.size()<=128
+     && data.requestUid is string && data.requestUid.size()<=128 && data.confirmation is string && data.confirmation.size()<=8
+     && data.state in ['waiting','paired','revoked'] && data.enabled is bool
+     && data.createdAt is timestamp && data.updatedAt is timestamp && data.allowAfter is timestamp && data.heartbeat is timestamp;
+   }
+   allow list,delete: if false;
+   allow get: if signedIn() && idValid() &&
+    (!exists(/databases/$(database)/documents/remoteDevices/$(deviceId))
+     || resource.data.ownerUid == request.auth.uid || resource.data.controllerUid == request.auth.uid || resource.data.requestUid == request.auth.uid
+     || (resource.data.state=='waiting' && resource.data.createdAt>request.time-duration.value(5,'m')));
+   allow create: if signedIn() && idValid() && valid(request.resource.data)
+    && request.resource.data.ownerUid==request.auth.uid
+    && request.resource.data.controllerUid=='' && request.resource.data.requestUid=='' && request.resource.data.confirmation==''
+    && request.resource.data.state=='waiting' && request.resource.data.enabled==false
+    && request.resource.data.createdAt==request.time && request.resource.data.updatedAt==request.time
+    && request.resource.data.allowAfter==request.time && request.resource.data.heartbeat==request.time;
+   allow update: if signedIn() && idValid() && valid(request.resource.data) && young(resource.data)
+    && request.resource.data.updatedAt==request.time && resource.data.state!='revoked'
+    && (
+     (owner() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['controllerUid','state','enabled','updatedAt','heartbeat','allowAfter'])
+      && (request.resource.data.heartbeat==resource.data.heartbeat || request.resource.data.heartbeat==request.time)
+      && (request.resource.data.allowAfter==resource.data.allowAfter || request.resource.data.allowAfter==request.time)
+      && (!request.resource.data.enabled || resource.data.enabled || request.resource.data.allowAfter==request.time)
+      && ((request.resource.data.state=='revoked' && !request.resource.data.enabled)
+       || (resource.data.state=='waiting' && request.resource.data.state=='waiting' && request.resource.data.controllerUid=='' && !request.resource.data.enabled)
+       || (resource.data.state=='waiting' && request.resource.data.state=='paired' && resource.data.createdAt>request.time-duration.value(5,'m') && resource.data.requestUid!='' && request.resource.data.controllerUid==resource.data.requestUid)
+       || (resource.data.state=='paired' && request.resource.data.state=='paired' && request.resource.data.controllerUid==resource.data.controllerUid)))
+     || (resource.data.state=='waiting' && resource.data.requestUid=='' && resource.data.createdAt>request.time-duration.value(5,'m')
+      && request.auth.uid!=resource.data.ownerUid
+      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['requestUid','confirmation','updatedAt'])
+      && request.resource.data.requestUid==request.auth.uid && request.resource.data.confirmation.matches('^[0-9]{8}$'))
+     || ((resource.data.requestUid==request.auth.uid || resource.data.controllerUid==request.auth.uid)
+      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['state','enabled','updatedAt'])
+      && request.resource.data.state=='revoked' && !request.resource.data.enabled)
+    );
+   match /commands/{slot} {
+    function device(){return get(/databases/$(database)/documents/remoteDevices/$(deviceId)).data;}
+    function participant(){return request.auth!=null && (device().ownerUid==request.auth.uid || device().controllerUid==request.auth.uid);}
+    function ready(){return device().state=='paired' && device().enabled && device().createdAt>request.time-duration.value(1,'h') && device().heartbeat>request.time-duration.value(12,'s');}
+    function command(data){
+     return data.keys().hasOnly(['commandId','action','controllerUid','state','message','issuedAt','expiresAt','updatedAt'])
+      && data.keys().hasAll(['commandId','action','controllerUid','state','message','issuedAt','expiresAt','updatedAt'])
+      && data.commandId is string && data.commandId.matches('^[a-f0-9]{24}$')
+      && data.action in ['focus-presentation','open-browser','open-approved-url','open-ebook','focus-browser','focus-ebook','next-window','media-toggle','volume-up','volume-down','mute-toggle']
+      && data.controllerUid is string && data.state in ['pending','accepted','completed','failed','expired']
+      && data.message is string && data.message.size()<=160 && data.issuedAt is timestamp && data.expiresAt is timestamp && data.updatedAt is timestamp;
+    }
+    function sending(){return participant() && ready() && request.auth.uid==device().controllerUid && command(request.resource.data)
+      && request.resource.data.controllerUid==request.auth.uid && request.resource.data.state=='pending' && request.resource.data.message==''
+      && request.resource.data.issuedAt==request.time && request.resource.data.updatedAt==request.time
+      && request.resource.data.issuedAt>=device().allowAfter
+      && request.resource.data.expiresAt>request.time+duration.value(1,'s') && request.resource.data.expiresAt<=request.time+duration.value(15,'s');}
+    allow list,delete: if false;
+    allow get: if slot=='current' && participant();
+    allow create: if slot=='current' && sending();
+    allow update: if slot=='current' && (
+     (sending() && request.resource.data.commandId!=resource.data.commandId && (resource.data.state in ['completed','failed','expired'] || resource.data.expiresAt<request.time))
+     || (participant() && request.auth.uid==device().ownerUid && command(request.resource.data)
+      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['state','message','updatedAt']) && request.resource.data.updatedAt==request.time
+      && ((resource.data.state=='pending' && request.resource.data.state in ['accepted','failed','expired'])
+       || (resource.data.state=='accepted' && request.resource.data.state in ['completed','failed','expired'])))
+    );
+   }
+  }
+
   match /sessions/{sessionId} {
    function authenticated() { return request.auth != null; }
    // A lesson code works for LESSON_HOURS (24) after creation, until the teacher ends it.
