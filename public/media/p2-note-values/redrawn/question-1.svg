@@ -22,4 +22,61 @@
 <g transform="translate(1378.500897666068 493) scale(1.1310592459605027)"><ellipse cx="0" cy="0" rx="19" ry="13" transform="rotate(-20)" fill="#152d34" stroke="#152d34" stroke-width="4"/><path d="M17 -5V-104" fill="none" stroke="#152d34" stroke-width="5"/></g>
 <path d="M1461.0682226211848 343.70017953321366V529.1938958707361" stroke="#152d34" stroke-width="3.5"/>
 <path d="M1472.3788150807898 343.70017953321366V529.1938958707361" stroke="#152d34" stroke-width="6"/>
+<g id="corner-note-tree" aria-label="音符樹：全音符四拍，二分音符兩拍，四分音符一拍，八分音符半拍"><rect x="1030" y="25" width="500" height="292" rx="18" fill="#edf3e9"/><text x="1050" y="60" font-family="sans-serif" font-size="29" font-weight="700" fill="#176b60">音符樹</text>
+<path d="M1330.0 106L1240.0 121" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1330.0 106L1420.0 121" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1240.0 169L1195.0 184" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1240.0 169L1285.0 184" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1420.0 169L1375.0 184" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1420.0 169L1465.0 184" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1195.0 232L1172.5 247" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1195.0 232L1217.5 247" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1285.0 232L1262.5 247" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1285.0 232L1307.5 247" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1375.0 232L1352.5 247" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1375.0 232L1397.5 247" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1465.0 232L1442.5 247" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<path d="M1465.0 232L1487.5 247" fill="none" stroke="#98b4a3" stroke-width="2"/>
+<text x="1050" y="100" font-family="sans-serif" font-size="25" fill="#173f45">4 拍</text>
+<ellipse cx="1330.0" cy="93" rx="11" ry="6" transform="rotate(-18 1330.0 93)" fill="#fffaf0" stroke="#173f45" stroke-width="2"/>
+<text x="1050" y="163" font-family="sans-serif" font-size="25" fill="#173f45">2 拍</text>
+<ellipse cx="1240.0" cy="156" rx="8" ry="6" transform="rotate(-18 1240.0 156)" fill="#fffaf0" stroke="#173f45" stroke-width="2"/>
+<path d="M1247.0 154V125" stroke="#173f45" stroke-width="2"/>
+<ellipse cx="1420.0" cy="156" rx="8" ry="6" transform="rotate(-18 1420.0 156)" fill="#fffaf0" stroke="#173f45" stroke-width="2"/>
+<path d="M1427.0 154V125" stroke="#173f45" stroke-width="2"/>
+<text x="1050" y="226" font-family="sans-serif" font-size="25" fill="#173f45">1 拍</text>
+<ellipse cx="1195.0" cy="219" rx="8" ry="6" transform="rotate(-18 1195.0 219)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1202.0 217V188" stroke="#173f45" stroke-width="2"/>
+<ellipse cx="1285.0" cy="219" rx="8" ry="6" transform="rotate(-18 1285.0 219)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1292.0 217V188" stroke="#173f45" stroke-width="2"/>
+<ellipse cx="1375.0" cy="219" rx="8" ry="6" transform="rotate(-18 1375.0 219)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1382.0 217V188" stroke="#173f45" stroke-width="2"/>
+<ellipse cx="1465.0" cy="219" rx="8" ry="6" transform="rotate(-18 1465.0 219)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1472.0 217V188" stroke="#173f45" stroke-width="2"/>
+<text x="1050" y="289" font-family="sans-serif" font-size="25" fill="#173f45">半拍</text>
+<ellipse cx="1172.5" cy="282" rx="8" ry="6" transform="rotate(-18 1172.5 282)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1179.5 280V251" stroke="#173f45" stroke-width="2"/>
+<path d="M1179.5 251C1182.5 263 1197.5 260 1188.5 273C1192.5 261 1182.5 266 1179.5 260Z" fill="#173f45"/>
+<ellipse cx="1217.5" cy="282" rx="8" ry="6" transform="rotate(-18 1217.5 282)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1224.5 280V251" stroke="#173f45" stroke-width="2"/>
+<path d="M1224.5 251C1227.5 263 1242.5 260 1233.5 273C1237.5 261 1227.5 266 1224.5 260Z" fill="#173f45"/>
+<ellipse cx="1262.5" cy="282" rx="8" ry="6" transform="rotate(-18 1262.5 282)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1269.5 280V251" stroke="#173f45" stroke-width="2"/>
+<path d="M1269.5 251C1272.5 263 1287.5 260 1278.5 273C1282.5 261 1272.5 266 1269.5 260Z" fill="#173f45"/>
+<ellipse cx="1307.5" cy="282" rx="8" ry="6" transform="rotate(-18 1307.5 282)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1314.5 280V251" stroke="#173f45" stroke-width="2"/>
+<path d="M1314.5 251C1317.5 263 1332.5 260 1323.5 273C1327.5 261 1317.5 266 1314.5 260Z" fill="#173f45"/>
+<ellipse cx="1352.5" cy="282" rx="8" ry="6" transform="rotate(-18 1352.5 282)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1359.5 280V251" stroke="#173f45" stroke-width="2"/>
+<path d="M1359.5 251C1362.5 263 1377.5 260 1368.5 273C1372.5 261 1362.5 266 1359.5 260Z" fill="#173f45"/>
+<ellipse cx="1397.5" cy="282" rx="8" ry="6" transform="rotate(-18 1397.5 282)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1404.5 280V251" stroke="#173f45" stroke-width="2"/>
+<path d="M1404.5 251C1407.5 263 1422.5 260 1413.5 273C1417.5 261 1407.5 266 1404.5 260Z" fill="#173f45"/>
+<ellipse cx="1442.5" cy="282" rx="8" ry="6" transform="rotate(-18 1442.5 282)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1449.5 280V251" stroke="#173f45" stroke-width="2"/>
+<path d="M1449.5 251C1452.5 263 1467.5 260 1458.5 273C1462.5 261 1452.5 266 1449.5 260Z" fill="#173f45"/>
+<ellipse cx="1487.5" cy="282" rx="8" ry="6" transform="rotate(-18 1487.5 282)" fill="#173f45" stroke="#173f45" stroke-width="2"/>
+<path d="M1494.5 280V251" stroke="#173f45" stroke-width="2"/>
+<path d="M1494.5 251C1497.5 263 1512.5 260 1503.5 273C1507.5 261 1497.5 266 1494.5 260Z" fill="#173f45"/>
+</g>
 </svg>
