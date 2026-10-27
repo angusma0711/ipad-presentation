@@ -4,8 +4,9 @@
 .preview-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid #b6c6cd;border-radius:12px;background:#f9faf6}
 .preview-frame .slide{width:100%;height:100%;padding:6%}
 .slide-content{width:100%;position:relative}
-.annotation-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.annotation-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5;isolation:isolate}
 .interactive-layer{pointer-events:auto;touch-action:none;cursor:crosshair;user-select:none;-webkit-user-select:none}
+.erase-layer{cursor:cell}
 .laser-point{filter:drop-shadow(0 0 9px #ef233c)}
 .tool-bar{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
 .tool-bar [aria-pressed=true]{background:#176b60;color:white;border-color:#176b60}

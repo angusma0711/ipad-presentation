@@ -1,7 +1,7 @@
 export type Group = { name: string; points: number };
 export type GroupsState = { groups: Group[]; visible: boolean };
 export type Point = { x: number; y: number };
-export type Stroke = { id: string; points: Point[]; color: string; width: number };
+export type Stroke = { id: string; points: Point[]; color: string; width: number; erase?: boolean };
 export type PointerState = Point & { active: boolean; slide: number; expiresAt: number };
 export type MediaKind = 'audio' | 'video' | 'youtube';
 export type MediaAction = 'play' | 'pause' | 'restart';
@@ -10,12 +10,20 @@ export type MediaFeedback = { commandId: string; status: 'ready' | 'playing' | '
 export const defaultGroups = (): GroupsState => ({ visible: false, groups: Array.from({length:4}, (_,i) => ({name:`第 ${i+1} 組`,points:0})) });
 export const uid = () => Array.from(crypto.getRandomValues(new Uint8Array(12)), byte => byte.toString(16).padStart(2,'0')).join('');
 export const MAX_STROKES = 30, MAX_POINTS = 300;
+const penColor = (color: string) => color === '#e63946' || color === '#176b60' || color === '#1b4fc4';
+const penWidth = (width: number) => width === 3 || width === 6 || width === 10;
 export function validStrokes(value: unknown): Stroke[] {
  if (!Array.isArray(value)) return [];
- return value.slice(0,30).filter((s): s is Stroke => !!s && typeof s.id === 'string' && s.id.length <= 32
-  && ['#e63946','#176b60','#1b4fc4'].includes(s.color) && [3,6,10].includes(s.width)
-  && Array.isArray(s.points) && s.points.length > 0 && s.points.length <= MAX_POINTS
-  && s.points.every((p:Point) => p && Number.isFinite(p.x) && Number.isFinite(p.y) && p.x >= 0 && p.x <= 1 && p.y >= 0 && p.y <= 1));
+ return value.slice(0,30).filter((s): s is Stroke => {
+  if (!s || typeof s !== 'object') return false;
+  const stroke = s as Stroke;
+  const points = stroke.points;
+  if (typeof stroke.id !== 'string' || stroke.id.length > 32 || !Array.isArray(points) || points.length === 0 || points.length > MAX_POINTS) return false;
+  if (!points.every(point => !!point && Number.isFinite(point.x) && Number.isFinite(point.y) && point.x >= 0 && point.x <= 1 && point.y >= 0 && point.y <= 1)) return false;
+  // Eraser strokes punch holes in ink already on the page. They use one fixed width so the projector can trust them.
+  if (stroke.erase === true) return stroke.color === '#111111' && stroke.width === 10;
+  return stroke.erase == null && penColor(stroke.color) && penWidth(stroke.width);
+ });
 }
 export function mediaSource(kind: MediaKind, input: string) {
  if (kind === 'youtube') {
@@ -55,8 +63,8 @@ function rdp(points: Point[], tolerance: number): Point[] {
  return [...rdp(points.slice(0, index + 1), tolerance).slice(0, -1), ...rdp(points.slice(index), tolerance)];
 }
 // Smooth curve through the points (quadratic segments between midpoints), in a 1600×900 box.
-export function smoothPath(points: Point[]) {
- const p = points.map(point => [point.x * 1600, point.y * 900]);
+export function smoothPath(points: Point[], width = 1600, height = 900) {
+ const p = points.map(point => [point.x * width, point.y * height]);
  if (p.length < 3) return `M${p[0][0]},${p[0][1]}` + p.slice(1).map(([x, y]) => `L${x},${y}`).join('');
  let d = `M${p[0][0]},${p[0][1]}`;
  for (let i = 1; i < p.length - 1; i++) d += `Q${p[i][0]},${p[i][1]} ${(p[i][0] + p[i + 1][0]) / 2},${(p[i][1] + p[i + 1][1]) / 2}`;

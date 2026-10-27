@@ -1,5 +1,6 @@
 import { useContext, useEffect, useMemo, useRef } from 'react';
 import { ActionContext } from './ActionContext';
+import type { SlideAction } from './ActionContext';
 import { deckAsset } from '../presentations/registry';
 import type { Deck } from '../presentations/types';
 // Deck HTML is authored lesson material, never student input.
@@ -21,7 +22,7 @@ function HtmlSlide({ deck, index, passive=false }: { deck: Deck; index: number; 
  }, [command, passive]);
  return <div ref={root} className={typeof deck.data.htmlClass === 'string' ? deck.data.htmlClass : 'deck-html'} dangerouslySetInnerHTML={{ __html: html }} />;
 }
-export function DeckSlideView({ deck, index, passive=false, preview=false }: { deck: Deck; index: number; passive?: boolean; preview?:boolean }) {
+export function DeckSlideView({ deck, index, passive=false, preview=false, action=null }: { deck: Deck; index: number; passive?: boolean; preview?:boolean; action?: SlideAction | null }) {
  const Custom = deck.plugin.Slide;
- return Custom ? <Custom deck={deck} index={index} passive={passive||preview} /> : <HtmlSlide passive={passive} key={deck.slides[index].id} deck={deck} index={index} />;
+ return Custom ? <Custom deck={deck} index={index} passive={passive||preview} preview={preview} action={action} /> : <HtmlSlide passive={passive} key={deck.slides[index].id} deck={deck} index={index} />;
 }

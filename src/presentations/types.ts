@@ -10,7 +10,7 @@ export type DeckSlide = { id: string; title: string; notes: string; html?: strin
 export type DeckControlsProps = {sendAction?:(action:string)=>void;action?:SlideAction|null;feedback?:MediaFeedback|null; deck: Deck; index: number; state: LessonInteraction; disabled: boolean; change: (patch: Partial<LessonInteraction>) => void; playMedia: (media: DeckMedia) => void };
 // Optional plugin.tsx beside deck.json, for decks that need more than HTML slides.
 export type DeckPlugin = {
- Slide?: ComponentType<{ deck: Deck; index: number; passive?:boolean }>;
+ Slide?: ComponentType<{ deck: Deck; index: number; passive?:boolean; preview?: boolean; action?: SlideAction | null }>;
  Controls?: ComponentType<DeckControlsProps>;
  attach?: (root: HTMLElement) => () => void;
 };

@@ -2,215 +2,30 @@
   "title": "P2 · 音符時值",
   "order": 0.2,
   "assetBase": "/media/p2-note-values/",
-  "htmlClass": "nv-deck",
+  "viewClass": "nv-page-deck",
+  "ink": "page",
   "slides": [
     {
-      "id": "nv-cover",
-      "title": "音符時值",
-      "notes": "開場。這是培基小學二年級上學期工作紙「音符時值」，班別標記為 2B。姓名和日期寫在紙上，不要在投影收集學生資料。先問：今天的方格可以填哪兩種音符？",
-      "html": "<section class=\"nv-slide nv-cover\" id=\"nv-cover\" aria-label=\"音符時值\"><p class=\"nv-kicker\">培基小學 · 2026–2027 上學期 · 音樂科</p><h1>音符時值</h1><p class=\"nv-lead\">細看節奏，填滿每一小節</p><p class=\"nv-meta\">二年級 · 2B · 課節：音符時值</p></section>",
+      "id": "nv-page-1",
+      "title": "第一頁",
+      "notes": "工作紙第一頁原頁（頁首及第1至5題）。用上半頁、下半頁或框選放大，避免整張 A4 縮到看不清。筆跡在「畫筆」：可畫線、圈選、擦除、復原、清除；放大或改視窗後仍對準原位。\n\n姓名和日期寫在紙上，不要在投影收集學生資料。方格只填四分音符（一拍）或二分音符（兩拍）。\n第1題 3/4：第3小節空格是四分音符。中間方格是工作紙已印的示例。\n第2題 2/4：兩個空格都是四分音符。最後的二分音符已是兩拍。\n第3題 2/4：開頭只有一個空格，要填二分音符。\n第4題 3/4：第一空格二分音符，第二空格四分音符。\n第5題 4/4：第一空格二分音符，第二空格四分音符。",
+      "html": "<img src=\"./pages/page-1.jpg\" alt=\"培基小學音樂科工作紙第一頁：音符時值\">",
       "media": [],
-      "actions": []
+      "actions": [],
+      "image": "./pages/page-1.jpg",
+      "pageWidth": 4284,
+      "pageHeight": 5712
     },
     {
-      "id": "nv-task",
-      "title": "怎樣填",
-      "notes": "讀工作紙指示：在方格內填四分音符或二分音符。強調只有這兩種。先讓學生說出一拍和兩拍，再進入題目。不要在這一頁揭示任何題目答案。",
-      "html": "<section class=\"nv-slide nv-sun\" id=\"nv-task\" aria-label=\"怎樣填\"><p class=\"nv-kicker\">工作紙指示</p><h2>在方格內填上</h2><div class=\"nv-pair\"><article class=\"nv-card\"><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><strong>四分音符</strong><small>一拍</small></article><article class=\"nv-card\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span><strong>二分音符</strong><small>兩拍</small></article></div><p class=\"nv-hint\">每小節的拍子要剛剛好，不能多，也不能少。</p></section>",
+      "id": "nv-page-2",
+      "title": "第二頁",
+      "notes": "工作紙第二頁原頁（第5、6題、整體表現、學生自我評估）。同樣可用上半頁、下半頁和框選放大。\n\n第5題 4/4：三個空格都是四分音符。最後的附點二分音符加四分音符已滿四拍。\n第6題 4/4：空格是四分音符。兩粒八分音符合共一拍，休止符也算拍。相片中間有反光；若印刷和小節線看起來不同，以工作紙拍數口頭調整。\n\n整體表現在各人工作紙勾選，不要在螢幕點名。自我評估由學生在紙上塗顏色。",
+      "html": "<img src=\"./pages/page-2.jpg\" alt=\"培基小學音樂科工作紙第二頁：音符時值\">",
       "media": [],
-      "actions": []
-    },
-    {
-      "id": "nv-values",
-      "title": "每小節有幾拍",
-      "notes": "指着拍號。2/4 每小節 2 拍，3/4 是 3 拍，4/4 是 4 拍。四分音符數一拍，二分音符數兩拍。可選用 ta、ta-a，但工作紙只要求填符號。問：兩拍的空格，可以填兩粒四分音符嗎？預期：不可以，一格只填一個音符。",
-      "html": "<section class=\"nv-slide nv-sky\" id=\"nv-values\" aria-label=\"每小節有幾拍\"><p class=\"nv-kicker\">先看拍號</p><h2>每小節要填滿</h2><div class=\"nv-meters\"><article class=\"nv-card\"><div class=\"nv-meter\" aria-hidden=\"true\"><b>2</b><b>4</b></div><strong>2 拍</strong></article><article class=\"nv-card\"><div class=\"nv-meter\" aria-hidden=\"true\"><b>3</b><b>4</b></div><strong>3 拍</strong></article><article class=\"nv-card\"><div class=\"nv-meter\" aria-hidden=\"true\"><b>4</b><b>4</b></div><strong>4 拍</strong></article></div><p class=\"nv-hint\">一格只填一個音符：一拍用四分音符，兩拍用二分音符。</p></section>",
-      "media": [],
-      "actions": []
-    },
-    {
-      "id": "nv-ex1",
-      "title": "第1題",
-      "notes": "3/4，每小節 3 拍。第1小節：四分音符 ×3，已滿。第2小節中間的方格是工作紙印好的示例（四分音符），左右各一粒四分音符，已滿 3 拍，不用再填。第3小節只餘 1 拍，空格是四分音符。按「數下一小節」逐節數，再揭示空格。觀察學生會否把已滿的小節也填字。",
-      "html": "<section class=\"nv-slide\" id=\"nv-ex1\" aria-label=\"第1題\"><p class=\"nv-kicker\">第一頁 · 第 1 題 · 四三拍</p><h2>空格是一拍還是兩拍？</h2><div class=\"nv-row\"><div class=\"nv-meter\" aria-label=\"以四分音符為一拍，每小節三拍\"><b>3</b><b>4</b></div><div class=\"nv-bar\" data-beats=\"3\"><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"3\"><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-blank nv-given\" role=\"img\" aria-label=\"示例，已印上四分音符\"><span class=\"nv-ans\">&#xE1D5;<small>例</small></span></span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"3\"><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline nv-final\" aria-hidden=\"true\"></span></div><p class=\"nv-hint\">每小節 3 拍。中間有「例」的方格，工作紙已經印好。</p><p class=\"nv-status\" role=\"status\">先數拍，再決定空格。</p><button type=\"button\" hidden data-action=\"next-bar\"></button><button type=\"button\" hidden data-action=\"reveal-next\"></button><button type=\"button\" hidden data-action=\"reveal-all\"></button></section>",
-      "media": [],
-      "actions": [
-        {
-          "id": "next-bar",
-          "label": "數下一小節"
-        },
-        {
-          "id": "reveal-next",
-          "label": "揭示下一個空格"
-        },
-        {
-          "id": "reveal-all",
-          "label": "全部揭示／收起"
-        }
-      ]
-    },
-    {
-      "id": "nv-ex2",
-      "title": "第2題",
-      "notes": "2/4。第1小節：四分音符 + 空格 = 2，空格是四分音符。第2小節同樣是四分音符 + 四分音符。第3小節是二分音符，本身已是 2 拍，沒有空格。問：最後一粒空心音符等於幾粒四分音符？預期：兩粒。",
-      "html": "<section class=\"nv-slide\" id=\"nv-ex2\" aria-label=\"第2題\"><p class=\"nv-kicker\">第一頁 · 第 2 題 · 四二拍</p><h2>兩個空格，各是幾拍？</h2><div class=\"nv-row\"><div class=\"nv-meter\" aria-label=\"以四分音符為一拍，每小節兩拍\"><b>2</b><b>4</b></div><div class=\"nv-bar\" data-beats=\"2\"><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"2\"><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"2\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span></div><span class=\"nv-barline nv-final\" aria-hidden=\"true\"></span></div><p class=\"nv-hint\">每小節 2 拍。空心的音符自己已經佔兩拍。</p><p class=\"nv-status\" role=\"status\">先數拍，再決定空格。</p><button type=\"button\" hidden data-action=\"next-bar\"></button><button type=\"button\" hidden data-action=\"reveal-next\"></button><button type=\"button\" hidden data-action=\"reveal-all\"></button></section>",
-      "media": [],
-      "actions": [
-        {
-          "id": "next-bar",
-          "label": "數下一小節"
-        },
-        {
-          "id": "reveal-next",
-          "label": "揭示下一個空格"
-        },
-        {
-          "id": "reveal-all",
-          "label": "全部揭示／收起"
-        }
-      ]
-    },
-    {
-      "id": "nv-ex3",
-      "title": "第3題",
-      "notes": "2/4。第1小節只有一個空格，必須自己佔滿 2 拍，所以是二分音符。第2小節兩個四分音符。第3小節一個二分音符。常見錯誤：在空格填四分音符，小節就只得 1 拍。揭示後讓學生拍一下，聽二分音符有沒有維持兩拍。",
-      "html": "<section class=\"nv-slide\" id=\"nv-ex3\" aria-label=\"第3題\"><p class=\"nv-kicker\">第一頁 · 第 3 題 · 四二拍</p><h2>這個空格要填滿兩拍</h2><div class=\"nv-row\"><div class=\"nv-meter\" aria-label=\"以四分音符為一拍，每小節兩拍\"><b>2</b><b>4</b></div><div class=\"nv-bar\" data-beats=\"2\"><span class=\"nv-blank\" data-answer=\"h\" role=\"img\" aria-label=\"空格，答案是二分音符，兩拍\"><span class=\"nv-ans\">&#xE1D3;<small>兩拍</small></span></span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"2\"><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"2\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span></div><span class=\"nv-barline nv-final\" aria-hidden=\"true\"></span></div><p class=\"nv-hint\">每小節 2 拍。如果空格只填一拍，小節就太短。</p><p class=\"nv-status\" role=\"status\">先數拍，再決定空格。</p><button type=\"button\" hidden data-action=\"next-bar\"></button><button type=\"button\" hidden data-action=\"reveal-next\"></button><button type=\"button\" hidden data-action=\"reveal-all\"></button></section>",
-      "media": [],
-      "actions": [
-        {
-          "id": "next-bar",
-          "label": "數下一小節"
-        },
-        {
-          "id": "reveal-next",
-          "label": "揭示下一個空格"
-        },
-        {
-          "id": "reveal-all",
-          "label": "全部揭示／收起"
-        }
-      ]
-    },
-    {
-      "id": "nv-ex4",
-      "title": "第4題",
-      "notes": "3/4。第1小節：空格 + 四分音符 = 3，空格是二分音符（2 拍）。第2小節：兩個四分音符 + 空格 = 3，空格是四分音符。第3小節：二分音符 + 四分音符 = 3，沒有空格。先分開問兩格，避免學生兩格填同一個。",
-      "html": "<section class=\"nv-slide\" id=\"nv-ex4\" aria-label=\"第4題\"><p class=\"nv-kicker\">第一頁 · 第 4 題 · 四三拍</p><h2>兩個空格，答案不一樣</h2><div class=\"nv-row\"><div class=\"nv-meter\" aria-label=\"以四分音符為一拍，每小節三拍\"><b>3</b><b>4</b></div><div class=\"nv-bar\" data-beats=\"3\"><span class=\"nv-blank\" data-answer=\"h\" role=\"img\" aria-label=\"空格，答案是二分音符，兩拍\"><span class=\"nv-ans\">&#xE1D3;<small>兩拍</small></span></span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"3\"><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"3\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline nv-final\" aria-hidden=\"true\"></span></div><p class=\"nv-hint\">每小節 3 拍。先算已經印好的音符，再看空格剩幾拍。</p><p class=\"nv-status\" role=\"status\">先數拍，再決定空格。</p><button type=\"button\" hidden data-action=\"next-bar\"></button><button type=\"button\" hidden data-action=\"reveal-next\"></button><button type=\"button\" hidden data-action=\"reveal-all\"></button></section>",
-      "media": [],
-      "actions": [
-        {
-          "id": "next-bar",
-          "label": "數下一小節"
-        },
-        {
-          "id": "reveal-next",
-          "label": "揭示下一個空格"
-        },
-        {
-          "id": "reveal-all",
-          "label": "全部揭示／收起"
-        }
-      ]
-    },
-    {
-      "id": "nv-ex5",
-      "title": "第5題",
-      "notes": "第一頁第5題，4/4。第1小節：二分音符（2）+ 空格，空格要再補 2 拍，是二分音符。第2小節：二分音符 + 四分音符 + 空格 = 4，空格是四分音符。第3小節：兩個二分音符，已滿。學生容易把第1小節的空格也填成四分音符。",
-      "html": "<section class=\"nv-slide nv-wide\" id=\"nv-ex5\" aria-label=\"第5題\"><p class=\"nv-kicker\">第一頁 · 第 5 題 · 四四拍</p><h2>四拍的小節</h2><div class=\"nv-row\"><div class=\"nv-meter\" aria-label=\"以四分音符為一拍，每小節四拍\"><b>4</b><b>4</b></div><div class=\"nv-bar\" data-beats=\"4\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span><span class=\"nv-blank\" data-answer=\"h\" role=\"img\" aria-label=\"空格，答案是二分音符，兩拍\"><span class=\"nv-ans\">&#xE1D3;<small>兩拍</small></span></span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"4\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"4\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span></div><span class=\"nv-barline nv-final\" aria-hidden=\"true\"></span></div><p class=\"nv-hint\">每小節 4 拍。第一格要和旁邊的二分音符一樣長。</p><p class=\"nv-status\" role=\"status\">先數拍，再決定空格。</p><button type=\"button\" hidden data-action=\"next-bar\"></button><button type=\"button\" hidden data-action=\"reveal-next\"></button><button type=\"button\" hidden data-action=\"reveal-all\"></button></section>",
-      "media": [],
-      "actions": [
-        {
-          "id": "next-bar",
-          "label": "數下一小節"
-        },
-        {
-          "id": "reveal-next",
-          "label": "揭示下一個空格"
-        },
-        {
-          "id": "reveal-all",
-          "label": "全部揭示／收起"
-        }
-      ]
-    },
-    {
-      "id": "nv-more",
-      "title": "第二頁的符號",
-      "notes": "轉到工作紙第二頁之前先認符號。附點二分音符 = 3 拍；八分音符 = 半拍，兩粒才是一拍；四分休止符停一拍；八分休止符停半拍。這些是題目印好的，方格仍然只填四分音符或二分音符。問學生：兩粒八分音符合起來等於甚麼？預期：一粒四分音符。",
-      "html": "<section class=\"nv-slide nv-sky\" id=\"nv-more\" aria-label=\"第二頁的符號\"><p class=\"nv-kicker\">第二頁會見到</p><h2>這些不用填，只要認得</h2><div class=\"nv-pair\"><article class=\"nv-card\"><span class=\"nv-sym nv-dh\" role=\"img\" aria-label=\"附點二分音符，三拍\"><span class=\"nv-glyph\">&#xE1D3;</span><i class=\"nv-dot\" aria-hidden=\"true\"></i></span><strong>附點二分音符</strong><small>三拍</small></article><article class=\"nv-card\"><span class=\"nv-sym nv-e\" role=\"img\" aria-label=\"八分音符，半拍\">&#xE1D7;</span><strong>八分音符</strong><small>半拍</small><em>兩粒 = 一拍</em></article><article class=\"nv-card\"><span class=\"nv-sym nv-rest\" role=\"img\" aria-label=\"四分休止符，停一拍\">&#xE4E5;</span><strong>四分休止符</strong><small>停一拍</small></article><article class=\"nv-card\"><span class=\"nv-sym nv-rest\" role=\"img\" aria-label=\"八分休止符，停半拍\">&#xE4E6;</span><strong>八分休止符</strong><small>停半拍</small></article></div><p class=\"nv-hint\">方格還是只填四分音符或二分音符。</p></section>",
-      "media": [],
-      "actions": []
-    },
-    {
-      "id": "nv-ex5b",
-      "title": "第5題（下頁）",
-      "notes": "第二頁第5題，和第一頁第5題不是同一條。4/4。第1小節四個一拍：空格、四分音符、空格、四分音符，兩個空格都是四分音符。第2小節：二分音符 + 四分音符 + 空格，空格是四分音符。第3小節：附點二分音符（3 拍）+ 四分音符，已滿，沒有空格。先讓學生說出附點二分音符佔幾拍，再填。",
-      "html": "<section class=\"nv-slide nv-wide\" id=\"nv-ex5b\" aria-label=\"第5題（下頁）\"><p class=\"nv-kicker\">第二頁 · 第 5 題 · 四四拍</p><h2>印好的長音符，空格補一拍</h2><div class=\"nv-row\"><div class=\"nv-meter\" aria-label=\"以四分音符為一拍，每小節四拍\"><b>4</b><b>4</b></div><div class=\"nv-bar\" data-beats=\"4\"><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"4\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"4\"><span class=\"nv-sym nv-dh\" role=\"img\" aria-label=\"附點二分音符，三拍\"><span class=\"nv-glyph\">&#xE1D3;</span><i class=\"nv-dot\" aria-hidden=\"true\"></i></span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span></div><span class=\"nv-barline nv-final\" aria-hidden=\"true\"></span></div><p class=\"nv-hint\">每小節 4 拍。附點二分音符自己佔三拍。</p><p class=\"nv-status\" role=\"status\">先數拍，再決定空格。</p><button type=\"button\" hidden data-action=\"next-bar\"></button><button type=\"button\" hidden data-action=\"reveal-next\"></button><button type=\"button\" hidden data-action=\"reveal-all\"></button></section>",
-      "media": [],
-      "actions": [
-        {
-          "id": "next-bar",
-          "label": "數下一小節"
-        },
-        {
-          "id": "reveal-next",
-          "label": "揭示下一個空格"
-        },
-        {
-          "id": "reveal-all",
-          "label": "全部揭示／收起"
-        }
-      ]
-    },
-    {
-      "id": "nv-ex6",
-      "title": "第6題",
-      "notes": "第二頁第6題，4/4。相片中間有反光，左半符號較淡；這一頁按可見符號排：空格、四分音符、空格、兩個八分音符｜四分音符、八分休止符、四分音符、空格、八分休止符。三個空格都是四分音符。第1小節：1+1+1+半拍+半拍 = 4。第2小節：1+半拍+1+1+半拍 = 4。兩個八分音符要連着數成一拍。若印刷小節線和螢幕不同，以工作紙拍數口頭調整，空格仍然是一拍。",
-      "html": "<section class=\"nv-slide nv-wide\" id=\"nv-ex6\" aria-label=\"第6題\"><p class=\"nv-kicker\">第二頁 · 第 6 題 · 四四拍</p><h2>半拍加半拍，合成一拍</h2><div class=\"nv-row\"><div class=\"nv-meter\" aria-label=\"以四分音符為一拍，每小節四拍\"><b>4</b><b>4</b></div><div class=\"nv-bar\" data-beats=\"4\"><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span><span class=\"nv-sym nv-e\" role=\"img\" aria-label=\"八分音符，半拍\">&#xE1D7;</span><span class=\"nv-sym nv-e\" role=\"img\" aria-label=\"八分音符，半拍\">&#xE1D7;</span></div><span class=\"nv-barline\" aria-hidden=\"true\"></span><div class=\"nv-bar\" data-beats=\"4\"><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-sym nv-rest\" role=\"img\" aria-label=\"八分休止符，停半拍\">&#xE4E6;</span><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><span class=\"nv-blank\" data-answer=\"q\" role=\"img\" aria-label=\"空格，答案是四分音符，一拍\"><span class=\"nv-ans\">&#xE1D5;<small>一拍</small></span></span><span class=\"nv-sym nv-rest\" role=\"img\" aria-label=\"八分休止符，停半拍\">&#xE4E6;</span></div><span class=\"nv-barline nv-final\" aria-hidden=\"true\"></span></div><p class=\"nv-hint\">每小節 4 拍。兩粒八分音符合共一拍，休止符也算拍。</p><p class=\"nv-status\" role=\"status\">先數拍，再決定空格。</p><button type=\"button\" hidden data-action=\"next-bar\"></button><button type=\"button\" hidden data-action=\"reveal-next\"></button><button type=\"button\" hidden data-action=\"reveal-all\"></button></section>",
-      "media": [],
-      "actions": [
-        {
-          "id": "next-bar",
-          "label": "數下一小節"
-        },
-        {
-          "id": "reveal-next",
-          "label": "揭示下一個空格"
-        },
-        {
-          "id": "reveal-all",
-          "label": "全部揭示／收起"
-        }
-      ]
-    },
-    {
-      "id": "nv-grade",
-      "title": "整體表現",
-      "notes": "對應工作紙右下方「整體表現」：優異、良好、一般、加油。這頁給全班看標準，教師在各人工作紙上勾選，不要在螢幕點名或記個別分數。優異：拍數正確，並能說出用了哪種音符。良好：大部分正確，偶爾把兩拍填成一拍。一般：找得到空格，但拍數未加對。加油：尚未穩定分開一拍和兩拍。",
-      "html": "<section class=\"nv-slide\" id=\"nv-grade\" aria-label=\"整體表現\"><p class=\"nv-kicker\">整體表現</p><h2>今天怎樣算做得好？</h2><div class=\"nv-levels\"><article><h3>優異</h3><p>每小節拍數正確，又能說出音符名稱。</p></article><article><h3>良好</h3><p>大部分填對，只有少部分把兩拍填成一拍。</p></article><article><h3>一般</h3><p>找得到空格，但加起來還未剛剛好。</p></article><article><h3>加油</h3><p>還要再分清楚一拍和兩拍。</p></article></div><p class=\"nv-hint\">教師在工作紙上勾選。螢幕只給全班看標準。</p></section>",
-      "media": [],
-      "actions": []
-    },
-    {
-      "id": "nv-self",
-      "title": "自我評估",
-      "notes": "對應「學生自我評估表」：我能準確地辨認四分音符、二分音符。三格是要加油、做到了、做得很好。請學生在自己的工作紙用顏色塗臉，不要交姓名到這頁。若用 iPad 按鈕，只顯示全班舉手後較多的那個表情，作為收結，不代表個別學生。",
-      "html": "<section class=\"nv-slide nv-sun\" id=\"nv-self\" aria-label=\"自我評估\"><p class=\"nv-kicker\">學生自我評估</p><h2>我能準確地辨認這兩個音符</h2><div class=\"nv-pair\" aria-hidden=\"true\"><article class=\"nv-card\"><span class=\"nv-sym nv-q\" role=\"img\" aria-label=\"四分音符，一拍\">&#xE1D5;</span><strong>四分音符</strong><small>一拍</small></article><article class=\"nv-card\"><span class=\"nv-sym nv-h\" role=\"img\" aria-label=\"二分音符，兩拍\">&#xE1D3;</span><strong>二分音符</strong><small>兩拍</small></article></div><div class=\"nv-faces\"><button type=\"button\" class=\"nv-face nv-try\" data-face=\"self-try\" data-action=\"self-try\"><span aria-hidden=\"true\">😟</span><small>要加油</small></button><button type=\"button\" class=\"nv-face nv-ok\" data-face=\"self-ok\" data-action=\"self-ok\"><span aria-hidden=\"true\">😐</span><small>做到了</small></button><button type=\"button\" class=\"nv-face nv-good\" data-face=\"self-good\" data-action=\"self-good\"><span aria-hidden=\"true\">😊</span><small>做得很好</small></button></div></section>",
-      "media": [],
-      "actions": [
-        {
-          "id": "self-try",
-          "label": "全班較多：要加油"
-        },
-        {
-          "id": "self-ok",
-          "label": "全班較多：做到了"
-        },
-        {
-          "id": "self-good",
-          "label": "全班較多：做得很好"
-        }
-      ]
+      "actions": [],
+      "image": "./pages/page-2.jpg",
+      "pageWidth": 4284,
+      "pageHeight": 5712
     }
   ]
 }
