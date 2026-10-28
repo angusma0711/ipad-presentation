@@ -1,13 +1,18 @@
+import {readDeletedSlides} from './deletedPresentations';
 import { fastWrite } from './fastWrite';
 import { doc, runTransaction, serverTimestamp, onSnapshot } from 'firebase/firestore';
 import { database } from './firebase';
-import { deckIds, defaultPresentationId, MAX_SLIDES } from '../presentations/registry';
+import { deckIds, defaultPresentationId, loadDeck, MAX_SLIDES } from '../presentations/registry';
 export const validSession = (id: string) => /^[A-HJ-NP-Z2-9]{6}$/.test(id);
 // Keep in step with LESSON_HOURS in firestore.rules.
 export const LESSON_HOURS = 24;
-export type SessionSnapshot = { slide: number; cached: boolean; presentationId: string; updatedAt: number; ended: boolean };
+export type SessionSnapshot = { slide: number; cached: boolean; presentationId: string; updatedAt: number; ended: boolean; slideOrder: number[] | null };
 export async function createSession(presentationId=defaultPresentationId) {
     if(!deckIds.includes(presentationId)) throw new Error('簡報不存在。');
+    const deck=await loadDeck(presentationId);
+    const deleted=readDeletedSlides(presentationId);
+    const slideOrder=deck.slides.map((slide,index)=>deleted.includes(slide.id)?-1:index).filter(index=>index>=0);
+    if(!slideOrder.length)throw new Error('沒有可播放的投影片，請先在預覽復原至少一頁。');
     const db = await database();
     const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
     for (let attempt = 0; attempt < 12; attempt++) {
@@ -17,7 +22,7 @@ export async function createSession(presentationId=defaultPresentationId) {
             const ref = doc(db, 'sessions', id);
             if ((await tx.get(ref)).exists())
                 return false;
-            tx.set(ref, { currentSlide: 0, presentationId, status: 'active', createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
+            tx.set(ref, { currentSlide: 0, presentationId, ...(deleted.length?{slideOrder}:{}), status: 'active', createdAt: serverTimestamp(), updatedAt: serverTimestamp() });
             return true;
         });
         if (created)
@@ -41,7 +46,9 @@ export async function subscribeSession(id: string, receive: (session: SessionSna
         // Pending server timestamps read as null until the write is confirmed.
         const createdAt = data.createdAt?.toMillis?.() ?? Date.now();
         const ended = data.status === 'ended' || Date.now() - createdAt > LESSON_HOURS * 3600000;
-        receive({ slide: data.currentSlide, cached: snapshot.metadata.fromCache, presentationId: data.presentationId, updatedAt: data.updatedAt?.toMillis?.() ?? 0, ended });
+        const order=data.slideOrder;
+        if(order!==undefined&&(!Array.isArray(order)||!order.length||order.length>MAX_SLIDES||new Set(order).size!==order.length||!order.every(n=>Number.isInteger(n)&&n>=0&&n<MAX_SLIDES))){fail(new Error('課堂頁序無效。'));return;}
+        receive({ slideOrder:order??null, slide: data.currentSlide, cached: snapshot.metadata.fromCache, presentationId: data.presentationId, updatedAt: data.updatedAt?.toMillis?.() ?? 0, ended });
     }, fail);
 }
 export async function navigateSession(id: string, index: number) {

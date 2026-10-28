@@ -83,8 +83,9 @@ service cloud.firestore {
    // Any deck folder name; the app checks the deck exists and clamps the slide.
    function validDeck(data) { return data.presentationId is string && data.presentationId.matches('^[a-z0-9-]{1,60}$') && data.currentSlide < 100; }
    function valid(data) {
-    return data.keys().hasOnly(['currentSlide','presentationId','status','createdAt','updatedAt'])
+    return data.keys().hasOnly(['currentSlide','presentationId','status','createdAt','updatedAt','slideOrder'])
      && data.keys().hasAll(['currentSlide','presentationId','status','createdAt','updatedAt'])
+     && (!('slideOrder' in data) || (data.slideOrder is list && data.slideOrder.size()>0 && data.slideOrder.size()<=100 && data.slideOrder.size()==data.slideOrder.toSet().size() && data.slideOrder.hasOnly([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99])))
      && data.currentSlide is int && data.currentSlide >= 0 && validDeck(data)
      && data.status in ['active', 'ended']
      && data.createdAt is timestamp && data.updatedAt is timestamp;

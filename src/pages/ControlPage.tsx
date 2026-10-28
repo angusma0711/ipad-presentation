@@ -14,7 +14,7 @@ import { TeacherTools } from '../components/TeacherTools';
 import { LessonEnded } from '../components/LessonEnded';
 import { useDeck } from '../presentations/registry';
 export function ControlPage(){
- const {sessionId=''}=useParams();const session=useSession(sessionId);const {deck,error}=useDeck(session.presentationId);
+ const {sessionId=''}=useParams();const session=useSession(sessionId);const {deck,error}=useDeck(session.presentationId,session.slideOrder);
  const {setDeck}=session;useEffect(()=>setDeck(deck),[deck,setDeck]);
  const index=deck?Math.min(session.slide,deck.slides.length-1):0;
  const teaching=useTeaching(sessionId,index);

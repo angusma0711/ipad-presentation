@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { assetURL } from '../utils/urls';
 import type { Deck, DeckMedia, DeckPlugin, DeckSlide } from './types';
 // Every folder with a deck.json is a lesson; the folder name is its presentation ID.
@@ -37,13 +37,14 @@ export function loadDeck(id: string): Promise<Deck> {
  return cache.get(id)!;
 }
 export const loadAllDecks = () => Promise.all(deckIds.map(loadDeck)).then(list => list.sort((a, b) => a.order - b.order));
-export function useDeck(id: string) {
+export function useDeck(id: string, slideOrder: number[] | null = null) {
  const [state, setState] = useState<{ id: string; deck: Deck | null; error: string }>({ id, deck: null, error: '' });
  useEffect(() => {
   let current = true;
   loadDeck(id).then(deck => { if (current) setState({ id, deck, error: '' }); }, error => { if (current) setState({ id, deck: null, error: error instanceof Error ? error.message : '未能載入簡報。' }); });
   return () => { current = false; };
  }, [id]);
- return state.id === id ? state : { id, deck: null, error: '' };
+ const ordered=useMemo(()=>state.deck&&slideOrder?{...state.deck,slides:slideOrder.map(index=>state.deck!.slides[index]).filter((slide):slide is DeckSlide=>!!slide)}:state.deck,[state.deck,JSON.stringify(slideOrder)]);
+ return state.id === id ? {...state,deck:ordered} : { id, deck: null, error: '' };
 }
 export const clampSlide = (value: number, deck: Deck | null) => Math.max(0, Math.min((deck?.slides.length ?? MAX_SLIDES) - 1, Math.trunc(value)));

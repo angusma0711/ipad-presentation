@@ -6,6 +6,7 @@ import { navigateSession, subscribeSession, validSession } from './sessionServic
 export function useSession(id: string, localFallback = false) {
     const [ended, setEnded] = useState(false);
     const deck = useRef<Deck | null>(null);
+    const [slideOrder,setSlideOrder]=useState<number[]|null>(null);
     const [presentationId,setPresentationId]=useState(defaultPresentationId);
     const [slide, setSlide] = useState(0);
     const current = useRef(0);
@@ -53,6 +54,7 @@ export function useSession(id: string, localFallback = false) {
             }
             const {slide: index, presentationId: nextDeck, updatedAt} = session;
             setPresentationId(nextDeck);
+            setSlideOrder(session.slideOrder);
             setEnded(session.ended);
             if (session.ended) connected.current = false;
             setMissing(false);
@@ -118,5 +120,5 @@ export function useSession(id: string, localFallback = false) {
     }, [id, missing, ended, localFallback]);
     // The page loads the deck after the session names it; navigation clamps to its length.
     const setDeck = useCallback((value: Deck | null) => { deck.current = value; }, []);
-    return { presentationId, slide, status, error, missing, ended, busy, navigate, setDeck };
+    return { presentationId, slideOrder, slide, status, error, missing, ended, busy, navigate, setDeck };
 }
