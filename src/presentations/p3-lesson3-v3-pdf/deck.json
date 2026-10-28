@@ -60,7 +60,7 @@
       "music": [
         "chopin"
       ],
-      "readableHtml": "<section style=\"background-image:linear-gradient(#fff9edd4,#fff9edd4),url('./images/garden-rain.webp');background-size:cover;background-position:center\" class=\"v3-readable \"><h1>用聽到的聲音說理由</h1><div class=\"v3-reading-body\"><div class=\"v3-big-cards\"><article>① 我聽到：<strong>快／慢・強／弱</strong></article><article>② 配合畫面：<strong>哪個動作？</strong></article><article>③ 所以我選：<strong>1、2 或 3</strong></article></div><p class=\"v3-prompt\">可以改選，但要說理由。</p></div></section>"
+      "readableHtml": "<section style=\"background-image:linear-gradient(#fff9edd4,#fff9edd4),url('./images/garden-rain.webp');background-size:cover;background-position:center\" class=\"v3-readable v3-evidence-with-art\"><h1>用聽到的聲音說理由</h1><div class=\"v3-reading-body\"><div class=\"v3-evidence-layout\"><div class=\"v3-big-cards\"><article>① 我聽到：<strong>快／慢・強／弱</strong></article><article>② 配合畫面：<strong>哪個動作？</strong></article><article>③ 所以我選：<strong>1、2 或 3</strong></article></div><div class=\"v3-art-options\" aria-label=\"第3頁的三幅畫\"><figure><img src=\"./images/Art_Skating.webp\" alt=\"溜冰\"><figcaption>1　溜冰</figcaption></figure><figure><img src=\"./images/Art_Pleader.webp\" alt=\"小狗與女孩\"><figcaption>2　小狗與女孩</figcaption></figure><figure><img src=\"./images/Art_Regatta.webp\" alt=\"帆船\"><figcaption>3　帆船</figcaption></figure></div></div><p class=\"v3-prompt\">可以改選，但要說理由。</p></div></section>"
     },
     {
       "id": "pdf-page-05",
