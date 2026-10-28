@@ -25,3 +25,7 @@ Music Maker 首次必須在投影電腦按App「開始」載入樂器並啟用�
 ## 驗證範圍
 
 TypeScript及production build由發布流程檢查。實際音量、iPad/Safari音訊啟用、跨裝置試聽及停止仍需在上課設備驗收。沒有把播放器建立成功當作有聲音。
+
+## 學生開啟 Music Maker
+
+第12頁六步小組任務旁新增 Music Maker QR code，可掃描或點擊開啟 https://angusma0711.github.io/music-maker/ 。QR code 保留四格白邊，不使用外部 QR 服務；原有15頁次序及六步活動不變。

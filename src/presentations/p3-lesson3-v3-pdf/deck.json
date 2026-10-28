@@ -143,11 +143,12 @@
     {
       "id": "v3-group-task",
       "title": "我們要做甚麼？小組配樂任務",
-      "notes": "按10月29日V3教案：先用6分鐘看圖、試聲、共同決定並記錄；接著4分鐘排練（加分挑戰可選）；每組演出15–30秒並給具體回饋。",
+      "notes": "按10月29日V3教案：先用6分鐘看圖、試聲、共同決定並記錄；接著4分鐘排練（加分挑戰可選）；每組演出15–30秒並給具體回饋。 QR code 及連結： https://angusma0711.github.io/music-maker/ 。學生在自己的 iPad 開啟後按「開始」。",
       "kind": "task",
       "html": "<section style=\"background-image:linear-gradient(#fff9edd4,#fff9edd4),url('./images/garden-rain.webp');background-size:cover;background-position:center\" class=\"v3-readable \"><h1>我們要做甚麼？</h1><div class=\"v3-reading-body\"><div class=\"v3-task-large\"><article><b>1</b><h2>看圖</h2><p>指出一個動作</p></article><article><b>2</b><h2>試聲</h2><p>低音量試設定</p></article><article><b>3</b><h2>決定</h2><p>每人說理由<br>表決並圈選</p></article><article><b>4</b><h2>排練</h2><p>配樂＋可選律動</p></article><article><b>5</b><h2>展示</h2><p>說構思<br>演出 15–30 秒</p></article><article><b>6</b><h2>回饋</h2><p>先欣賞，再建議</p></article></div></div></section>",
       "media": [],
-      "actions": []
+      "actions": [],
+      "readableHtml": "<section class=\"v3-readable v3-task-with-qr\"><h1>我們要做甚麼？</h1><div class=\"v3-reading-body\"><div class=\"v3-task-qr-layout\"><div class=\"v3-task-large\"><article><b>1</b><h2>看圖</h2><p>指出一個動作</p></article><article><b>2</b><h2>試聲</h2><p>低音量試設定</p></article><article><b>3</b><h2>決定</h2><p>每人說理由<br>表決並圈選</p></article><article><b>4</b><h2>排練</h2><p>配樂＋可選律動</p></article><article><b>5</b><h2>展示</h2><p>說構思<br>演出 15–30 秒</p></article><article><b>6</b><h2>回饋</h2><p>先欣賞，再建議</p></article></div><figure class=\"v3-maker-qr\"><a href=\"https://angusma0711.github.io/music-maker/\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"開啟音樂創作坊（新分頁）\"><img src=\"./images/music-maker-qr.svg\" alt=\"掃描 QR code 開啟音樂創作坊\"></a><figcaption><strong>音樂創作坊</strong><span>掃描或點擊開啟</span></figcaption></figure></div></div></section>"
     },
     {
       "id": "pdf-page-12",

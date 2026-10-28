@@ -49,3 +49,15 @@
 .v3-readable.v3-feedback-with-photo .v3-big-cards article{font-size:2.5cqw;padding:1.1cqw 1.4cqw}
 .v3-readable.v3-feedback-with-photo .v3-feedback-photo img{height:29cqw}
 .v3-readable.v3-feedback-with-photo .v3-feedback-photo figcaption{font-size:2.4cqw;color:#176b60;font-weight:700}
+
+/* Page 12: retain six task steps; add a large, scannable student app link. */
+.v3-task-with-qr .v3-task-qr-layout{display:grid;grid-template-columns:minmax(0,1fr) 26cqw;gap:2cqw;align-items:center;min-height:0}
+.v3-readable.v3-task-with-qr .v3-task-large{gap:1.2cqw}
+.v3-readable.v3-task-with-qr .v3-task-large article{padding:1cqw;min-height:13cqw}
+.v3-readable.v3-task-with-qr .v3-task-large h2{font-size:2.6cqw}
+.v3-readable.v3-task-with-qr .v3-task-large p{font-size:2.25cqw}
+.v3-readable .v3-maker-qr{gap:1cqw;text-align:center}
+.v3-maker-qr a{display:block;width:26cqw;height:26cqw;background:#fff}
+.v3-readable .v3-maker-qr img{width:100%;height:100%;border-radius:0;object-fit:contain;image-rendering:pixelated}
+.v3-readable .v3-maker-qr figcaption{font-size:2.1cqw;line-height:1.4}
+.v3-maker-qr figcaption span{display:block}
