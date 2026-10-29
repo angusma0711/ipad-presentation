@@ -13,7 +13,7 @@ export function PresentPage(){
  const {sessionId=''}=useParams();const session=useSession(sessionId,true);const {deck,error}=useDeck(session.presentationId,session.slideOrder);
  const {setDeck}=session;useEffect(()=>setDeck(deck),[deck,setDeck]);
  const index=deck?Math.min(session.slide,deck.slides.length-1):0;
- const teaching=useTeaching(sessionId,index);
+ const teaching=useTeaching(sessionId,index,deck?.data.syncZoom===true);
  useWakeLock(!session.ended);
  const feedback=useCallback((value:MediaFeedback)=>{if(session.status==='Connected')void reportMedia(sessionId,index,value).catch(()=>{});},[sessionId,index,session.status]);
  useEffect(()=>{const handler=(event:KeyboardEvent)=>{
@@ -23,5 +23,5 @@ export function PresentPage(){
  };window.addEventListener('keydown',handler);return()=>window.removeEventListener('keydown',handler);},[session.navigate]);
  if(session.ended)return <LessonEnded projector/>;
  if(!deck)return <main className="presentation"><p className="deck-loading">{error||'正在載入簡報…'}</p></main>;
- return <main className="presentation"><FullscreenButton overlay/><PresentationView mediaLayout={teaching.mediaLayout} timer={teaching.timer} deck={deck} index={index} interaction={teaching.interaction} onInteraction={patch=>{if(session.status==='Connected')void changeInteraction(sessionId,index,patch).catch(()=>{});}} onPlayMedia={media=>{if(session.status==='Connected')void configureMedia(sessionId,index,media.kind,media.src).then(()=>commandMedia(sessionId,index,'play')).catch(()=>{});}} onNext={()=>void session.navigate({delta:1})} action={teaching.action} groups={teaching.groups} strokes={teaching.strokes} pointer={teaching.pointer} media={teaching.media} onFeedback={feedback}/></main>;
+ return <main className="presentation"><FullscreenButton overlay/><PresentationView viewport={teaching.viewport} mediaLayout={teaching.mediaLayout} timer={teaching.timer} deck={deck} index={index} interaction={teaching.interaction} onInteraction={patch=>{if(session.status==='Connected')void changeInteraction(sessionId,index,patch).catch(()=>{});}} onPlayMedia={media=>{if(session.status==='Connected')void configureMedia(sessionId,index,media.kind,media.src).then(()=>commandMedia(sessionId,index,'play')).catch(()=>{});}} onNext={()=>void session.navigate({delta:1})} action={teaching.action} groups={teaching.groups} strokes={teaching.strokes} pointer={teaching.pointer} media={teaching.media} onFeedback={feedback}/></main>;
 }

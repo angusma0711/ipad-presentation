@@ -157,3 +157,9 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 .media-placement-handle{position:absolute;inset:0;z-index:6;border:3px dashed #176b60;touch-action:none;cursor:move;user-select:none;display:grid;place-items:center;color:#176b60;font-weight:700;font-size:2cqw;background:#ffffff35}.media-placement-handle>span:first-child{background:#fff;padding:8px;border-radius:8px;pointer-events:none}.media-placement-resize{position:absolute;right:0;bottom:0;width:44px;height:44px;display:grid;place-items:center;background:#176b60;color:white;font-size:30px;cursor:nwse-resize}
 
 .deleted-presentations{margin-top:1rem}.deleted-presentations summary{cursor:pointer;font-weight:650}.deleted-presentations ul{list-style:none;padding:0}.deleted-presentations li{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid #dce5e0}.deleted-presentations button{flex:none}
+
+.slide-zoom-surface{position:absolute;inset:0;transform-origin:0 0}.slide-zoom-gesture{position:absolute;inset:0;z-index:15;touch-action:none;overscroll-behavior:contain;user-select:none;-webkit-user-select:none;cursor:grab}.controller-zoom-tools .tool-bar{align-items:center}.controller-zoom-tools .tool-bar>span{font-variant-numeric:tabular-nums;font-weight:700}
+
+.slide-normal-surface{display:contents}.slide-zoom-surface{display:flex;flex-direction:column;justify-content:center;padding:inherit}
+
+.slide.sync-zoom-slide{overflow:hidden}

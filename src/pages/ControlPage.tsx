@@ -17,7 +17,7 @@ export function ControlPage(){
  const {sessionId=''}=useParams();const session=useSession(sessionId);const {deck,error}=useDeck(session.presentationId,session.slideOrder);
  const {setDeck}=session;useEffect(()=>setDeck(deck),[deck,setDeck]);
  const index=deck?Math.min(session.slide,deck.slides.length-1):0;
- const teaching=useTeaching(sessionId,index);
+ const teaching=useTeaching(sessionId,index,deck?.data.syncZoom===true);
  const [menuOpen,setMenuOpen]=useState(()=>window.matchMedia('(min-width:761px)').matches),[previewNext,setPreviewNext]=useState(true);
  const [navigationVersion,setNavigationVersion]=useState(0);
  const [category,setCategory]=useState<TeacherCategory>('slides');
