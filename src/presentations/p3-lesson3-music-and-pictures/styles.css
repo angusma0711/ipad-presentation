@@ -1,5 +1,5 @@
-.slide:has(> .slide-content > .mp-deck){padding:0}
-.slide:has(> .slide-content > .mp-deck)>.slide-content{width:100%;height:100%}
+.slide:has(> .slide-zoom-surface > .slide-content > .mp-deck){padding:0}
+.slide:has(> .slide-zoom-surface > .slide-content > .mp-deck) > .slide-zoom-surface > .slide-content{width:100%;height:100%}
 .mp-deck{width:100%;height:100%;font-family:"PingFang TC","Microsoft JhengHei",sans-serif;color:#183c43;container-type:inline-size}
 .mp-deck *{box-sizing:border-box}
 .mp-deck .mp-page{position:relative;isolation:isolate;width:100%;height:100%;background:#f8f6ef;padding:3% 5% 4%;display:flex;flex-direction:column;overflow:hidden}

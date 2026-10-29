@@ -13,7 +13,7 @@ export function PresentPage(){
  const {sessionId=''}=useParams();const session=useSession(sessionId,true);const {deck,error}=useDeck(session.presentationId,session.slideOrder);
  const {setDeck}=session;useEffect(()=>setDeck(deck),[deck,setDeck]);
  const index=deck?Math.min(session.slide,deck.slides.length-1):0;
- const teaching=useTeaching(sessionId,index,deck?.data.syncZoom===true);
+ const teaching=useTeaching(sessionId,index);
  useWakeLock(!session.ended);
  const feedback=useCallback((value:MediaFeedback)=>{if(session.status==='Connected')void reportMedia(sessionId,index,value).catch(()=>{});},[sessionId,index,session.status]);
  useEffect(()=>{const handler=(event:KeyboardEvent)=>{

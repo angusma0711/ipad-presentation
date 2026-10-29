@@ -21,8 +21,8 @@ function useDocument(id:string,key:string,enabled=true) {
  },[id,key,retry,enabled]);
  return {data:stored.token===token?stored.data:null,error};
 }
-export function useTeaching(id:string,slide:number,zoom=false) {
- const viewport=useDocument(id,`viewport-${slide}`,zoom);
+export function useTeaching(id:string,slide:number) {
+ const viewport=useDocument(id,`viewport-${slide}`);
  const mediaLayout=useDocument(id,`media-layout-${slide}`);
  const timer=useDocument(id,'timer');
  const groups=useDocument(id,'groups');const pointer=useDocument(id,'pointer');

@@ -160,6 +160,6 @@ input:focus-visible,select:focus-visible{outline:3px solid #d78827;outline-offse
 
 .slide-zoom-surface{position:absolute;inset:0;transform-origin:0 0}.slide-zoom-gesture{position:absolute;inset:0;z-index:15;touch-action:none;overscroll-behavior:contain;user-select:none;-webkit-user-select:none;cursor:grab}.controller-zoom-tools .tool-bar{align-items:center}.controller-zoom-tools .tool-bar>span{font-variant-numeric:tabular-nums;font-weight:700}
 
-.slide-normal-surface{display:contents}.slide-zoom-surface{display:flex;flex-direction:column;justify-content:center;padding:inherit}
+.slide-zoom-surface{display:flex;flex-direction:column;justify-content:inherit;align-items:inherit;padding:inherit}
 
 .slide.sync-zoom-slide{overflow:hidden}

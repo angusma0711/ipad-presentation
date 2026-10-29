@@ -1,8 +1,8 @@
 /* P2 動感詩歌. Same design language as P3 Pitter Patter, scoped to .dp-deck. */
-.slide:has(> .slide-content > .dp-deck){padding:0}
-.slide:has(> .slide-content > .dp-deck) > .slide-content{width:100%;height:100%}
-.slide.with-media:has(> .slide-content > .dp-deck) > .slide-content{width:58%;height:100%}
-.slide:has(> .slide-content > .dp-deck) .slide-counter{background:#fff9ebd9;border-radius:4px;padding:2px 7px;z-index:5}
+.slide:has(> .slide-zoom-surface > .slide-content > .dp-deck){padding:0}
+.slide:has(> .slide-zoom-surface > .slide-content > .dp-deck) > .slide-zoom-surface > .slide-content{width:100%;height:100%}
+.slide.with-media:has(> .slide-zoom-surface > .slide-content > .dp-deck) > .slide-zoom-surface > .slide-content{width:58%;height:100%}
+.slide:has(> .slide-zoom-surface > .slide-content > .dp-deck) .slide-counter{background:#fff9ebd9;border-radius:4px;padding:2px 7px;z-index:5}
 
 .dp-deck{--dp-ink:#183f4a;--dp-teal:#037d8b;--dp-coral:#b23c32;--dp-yellow:#ffd76d;--dp-cream:#fff9eb;--dp-sky:#e3f4f4;--dp-sun:#fff0bd;--dp-g1:#037d8b;--dp-g2:#3f6fb5;--dp-g3:#4f8a32;--dp-g4:#b23c32;--dp-gt:#9a6a00;width:100%;height:100%;color:var(--dp-ink);font-family:"PingFang TC","Microsoft JhengHei",sans-serif;container-type:size;overflow:hidden}
 .dp-deck *{box-sizing:border-box}

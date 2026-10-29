@@ -38,8 +38,8 @@
 /* Music engraving glyphs: staff space = 14 SVG units, Bravura em = four spaces. */
 @font-face{font-family:PPBravura;src:url("../../../public/media/3d-music/assets/fonts/Bravura.woff2") format("woff2");font-style:normal;font-weight:400;font-display:block}
 /* Load after the existing app CSS. Scoped to a host containing this lesson. */
-.slide:has(> .slide-content > .pp-deck){padding:0}
-.slide:has(> .slide-content > .pp-deck) > .slide-content{width:100%;height:100%}
-.slide.with-media:has(> .slide-content > .pp-deck) > .slide-content{width:58%;height:100%}
-.slide.with-media:has(> .slide-content > .pp-deck) .pp-deck .pp-slide{font-size:clamp(13px,2.7cqw,48px)}
-.slide:has(> .slide-content > .pp-deck) .slide-counter{background:#fff9ebd9;border-radius:4px;padding:2px 7px;z-index:5}
+.slide:has(> .slide-zoom-surface > .slide-content > .pp-deck){padding:0}
+.slide:has(> .slide-zoom-surface > .slide-content > .pp-deck) > .slide-zoom-surface > .slide-content{width:100%;height:100%}
+.slide.with-media:has(> .slide-zoom-surface > .slide-content > .pp-deck) > .slide-zoom-surface > .slide-content{width:58%;height:100%}
+.slide.with-media:has(> .slide-zoom-surface > .slide-content > .pp-deck) .pp-deck .pp-slide{font-size:clamp(13px,2.7cqw,48px)}
+.slide:has(> .slide-zoom-surface > .slide-content > .pp-deck) .slide-counter{background:#fff9ebd9;border-radius:4px;padding:2px 7px;z-index:5}
